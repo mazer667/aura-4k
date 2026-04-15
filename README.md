@@ -3,6 +3,10 @@
 ![Version](https://img.shields.io/badge/version-2.5.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-green)
 ![Electron](https://img.shields.io/badge/Electron-28.0.0-purple)
+![Tests](https://img.shields.io/badge/tests-12 passed-green)
+![License](https://img.shields.io/badge/license-MIT-yellow)
+
+![CI](https://github.com/mazer667/aura-4k/actions/workflows/ci.yml/badge.svg)
 
 ## Table des matières
 
@@ -543,12 +547,52 @@ npm start
 # Executer les tests
 npm test
 
+# Lancer les tests en mode watch
+npm run test:watch
+
+#Verifier le code avec ESLint
+npm run lint
+
+# Formater le code avec Prettier
+npm run format
+
 # Build production
 npm run build
 
-# Tester avec Electron directement
+#Tester avec Electron directement
 electron .
 ```
+
+---
+
+## Tests et CI/CD
+
+Le projet utilise **Vitest** pour les tests unitaires et **GitHub Actions** pour l'intégration continue.
+
+### Tests
+
+```bash
+# Lancer tous les tests
+npm test
+
+# Tests en mode watch
+npm run test:watch
+
+# Couverture de code
+npm run test:coverage
+```
+
+### Fichiers de tests
+
+- `tests/constants.test.js` - Tests des constantes
+- `tests/modules.test.js` - Tests des modules
+
+### CI/CD
+
+À chaque push sur `master`, GitHub Actions exécute automatiquement :
+- Installation des dépendances
+- Vérification ESLint
+- Exécution des tests unitaires
 
 ---
 
