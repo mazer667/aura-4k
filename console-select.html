@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>AURA 4K — <span data-i18n="page.title">Console Select</span></title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:none; }
+
+:root {
+  --accent: #5eb8ff;
+  --accent2: #a78bfa;
+  --w: 1920px;
+  --h: 1080px;
+}
+
+/* ── Scaler ── */
+#scaler {
+  position: fixed; top:0; left:0;
+  transform-origin: top left;
+  width: var(--w); height: var(--h);
+}
+
+/* ── Cursor ── */
+#cur {
+  position: fixed; pointer-events:none; z-index:9999;
+  width:12px; height:12px; border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.7);
+  transform:translate(-50%,-50%);
+  mix-blend-mode:difference;
+  transition:width .15s, height .15s;
+}
+#cur.big { width:32px; height:32px; }
+
+/* ── Background ── */
+.bg {
+  position: absolute; inset:0;
+  background:
+    radial-gradient(ellipse 1200px 800px at 50% 60%, rgba(10,30,70,0.6) 0%, transparent 70%),
+    linear-gradient(160deg, #020508 0%, #060c18 50%, #040810 100%);
+}
+.grain {
+  position:absolute; inset:0; pointer-events:none; z-index:2;
+  opacity:0.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  animation:gn .12s steps(1) infinite;
+}
+@keyframes gn {
+  0%{background-position:0 0}16%{background-position:-52px 24px}
+  33%{background-position:36px -44px}50%{background-position:-68px 14px}
+  66%{background-position:20px -54px}83%{background-position:-40px 68px}
+  100%{background-position:58px -20px}
+}
+
+/* ── Layout principal ── */
+.screen {
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+}
+
+/* ── Header ── */
+.header {
+  position:absolute; top:0; left:0; right:0;
+  height:100px; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 80px;
+}
+.header-logo {
+  font-family:'Bebas Neue',sans-serif; font-size:22px;
+  letter-spacing:10px; color:rgba(255,255,255,0.6);
+}
+.header-title {
+  font-family:'Bebas Neue',sans-serif; font-size:14px;
+  letter-spacing:8px; color:rgba(255,255,255,0.25);
+  text-transform:uppercase;
+}
+.header-clock {
+  font-family:'Bebas Neue',sans-serif; font-size:28px;
+  letter-spacing:3px; color:rgba(200,235,255,0.7);
+}
+
+/* ── Ligne séparatrice header ── */
+.header::after {
+  content:'';
+  position:absolute; bottom:0; left:80px; right:80px; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 20%, rgba(255,255,255,0.08) 80%, transparent);
+}
+
+/* ── ERA TABS (navigation par époque) ── */
+.era-nav {
+  position:absolute; top:112px; left:80px; right:80px;
+  z-index:10; display:flex; gap:4px; align-items:center;
+}
+.era-tab {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700; letter-spacing:3px;
+  text-transform:uppercase; padding:7px 20px;
+  color:rgba(255,255,255,0.28);
+  border:1px solid transparent; border-radius:3px;
+  cursor:pointer; transition:all 0.2s; user-select:none;
+  position:relative;
+}
+.era-tab:hover { color:rgba(255,255,255,0.6); }
+.era-tab.active {
+  color:#fff;
+  border-color:rgba(94,184,255,0.3);
+  background:rgba(94,184,255,0.06);
+}
+.era-tab.active::after {
+  content:'';
+  position:absolute; bottom:-1px; left:20%; right:20%; height:1px;
+  background:var(--accent);
+}
+.era-sep {
+  flex:1; height:1px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.06), transparent);
+  margin-left:12px;
+}
+.era-count {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:600; letter-spacing:2px;
+  color:rgba(255,255,255,0.2);
+}
+
+/* ── Zone des consoles ── */
+.consoles-zone {
+  position:absolute;
+  top:168px; bottom:120px;
+  left:0; right:0;
+  display:flex; align-items:center;
+  overflow:hidden;
+}
+
+/* ── Track de défilement ── */
+.track {
+  display:flex; align-items:center;
+  gap:0;
+  padding:0 calc((var(--w) - 320px) / 2);
+  transition:transform 0.55s cubic-bezier(0.16,1,0.3,1);
+  will-change:transform;
+}
+
+/* ── Carte console ── */
+.ccard {
+  width:280px;
+  flex-shrink:0;
+  display:flex; flex-direction:column;
+  cursor:pointer;
+  transition:all 0.45s cubic-bezier(0.16,1,0.3,1);
+  position:relative;
+  margin:0 16px;
+}
+
+/* Carte inactive */
+.ccard .card-inner {
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:8px;
+  overflow:hidden;
+  transition:all 0.45s cubic-bezier(0.16,1,0.3,1);
+  position:relative;
+}
+
+/* Fond coloré de la carte */
+.ccard .card-bg {
+  height:220px;
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.ccard .card-glow {
+  position:absolute; inset:-20px;
+  opacity:0.18;
+  transition:opacity 0.45s;
+  filter:blur(30px);
+  border-radius:50%;
+}
+.ccard .card-icon {
+  position:relative; z-index:2;
+  font-size:72px;
+  filter:drop-shadow(0 4px 20px rgba(0,0,0,0.6));
+  transition:transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.3s;
+  opacity:0.55;
+  user-select:none;
+  display:flex; align-items:center; justify-content:center;
+}
+.ccard .card-icon img {
+  max-width:140px; max-height:100px;
+  width:auto; height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 24px rgba(0,0,0,0.7));
+  transition:inherit;
+}
+/* Fallback emoji si pas d'image */
+.ccard .card-icon .icon-emoji { font-size:72px; line-height:1; }
+.ccard .card-year-badge {
+  position:absolute; top:14px; right:14px; z-index:3;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700; letter-spacing:2px;
+  color:rgba(255,255,255,0.35);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:3px; padding:3px 8px;
+  background:rgba(0,0,0,0.3);
+}
+
+/* Bottom info de la carte */
+.ccard .card-info {
+  padding:16px 20px 18px;
+  background:rgba(6,10,20,0.85);
+  border-top:1px solid rgba(255,255,255,0.05);
+  transition:background 0.3s;
+}
+.ccard .card-name {
+  font-family:'Bebas Neue',sans-serif; font-size:22px;
+  letter-spacing:3px; color:rgba(255,255,255,0.55);
+  transition:color 0.3s;
+  line-height:1;
+}
+.ccard .card-maker {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:300; letter-spacing:2px;
+  color:rgba(255,255,255,0.22); margin-top:3px;
+  text-transform:uppercase;
+}
+.ccard .card-games {
+  margin-top:10px;
+  display:flex; align-items:center; gap:8px;
+}
+.ccard .games-count {
+  font-family:'Bebas Neue',sans-serif; font-size:28px;
+  letter-spacing:1px; color:rgba(255,255,255,0.2);
+  transition:color 0.3s;
+  line-height:1;
+}
+.ccard .games-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700; letter-spacing:2px;
+  color:rgba(255,255,255,0.15); text-transform:uppercase;
+  margin-top:4px;
+}
+.ccard .card-bar {
+  margin-top:12px; height:2px; border-radius:1px;
+  background:rgba(255,255,255,0.06);
+  overflow:hidden;
+}
+.ccard .card-bar-fill {
+  height:100%; border-radius:1px;
+  transition:width 0.6s cubic-bezier(0.16,1,0.3,1), background 0.3s;
+  width:0;
+}
+
+/* ── État ACTIF de la carte ── */
+.ccard.active {
+  transform:scale(1) translateY(-8px);
+  z-index:5;
+}
+.ccard.active .card-inner {
+  border-color:rgba(94,184,255,0.3);
+  box-shadow:
+    0 0 0 1px rgba(94,184,255,0.1),
+    0 24px 60px rgba(0,0,0,0.7),
+    0 0 80px rgba(94,184,255,0.08);
+}
+.ccard.active .card-glow { opacity:0.55; }
+.ccard.active .card-icon { opacity:1; transform:scale(1.08) translateY(-4px); }
+.ccard.active .card-name { color:#fff; }
+.ccard.active .card-info { background:rgba(8,14,28,0.95); }
+.ccard.active .games-count { color:var(--accent); }
+.ccard.active .card-bar-fill { background:var(--accent); }
+
+/* Couleur accent par console appliquée via JS */
+.ccard.active .card-inner { border-color:var(--cc-accent, rgba(94,184,255,0.3)); }
+.ccard.active .games-count { color:var(--cc-accent, var(--accent)); }
+.ccard.active .card-bar-fill { background:var(--cc-accent, var(--accent)); }
+.ccard.active .card-inner {
+  box-shadow:
+    0 0 0 1px rgba(var(--cc-rgb, 94,184,255),0.12),
+    0 24px 60px rgba(0,0,0,0.7),
+    0 0 80px rgba(var(--cc-rgb, 94,184,255),0.1);
+}
+
+/* Cartes adjacentes légèrement visibles */
+.ccard.prev, .ccard.next {
+  transform: scale(0.88) translateY(10px);
+  opacity:0.5;
+}
+.ccard.far {
+  transform: scale(0.78) translateY(20px);
+  opacity:0.2;
+}
+.ccard.hidden {
+  opacity:0;
+  pointer-events:none;
+}
+
+/* ── Panneau d'infos bas ── */
+.info-bar {
+  position:absolute; bottom:0; left:0; right:0; height:120px;
+  z-index:10;
+  display:flex; align-items:center;
+  padding:0 80px;
+  gap:40px;
+}
+.info-bar::before {
+  content:'';
+  position:absolute; top:0; left:80px; right:80px; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 20%, rgba(255,255,255,0.07) 80%, transparent);
+}
+
+.info-console-name {
+  font-family:'Bebas Neue',sans-serif; font-size:44px;
+  letter-spacing:4px; color:#fff;
+  line-height:1;
+  min-width:340px;
+  transition:opacity 0.3s;
+}
+.info-console-name span {
+  display:block;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:300; letter-spacing:4px;
+  color:rgba(255,255,255,0.3); margin-top:2px;
+}
+
+.info-sep { width:1px; height:50px; background:rgba(255,255,255,0.08); flex-shrink:0; }
+
+.info-stats {
+  display:flex; gap:36px;
+}
+.info-stat {
+  display:flex; flex-direction:column; gap:2px;
+}
+.info-stat-val {
+  font-family:'Bebas Neue',sans-serif; font-size:28px;
+  letter-spacing:2px; color:#fff; line-height:1;
+  transition:color 0.3s;
+}
+.info-stat-key {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; font-weight:700; letter-spacing:3px;
+  text-transform:uppercase; color:rgba(255,255,255,0.25);
+}
+
+.info-spacer { flex:1; }
+
+/* Navigation hints */
+.nav-hints {
+  display:flex; align-items:center; gap:20px;
+}
+.nav-hint {
+  display:flex; align-items:center; gap:6px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:600; letter-spacing:1px;
+  text-transform:uppercase; color:rgba(255,255,255,0.4);
+}
+.nav-hint .ci { position:relative; width:14px; height:14px; flex-shrink:0; }
+.nav-hint .ci-h, .nav-hint .ci-v { position:absolute; background:rgba(255,255,255,0.22); border-radius:1px; }
+.nav-hint .ci-h { left:0; top:50%; transform:translateY(-50%); width:100%; height:5px; }
+.nav-hint .ci-v { top:0; left:50%; transform:translateX(-50%); width:5px; height:100%; }
+.nav-hint .ci .arm { position:absolute; background:#fff; border-radius:1px; }
+.nav-hint .ci.L .arm { left:0; top:50%; transform:translateY(-50%); width:4px; height:5px; border-radius:1px 0 0 1px; }
+.nav-hint .ci.R .arm { right:0; top:50%; transform:translateY(-50%); width:4px; height:5px; border-radius:0 1px 1px 0; }
+.nav-hint .round {
+  width:22px; height:22px; border-radius:50%;
+  background:#fff; display:flex; align-items:center; justify-content:center;
+  font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:11px; color:#000;
+  box-shadow:0 1px 1px rgba(0,0,0,0.2);
+}
+.nav-hint .label {
+  font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600;
+  letter-spacing:0.5px; text-transform:uppercase; color:#fff;
+}
+
+/* Navigation buttons */
+.nav-item {
+  display:flex; align-items:center; gap:8px;
+  background:none; border:1px solid rgba(255,255,255,0.1);
+  border-radius:6px; padding:8px 16px; cursor:pointer;
+  color:rgba(255,255,255,0.4); transition:all 0.2s;
+}
+.nav-item:hover { background:rgba(255,255,255,0.05); color:#fff; }
+.nav-item .ci { position:relative; width:14px; height:14px; flex-shrink:0; }
+.nav-item .ci-h, .nav-item .ci-v { position:absolute; background:rgba(255,255,255,0.22); border-radius:1px; }
+.nav-item .ci-h { left:0; top:50%; transform:translateY(-50%); width:100%; height:5px; }
+.nav-item .ci-v { top:0; left:50%; transform:translateX(-50%); width:5px; height:100%; }
+.nav-item .ci .arm { position:absolute; background:#fff; border-radius:1px; }
+.nav-item .ci.L .arm { left:0; top:50%; transform:translateY(-50%); width:4px; height:5px; border-radius:1px 0 0 1px; }
+.nav-item .ci.R .arm { right:0; top:50%; transform:translateY(-50%); width:4px; height:5px; border-radius:0 1px 1px 0; }
+.nav-item span {
+  font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600;
+  letter-spacing:1px; text-transform:uppercase;
+}
+
+/* Manette buttons */
+.manette-group { display:flex; gap:12px; align-items:center; }
+.manette-btn { display:inline-flex; align-items:center; gap:5px; cursor:pointer; background:none; border:none; padding:0; }
+.manette-btn .round {
+  width:22px; height:22px; border-radius:50%;
+  background:#fff; display:flex; align-items:center; justify-content:center;
+  font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:11px; color:#000;
+  box-shadow:0 1px 1px rgba(0,0,0,0.2); transition:transform 0.1s;
+}
+.manette-btn:hover .round { transform:scale(1.05); }
+.manette-btn:active .round { transform:scale(0.96); }
+.manette-btn .label {
+  font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:600;
+  letter-spacing:0.5px; text-transform:uppercase; color:#fff; text-shadow:0 0 2px rgba(0,0,0,0.5);
+}
+
+/* ── Indicateurs de position ── */
+.dots {
+  position:absolute; bottom:130px; left:50%;
+  transform:translateX(-50%);
+  display:flex; gap:7px; z-index:10;
+}
+.dot {
+  width:5px; height:5px; border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  transition:all 0.3s;
+  cursor:pointer;
+}
+.dot.active {
+  width:20px; border-radius:3px;
+  background:var(--accent);
+}
+
+/* ── Flash ── */
+.flash {
+  position:absolute; inset:0; z-index:50;
+  background:#fff; opacity:0; pointer-events:none;
+  transition:opacity 0.06s;
+}
+/* ── Intro overlay ── */
+#intro-overlay {
+  position:fixed; inset:0; z-index:500;
+  background:#000;
+  display:flex; align-items:center; justify-content:center;
+  transition:opacity 0.9s ease;
+}
+#intro-overlay.fade-out { opacity:0; pointer-events:none; }
+.intro-logo-img {
+  opacity:0; transform:scale(0.82);
+  transition:opacity 0.6s ease, transform 0.6s ease;
+  filter:brightness(0) invert(1);
+  max-height:80px;
+}
+.intro-logo-img.show { opacity:1; transform:scale(1); }
+
+/* ── Transition — fondu noir simple ── */
+#transition-overlay {
+  position:fixed; inset:0; z-index:400;
+  background:#000; opacity:0; pointer-events:none;
+  transition:opacity 0.5s ease;
+}
+#transition-overlay.show { opacity:1; pointer-events:all; }
+
+/* ── Badge compteur réel ── */
+.real-count {
+  position:absolute; top:10px; left:10px; z-index:4;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:9px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase;
+  background:rgba(94,184,255,0.15);
+  border:1px solid rgba(94,184,255,0.3);
+  color:#5eb8ff; border-radius:3px; padding:2px 7px;
+}
+
+/* ── Badge console vide ── */
+.empty-count {
+  position:absolute; top:10px; left:10px; z-index:4;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:9px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.5); border-radius:3px; padding:2px 7px;
+}
+.ccard .card-bg { position:relative; }
+
+/* ── Console sans jeux ── */
+.ccard.unavailable { opacity:0.5; }
+
+/* Japanese text - thicker fonts */
+:lang(ja) .header-logo,
+:lang(ja) .header-title,
+:lang(ja) .header-clock,
+:lang(ja) .era-tab,
+:lang(ja) .card-name,
+:lang(ja) .games-count,
+:lang(ja) .info-console-name,
+:lang(ja) .info-stat-val {
+  font-family: 'Yu Gothic UI', 'Meiryo UI', 'MS Gothic', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+:lang(ja) .card-maker,
+:lang(ja) .games-label,
+:lang(ja) .info-stat-key,
+:lang(ja) .maker {
+  font-family: 'Yu Gothic UI', 'Meiryo UI', 'MS Gothic', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Intro -->
+<div id="intro-overlay">
+  <img class="intro-logo-img" src="ui/aura-logo.png" alt="AURA 4K" id="intro-logo">
+</div>
+
+<!-- Transition -->
+<div id="transition-overlay"></div>
+
+<div id="cur"></div>
+<div id="scaler">
+
+  <!-- Background -->
+  <div class="bg"></div>
+  <div class="grain"></div>
+  <div class="flash" id="flash"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">AURA 4K</div>
+    <div class="header-title" id="header-title" data-i18n="console.title">Sélection de la plateforme</div>
+    <div id="resume-btn" style="display:none; cursor:pointer;" onclick="resumeLastGame()">
+      <span style="font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; color:#fbbf24; background:rgba(251,191,36,0.15); border:1px solid rgba(251,191,36,0.3); border-radius:4px; padding:6px 14px;">
+        <span data-i18n="resume.btn">REPRENDRE</span>
+      </span>
+    </div>
+    <div class="header-clock" id="clock">00:00</div>
+  </div>
+
+  <!-- Era tabs -->
+  <div class="era-nav" id="eraTabs"></div>
+
+  <!-- Consoles -->
+  <div class="consoles-zone">
+    <div class="track" id="track"></div>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots" id="dots"></div>
+
+  <!-- Info bar -->
+  <div class="info-bar">
+    <button class="nav-item" id="navLeft"><div class="ci L"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.prev">Jeu précédent</span></button>
+    <div>
+      <div class="info-console-name" id="infoName">—<span id="infoMaker"></span></div>
+    </div>
+    <div class="info-sep"></div>
+    <div class="info-stats">
+      <div class="info-stat">
+        <div class="info-stat-val" id="infoGames">—</div>
+        <div class="info-stat-key" data-i18n="info.games">Jeux</div>
+      </div>
+    </div>
+    <div class="info-spacer"></div>
+    <div class="manette-group">
+      <div class="manette-btn" id="btnA">
+        <div class="round">A</div>
+        <span class="label" data-i18n="btn.play">Jouer</span>
+      </div>
+      <div class="manette-btn" id="btnB">
+        <div class="round">B</div>
+        <span class="label" data-i18n="btn.quit">Quitter</span>
+      </div>
+    </div>
+    <button class="nav-item" id="navRight"><div class="ci R"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.next">Jeu suivant</span></button>
+  </div>
+
+</div>
+
+<script type="module">
+// ─── ERROR BOUNDARIES ───────────────────────────────────────────
+window.onerror = (msg, url, line, col, err) => {
+  console.error('[RENDERER ERROR]', msg, '| line:', line, '|', url);
+  return false;
+};
+window.onunhandledrejection = (e) => {
+  console.error('[UNHANDLED REJECTION]', e.reason);
+};
+
+// Imports
+import { initOptions, toggleOptions, isOptionsOpen } from './js/options.js';
+import { getLastPlayed } from './js/state.js';
+import { initGamepad } from './js/gamepad.js';
+import { applyLanguage, getCurrentLang, t } from './js/i18n.js';
+
+// ─── Traductions spécifiques au menu console ──────────────────
+const MENU_LABELS = {
+  fr: { title:'Sélection de la plateforme', platforms:'plateforme', platformsPlural:'plateformes' },
+  en: { title:'Platform Selection', platforms:'platform', platformsPlural:'platforms' },
+  es: { title:'Selección de plataforma', platforms:'plataforma', platformsPlural:'plataformas' },
+  de: { title:'Plattform-Auswahl', platforms:'Plattform', platformsPlural:'Plattformen' },
+  it: { title:'Selezione piattaforma', platforms:'piattaforma', platformsPlural:'piattaforme' },
+  ja: { title:'プラットフォーム選択', platforms:'プラットフォーム', platformsPlural:'プラットフォーム' },
+};
+
+function updateMenuLanguage(lang) {
+  const labels = MENU_LABELS[lang] || MENU_LABELS['fr'];
+  const headerTitle = document.getElementById('header-title');
+  const eraCount = document.querySelector('.era-count');
+  if (headerTitle) headerTitle.textContent = labels.title;
+  if (eraCount) eraCount.textContent = `${filteredList.length} ${filteredList.length > 1 ? labels.platformsPlural : labels.platforms}`;
+  // Rebuild cards to update translations
+  buildCards();
+  // Update info bar
+  updateInfo();
+}
+
+// ─── Chargement des consoles depuis consoles.json ───────────────
+let CONSOLES = [];
+
+async function loadConsolesFromData() {
+  CONSOLES = [];
+  
+  try {
+    const consoles = await window.electronAPI.getAllConsoles();
+    console.log('[Console] Consoles chargees:', consoles.length);
+    
+    for (const c of consoles) {
+      CONSOLES.push({
+        id: c.id,
+        name: c.name,
+        maker: c.maker,
+        year: c.year || 1990,
+        era: c.era || 'other',
+        color: c.color || '#5eb8ff',
+        rgb: c.rgb || '94,184,255',
+        games: c.gameCount || 0,
+        hasXml: c.hasXml || false
+      });
+    }
+    
+    // Filtrer les consoles vides si l'option est activée
+    const hideEmpty = localStorage.getItem('aura4k_hide_empty_consoles') === 'true';
+    console.log('[Console] hide_empty_consoles:', hideEmpty);
+    if (hideEmpty) {
+      CONSOLES = CONSOLES.filter(c => c.games > 0);
+    }
+    
+    // Trier par année
+    CONSOLES.sort((a, b) => a.year - b.year);
+    
+    console.log('[Console] Consoles finales:', CONSOLES.length);
+    
+  } catch (e) {
+    console.warn('[Console] Erreur chargement consoles:', e);
+  }
+}
+
+const ERAS = [
+  { id:'all',      labelKey:'era.all',      label:'Tout'      },
+  { id:'arcade',   labelKey:'era.arcade',   label:'Arcade'   },
+  { id:'8bit',     labelKey:'era.8bit',     label:'8-Bit'    },
+  { id:'16bit',    labelKey:'era.16bit',    label:'16-Bit'   },
+  { id:'32bit',    labelKey:'era.32bit',    label:'32-Bit'   },
+  { id:'64bit',    labelKey:'era.64bit',    label:'64-Bit'   },
+  { id:'portable', labelKey:'era.portable', label:'Portable' },
+  { id:'other',    labelKey:'era.other',    label:'Autre'    },
+];
+
+// ─── État ────────────────────────────────────────────────────
+let currentEra   = 'all';
+let filteredList = [];
+let activeIdx    = 0;
+
+// ─── Scaler ──────────────────────────────────────────────────
+const scaler = document.getElementById('scaler');
+function scale() {
+  const s  = Math.min(innerWidth / 1920, innerHeight / 1080);
+  const ox = (innerWidth  - 1920 * s) / 2;
+  const oy = (innerHeight - 1080 * s) / 2;
+  scaler.style.transform = `translate(${ox}px,${oy}px) scale(${s})`;
+}
+scale(); addEventListener('resize', scale);
+
+// ─── Cursor ──────────────────────────────────────────────────
+const cur = document.getElementById('cur');
+addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top  = e.clientY + 'px';
+});
+
+// ─── Horloge ─────────────────────────────────────────────────
+function tickClock() {
+  const n = new Date();
+  document.getElementById('clock').textContent =
+    `${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}`;
+}
+tickClock(); setInterval(tickClock, 1000);
+
+// ─── Onglets d'ère ───────────────────────────────────────────
+function buildEraTabs() {
+  const container = document.getElementById('eraTabs');
+  container.innerHTML = '';
+  ERAS.forEach(era => {
+    const count = era.id === 'all' ? CONSOLES.length
+      : CONSOLES.filter(c => c.era === era.id).length;
+    const tab = document.createElement('div');
+    tab.className = 'era-tab' + (era.id === currentEra ? ' active' : '');
+    tab.textContent = era.labelKey ? t(era.labelKey) : era.label;
+    tab.dataset.era = era.id;
+    tab.addEventListener('click', () => selectEra(era.id));
+    container.appendChild(tab);
+  });
+  // Séparateur + compteur
+  const sep = document.createElement('div'); sep.className = 'era-sep';
+  const cnt = document.createElement('div'); cnt.className = 'era-count';
+  const labels = MENU_LABELS[getCurrentLang()] || MENU_LABELS['fr'];
+  cnt.textContent = `${filteredList.length} ${filteredList.length > 1 ? labels.platformsPlural : labels.platforms}`;
+  container.appendChild(sep);
+  container.appendChild(cnt);
+}
+
+function selectEra(eraId) {
+  currentEra   = eraId;
+  filteredList = eraId === 'all' ? [...CONSOLES] : CONSOLES.filter(c => c.era === eraId);
+  activeIdx    = 0;
+  buildEraTabs();
+  buildCards();
+  updateTrack();
+  updateInfo();
+  updateDots();
+}
+
+// ─── Construction des cartes ─────────────────────────────────
+function buildCards() {
+  const track = document.getElementById('track');
+  track.innerHTML = '';
+  filteredList.forEach((c, i) => {
+    const card = document.createElement('div');
+    card.className = 'ccard' + (c.games === 0 ? ' unavailable' : '');
+    card.dataset.idx = i;
+    card.style.setProperty('--cc-accent', c.color);
+    card.style.setProperty('--cc-rgb', c.rgb);
+
+    // Icône : image si disponible
+    const logoPath = `ui/consoles/${c.id}.png`;
+    const shortName = c.name.split(' - ').pop();
+    const iconHtml = `
+      <div class="card-icon">
+        <img src="${logoPath}" alt="${c.name}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+          style="display:block">
+        <span class="icon-emoji" style="display:none">🎮</span>
+      </div>`;
+    const realCount = c.games || 0;
+    const localeMap = { fr:'fr', en:'en', es:'es', de:'de', it:'it', ja:'ja' };
+    const countLocale = localeMap[getCurrentLang()] || 'fr';
+    const countLabel = realCount.toLocaleString(countLocale);
+    const gamesLabel = realCount === 1 ? t('card.game') : t('card.games');
+    const realBadge = realCount > 0
+      ? `<div class="real-count">✓ ${t('card.real')}</div>`
+      : '';
+    const emptyBadge = realCount === 0
+      ? `<div class="empty-count">${t('card.empty')}</div>`
+      : '';
+
+    // Afficher le nom court (derrière le tiret) si disponible, sinon le nom complet
+    const displayName = shortName || c.name;
+    const displayMaker = t('maker.' + c.id) || c.maker;
+
+    card.innerHTML = `
+      <div class="card-inner">
+        <div class="card-bg" style="background:linear-gradient(135deg, rgba(${c.rgb},0.12) 0%, rgba(0,0,0,0.6) 100%);">
+          <div class="card-glow" style="background:${c.color};"></div>
+          ${iconHtml}
+          ${realBadge}
+          ${emptyBadge}
+        </div>
+        <div class="card-info">
+          <div class="card-name">${displayName}</div>
+          <div class="card-maker">${displayMaker}</div>
+          <div class="card-games">
+            <div class="games-count">${countLabel}</div>
+            <div class="games-label">${gamesLabel}</div>
+          </div>
+          <div class="card-bar">
+            <div class="card-bar-fill" style="width:${Math.min(100, realCount / 50)}%"></div>
+          </div>
+        </div>
+      </div>`;
+
+    card.addEventListener('click', () => {
+      if (i === activeIdx) { playSound('select'); confirmSelect(); }
+      else { activeIdx = i; updateTrack(); updateInfo(); updateDots(); playSound('highlight'); }
+    });
+    card.addEventListener('mouseenter', () => cur.classList.add('big'));
+    card.addEventListener('mouseleave', () => cur.classList.remove('big'));
+
+    track.appendChild(card);
+  });
+}
+
+// ─── Mise à jour visuelle du track ───────────────────────────
+function updateTrack() {
+  const cards  = document.querySelectorAll('.ccard');
+  const cardW  = 280 + 32; // largeur + margin*2
+  const offset = -activeIdx * cardW;
+  document.getElementById('track').style.transform = `translateX(${offset}px)`;
+
+  cards.forEach((card, i) => {
+    const dist = Math.abs(i - activeIdx);
+    card.classList.remove('active','prev','next','far','hidden');
+    if      (dist === 0) card.classList.add('active');
+    else if (dist === 1) card.classList.add(i < activeIdx ? 'prev' : 'next');
+    else if (dist === 2) card.classList.add('far');
+    else                 card.classList.add('hidden');
+  });
+
+}
+
+// ─── Info bar ────────────────────────────────────────────────
+function updateInfo() {
+  const c = filteredList[activeIdx];
+  if (!c) return;
+  document.getElementById('infoName').childNodes[0].textContent = c.name;
+  document.getElementById('infoMaker').textContent = c.maker;
+  const realCount = c.games || 0;
+  const localeMap = { fr:'fr', en:'en', es:'es', de:'de', it:'it', ja:'ja' };
+  const countLocale = localeMap[getCurrentLang()] || 'fr';
+  document.getElementById('infoGames').textContent = realCount.toLocaleString(countLocale);
+  document.getElementById('infoGames').style.color = c.color;
+}
+
+// ─── Dots ────────────────────────────────────────────────────
+function buildDots() {
+  const dots = document.getElementById('dots');
+  dots.innerHTML = '';
+  filteredList.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === activeIdx ? ' active' : '');
+    d.addEventListener('click', () => { activeIdx = i; updateTrack(); updateInfo(); updateDots(); });
+    dots.appendChild(d);
+  });
+}
+
+function updateDots() {
+  document.querySelectorAll('.dot').forEach((d, i) => {
+    d.classList.toggle('active', i === activeIdx);
+  });
+  // Couleur dot active
+  const c = filteredList[activeIdx];
+  document.querySelector('.dot.active')?.style && (
+    document.querySelector('.dot.active').style.background = c?.color || 'var(--accent)'
+  );
+}
+
+// ─── Sélection ───────────────────────────────────────────────
+// ─── Sons UI ──────────────────────────────────────────────────
+const SFX = {};
+const SFX_FILES = { highlight: 'sounds/highlight.wav', select: 'sounds/select.wav', load: 'sounds/load.wav', unload: 'sounds/unload.wav' };
+(function initSfx() {
+  for (const [name, path] of Object.entries(SFX_FILES)) {
+    const a = new Audio(path);
+    a.preload = 'auto';
+    a.volume  = 0.60;
+    SFX[name] = a;
+  }
+})();
+function playSound(name) {
+  const a = SFX[name];
+  if (!a) return;
+  a.currentTime = 0;
+  a.play().catch(() => {});
+}
+
+// ─── Dernier jeu ────────────────────────────────────────────
+function showResumeButton() {
+  const last = getLastPlayed();
+  const btn = document.getElementById('resume-btn');
+  if (last && last.console && last.rom) {
+    const consoleExists = CONSOLES.some(c => c.name === last.console);
+    if (consoleExists) {
+      btn.style.display = 'block';
+    }
+  }
+}
+
+window.resumeLastGame = function() {
+  const last = getLastPlayed();
+  if (!last) return;
+  playSound('select');
+  const trOverlay = document.getElementById('transition-overlay');
+  trOverlay.classList.add('show');
+  setTimeout(() => {
+    stopBgMusic(() => {
+      window.electronAPI.selectConsole(last.console);
+      sessionStorage.setItem('resumeRom', last.rom);
+    });
+  }, 700);
+};
+
+// ─── Consoles (chargées dynamiquement depuis data/) ────────────────────────
+
+// ─── Musique de fond ──────────────────────────────────────────
+let bgMusic = null;
+function initBgMusic() {
+  bgMusic = new Audio('sounds/background.mp3');
+  bgMusic.loop   = true;
+  bgMusic.volume = 0;
+  bgMusic.play().catch(() => {});
+  window.__bgMusic = bgMusic; // exposé pour le patch options
+  // Fade-in progressif
+  let v = 0;
+  const fadeIn = setInterval(() => {
+    v = Math.min(0.45, v + 0.02);
+    bgMusic.volume = v;
+    if (v >= 0.45) clearInterval(fadeIn);
+  }, 80);
+}
+function stopBgMusic(cb) {
+  if (!bgMusic) { if (cb) cb(); return; }
+  let v = bgMusic.volume;
+  const fadeOut = setInterval(() => {
+    v = Math.max(0, v - 0.04);
+    bgMusic.volume = v;
+    if (v <= 0) { clearInterval(fadeOut); bgMusic.pause(); if (cb) cb(); }
+  }, 40);
+}
+
+// ─── Sélection ───────────────────────────────────────────────
+function confirmSelect() {
+  const c = filteredList[activeIdx];
+
+  const flash = document.getElementById('flash');
+  flash.classList.add('on');
+  setTimeout(() => flash.classList.remove('on'), 100);
+
+  const trOverlay = document.getElementById('transition-overlay');
+  trOverlay.classList.add('show');
+
+  setTimeout(() => {
+    stopBgMusic(() => { window.electronAPI.selectConsole(c.name); });
+  }, 700);
+}
+
+// ─── "Bientôt disponible" ─────────────────────────────────────
+function showComingSoon(name) {
+  let banner = document.getElementById('cs-banner');
+  if (!banner) {
+    banner = document.createElement('div');
+    banner.id = 'cs-banner';
+    Object.assign(banner.style, {
+      position:'absolute', bottom:'140px', left:'50%',
+      transform:'translateX(-50%)',
+      background:'rgba(10,20,40,0.95)',
+      border:'1px solid rgba(94,184,255,0.3)',
+      borderRadius:'6px', padding:'14px 36px',
+      fontFamily:"'Barlow Condensed',sans-serif",
+      fontSize:'13px', fontWeight:'700', letterSpacing:'3px',
+      textTransform:'uppercase', color:'rgba(255,255,255,0.6)',
+      zIndex:'100', pointerEvents:'none',
+      opacity:'0', transition:'opacity 0.3s', whiteSpace:'nowrap'
+    });
+    document.getElementById('scaler').appendChild(banner);
+  }
+  banner.textContent = `${name} — ${t('banner.coming')}`;
+  banner.style.opacity = '1';
+  clearTimeout(banner._timer);
+  banner._timer = setTimeout(() => { banner.style.opacity = '0'; }, 2500);
+}
+
+// ─── Clavier ─────────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  // Backspace = toggle options (cohérent avec index.html)
+  if (e.key === 'Backspace') {
+    e.preventDefault();
+    toggleOptions();
+    return;  }
+
+  // Si options ouvert, laisser options gérer ses propres touches
+  if (isOptionsOpen()) return;
+
+  // Escape = quitter l'application
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    playSound('unload');
+    stopBgMusic(() => { window.electronAPI.quitApp(); });
+    return;
+  }
+
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+    e.preventDefault();
+    const dir = e.key === 'ArrowRight' ? 1 : -1;
+    activeIdx = Math.max(0, Math.min(filteredList.length - 1, activeIdx + dir));
+    updateTrack(); updateInfo(); updateDots();
+    playSound('highlight');
+  }
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    const idx = ERAS.findIndex(e => e.id === currentEra);
+    if (idx > 0) { selectEra(ERAS[idx - 1].id); playSound('highlight'); }
+  }
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    const idx = ERAS.findIndex(e => e.id === currentEra);
+    if (idx < ERAS.length - 1) { selectEra(ERAS[idx + 1].id); playSound('highlight'); }
+  }
+  if (e.key === 'Enter') { e.preventDefault(); playSound('select'); confirmSelect(); }
+});
+
+// ─── Navigation buttons ─────────────────────────────────────
+document.getElementById('navLeft').addEventListener('click', () => {
+  activeIdx = Math.max(0, activeIdx - 1);
+  updateTrack(); updateInfo(); updateDots();
+  playSound('highlight');
+});
+document.getElementById('navRight').addEventListener('click', () => {
+  activeIdx = Math.min(filteredList.length - 1, activeIdx + 1);
+  updateTrack(); updateInfo(); updateDots();
+  playSound('highlight');
+});
+
+// ─── Manette buttons ─────────────────────────────────────────
+document.getElementById('btnA').addEventListener('click', () => {
+  playSound('select'); confirmSelect();
+});
+document.getElementById('btnB').addEventListener('click', () => {
+  playSound('unload');
+  stopBgMusic(() => { window.electronAPI.quitApp(); });
+});
+
+// ─── Init ────────────────────────────────────────────────────
+async function init() {
+  // 0. Langue (depuis options)
+  const savedLang = localStorage.getItem('aura-lang') || 'fr';
+  applyLanguage(savedLang);
+  updateMenuLanguage(savedLang);
+  
+  // Écouter les changements de langue (NE PAS rappeler applyLanguage ici pour éviter la récursion)
+  window.addEventListener('aura-lang-change', e => {
+    updateMenuLanguage(e.detail.lang);
+  });
+  
+  // Reconstruire les cartes quand les consoles changent (après création XML par exemple)
+  window.addEventListener('aura-consoles-changed', async () => {
+    await loadConsolesFromData();
+    filteredList = [...CONSOLES];
+    activeIdx = 0;
+    buildEraTabs();
+    buildCards();
+    updateTrack();
+    updateInfo();
+    buildDots();
+    updateDots();
+  });
+  
+// 0. Options AVANT tout (pour que hide_empty_consoles soit chargé)
+  initOptions();
+  
+  // 1. Charger les consoles dynamiquement depuis data/
+  await loadConsolesFromData();
+  console.log('[Console] Consoles chargees dynamiquement :', CONSOLES.length);
+  
+  // Met à jour filteredList après chargement
+  filteredList = [...CONSOLES];
+
+  // 2. Construire l'UI
+  buildEraTabs();
+  buildCards();
+  updateTrack();
+  updateInfo();
+  buildDots();
+  updateDots();
+  showResumeButton();
+
+  // 3. Intro : logo apparaît → logo disparaît → overlay fade → display:none
+  const overlay   = document.getElementById('intro-overlay');
+  const introLogo = document.getElementById('intro-logo');
+
+  // Logo apparaît + son intro
+  setTimeout(() => { introLogo.classList.add('show'); playSound('load'); }, 150);
+
+  // Logo disparaît en premier (sa propre transition 0.6s)
+  setTimeout(() => { introLogo.classList.remove('show'); }, 1800);
+
+  // Une fois le logo invisible, l'overlay entier fade
+  setTimeout(() => {
+    overlay.classList.add('fade-out');
+    initBgMusic();
+    setTimeout(() => { overlay.style.display = 'none'; }, 950);
+  }, 2450);
+
+  // Options — initialisées avant (1b)
+
+  // Gamepad — initialisation sur le menu console
+  initGamepad();
+
+  // Exposer les fonctions de navigation pour le gamepad
+  window.__auraNavigate = function(dir) {
+    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true });
+    document.dispatchEvent(event);
+  };
+
+  // Exposer le paramètre de masquage des consoles vides
+  window.__auraGetHideEmptyConsoles = () => {
+    try {
+      return localStorage.getItem('aura4k_hide_empty_consoles') === 'true';
+    } catch (e) {
+      return false;
+    }
+  };
+
+  window.__auraNavigateLetter = function(dir) {
+    // Menu console: stick haut/bas = changer d'ere/tab
+    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
+    document.dispatchEvent(event);
+  };
+
+  window.__auraGoToLetter = function(dir) {
+    // Menu console: stick haut/bas = changer d'ere/tab
+    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
+    document.dispatchEvent(event);
+  };
+
+  window.__auraLaunchGame = function() {
+    const event = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true });
+    document.dispatchEvent(event);
+  };
+
+  // Brancher setMusicVolume sur la bgMusic du menu
+  const _origSetMusic = window.setMusicVolume;
+  window.setMusicVolume = function(vol) {
+    if (_origSetMusic) _origSetMusic(vol);
+    if (bgMusic) bgMusic.volume = vol;
+  };
+}
+
+init();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+}
+
+</script>
+</body>
+</html>

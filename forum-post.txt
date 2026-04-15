@@ -1,0 +1,90 @@
+# Presentation du projet - AURA 4K
+
+Salut a tous!
+
+Je vous presente mon projet de launcher retro que j'ai developpe avec Electron. C'est un projet personnel mais je voulais le partager car ca peut servir a d'autres.
+
+## C'est quoi AURA 4K?
+
+C'est un launcher de jeux retro avec une interface cinema. Il permet de:
+- Lancer vos ROMs via RetroArch
+- Naviguer avec manette (NSW Nano) ou clavier
+- Ajouter des images par jeu (jaquette, screenshot)
+- Avoir de la musique par jeu
+- Creer ses listes de jeux automatiquement
+
+## Ce que j'ai accompli
+
+**Fonctionnalites implementees:**
+- Cache XML pour chargement rapide
+- Generation automatique des listes HyperList
+- Detection automatique des extensions ROM
+- Musique par jeu
+- Favoris
+- Recherche lettre par lettre
+- Options completes (volume, affichage, manette, langue)
+- 6 langues (FR, EN, ES, DE, IT, JA)
+- Support gamepad complet
+
+**Niveau code:**
+- Architecture Electron propre (main/preload/renderer)
+- Gestion d'erreurs IPC
+- Logging dans fichier pour debug
+- Error boundaries
+- Cache offline via Service Worker
+
+## Screenshots
+
+[Inserez vos screenshots ici]
+
+## La structure
+
+```
+Aura 4K/
+├── index.html           # Ecran principal
+├── console-select.html # Selection console
+├── main.js            # Processus principal
+├── preload.js        # Bridge IPC
+├── js/              # Modules JS
+│   ├── state.js
+│   ├── games.js
+│   ├── navigation.js
+│   └── ...
+├── assets/
+│   └── consoles/    # ROMs, images, musique
+├── data/            # Fichiers XML
+└── retroarch/       # Cores
+```
+
+## Problemes rencontrees
+
+1. **Cache XML** - Le vieux XML etait toujours charge. J'ai ajouté une verification de timestamp pour forcer le rechargement quand le XML change.
+
+2. **Extensions ROM** - Les noms dans le XML etaient sans extension mais les fichiers avaient .zip. J'ai ajoute une detection automatique.
+
+3. **Hide empty consoles** - L'option ne marchait pas. Corrigé en ajoutant la lecture des settings au bon moment.
+
+4. **Test unitaires** - 26/26 tests OK.
+
+## Ce qui reste a faire (manuel)
+
+- Ajouter les images (jaquette, screenshots)
+- Installer les cores RetroArch
+- Ajouter les ROMs
+
+## Demo en video
+
+[Inserez une video ici]
+
+## Telechargement
+
+Le projet n'est pas encore publique, c'est un projet personnel. Mais si ca interesse du monde je pourrais partager.
+
+@+
+
+---
+
+**Config:**
+- Windows 10/11
+- Electron 28
+- Node.js 18+

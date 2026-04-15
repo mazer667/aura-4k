@@ -1,0 +1,71 @@
+/* fonts.css - Polices locales pour AURA 4K (hors-ligne) */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bebas Neue'), local('BebasNeue-Regular'),
+       url('fonts/BebasNeue-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Barlow Condensed Light'), local('BarlowCondensed-Light'),
+       url('fonts/BarlowCondensed-Light.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Barlow Condensed Regular'), local('BarlowCondensed-Regular'),
+       url('fonts/BarlowCondensed-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Barlow Condensed SemiBold'), local('BarlowCondensed-SemiBold'),
+       url('fonts/BarlowCondensed-SemiBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Barlow Condensed Bold'), local('BarlowCondensed-Bold'),
+       url('fonts/BarlowCondensed-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Barlow Condensed ExtraBold'), local('BarlowCondensed-ExtraBold'),
+       url('fonts/BarlowCondensed-ExtraBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* Japanese font - thicker variant with Japanese support */
+@font-face {
+  font-family: 'Bebas Neue JP';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Yu Gothic'), local('Meiryo'), local('MS Gothic'), local('MS Mincho');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Barlow Condensed JP';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Yu Gothic'), local('Meiryo'), local('MS Gothic'), local('MS Mincho');
+  font-display: swap;
+}

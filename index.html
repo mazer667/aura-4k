@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' file:; img-src 'self' data: file:; media-src 'self' file:; connect-src 'self' file:;">
+<title>AURA 4K — Game Launcher</title>
+<link rel="preload" as="style" href="fonts.css">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:none; }
+
+#scaler { position:fixed; top:0; left:0; transform-origin:top left; opacity:0; transition:opacity 0.8s ease; contain: layout style; }
+
+.screen {
+  width:2020px; height:1080px;
+  position:relative; overflow:hidden; background:#080808;
+  contain: layout style;
+}
+
+.slot { position:absolute; top:0; height:100%; overflow:hidden; contain: layout style; }
+.sL { left:0; width:450px; }
+.sC { left:450px; width:1120px; }
+.sR { left:1570px; width:450px; }
+
+.bg-a, .bg-b {
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  transition: opacity 0.6s ease;
+}
+.sL .bg-a, .sL .bg-b,
+.sR .bg-a, .sR .bg-b {
+  filter: blur(8px) brightness(0.85) saturate(1.1);
+}
+.sL::before, .sR::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 30, 60, 0.4);
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: multiply;
+}
+.sL .grain, .sR .grain { opacity: 0.25; z-index: 5; }
+.bg-a { opacity:1; z-index:0; }
+.bg-b { opacity:0; z-index:1; }
+
+.sL::after, .sR::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+.sL::after { background: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.0) 100%); }
+.sR::after { background: linear-gradient(to left, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.0) 100%); }
+
+.grain {
+  position:absolute; inset:0; opacity:0.06; pointer-events:none; z-index:8;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  animation:gn .12s steps(1) infinite;
+}
+@keyframes gn {
+  0%{background-position:0 0} 16%{background-position:-52px 24px}
+  33%{background-position:36px -44px} 50%{background-position:-68px 14px}
+  66%{background-position:20px -54px} 83%{background-position:-40px 68px}
+  100%{background-position:58px -20px}
+}
+
+.cvign {
+  position:absolute; inset:0; z-index:2;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.65) 18%, rgba(0,0,0,0.15) 42%, transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.40) 15%, transparent 35%),
+    linear-gradient(to right, rgba(0,0,0,0.18) 0%, transparent 15%),
+    linear-gradient(to left,  rgba(0,0,0,0.18) 0%, transparent 15%);
+}
+
+.div { position:absolute; top:0; height:100%; width:1px; z-index:20; background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.22) 50%, rgba(255,255,255,0.15) 70%, transparent); }
+.dL { left:450px; }
+.dR { left:1570px; }
+
+.logo {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1) sepia(0.18) hue-rotate(195deg) saturate(1.4) opacity(0.92);
+}
+
+.alpha {
+  position: absolute;
+  top: 36px;
+  left: 450px;
+  width: 1120px;
+  z-index: 30;
+  text-align: center;
+}
+.alpha .ac {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 4px;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+  transition: all 0.2s;
+}
+.alpha .ac.on {
+  color: #fbbf24;
+  font-weight: 900;
+  font-size: 14px;
+  text-shadow: 0 0 10px rgba(251,191,36,0.8), 0 0 20px rgba(251,191,36,0.4);
+  transform: scale(1.15);
+}
+.alpha .ac.fav {
+  color: #fbbf24;
+  font-size: 13px;
+}
+.alpha .ac.fav.on {
+  color: #fbbf24;
+  font-size: 14px;
+  font-weight: 900;
+  text-shadow: 0 0 12px rgba(251,191,36,1), 0 0 24px rgba(251,191,36,0.6);
+  transform: scale(1.2);
+}
+
+.clock {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  text-align: center;
+}
+.clock-h {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  letter-spacing: 3px;
+  color: rgba(200,235,255,0.92);
+  line-height: 1;
+}
+.clock-d {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(180,220,255,0.5);
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.sname {
+  position: absolute;
+  bottom: 38px;
+  width: 100%;
+  text-align: center;
+  z-index: 15;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.sname span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.gtitle {
+  position:absolute;
+  bottom:158px;
+  left:66px;
+  width:980px;
+  z-index:10;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:68px;
+  line-height:0.92;
+  color:#fff;
+  letter-spacing:3px;
+  transition:bottom 0.7s cubic-bezier(0.16,1,0.3,1);
+  white-space: pre-line;
+  text-align: left;
+}
+.gtags { position:absolute; bottom:120px; left:66px; width:980px; z-index:10; display:flex; gap:8px; justify-content:flex-start; transition:bottom 0.7s cubic-bezier(0.16,1,0.3,1); }
+.tag { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#fff; background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.6); padding:4px 14px; border-radius:20px; }
+
+.shots {
+  position: absolute;
+  bottom: 20px;
+  left: 66px;
+  z-index: 10;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+.shot {
+  width: 310px;
+  height: 205px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(60px) scale(0.96);
+  will-change: transform, opacity;
+  background-color: #111;
+}
+.shot-in {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.35s;
+}
+.shot:hover .shot-in { transform: scale(1.06); }
+
+.btns {
+  position: absolute;
+  bottom: 38px;
+  left: 66px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  background: none;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+.nav-item:hover { opacity: 0.75; }
+
+.ci { position: relative; width: 14px; height: 14px; flex-shrink: 0; }
+.ci-h, .ci-v { position: absolute; background: rgba(255,255,255,0.22); border-radius: 1px; }
+.ci-h { left: 0; top: 50%; transform: translateY(-50%); width: 100%; height: 5px; }
+.ci-v { top: 0; left: 50%; transform: translateX(-50%); width: 5px; height: 100%; }
+.ci .arm { position: absolute; background: #fff; border-radius: 1px; }
+.ci.L .arm { left: 0;   top: 50%; transform: translateY(-50%); width: 4px; height: 5px; border-radius: 1px 0 0 1px; }
+.ci.R .arm { right: 0;  top: 50%; transform: translateY(-50%); width: 4px; height: 5px; border-radius: 0 1px 1px 0; }
+.ci.U .arm { top: 0;    left: 50%; transform: translateX(-50%); width: 5px; height: 4px; border-radius: 1px 1px 0 0; }
+.ci.D .arm { bottom: 0; left: 50%; transform: translateX(-50%); width: 5px; height: 4px; border-radius: 0 0 1px 1px; }
+
+.sep {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.3);
+  margin: 0 4px;
+}
+
+.manette-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.manette-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.manette-btn .round {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 11px;
+  color: black;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  transition: transform 0.1s ease, background 0.1s;
+}
+.manette-btn .label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+.manette-btn:hover .round {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+.manette-btn:active .round {
+  transform: scale(0.96);
+}
+
+.pub { position:absolute; bottom:120px; right:66px; z-index:20; font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:5px; color:#fff; text-align:right; line-height:1; text-shadow:0 0 10px rgba(0,0,0,1),0 1px 4px rgba(0,0,0,1); transition:bottom 0.7s cubic-bezier(0.16,1,0.3,1); }
+
+.screen.idle .gtitle { bottom:280px; }
+.screen.idle .gtags { bottom:242px; }
+.screen.idle .pub { bottom:242px; }
+
+.cz { position:absolute; top:0; height:100%; z-index:25; cursor: none; }
+.czL { left:0; width:450px; }
+.czR { left:1570px; width:450px; }
+.arr { display: none; }
+
+.flash { position:absolute; inset:0; background:#000; z-index:100; pointer-events:none; opacity:0; transition:opacity 0.18s; }
+.flash.on { opacity:0.6; }
+
+#cur { position:fixed; pointer-events:none; z-index:9999; width:14px; height:14px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.7); transform:translate(-50%,-50%); mix-blend-mode:difference; transition:width .18s, height .18s; }
+#cur.big { width:38px; height:38px; }
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease;
+}
+.intro-logo {
+  max-width: 80%;
+  max-height: 80%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  filter: brightness(0) invert(1);
+}
+.intro-logo.show {
+  opacity: 1;
+  transform: scale(1);
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+
+<div id="skeleton-loader">
+  <div class="sk-bg"></div>
+  <div class="sk-content">
+    <div class="sk-title"></div>
+    <div class="sk-tags">
+      <div class="sk-tag"></div>
+      <div class="sk-tag"></div>
+      <div class="sk-tag"></div>
+    </div>
+    <div class="sk-shots">
+      <div class="sk-shot"></div>
+      <div class="sk-shot"></div>
+      <div class="sk-shot"></div>
+    </div>
+  </div>
+  <div class="sk-spinner"></div>
+</div>
+
+<style>
+#skeleton-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+#skeleton-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.sk-bg {
+  position: absolute;
+  inset: 0;
+  background: #0a0a0f;
+}
+.sk-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.sk-title {
+  width: 600px;
+  height: 80px;
+  background: linear-gradient(90deg, #1a1a2e 25%, #252540 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+.sk-tags {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.sk-tag {
+  width: 80px;
+  height: 28px;
+  background: linear-gradient(90deg, #1a1a2e 25%, #252540 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 20px;
+}
+.sk-shots {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.sk-shot {
+  width: 200px;
+  height: 130px;
+  background: linear-gradient(90deg, #1a1a2e 25%, #252540 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+.sk-spinner {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(94,184,255,0.2);
+  border-top-color: #5eb8ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes spin {
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Japanese text - thicker fonts */
+:lang(ja) .gname,
+:lang(ja) .gpub,
+:lang(ja) .gdesc,
+:lang(ja) .gfoot span,
+:lang(ja) .year,
+:lang(ja) .genre,
+:lang(ja) .players,
+:lang(ja) .gtitle,
+:lang(ja) .letter-bar a {
+  font-family: 'Yu Gothic UI', 'Meiryo UI', 'MS Gothic', sans-serif !important;
+  font-weight: 600 !important;
+}
+</style>
+
+<div id="scaler">
+<div class="screen" id="screen">
+
+  <div class="slot sL">
+    <div class="bg-a" id="bgLa"></div>
+    <div class="bg-b" id="bgLb"></div>
+    <div class="grain"></div>
+    <div class="logo"><img class="logo-img" src="ui/aura-logo.png" alt="AURA 4K"></div>
+    <div class="sname" id="snL"><span></span></div>
+  </div>
+
+  <div class="slot sC">
+    <div class="bg-a" id="bgCa"></div>
+    <div class="bg-b" id="bgCb"></div>
+    <div class="grain"></div>
+    <div class="cvign"></div>
+    <div class="gtitle" id="gtitle">—</div>
+    <div class="gtags" id="gtags"></div>
+
+    <div class="shots">
+      <div class="shot"><div class="shot-in" id="s0"></div></div>
+      <div class="shot"><div class="shot-in" id="s1"></div></div>
+      <div class="shot"><div class="shot-in" id="s2"></div></div>
+    </div>
+
+    <div class="btns">
+      <button class="nav-item" id="navLeft"><div class="ci L"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.prev">Jeu précédent</span></button>
+      <button class="nav-item" id="navRight"><div class="ci R"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.next">Jeu suivant</span></button>
+      <button class="nav-item" id="navUp"><div class="ci U"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.letter.prev">Lettre précédente</span></button>
+      <button class="nav-item" id="navDown"><div class="ci D"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.letter.next">Lettre suivante</span></button>
+
+      <div class="sep"></div>
+
+      <div class="manette-group">
+        <div class="manette-btn" id="btnB">
+          <div class="round">B</div>
+          <span class="label" data-i18n="btn.play">Jouer</span>
+        </div>
+        <div class="manette-btn" id="btnY">
+          <div class="round">Y</div>
+          <span class="label" id="favLabel" data-i18n="btn.favorite">Favori</span>
+        </div>
+        <div class="manette-btn" id="btnX">
+          <div class="round">X</div>
+          <span class="label" data-i18n="btn.screenshots">Screenshots</span>
+        </div>
+        <div class="manette-btn" id="btnA">
+          <div class="round">A</div>
+          <span class="label" data-i18n="btn.quit">Quitter</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub" id="pub"></div>
+  </div>
+
+  <div class="slot sR">
+    <div class="bg-a" id="bgRa"></div>
+    <div class="bg-b" id="bgRb"></div>
+    <div class="grain"></div>
+    <div class="clock"><div class="clock-h" id="ch">00:00</div><div class="clock-d" id="cd">00.00.0000</div></div>
+    <div class="sname" id="snR"><span></span></div>
+  </div>
+
+  <div class="alpha" id="alpha"></div>
+  <div id="fav-indicator" style="position:absolute; top:8px; left:50%; transform:translateX(-50%); z-index:35; display:none;">
+    <span style="font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:900; letter-spacing:4px; color:#fbbf24; background:rgba(0,0,0,0.6); border:1px solid rgba(251,191,36,0.5); padding:4px 16px; border-radius:20px; text-shadow:0 0 8px rgba(251,191,36,0.8);">★ FAVORIS</span>
+  </div>
+  <div class="div dL"></div>
+  <div class="div dR"></div>
+  <div class="cz czL" id="czL"></div>
+  <div class="cz czR" id="czR"></div>
+  <div class="flash" id="flash"></div>
+  <div style="position:absolute; top:5px; left:8px; right:8px; z-index:50; pointer-events:none; display:flex; justify-content:center; overflow:hidden;">
+    <img src="ui/cristal.png" style="max-width:100%; height:auto; display:block; opacity:0.30;">
+  </div>
+
+</div>
+</div>
+
+<div id="intro">
+  <img class="intro-logo" src="ui/aura-logo.png" alt="AURA">
+</div>
+
+
+
+<script type="module">
+// ─── ERROR BOUNDARIES ───────────────────────────────────────────
+window.onerror = (msg, url, line, col, err) => {
+  console.error('[RENDERER ERROR]', msg, '| line:', line, '|', url);
+  return false;
+};
+window.onunhandledrejection = (e) => {
+  console.error('[UNHANDLED REJECTION]', e.reason);
+};
+
+// Imports
+import { loadConfig, loadGamesAndPopulate, getMusicId } from './js/games.js';
+import { initDisplay, setIdleUI, shotsAppear, shotsDisappear, btnsHide, btnsShow, setFilterFav, setFilterLetter } from './js/ui.js';
+import { navigate, launchCurrentGame, navigateToLetter, navigateToGame } from './js/navigation.js';
+import { getIdle, setIdle, getGames, getCurrentIndex, getCurrentGame, toggleFavorite, isFavorite, getFavorites } from './js/state.js';
+import { initAudio, playSound, playSoundAndWait, muteAllAudio } from './js/audio.js';
+import { initGamepad, setGameRunning } from './js/gamepad.js';
+import { playMusicForGame, stopMusic, pauseMusic, resumeMusic, muteMusic } from './js/music.js';
+import { initOptions, toggleOptions, isOptionsOpen } from './js/options.js';
+import { setOnGameChange } from './js/navigation.js';
+
+window.toggleFavorite = toggleFavorite;
+window.isFavorite = isFavorite;
+
+function updateFavLabel(rom) {
+  const label = document.getElementById('favLabel');
+  if (!label) return;
+  if (rom && isFavorite(rom)) {
+    label.textContent = 'FAVORI *';
+    label.style.color = '#fbbf24';
+  } else {
+    label.textContent = 'FAVORI';
+    label.style.color = '#fff';
+  }
+}
+
+function toggleFav() {
+  const game = getCurrentGame();
+  if (!game || !game.rom) return;
+  toggleFavorite(game.rom);
+  updateFavLabel(game.rom);
+  playSound('select');
+}
+
+window.toggleFav = toggleFav;
+
+setOnGameChange((game) => {
+  if (game?.rom) updateFavLabel(game.rom);
+});
+
+const scaler = document.getElementById('scaler');
+function scale() {
+  const s = Math.max(innerWidth/2020, innerHeight/1080);
+  const ox = (innerWidth - 2020*s)/2;
+  const oy = (innerHeight - 1080*s)/2;
+  scaler.style.transform = `translate(${ox}px,${oy}px) scale(${s})`;
+}
+scale(); addEventListener('resize', scale);
+
+const cur = document.getElementById('cur');
+addEventListener('mousemove', e => { cur.style.left = e.clientX+'px'; cur.style.top = e.clientY+'px'; });
+document.querySelectorAll('.cz').forEach(z => {
+  z.addEventListener('mouseenter', () => cur.classList.add('big'));
+  z.addEventListener('mouseleave', () => cur.classList.remove('big'));
+});
+
+window.exitWithFade = async function() {
+  stopMusic();
+  const fadeDiv = document.createElement('div');
+  Object.assign(fadeDiv.style, {
+    position:'fixed', top:'0', left:'0', width:'100%', height:'100%',
+    backgroundColor:'black', zIndex:'9999', pointerEvents:'none',
+    opacity:'0', transition:'opacity 0.8s ease'
+  });
+  document.body.appendChild(fadeDiv);
+  requestAnimationFrame(() => { fadeDiv.style.opacity = '1'; });
+  await playSoundAndWait('unload');
+  window.electronAPI.loadConsoleSelect();
+};
+
+window.toggleShotsFromUI = function() {
+  if (!getIdle()) {
+    btnsHide();
+    setTimeout(() => { setIdleUI(true); shotsAppear(); }, 280);
+  } else {
+    shotsDisappear(() => { setIdleUI(false); setTimeout(() => btnsShow(), 200); });
+  }
+};
+
+window.launchCurrentGame = launchCurrentGame;
+
+document.getElementById('navLeft').addEventListener('click', () => navigate(-1));
+document.getElementById('navRight').addEventListener('click', () => navigate(1));
+document.getElementById('navUp').addEventListener('click', () => navigateToLetter(-1));
+document.getElementById('navDown').addEventListener('click', () => navigateToLetter(1));
+
+document.getElementById('btnB').addEventListener('click', () => launchCurrentGame());
+document.getElementById('btnY').addEventListener('click', () => toggleFav());
+document.getElementById('btnA').addEventListener('click', () => window.exitWithFade());
+document.getElementById('btnX').addEventListener('click', () => window.toggleShotsFromUI());
+
+document.getElementById('czL').addEventListener('click', () => navigate(-1));
+document.getElementById('czR').addEventListener('click', () => navigate(1));
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Backspace') {
+    e.preventDefault();
+    toggleOptions();
+    return;
+  }
+  
+  if (isOptionsOpen()) return;
+  
+  if (e.key === 'ArrowLeft')  { e.preventDefault(); navigate(-1); }
+  if (e.key === 'ArrowRight') { e.preventDefault(); navigate(1); }
+  if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (!getIdle()) {
+      btnsHide();
+      setTimeout(() => { setIdleUI(true); shotsAppear(); }, 280);
+    }
+  }
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (getIdle()) {
+      shotsDisappear(() => { setIdleUI(false); setTimeout(() => btnsShow(), 200); });
+    }
+  }
+  if (e.key === 'Enter')      { e.preventDefault(); launchCurrentGame(); }
+  if (e.key === 'Escape')     { setFilterFav(false); setFilterLetter(null); window.exitWithFade(); }
+  if (e.key === 'f' || e.key === 'F') { e.preventDefault(); toggleFav(); }
+  if (e.key === '*') { e.preventDefault(); setFilterFav(true); navigate(0); }
+  if (e.key === ' ' || e.key === 'Space') {
+    e.preventDefault();
+    window.toggleShotsFromUI();
+  }
+});
+
+function tick() {
+  const n = new Date();
+  document.getElementById('ch').textContent = `${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}`;
+  document.getElementById('cd').textContent = `${String(n.getDate()).padStart(2,'0')}.${String(n.getMonth()+1).padStart(2,'0')}.${n.getFullYear()}`;
+  const clockH = document.getElementById('ch');
+  const logoImg = document.querySelector('.logo-img');
+  if (clockH && logoImg) {
+    const w = clockH.getBoundingClientRect().width;
+    logoImg.style.width = `${w}px`;
+    logoImg.style.height = '32px';
+  }
+}
+
+function startIntro() {
+  const introDiv = document.getElementById('intro');
+  const logoImg = introDiv.querySelector('.intro-logo');
+  setTimeout(() => { logoImg.classList.add('show'); playSound('load'); }, 100);
+  setTimeout(() => {
+    introDiv.style.opacity = '0';
+    setTimeout(() => { 
+      introDiv.style.display = 'none'; 
+      scaler.style.opacity = '1';
+      
+      const games = getGames();
+      const idx = getCurrentIndex();
+      if (games && games.length > 0 && games[idx]) {
+        playMusicForGame(games[idx], true);
+        updateFavLabel(games[idx].rom);
+      }
+    }, 800);
+  }, 2500);
+}
+
+async function init() {
+  scaler.style.opacity = '0';
+  await initAudio();
+  await loadConfig();
+
+  // ── Récupérer la console choisie dans l'écran de sélection ──
+  const selectedConsole = await window.electronAPI.getSelectedConsole();
+  const consoleKey = selectedConsole || 'Fbneo';
+
+  await loadGamesAndPopulate(consoleKey);
+  
+  // Cacher le skeleton loader
+  const skeleton = document.getElementById('skeleton-loader');
+  if (skeleton) skeleton.classList.add('hidden');
+  
+  initDisplay();
+  setTimeout(() => { if (window.updateLetterDisplay) window.updateLetterDisplay(); }, 100);
+  initOptions();
+  tick();
+  setInterval(tick, 1000);
+  initGamepad();
+
+  // ── Pause / reprise audio quand un jeu est lancé / terminé ──
+  if (window.electronAPI?.onGameStarted) {
+    window.electronAPI.onGameStarted(() => {
+      setGameRunning(true);
+      pauseMusic();
+      muteMusic(true);
+      muteAllAudio(true);
+    });
+  }
+  if (window.electronAPI?.onGameEnded) {
+    window.electronAPI.onGameEnded(() => {
+      setGameRunning(false);
+      muteMusic(false);
+      muteAllAudio(false);
+      resumeMusic();
+    });
+  }
+
+  startIntro();
+  
+  // Reprendre le dernier jeu si present
+  const resumeRom = sessionStorage.getItem('resumeRom');
+  if (resumeRom) {
+    sessionStorage.removeItem('resumeRom');
+    setTimeout(() => {
+      const games = getGames();
+      const idx = games.findIndex(g => g.rom === resumeRom);
+      if (idx !== -1) {
+        navigateToGame(idx);
+        setTimeout(() => launchCurrentGame(), 500);
+      }
+    }, 3500);
+  }
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+}
+
+init();
+</script>
+</body>
+</html>

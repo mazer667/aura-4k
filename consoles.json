@@ -1,0 +1,989 @@
+{
+  "CaveStory": {
+    "id": "cavestory",
+    "maker": "Studio Pixel",
+    "systemId": 0,
+    "era": "other",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/duckstation_libretro.dll"
+    },
+    "romExtensions": [
+      ".exe",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/CaveStory/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/CaveStory/music"
+  },
+  "3DO Company - 3DO": {
+    "id": "3do",
+    "maker": "3DO Company",
+    "systemId": 163,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/4do_libretro.dll"
+    },
+    "romExtensions": [
+      ".iso",
+      ".bin",
+      ".cue",
+      ".chd"
+    ],
+    "imagesFolder": "consoles/3DO Company - 3DO/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/3DO Company - 3DO/music"
+  },
+  "Atari - 5200": {
+    "id": "a5200",
+    "maker": "Atari",
+    "systemId": 107,
+    "era": "8bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/atari800_libretro.dll"
+    },
+    "romExtensions": [
+      ".a52",
+      ".bin",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Atari - 5200/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Atari - 5200/music"
+  },
+  "Atari - 7800": {
+    "id": "a78",
+    "maker": "Atari",
+    "systemId": 41,
+    "era": "8bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/prosystem_libretro.dll"
+    },
+    "romExtensions": [
+      ".a78",
+      ".bin",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Atari - 7800/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Atari - 7800/music"
+  },
+  "Atari - Lynx": {
+    "id": "lynx",
+    "maker": "Atari",
+    "systemId": 25,
+    "era": "portable",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/mednafen_lynx_libretro.dll"
+    },
+    "romExtensions": [
+      ".lnx",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Atari - Lynx/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Atari - Lynx/music"
+  },
+  "Atari - ST-STE-TT-Falcon": {
+    "id": "atari_st",
+    "maker": "Atari",
+    "systemId": 106,
+    "era": "32bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/hatari_libretro.dll"
+    },
+    "romExtensions": [
+      ".st",
+      ".ste",
+      ".tt",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Atari - ST-STE-TT-Falcon/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Atari - ST-STE-TT-Falcon/music"
+  },
+  "Coleco - ColecoVision": {
+    "id": "coleco",
+    "maker": "Coleco",
+    "systemId": 35,
+    "era": "8bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/blueMSX_libretro.dll"
+    },
+    "romExtensions": [
+      ".rom",
+      ".col",
+      ".bin",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Coleco - ColecoVision/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Coleco - ColecoVision/music"
+  },
+  "Commodore - 8-bit": {
+    "id": "c64",
+    "maker": "Commodore",
+    "systemId": 102,
+    "era": "8bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/vice_xvic_libretro.dll"
+    },
+    "romExtensions": [
+      ".crt",
+      ".d64",
+      ".prg",
+      ".tap",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Commodore - 8-bit/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Commodore - 8-bit/music"
+  },
+  "Commodore - Amiga": {
+    "id": "amiga",
+    "maker": "Commodore",
+    "systemId": 91,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/puae_libretro.dll"
+    },
+    "romExtensions": [
+      ".adf",
+      ".hdf",
+      ".lha",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Commodore - Amiga/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Commodore - Amiga/music"
+  },
+  "FBNeo - Arcade Games": {
+    "id": "fbneo",
+    "maker": "FinalBurn Neo",
+    "systemId": 75,
+    "era": "arcade",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/fbneo_libretro.dll"
+    },
+    "romExtensions": [
+      ".zip"
+    ],
+    "imagesFolder": "consoles/FBNeo - Arcade Games/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/FBNeo - Arcade Games/music"
+  },
+  "Magnavox - Odyssey2 - Philips Videopac+": {
+    "id": "odyssey2",
+    "maker": "Magnavox",
+    "systemId": 36,
+    "era": "8bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/o2em_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".rom",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Magnavox - Odyssey2 - Philips Videopac+/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Magnavox - Odyssey2 - Philips Videopac+/music"
+  },
+  "Mattel - Intellivision": {
+    "id": "intellivision",
+    "maker": "Mattel",
+    "systemId": 44,
+    "era": "16bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/freeintv_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".int",
+      ".rom",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Mattel - Intellivision/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Mattel - Intellivision/music"
+  },
+  "Microsoft - MSX": {
+    "id": "msx",
+    "maker": "Microsoft",
+    "systemId": 89,
+    "era": "8bit",
+    "color": "#107C10",
+    "rgb": "16,124,16",
+    "cores": {
+      "default": "retroarch/cores/msx_libretro.dll"
+    },
+    "romExtensions": [
+      ".rom",
+      ".mx1",
+      ".mx2"
+    ],
+    "imagesFolder": "consoles/Microsoft - MSX/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Microsoft - MSX/music"
+  },
+  "MS-DOS": {
+    "id": "dos",
+    "maker": "Microsoft",
+    "systemId": 90,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/dosbox_core_libretro.dll"
+    },
+    "romExtensions": [
+      ".exe",
+      ".com",
+      ".bat",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/MS-DOS/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/MS-DOS/music"
+  },
+  "MSX-SVI-ColecoVision-SG1000": {
+    "id": "msx_svi",
+    "maker": "Various",
+    "systemId": 89,
+    "era": "8bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/blueMSX_libretro.dll"
+    },
+    "romExtensions": [
+      ".rom",
+      ".sg",
+      ".col",
+      ".dsk",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/MSX-SVI-ColecoVision-SG1000/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/MSX-SVI-ColecoVision-SG1000/music"
+  },
+  "NEC - PC Engine - SuperGrafx - CD": {
+    "id": "pcecd",
+    "maker": "NEC",
+    "systemId": 108,
+    "era": "16bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/mednafen_pce_libretro.dll"
+    },
+    "romExtensions": [
+      ".zip"
+    ],
+    "imagesFolder": "consoles/NEC - PC Engine - SuperGrafx - CD/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/NEC - PC Engine - SuperGrafx - CD/music"
+  },
+  "NEC - PC-8800 series": {
+    "id": "pc88",
+    "maker": "NEC",
+    "systemId": 221,
+    "era": "16bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/QUAKE2_libretro.dll"
+    },
+    "romExtensions": [
+      ".d88",
+      ".m3u",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/NEC - PC-8800 series/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/NEC - PC-8800 series/music"
+  },
+  "NEC - PC-98": {
+    "id": "pc98",
+    "maker": "NEC",
+    "systemId": 208,
+    "era": "32bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/np2kai_libretro.dll"
+    },
+    "romExtensions": [
+      ".hdi",
+      ".m3u",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/NEC - PC-98/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/NEC - PC-98/music"
+  },
+  "NEC - PC-FX": {
+    "id": "pcfx",
+    "maker": "NEC",
+    "systemId": 87,
+    "era": "32bit",
+    "color": "#f97316",
+    "rgb": "249,115,22",
+    "cores": {
+      "default": "retroarch/cores/mednafen_pcfx_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".iso",
+      ".cue",
+      ".chd",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/NEC - PC-FX/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/NEC - PC-FX/music"
+  },
+  "Nintendo - 3DS": {
+    "id": "3ds",
+    "maker": "Nintendo",
+    "systemId": 17,
+    "era": "portable",
+    "color": "#f87171",
+    "rgb": "248,113,113",
+    "cores": {
+      "default": "retroarch/cores/citra_libretro.dll"
+    },
+    "romExtensions": [
+      ".3ds",
+      ".cia",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - 3DS/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - 3DS/music"
+  },
+  "Nintendo - DS": {
+    "id": "nds",
+    "maker": "Nintendo",
+    "systemId": 15,
+    "era": "portable",
+    "color": "#f87171",
+    "rgb": "248,113,113",
+    "cores": {
+      "default": "retroarch/cores/desmume2015_libretro.dll"
+    },
+    "romExtensions": [
+      ".nds",
+      ".nds.zip",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - DS/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - DS/music"
+  },
+  "Nintendo - Game Boy": {
+    "id": "gb",
+    "maker": "Nintendo",
+    "systemId": 9,
+    "era": "portable",
+    "color": "#4ade80",
+    "rgb": "74,222,128",
+    "cores": {
+      "default": "retroarch/cores/mgba_libretro.dll"
+    },
+    "romExtensions": [
+      ".gb",
+      ".gbc",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - Game Boy/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - Game Boy/music"
+  },
+  "Nintendo - Game Boy Advance": {
+    "id": "gba",
+    "maker": "Nintendo",
+    "systemId": 12,
+    "era": "portable",
+    "color": "#a78bfa",
+    "rgb": "167,139,250",
+    "cores": {
+      "default": "retroarch/cores/mgba_libretro.dll"
+    },
+    "romExtensions": [
+      ".gba",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - Game Boy Advance/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - Game Boy Advance/music"
+  },
+  "Nintendo - Game Boy Color": {
+    "id": "gbc",
+    "maker": "Nintendo",
+    "systemId": 10,
+    "era": "portable",
+    "color": "#4ade80",
+    "rgb": "74,222,128",
+    "cores": {
+      "default": "retroarch/cores/mgba_libretro.dll"
+    },
+    "romExtensions": [
+      ".gbc",
+      ".gb",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - Game Boy Color/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - Game Boy Color/music"
+  },
+  "Nintendo - GameCube - Wii": {
+    "id": "gcw",
+    "maker": "Nintendo",
+    "systemId": 13,
+    "era": "64bit",
+    "color": "#f87171",
+    "rgb": "248,113,113",
+    "cores": {
+      "default": "retroarch/cores/dolphin_libretro.dll"
+    },
+    "romExtensions": [
+      ".gcm",
+      ".iso",
+      ".ciso",
+      ".gcz",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - GameCube - Wii/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - GameCube - Wii/music"
+  },
+  "Nintendo - Nintendo Entertainment System": {
+    "id": "nes",
+    "maker": "Nintendo",
+    "systemId": 3,
+    "era": "8bit",
+    "color": "#f87171",
+    "rgb": "248,113,113",
+    "cores": {
+      "default": "retroarch/cores/fceumm_libretro.dll"
+    },
+    "romExtensions": [
+      ".nes",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - Nintendo Entertainment System/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - Nintendo Entertainment System/music"
+  },
+  "Nintendo - Nintendo 64": {
+    "id": "n64",
+    "maker": "Nintendo",
+    "systemId": 14,
+    "era": "64bit",
+    "color": "#f87171",
+    "rgb": "248,113,113",
+    "cores": {
+      "default": "retroarch/cores/mupen64plus_next_libretro.dll"
+    },
+    "romExtensions": [
+      ".n64",
+      ".z64",
+      ".v64",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - Nintendo 64/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - Nintendo 64/music"
+  },
+  "Nintendo - Pokemon Mini": {
+    "id": "pokemini",
+    "maker": "Nintendo",
+    "systemId": 211,
+    "era": "portable",
+    "color": "#f87171",
+    "rgb": "248,113,113",
+    "cores": {
+      "default": "retroarch/cores/meteor_libretro.dll"
+    },
+    "romExtensions": [
+      ".min",
+      ".bin",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - Pokemon Mini/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - Pokemon Mini/music"
+  },
+  "Nintendo - Super Nintendo Entertainment System": {
+    "id": "snes",
+    "maker": "Nintendo",
+    "systemId": 4,
+    "era": "16bit",
+    "color": "#c084fc",
+    "rgb": "192,132,252",
+    "cores": {
+      "default": "retroarch/cores/snes9x_libretro.dll"
+    },
+    "romExtensions": [
+      ".sfc",
+      ".smc",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Nintendo - Super Nintendo Entertainment System/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Nintendo - Super Nintendo Entertainment System/music"
+  },
+  "Palm OS": {
+    "id": "palm",
+    "maker": "Palm",
+    "systemId": 219,
+    "era": "portable",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/mame2003_plus_libretro.dll"
+    },
+    "romExtensions": [
+      ".prc",
+      ".pdb",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Palm OS/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Palm OS/music"
+  },
+  "Philips - CDi": {
+    "id": "cdi",
+    "maker": "Philips",
+    "systemId": 88,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/mame2003_plus_libretro.dll"
+    },
+    "romExtensions": [
+      ".iso",
+      ".bin",
+      ".cue",
+      ".chd",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Philips - CDi/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Philips - CDi/music"
+  },
+  "ScummVM": {
+    "id": "scummvm",
+    "maker": "ScummVM",
+    "systemId": 123,
+    "era": "other",
+    "color": "#fbbf24",
+    "rgb": "251,191,36",
+    "cores": {
+      "default": "retroarch/cores/scummvm_libretro.dll"
+    },
+    "romExtensions": [
+      ".scummvm"
+    ],
+    "imagesFolder": "consoles/ScummVM/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/ScummVM/music"
+  },
+  "Sega - Dreamcast - NAOMI": {
+    "id": "dreamcast",
+    "maker": "Sega",
+    "systemId": 84,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/flycast_libretro.dll"
+    },
+    "romExtensions": [
+      ".cdi",
+      ".gdi",
+      ".bin",
+      ".iso",
+      ".chd",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - Dreamcast - NAOMI/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - Dreamcast - NAOMI/music"
+  },
+  "Sega - Game Gear": {
+    "id": "gg",
+    "maker": "Sega",
+    "systemId": 32,
+    "era": "portable",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/genesis_plus_gx_libretro.dll"
+    },
+    "romExtensions": [
+      ".gg",
+      ".bin",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - Game Gear/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - Game Gear/music"
+  },
+  "Sega - Genesis - Mega Drive - CD": {
+    "id": "gen_cd",
+    "maker": "Sega",
+    "systemId": 21,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/genesis_plus_gx_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".iso",
+      ".cue",
+      ".chd",
+      ".md",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - Genesis - Mega Drive - CD/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - Genesis - Mega Drive - CD/music"
+  },
+  "Sega - Master System - Mark III": {
+    "id": "sms",
+    "maker": "Sega",
+    "systemId": 2,
+    "era": "8bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/genesis_plus_gx_libretro.dll"
+    },
+    "romExtensions": [
+      ".sms",
+      ".bin",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - Master System - Mark III/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - Master System - Mark III/music"
+  },
+  "Sega - Mega Drive - Genesis": {
+    "id": "md",
+    "maker": "Sega",
+    "systemId": 1,
+    "era": "16bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/genesis_plus_gx_libretro.dll"
+    },
+    "romExtensions": [
+      ".md",
+      ".gen",
+      ".bin",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - Mega Drive - Genesis/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - Mega Drive - Genesis/music"
+  },
+  "Sega - Saturn": {
+    "id": "saturn",
+    "maker": "Sega",
+    "systemId": 16,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/mednafen_saturn_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".iso",
+      ".cue",
+      ".chd",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - Saturn/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - Saturn/music"
+  },
+  "Sega - Saturn - ST-V": {
+    "id": "stv",
+    "maker": "Sega",
+    "systemId": 83,
+    "era": "32bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/mednafen_saturn_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".iso",
+      ".cue",
+      ".chd",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - Saturn - ST-V/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - Saturn - ST-V/music"
+  },
+  "Sega - SG-1000": {
+    "id": "sg1000",
+    "maker": "Sega",
+    "systemId": 83,
+    "era": "8bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/genesis_plus_gx_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".sg",
+      ".rom",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sega - SG-1000/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sega - SG-1000/music"
+  },
+  "Sharp - X68000": {
+    "id": "x68k",
+    "maker": "Sharp",
+    "systemId": 110,
+    "era": "16bit",
+    "color": "#FF0000",
+    "rgb": "255,0,0",
+    "cores": {
+      "default": "retroarch/cores/x68k_libretro.dll"
+    },
+    "romExtensions": [
+      ".a",
+      ".m",
+      ".M",
+      ".x",
+      ".68k"
+    ],
+    "imagesFolder": "consoles/Sharp - X68000/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sharp - X68000/music"
+  },
+  "Sharp X1": {
+    "id": "x1",
+    "maker": "Sharp",
+    "systemId": 220,
+    "era": "16bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/x1_libretro.dll"
+    },
+    "romExtensions": [
+      ".d88",
+      ".x1",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sharp X1/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sharp X1/music"
+  },
+  "Sinclair - ZX Spectrum": {
+    "id": "zxspectrum",
+    "maker": "Sinclair",
+    "systemId": 105,
+    "era": "8bit",
+    "color": "#5eb8ff",
+    "rgb": "94,184,255",
+    "cores": {
+      "default": "retroarch/cores/fuse_libretro.dll"
+    },
+    "romExtensions": [
+      ".tzx",
+      ".tap",
+      ".z80",
+      ".sna",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sinclair - ZX Spectrum/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sinclair - ZX Spectrum/music"
+  },
+  "SNK - Neo Geo AES-MVS": {
+    "id": "neogeo",
+    "maker": "SNK",
+    "systemId": 142,
+    "era": "32bit",
+    "color": "#fbbf24",
+    "rgb": "251,191,36",
+    "cores": {
+      "default": "retroarch/cores/fbneo_libretro.dll"
+    },
+    "romExtensions": [
+      ".zip"
+    ],
+    "imagesFolder": "consoles/SNK - Neo Geo AES-MVS/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/SNK - Neo Geo AES-MVS/music"
+  },
+  "SNK - Neo Geo CD": {
+    "id": "ngcd",
+    "maker": "SNK",
+    "systemId": 70,
+    "era": "32bit",
+    "color": "#E7001E",
+    "rgb": "231,0,30",
+    "cores": {
+      "default": "retroarch/cores/neocdlibretro.dll"
+    },
+    "romExtensions": [
+      ".iso",
+      ".bin",
+      ".cue"
+    ],
+    "imagesFolder": "consoles/SNK - Neo Geo CD/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/SNK - Neo Geo CD/music"
+  },
+  "Sony - PlayStation": {
+    "id": "psx",
+    "maker": "Sony",
+    "systemId": 57,
+    "era": "32bit",
+    "color": "#a78bfa",
+    "rgb": "167,139,250",
+    "cores": {
+      "default": "retroarch/cores/pcsx_rearmed_libretro.dll"
+    },
+    "romExtensions": [
+      ".bin",
+      ".iso",
+      ".pbp",
+      ".chd",
+      ".cue",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sony - PlayStation/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sony - PlayStation/music"
+  },
+  "Sony - PlayStation 2": {
+    "id": "ps2",
+    "maker": "Sony",
+    "systemId": 58,
+    "era": "64bit",
+    "color": "#a78bfa",
+    "rgb": "167,139,250",
+    "cores": {
+      "default": "retroarch/cores/pcsx2_libretro.dll"
+    },
+    "romExtensions": [
+      ".iso",
+      ".bin",
+      ".nrg",
+      ".mdf",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sony - PlayStation 2/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sony - PlayStation 2/music"
+  },
+  "Sony - PlayStation Portable": {
+    "id": "psp",
+    "maker": "Sony",
+    "systemId": 61,
+    "era": "portable",
+    "color": "#a78bfa",
+    "rgb": "167,139,250",
+    "cores": {
+      "default": "retroarch/cores/ppsspp_libretro.dll"
+    },
+    "romExtensions": [
+      ".iso",
+      ".pbp",
+      ".cso",
+      ".zip"
+    ],
+    "imagesFolder": "consoles/Sony - PlayStation Portable/images",
+    "imageCenterSubfolder": "Image centre",
+    "screenshotsSubfolder": "screenshots",
+    "musicFolder": "consoles/Sony - PlayStation Portable/music"
+  }
+}
