@@ -795,20 +795,6 @@ async function init() {
   }
 
   startIntro();
-  
-  // Reprendre le dernier jeu si present
-  const resumeRom = sessionStorage.getItem('resumeRom');
-  if (resumeRom) {
-    sessionStorage.removeItem('resumeRom');
-    setTimeout(() => {
-      const games = getGames();
-      const idx = games.findIndex(g => g.rom === resumeRom);
-      if (idx !== -1) {
-        navigateToGame(idx);
-        setTimeout(() => launchCurrentGame(), 500);
-      }
-    }, 3500);
-  }
 }
 
 if ('serviceWorker' in navigator) {
