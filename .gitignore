@@ -5,6 +5,7 @@ assets/
 .DS_Store
 Thumbs.db
 dist/
+coverage/
 *.xml
 *.webp
 *.mp3
