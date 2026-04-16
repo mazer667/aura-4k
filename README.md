@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/version-2.5.0-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows-green)
 ![Electron](https://img.shields.io/badge/Electron-28.0.0-purple)
-![Tests](https://img.shields.io/badge/tests-12 passed-green)
+![Tests](https://img.shields.io/badge/tests-32 passed-green)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 
 ![CI](https://github.com/mazer667/aura-4k/actions/workflows/ci.yml/badge.svg)
