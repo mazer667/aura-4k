@@ -525,11 +525,6 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
   <div class="header">
     <div class="header-logo">AURA 4K</div>
     <div class="header-title" id="header-title" data-i18n="console.title">Sélection de la plateforme</div>
-    <div id="resume-btn" style="display:none; cursor:pointer;" onclick="resumeLastGame()">
-      <span style="font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; color:#fbbf24; background:rgba(251,191,36,0.15); border:1px solid rgba(251,191,36,0.3); border-radius:4px; padding:6px 14px;">
-        <span data-i18n="resume.btn">REPRENDRE</span>
-      </span>
-    </div>
     <div class="header-clock" id="clock">00:00</div>
   </div>
 
@@ -585,7 +580,6 @@ window.onunhandledrejection = (e) => {
 
 // Imports
 import { initOptions, toggleOptions, isOptionsOpen } from './js/options.js';
-import { getLastPlayed } from './js/state.js';
 import { initGamepad } from './js/gamepad.js';
 import { applyLanguage, getCurrentLang, t } from './js/i18n.js';
 
@@ -869,32 +863,6 @@ function playSound(name) {
   a.play().catch(() => {});
 }
 
-// ─── Dernier jeu ────────────────────────────────────────────
-function showResumeButton() {
-  const last = getLastPlayed();
-  const btn = document.getElementById('resume-btn');
-  if (last && last.console && last.rom) {
-    const consoleExists = CONSOLES.some(c => c.name === last.console);
-    if (consoleExists) {
-      btn.style.display = 'block';
-    }
-  }
-}
-
-window.resumeLastGame = function() {
-  const last = getLastPlayed();
-  if (!last) return;
-  playSound('select');
-  const trOverlay = document.getElementById('transition-overlay');
-  trOverlay.classList.add('show');
-  setTimeout(() => {
-    stopBgMusic(() => {
-      window.electronAPI.selectConsole(last.console);
-      sessionStorage.setItem('resumeRom', last.rom);
-    });
-  }, 700);
-};
-
 // ─── Consoles (chargées dynamiquement depuis data/) ────────────────────────
 
 // ─── Musique de fond ──────────────────────────────────────────
@@ -1067,7 +1035,6 @@ async function init() {
   updateInfo();
   buildDots();
   updateDots();
-  showResumeButton();
 
   // 3. Intro : logo apparaît → logo disparaît → overlay fade → display:none
   const overlay   = document.getElementById('intro-overlay');

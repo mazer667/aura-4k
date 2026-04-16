@@ -189,18 +189,23 @@ ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) =>
     // Normaliser le chemin pour Windows (remplacer / par \)
     const normalizedRomPath = romPath.replace(/\//g, '\\');
     const baseDir = __dirname;
-    
     const romExtensions = extensions || consoleConfig.romExtensions || ['.zip'];
     let fullRomPath = null;
     
-    // Si le chemin existe déjà avec extension, utiliser directement
+    // Stripper l'extension existante avant de tester
+    const existingExt = path.extname(normalizedRomPath);
+    const basePath = existingExt
+      ? normalizedRomPath.slice(0, -existingExt.length)
+      : normalizedRomPath;
+
+    // Essai direct d'abord (chemin déjà complet et correct)
     const directPath = path.join(baseDir, normalizedRomPath);
     if (fs.existsSync(directPath)) {
       fullRomPath = directPath;
     } else {
-      // Sinon essayer chaque extension
+      // Tester chaque extension sur le chemin sans extension
       for (const ext of romExtensions) {
-        const testPath = path.join(baseDir, normalizedRomPath + ext);
+        const testPath = path.join(baseDir, basePath + ext);
         if (fs.existsSync(testPath)) {
           fullRomPath = testPath;
           break;
