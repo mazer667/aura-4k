@@ -186,14 +186,25 @@ ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) =>
     const retroarchPath = path.join(__dirname, CONFIG?.retroarch?.executable || 'retroarch/retroarch.exe');
     const corePath = path.join(__dirname, consoleConfig?.cores?.default || CONFIG?.retroarch?.defaultCore || '');
     
+    // Normaliser le chemin pour Windows (remplacer / par \)
+    const normalizedRomPath = romPath.replace(/\//g, '\\');
+    const baseDir = __dirname;
+    
     const romExtensions = extensions || consoleConfig.romExtensions || ['.zip'];
     let fullRomPath = null;
     
-    for (const ext of romExtensions) {
-      const testPath = path.join(__dirname, romPath + ext);
-      if (fs.existsSync(testPath)) {
-        fullRomPath = testPath;
-        break;
+    // Si le chemin existe déjà avec extension, utiliser directement
+    const directPath = path.join(baseDir, normalizedRomPath);
+    if (fs.existsSync(directPath)) {
+      fullRomPath = directPath;
+    } else {
+      // Sinon essayer chaque extension
+      for (const ext of romExtensions) {
+        const testPath = path.join(baseDir, normalizedRomPath + ext);
+        if (fs.existsSync(testPath)) {
+          fullRomPath = testPath;
+          break;
+        }
       }
     }
     
