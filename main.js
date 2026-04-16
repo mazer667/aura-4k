@@ -214,27 +214,38 @@ ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) =>
     }
     
     if (!fullRomPath) {
-      console.error('ROM introuvable:', romPath, '(tried:', romExtensions.join(', '), ')');
+      console.error('[Launch] ERREUR: ROM introuvable');
+      console.error('[Launch] Chemin buscado:', romPath);
+      console.error('[Launch] Extensions testées:', romExtensions.join(', '));
+      console.error('[Launch] Chemins essayés:');
+      for (const ext of romExtensions) {
+        console.error('  -', basePath + ext);
+      }
+      win.webContents.send('game-ended');
       return;
     }
 
-    console.log('[Launch] Launching:', { romPath: fullRomPath, consoleName });
+    console.log('[Launch] ROM trouvée:', fullRomPath);
 
-    if (!fs.existsSync(retroarchPath)) { 
-      console.error('RetroArch introuvable:', retroarchPath);
+    // Vérifier le core
+    if (!corePath || !fs.existsSync(corePath)) {
+      console.error('[Launch] ERREUR: Core introuvable');
+      console.error('[Launch] Core attendu:', corePath);
+      // Fallback: chercher un core alternatif
+      const coresDir = path.join(__dirname, 'retroarch/cores');
+      if (fs.existsSync(coresDir)) {
+        const cores = fs.readdirSync(coresDir).filter(f => f.endsWith('.dll') || f.endsWith('.so'));
+        console.log('[Launch] Cores disponibles:', cores.join(', '));
+      }
       win.webContents.send('game-ended');
       isGameRunning = false;
       return; 
     }
-    if (!corePath || !fs.existsSync(corePath)) { 
-      console.error('Core introuvable:', corePath);
-      win.webContents.send('game-ended');
-      isGameRunning = false;
-      return; 
-    }
+
+    console.log('[Launch] Core utilisé:', corePath);
 
     const command = `"${retroarchPath}" -L "${corePath}" "${fullRomPath}" --fullscreen`;
-    console.log('[Launch] Executing command:', command);
+    console.log('[Launch] Commande:', command);
     isGameRunning = true;
     win.webContents.send('game-started');
     

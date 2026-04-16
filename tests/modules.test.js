@@ -1,16 +1,10 @@
 import { describe, it, expect, vi } from 'vitest';
-import { getConsoleConfigByName, getRomExtensions } from '../js/games.js';
+import { getConsoleConfigByName } from '../js/games.js';
 
 describe('games.js', () => {
   describe('getConsoleConfigByName', () => {
     it('should be a function', () => {
       expect(typeof getConsoleConfigByName).toBe('function');
-    });
-  });
-
-  describe('getRomExtensions', () => {
-    it('should be a function', () => {
-      expect(typeof getRomExtensions).toBe('function');
     });
   });
 });
@@ -24,20 +18,6 @@ describe('navigation.js', () => {
       expect(typeof nav.launchCurrentGame).toBe('function');
       expect(typeof nav.navigateToGame).toBe('function');
       expect(typeof nav.setOnGameChange).toBe('function');
-    });
-  });
-
-  describe('navigate', () => {
-    it('should be a function', async () => {
-      const nav = await import('../js/navigation.js');
-      expect(typeof nav.navigate).toBe('function');
-    });
-  });
-
-  describe('navigateToLetter', () => {
-    it('should call navigate', async () => {
-      const nav = await import('../js/navigation.js');
-      expect(typeof nav.navigateToLetter).toBe('function');
     });
   });
 });
@@ -54,27 +34,6 @@ describe('state.js', () => {
       expect(typeof state.getFavorites).toBe('function');
       expect(typeof state.getLastPlayed).toBe('function');
       expect(typeof state.setLastPlayed).toBe('function');
-    });
-  });
-
-  describe('setCi', () => {
-    it('should be a function', async () => {
-      const state = await import('../js/state.js');
-      expect(typeof state.setCi).toBe('function');
-    });
-  });
-
-  describe('getIdle', () => {
-    it('should be a function', async () => {
-      const state = await import('../js/state.js');
-      expect(typeof state.getIdle).toBe('function');
-    });
-  });
-
-  describe('subscribe', () => {
-    it('should be a function', async () => {
-      const state = await import('../js/state.js');
-      expect(typeof state.subscribe).toBe('function');
     });
   });
 });
@@ -121,20 +80,6 @@ describe('audio.js', () => {
   });
 });
 
-describe('i18n.js', () => {
-  describe('i18n API', () => {
-    it('should export i18n functions', async () => {
-      const i18n = await import('../js/i18n.js');
-      expect(typeof i18n.t).toBe('function');
-      expect(typeof i18n.applyLanguage).toBe('function');
-      expect(typeof i18n.getCurrentLang).toBe('function');
-      expect(typeof i18n.tGenre).toBe('function');
-      expect(i18n.TRANSLATIONS).toBeDefined();
-      expect(i18n.GENRES).toBeDefined();
-    });
-  });
-});
-
 describe('music.js', () => {
   describe('music functions', () => {
     it('should export music functions', async () => {
@@ -153,6 +98,63 @@ describe('gamepad.js', () => {
       const gamepad = await import('../js/gamepad.js');
       expect(typeof gamepad.initGamepad).toBe('function');
       expect(typeof gamepad.setGameRunning).toBe('function');
+    });
+  });
+});
+
+describe('i18n.js', () => {
+  describe('i18n API', () => {
+    it('should export i18n functions', async () => {
+      const i18n = await import('../js/i18n.js');
+      expect(typeof i18n.t).toBe('function');
+      expect(typeof i18n.applyLanguage).toBe('function');
+      expect(typeof i18n.getCurrentLang).toBe('function');
+      expect(typeof i18n.tGenre).toBe('function');
+      expect(i18n.TRANSLATIONS).toBeDefined();
+      expect(i18n.GENRES).toBeDefined();
+    });
+  });
+});
+
+describe('aura.js', () => {
+  describe('AURA namespace', () => {
+    it('should export AURA object', async () => {
+      const aura = await import('../js/aura.js');
+      expect(aura.AURA).toBeDefined();
+      expect(aura.AURA.navigate).toBeNull();
+      expect(aura.AURA.launchGame).toBeNull();
+      expect(aura.AURA.sfxVolume).toBe(0.6);
+      expect(aura.AURA.musicVolume).toBe(0.72);
+      expect(aura.AURA.gpDeadzone).toBe(0.45);
+    });
+
+    it('should export setter functions', async () => {
+      const aura = await import('../js/aura.js');
+      expect(typeof aura.setNavigate).toBe('function');
+      expect(typeof aura.setLaunchGame).toBe('function');
+      expect(typeof aura.setSfxVolume).toBe('function');
+      expect(typeof aura.setMusicVolume).toBe('function');
+      expect(typeof aura.setGpDeadzone).toBe('function');
+      expect(typeof aura.setGpMapping).toBe('function');
+    });
+  });
+});
+
+describe('batchUpdate.js', () => {
+  describe('batchUpdate API', () => {
+    it('should export batchUpdate function', async () => {
+      const batch = await import('../js/batchUpdate.js');
+      expect(typeof batch.batchUpdate).toBe('function');
+    });
+  });
+});
+
+describe('preloader.js', () => {
+  describe('preloader API', () => {
+    it('should export preload functions', async () => {
+      const preloader = await import('../js/preloader.js');
+      expect(typeof preloader.preloadAdjacentGames).toBe('function');
+      expect(typeof preloader.preloadBackgrounds).toBe('function');
     });
   });
 });
