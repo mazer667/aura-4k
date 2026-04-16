@@ -1061,15 +1061,6 @@ async function init() {
     document.dispatchEvent(event);
   };
 
-  // Exposer le paramètre de masquage des consoles vides
-  window.__auraGetHideEmptyConsoles = () => {
-    try {
-      return localStorage.getItem('aura4k_hide_empty_consoles') === 'true';
-    } catch (e) {
-      return false;
-    }
-  };
-
   window.__auraNavigateLetter = function(dir) {
     // Menu console: stick haut/bas = changer d'ere/tab
     const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
