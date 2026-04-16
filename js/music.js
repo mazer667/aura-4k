@@ -1,13 +1,11 @@
 // js/music.js
 import { getMusicUrl, getMusicId } from './games.js';
+import { AURA, setMusicVolume } from './aura.js';
 
 let currentAudio  = null;
 let currentGameId = null;
 let currentGame   = null;
 let isMuted       = false;
-
-// volume musique — peut être mis à jour par options.js
-window.__auraMusicVolume = 0.70;
 
 export function playMusicForGame(game, immediate = false) {
   if (!game) return;
@@ -34,7 +32,7 @@ export function playMusicForGame(game, immediate = false) {
 
   const audio  = new Audio(musicPath);
   audio.loop   = true;
-  audio.volume = window.__auraMusicVolume ?? 0.70;
+  audio.volume = AURA.musicVolume ?? 0.70;
 
   audio.addEventListener('canplaythrough', () => {
     if (currentGameId !== gameId) return;
@@ -72,7 +70,7 @@ export function stopMusic() {
 export function muteMusic(mute) {
   isMuted = mute;
   if (currentAudio) {
-    currentAudio.volume = mute ? 0 : (window.__auraMusicVolume ?? 0.70);
+    currentAudio.volume = mute ? 0 : (AURA.musicVolume ?? 0.70);
     if (mute) {
       currentAudio.pause();
     }
@@ -80,7 +78,7 @@ export function muteMusic(mute) {
 }
 
 export function updateMusicVolume(volume) {
-  window.__auraMusicVolume = volume;
+  AURA.musicVolume = volume;
   if (currentAudio && !isMuted) currentAudio.volume = volume;
 }
 

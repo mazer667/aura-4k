@@ -1,5 +1,6 @@
 // js/options.js
 import { applyLanguage, t } from './i18n.js';
+import { AURA, setSfxVolume, setMusicVolume, setGpDeadzone, setGpMapping } from './aura.js';
 
 const LS_PREFIX = 'aura4k_';
 
@@ -183,7 +184,7 @@ function applyAllSettings() {
 
 function applyVolume() {
   const musicVol = settings.mute ? 0 : settings.volume_music / 100;
-  const sfxVol   = settings.mute ? 0 : settings.volume_sfx   / 100;
+  const sfxVol   = settings.mute ? 0 : settings.volume_sfx / 100;
 
   // ── music.js expose window.setMusicVolume() ──────────────
   if (typeof window.setMusicVolume === 'function') {
@@ -195,9 +196,9 @@ function applyVolume() {
     window.updateSfxVolume(sfxVol);
   }
 
-  // Mettre aussi à jour les variables globales utilisées dans audio.js
-  window.__auraSfxVolume   = sfxVol;
-  window.__auraMusicVolume = musicVol;
+  // Mettre aussi à jour le namespace AURA
+  setSfxVolume(sfxVol);
+  setMusicVolume(musicVol);
 }
 
 function applyGrain() {
@@ -644,7 +645,7 @@ function bindEvents() {
   }
 
   function _exportGpMapping() {
-    window.__auraGpMapping = {
+    const mapping = {
       left:     settings.gp_left,
       right:    settings.gp_right,
       up:       settings.gp_up,
@@ -655,6 +656,7 @@ function bindEvents() {
       favorite: settings.gp_favorite,
       options:  settings.gp_options,
     };
+    setGpMapping(mapping);
   }
 
   // Clic ailleurs = annuler l'écoute
@@ -675,7 +677,7 @@ function bindEvents() {
   // Deadzone slider
   bindSlider('aura-sl-deadzone', 'aura-val-deadzone', v => {
     saveSetting('gp_deadzone', v);
-    window.__auraGpDeadzone = v / 100;
+    setGpDeadzone(v / 100);
   });
   // Afficher % sur le label
   const dzSlider = document.getElementById('aura-sl-deadzone');

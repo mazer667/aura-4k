@@ -588,6 +588,7 @@ import { initGamepad, setGameRunning } from './js/gamepad.js';
 import { playMusicForGame, stopMusic, pauseMusic, resumeMusic, muteMusic } from './js/music.js';
 import { initOptions, toggleOptions, isOptionsOpen } from './js/options.js';
 import { setOnGameChange } from './js/navigation.js';
+import { setNavigate, setGoToLetter, setLaunchGame, setExitWithFade, setToggleFavorite, setIsFavorite } from './js/aura.js';
 
 window.toggleFavorite = toggleFavorite;
 window.isFavorite = isFavorite;
@@ -760,19 +761,24 @@ async function init() {
   tick();
   setInterval(tick, 1000);
 
-  // Exposer les fonctions de navigation pour le gamepad
-  window.__auraNavigate = function(dir) {
+  // Exposer les fonctions de navigation pour le gamepad via AURA
+  setNavigate(function(dir) {
     const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true });
     document.dispatchEvent(event);
-  };
-  window.__auraGoToLetter = function(dir) {
+  });
+  setGoToLetter(function(dir) {
     const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
     document.dispatchEvent(event);
-  };
-  window.__auraLaunchGame = function() {
+  });
+  setLaunchGame(function() {
     const event = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true });
     document.dispatchEvent(event);
-  };
+  });
+  setExitWithFade(function() {
+    playSound('unload');
+    stopMusic();
+    window.electronAPI.quitApp();
+  });
 
   initGamepad();
 

@@ -1,4 +1,6 @@
 // js/audio.js - Lazy loading des sons
+import { AURA } from './aura.js';
+
 let sounds = {};
 let isMuted = false;
 const soundFiles = {
@@ -8,8 +10,6 @@ const soundFiles = {
   unload:    'sounds/unload.wav',
   netplay:   'sounds/netplay-alert.wav'
 };
-
-window.__auraSfxVolume = 0.60;
 
 export async function initAudio() {
   // Ne rien charger au demarrage - chargement lazy
@@ -23,7 +23,7 @@ function loadSound(name) {
   
   const audio = new Audio(path);
   audio.preload = 'auto';
-  audio.volume = isMuted ? 0 : window.__auraSfxVolume;
+  audio.volume = isMuted ? 0 : AURA.sfxVolume;
   sounds[name] = audio;
   return audio;
 }
@@ -32,7 +32,7 @@ export function playSound(name) {
   if (isMuted) return;
   const audio = loadSound(name);
   if (!audio) return;
-  audio.volume = window.__auraSfxVolume;
+  audio.volume = AURA.sfxVolume;
   audio.currentTime = 0;
   audio.play().catch(() => {});
 }
@@ -42,7 +42,7 @@ export function playSoundAndWait(name) {
     if (isMuted) { resolve(); return; }
     const audio = loadSound(name);
     if (!audio) { resolve(); return; }
-    audio.volume = window.__auraSfxVolume;
+    audio.volume = AURA.sfxVolume;
     audio.currentTime = 0;
     audio.onended = () => { audio.onended = null; resolve(); };
     audio.play().catch(() => resolve());
@@ -50,7 +50,7 @@ export function playSoundAndWait(name) {
 }
 
 export function updateSfxVolume(volume) {
-  window.__auraSfxVolume = volume;
+  AURA.sfxVolume = volume;
   for (const name in sounds) {
     if (sounds[name]) sounds[name].volume = volume;
   }
@@ -60,7 +60,7 @@ export function muteAllAudio(mute) {
   isMuted = mute;
   for (const name in sounds) {
     if (sounds[name]) {
-      sounds[name].volume = mute ? 0 : window.__auraSfxVolume;
+      sounds[name].volume = mute ? 0 : AURA.sfxVolume;
       if (mute) {
         sounds[name].pause();
         sounds[name].currentTime = 0;

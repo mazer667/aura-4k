@@ -2,6 +2,7 @@
 import { idle, toggleFavorite, isFavorite } from './state.js';
 import { btnsHide, setIdleUI, shotsAppear, shotsDisappear, btnsShow } from './ui.js';
 import { isOptionsOpen, toggleOptions } from './options.js';
+import { AURA, setGameRunning as setAuraGameRunning } from './aura.js';
 
 const INITIAL_DELAY   = 380;
 const REPEAT_INTERVAL = 140;
@@ -17,18 +18,19 @@ const NAVIGATE_DEBOUNCE = 120;
 
 export function setGameRunning(running) {
   isGameRunning = running;
+  setAuraGameRunning(running);
   if (running) {
     stopAllHolds();
   }
 }
 
 function getDeadzone() {
-  return window.__auraGpDeadzone ?? 0.45;
+  return AURA.gpDeadzone ?? 0.45;
 }
 
 function getBtn(key) {
-  if (window.__auraGpMapping && window.__auraGpMapping[key] !== undefined) {
-    return window.__auraGpMapping[key];
+  if (AURA.gpMapping && AURA.gpMapping[key] !== undefined) {
+    return AURA.gpMapping[key];
   }
   return DEFAULT_BTN[key];
 }
@@ -104,8 +106,8 @@ function navigate(dir) {
   if (now - lastNavigateTime < NAVIGATE_DEBOUNCE) return;
   lastNavigateTime = now;
   
-  if (window.__auraNavigate) {
-    window.__auraNavigate(dir);
+  if (AURA.navigate) {
+    AURA.navigate(dir);
   }
 }
 
@@ -114,20 +116,20 @@ function navigateToLetter(dir) {
   if (now - lastNavigateTime < NAVIGATE_DEBOUNCE) return;
   lastNavigateTime = now;
   
-  if (window.__auraGoToLetter) {
-    window.__auraGoToLetter(dir);
+  if (AURA.goToLetter) {
+    AURA.goToLetter(dir);
   }
 }
 
 function launchCurrentGame() {
-  if (window.__auraLaunchGame) {
-    window.__auraLaunchGame();
+  if (AURA.launchGame) {
+    AURA.launchGame();
   }
 }
 
 function exitWithFade() {
-  if (window.exitWithFade) { 
-    window.exitWithFade(); 
+  if (AURA.exitWithFade) { 
+    AURA.exitWithFade(); 
     return; 
   }
   const d = document.createElement('div');

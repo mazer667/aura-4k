@@ -582,6 +582,7 @@ window.onunhandledrejection = (e) => {
 import { initOptions, toggleOptions, isOptionsOpen } from './js/options.js';
 import { initGamepad } from './js/gamepad.js';
 import { applyLanguage, getCurrentLang, t } from './js/i18n.js';
+import { setNavigate, setGoToLetter, setLaunchGame } from './js/aura.js';
 
 // ─── Traductions spécifiques au menu console ──────────────────
 const MENU_LABELS = {
@@ -1056,27 +1057,21 @@ async function init() {
   // Options — initialisées avant (1b)
 
   // Exposer les fonctions de navigation pour le gamepad AVANT l'init
-  window.__auraNavigate = function(dir) {
+  setNavigate(function(dir) {
     const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true });
     document.dispatchEvent(event);
-  };
+  });
 
-  window.__auraNavigateLetter = function(dir) {
+  setGoToLetter(function(dir) {
     // Menu console: stick haut/bas = changer d'ere/tab
     const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
     document.dispatchEvent(event);
-  };
+  });
 
-  window.__auraGoToLetter = function(dir) {
-    // Menu console: stick haut/bas = changer d'ere/tab
-    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
-    document.dispatchEvent(event);
-  };
-
-  window.__auraLaunchGame = function() {
+  setLaunchGame(function() {
     const event = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true });
     document.dispatchEvent(event);
-  };
+  });
 
   // Gamepad — initialisation APRES avoir exposé les fonctions de navigation
   initGamepad();
