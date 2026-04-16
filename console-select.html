@@ -1088,10 +1088,7 @@ async function init() {
 
   // Options — initialisées avant (1b)
 
-  // Gamepad — initialisation sur le menu console
-  initGamepad();
-
-  // Exposer les fonctions de navigation pour le gamepad
+  // Exposer les fonctions de navigation pour le gamepad AVANT l'init
   window.__auraNavigate = function(dir) {
     const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true });
     document.dispatchEvent(event);
@@ -1122,6 +1119,9 @@ async function init() {
     const event = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true });
     document.dispatchEvent(event);
   };
+
+  // Gamepad — initialisation APRES avoir exposé les fonctions de navigation
+  initGamepad();
 
   // Brancher setMusicVolume sur la bgMusic du menu
   const _origSetMusic = window.setMusicVolume;

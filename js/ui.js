@@ -150,7 +150,7 @@ function updateAlpha() {
     }).join('');
   
   const alphaEl = document.getElementById('alpha');
-  const newAlphaEl = alphaEl.cloneNode(false);
+  const newAlphaEl = alphaEl.cloneNode(true);
   alphaEl.parentNode.replaceChild(newAlphaEl, alphaEl);
   
   document.getElementById('alpha').querySelectorAll('[data-letter]').forEach(el => {

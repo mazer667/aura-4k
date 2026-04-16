@@ -759,6 +759,21 @@ async function init() {
   initOptions();
   tick();
   setInterval(tick, 1000);
+
+  // Exposer les fonctions de navigation pour le gamepad
+  window.__auraNavigate = function(dir) {
+    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true });
+    document.dispatchEvent(event);
+  };
+  window.__auraGoToLetter = function(dir) {
+    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
+    document.dispatchEvent(event);
+  };
+  window.__auraLaunchGame = function() {
+    const event = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true });
+    document.dispatchEvent(event);
+  };
+
   initGamepad();
 
   // ── Pause / reprise audio quand un jeu est lancé / terminé ──
