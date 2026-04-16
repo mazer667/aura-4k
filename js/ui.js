@@ -149,7 +149,11 @@ function updateAlpha() {
       return `<span class="ac${isActive ? ' on' : ''}" data-letter="${l}" style="cursor:pointer;">${isActive ? '★ ' : ''}${l}&nbsp;&nbsp;</span>`;
     }).join('');
   
-  document.querySelectorAll('#alpha [data-letter]').forEach(el => {
+  const alphaEl = document.getElementById('alpha');
+  const newAlphaEl = alphaEl.cloneNode(false);
+  alphaEl.parentNode.replaceChild(newAlphaEl, alphaEl);
+  
+  document.getElementById('alpha').querySelectorAll('[data-letter]').forEach(el => {
     el.addEventListener('click', () => {
       const letter = el.dataset.letter;
       if (filterLetter === letter) {
