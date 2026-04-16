@@ -53,45 +53,6 @@ export function navigateToLetter(dir) {
   navigate(dir);
 }
 
-const LETTERS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','#'];
-
-export function goToLetter(dir) {
-  const games = getFilteredGames();
-  if (games.length === 0) return;
-
-  const currentLetter = LETTERS.findIndex(l => {
-    const currentGame = getCurrentGame();
-    if (!currentGame?.title) return l === '#';
-    const firstChar = currentGame.title.charAt(0).toUpperCase();
-    return firstChar === l;
-  });
-
-  let targetIdx = currentLetter + dir;
-  if (targetIdx >= LETTERS.length) targetIdx = 0;
-  if (targetIdx < 0) targetIdx = LETTERS.length - 1;
-  
-  const targetLetter = LETTERS[targetIdx];
-
-  for (let i = 0; i < games.length; i++) {
-    const gameLetter = games[i]?.title?.charAt(0).toUpperCase();
-    if (targetLetter === '#') {
-      if (/[0-9]/.test(gameLetter)) {
-        const prevGame = games[(i - 1 + games.length) % games.length] || games[i];
-        const nextGame = games[(i + 1) % games.length] || games[i];
-        updateGameDisplay(games[i], prevGame, nextGame, games, getGames());
-        return;
-      }
-    } else if (gameLetter === targetLetter) {
-      const prevGame = games[(i - 1 + games.length) % games.length] || games[i];
-      const nextGame = games[(i + 1) % games.length] || games[i];
-      updateGameDisplay(games[i], prevGame, nextGame, games, getGames());
-      return;
-    }
-  }
-  
-  showToast(`Aucun jeu commence par "${targetLetter}"`);
-}
-
 function showToast(message) {
   let toast = document.getElementById('aura-toast');
   if (!toast) {
