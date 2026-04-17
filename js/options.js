@@ -754,6 +754,88 @@ function bindEvents() {
     if (gpDetectEl) gpDetectEl.textContent = 'Manette non détectée';
   });
 
+  // Custom Profiles Management
+  const PROFILES_KEY = 'aura4k_gp_profiles';
+  let currentProfile = null;
+  
+  function getProfiles() {
+    try { return JSON.parse(localStorage.getItem(PROFILES_KEY)) || []; }
+    catch { return []; }
+  }
+  
+  function saveProfiles(profiles) {
+    localStorage.setItem(PROFILES_KEY, JSON.stringify(profiles));
+  }
+  
+  function renderProfiles() {
+    const list = document.getElementById('aura-gp-profile-list');
+    if (!list) return;
+    const profiles = getProfiles();
+    
+    if (profiles.length === 0) {
+      list.innerHTML = '<div class="aura-gp-no-profiles">Aucun profil enregistré</div>';
+      return;
+    }
+    
+    list.innerHTML = profiles.map((p, idx) => `
+      <div class="aura-gp-profile-item ${currentProfile === p.name ? 'active' : ''}" data-idx="${idx}">
+        <span class="aura-gp-profile-name">${p.name}</span>
+        <button class="aura-gp-profile-delete" data-delete="${idx}">×</button>
+      </div>
+    `).join('');
+    
+    list.querySelectorAll('.aura-gp-profile-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target.classList.contains('aura-gp-profile-delete')) return;
+        const idx = parseInt(item.dataset.idx);
+        loadProfile(profiles[idx]);
+      });
+    });
+    
+    list.querySelectorAll('.aura-gp-profile-delete').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const idx = parseInt(btn.dataset.delete);
+        profiles.splice(idx, 1);
+        saveProfiles(profiles);
+        if (currentProfile === profiles[idx]?.name) currentProfile = null;
+        renderProfiles();
+      });
+    });
+  }
+  
+  function loadProfile(profile) {
+    if (!profile) return;
+    currentProfile = profile.name;
+    Object.keys(profile.mapping).forEach(key => {
+      if (key.startsWith('gp_')) {
+        settings[key] = profile.mapping[key];
+        localStorage.setItem(LS_PREFIX + key, profile.mapping[key]);
+      }
+    });
+    buildGpActions();
+    _exportGpMapping();
+    renderProfiles();
+    showSavedIndicator();
+  }
+  
+  document.getElementById('aura-gp-profile-new')?.addEventListener('click', () => {
+    const name = prompt('Nom du profil:');
+    if (!name) return;
+    const profiles = getProfiles();
+    const mapping = {};
+    ['gp_left','gp_right','gp_up','gp_down','gp_play','gp_quit','gp_shots','gp_favorite','gp_options','gp_deadzone'].forEach(k => {
+      mapping[k] = settings[k] ?? DEFAULTS[k];
+    });
+    profiles.push({ name, mapping });
+    saveProfiles(profiles);
+    currentProfile = name;
+    renderProfiles();
+    showSavedIndicator();
+  });
+  
+  renderProfiles();
+
   buildGpActions();
   _exportGpMapping();
 
@@ -1412,6 +1494,75 @@ function injectCSS() {
       background: rgba(0,0,0,0.2);
       border-radius: 4px;
     }
+    
+    /* Custom Profiles */
+    .aura-gp-custom-profiles {
+      margin-top: 16px;
+      padding: 14px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+    }
+    .aura-gp-profile-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+      min-height: 40px;
+    }
+    .aura-gp-profile-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .aura-gp-profile-item:hover {
+      background: rgba(94,184,255,0.1);
+      border-color: rgba(94,184,255,0.3);
+    }
+    .aura-gp-profile-item.active {
+      background: rgba(94,184,255,0.2);
+      border-color: #5eb8ff;
+    }
+    .aura-gp-profile-name {
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+    }
+    .aura-gp-profile-delete {
+      padding: 4px 8px;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.3);
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .aura-gp-profile-delete:hover { color: #f87171; }
+    .aura-gp-profile-new {
+      padding: 10px 20px;
+      background: rgba(94,184,255,0.15);
+      border: 1px dashed rgba(94,184,255,0.4);
+      border-radius: 6px;
+      color: rgba(94,184,255,0.8);
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      width: 100%;
+    }
+    .aura-gp-profile-new:hover {
+      background: rgba(94,184,255,0.25);
+      border-style: solid;
+    }
+    .aura-gp-no-profiles {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+      padding: 10px;
+    }
   `;
   document.head.appendChild(style);
 }
@@ -1671,6 +1822,18 @@ function injectHTML() {
                 <div class="aura-gp-preset-btn" data-preset="Generic">Générique</div>
               </div>
               <div class="aura-gp-preset-detect" id="aura-gp-detected">Manette non détectée</div>
+            </div>
+
+            <!-- Custom Profiles -->
+            <div class="aura-gp-custom-profiles">
+              <div class="aura-sec-title">Profils personnalisés</div>
+              <div class="aura-sec-line"></div>
+              <div class="aura-gp-profile-list" id="aura-gp-profile-list">
+                <!-- Dynamique -->
+              </div>
+              <div class="aura-gp-profile-actions">
+                <button class="aura-gp-profile-new" id="aura-gp-profile-new">+ Nouveau profil</button>
+              </div>
             </div>
 
             <!-- Calibration -->
