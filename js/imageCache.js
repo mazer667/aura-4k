@@ -1,9 +1,10 @@
 // js/imageCache.js
 // Cache d'images intelligent avec lazy loading et placeholder
 
+import { CACHE } from './constants.js';
+
 const imageCache = new Map();
 const loadingSet = new Set();
-const MAX_CACHE_SIZE = 100;
 
 const PLACEHOLDER_SVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23111' width='400' height='300'/%3E%3Ctext x='200' y='155' font-family='sans-serif' font-size='14' fill='%23333' text-anchor='middle'%3ENo Image%3C/text%3E%3C/svg%3E";
 
@@ -76,12 +77,12 @@ export function isImageLoading(url) {
 }
 
 function cleanupCache() {
-  if (imageCache.size <= MAX_CACHE_SIZE) return;
+  if (imageCache.size <= CACHE.MAX_CACHE_SIZE) return;
   
   const entries = [...imageCache.entries()]
     .sort((a, b) => a[1].lastAccess - b[1].lastAccess);
   
-  const toRemove = entries.slice(0, imageCache.size - MAX_CACHE_SIZE);
+  const toRemove = entries.slice(0, imageCache.size - CACHE.MAX_CACHE_SIZE);
   toRemove.forEach(([url]) => imageCache.delete(url));
 }
 
@@ -134,7 +135,7 @@ export function getCacheStats() {
   return {
     cached: imageCache.size,
     loading: loadingSet.size,
-    maxSize: MAX_CACHE_SIZE
+    maxSize: CACHE.MAX_CACHE_SIZE
   };
 }
 

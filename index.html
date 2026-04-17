@@ -387,6 +387,11 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
   <div class="sk-spinner"></div>
 </div>
 
+<div id="loading-progress" class="hidden">
+  <div class="lp-bar"><div class="lp-fill"></div></div>
+  <div class="lp-text">Chargement...</div>
+</div>
+
 <style>
 #skeleton-loader {
   position: fixed;
@@ -465,6 +470,52 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
 }
 @keyframes spin {
   to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Loading Progress Bar */
+#loading-progress {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: rgba(10,15,25,0.95);
+  border: 1px solid rgba(94,184,255,0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: opacity 0.3s, transform 0.3s;
+}
+#loading-progress.hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  pointer-events: none;
+}
+.lp-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.lp-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #5eb8ff, #a78bfa);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.lp-text {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
 }
 
 /* Japanese text - thicker fonts */
@@ -768,6 +819,33 @@ async function init() {
   scaler.style.opacity = '0';
   await initAudio();
   await loadConfig();
+
+  // ── Loading progress events ──
+  const lpBar = document.querySelector('.lp-fill');
+  const lpText = document.querySelector('.lp-text');
+  const lpContainer = document.getElementById('loading-progress');
+  
+  window.addEventListener('aura-loading-start', (e) => {
+    if (lpContainer) lpContainer.classList.remove('hidden');
+    if (lpText) lpText.textContent = `Chargement ${e.detail.console}...`;
+    if (lpBar) lpBar.style.width = '10%';
+  });
+  
+  window.addEventListener('aura-loading-progress', (e) => {
+    if (lpBar) lpBar.style.width = `${e.detail.progress}%`;
+    if (lpText && e.detail.phase) {
+      const phaseText = { parsing: 'Analyse XML...', saving: 'Sauvegarde cache...' };
+      if (phaseText[e.detail.phase]) lpText.textContent = phaseText[e.detail.phase];
+    }
+  });
+  
+  window.addEventListener('aura-loading-complete', (e) => {
+    if (lpBar) lpBar.style.width = '100%';
+    if (lpText) lpText.textContent = `${e.detail.count} jeux ${e.detail.fromCache ? '(cache)' : ''}`;
+    setTimeout(() => {
+      if (lpContainer) lpContainer.classList.add('hidden');
+    }, 1500);
+  });
 
   // ── Récupérer la console choisie dans l'écran de sélection ──
   const selectedConsole = await window.electronAPI.getSelectedConsole();

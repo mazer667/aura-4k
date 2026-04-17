@@ -241,6 +241,9 @@ export async function loadGamesFromXML(consoleName = 'FBNeo - Arcade Games') {
 }
 
 export async function loadGamesAndPopulate(consoleName = 'FBNeo - Arcade Games', forceReload = false) {
+  // Emit loading start
+  window.dispatchEvent(new CustomEvent('aura-loading-start', { detail: { console: consoleName } }));
+  
   if (!cacheInitialized) {
     await initCache();
     cacheInitialized = true;
@@ -259,12 +262,20 @@ export async function loadGamesAndPopulate(consoleName = 'FBNeo - Arcade Games',
   
   if (cached?.games?.length > 0 && cacheIsFresh && !forceReload) {
     games = cached.games;
+    window.dispatchEvent(new CustomEvent('aura-loading-complete', { detail: { count: games.length, fromCache: true } }));
   } else {
+    // Emit progress for XML loading
+    window.dispatchEvent(new CustomEvent('aura-loading-progress', { detail: { phase: 'parsing', progress: 30 } }));
+    
     games = await loadGamesFromXML(consoleName);
+    
+    window.dispatchEvent(new CustomEvent('aura-loading-progress', { detail: { phase: 'saving', progress: 80 } }));
     
     if (games.length > 0) {
       await setCachedGames(consoleName, games, xmlTimestamp || Date.now());
     }
+    
+    window.dispatchEvent(new CustomEvent('aura-loading-complete', { detail: { count: games.length, fromCache: false } }));
   }
   
   G.length = 0;
