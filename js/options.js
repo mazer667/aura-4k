@@ -31,6 +31,39 @@ const DEFAULTS = {
   gp_deadzone: 45,  // 45%
 };
 
+// Controller presets for auto-detection
+const GP_PRESETS = {
+  'Xbox': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:2, gp_favorite:3, gp_options:6, gp_deadzone:15 },
+  'PlayStation': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:15 },
+  'Nintendo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:3, gp_favorite:2, gp_options:8, gp_deadzone:15 },
+  'PowerA': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:3, gp_shots:2, gp_favorite:0, gp_options:8, gp_deadzone:20 },
+  '8BitDo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:15 },
+  'Generic': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:20 },
+};
+
+function detectControllerPreset(gpId) {
+  const id = (gpId || '').toLowerCase();
+  if (id.includes('xbox')) return 'Xbox';
+  if (id.includes('playstation') || id.includes('ps4') || id.includes('ps5') || id.includes('dualshock')) return 'PlayStation';
+  if (id.includes('nintendo') || id.includes('switch') || id.includes('wii') || id.includes('gamecube')) return 'Nintendo';
+  if (id.includes('powera') || id.includes('power') || id.includes('nan')) return 'PowerA';
+  if (id.includes('8bitdo')) return '8BitDo';
+  return 'Generic';
+}
+
+function applyPreset(presetName) {
+  const preset = GP_PRESETS[presetName];
+  if (!preset) return;
+  
+  Object.keys(preset).forEach(key => {
+    if (key.startsWith('gp_')) {
+      saveSetting(key, preset[key]);
+    }
+  });
+  
+  // rebuild will happen in init
+}
+
 let isOpen        = false;
 let currentTab    = 0;
 let settings      = { ...DEFAULTS };
@@ -698,6 +731,27 @@ function bindEvents() {
     if (dzVal) dzVal.textContent = DEFAULTS.gp_deadzone + '%';
     _exportGpMapping();
     showSavedIndicator();
+    document.querySelectorAll('.aura-gp-preset-btn').forEach(b => b.classList.remove('active'));
+  });
+
+  // Preset buttons
+  document.querySelectorAll('.aura-gp-preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const preset = btn.dataset.preset;
+      applyPreset(preset);
+      document.querySelectorAll('.aura-gp-preset-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Update detected preset display
+  const gpDetectEl = document.getElementById('aura-gp-detected');
+  window.addEventListener('gamepadconnected', (e) => {
+    const preset = detectControllerPreset(e.gamepad.id);
+    if (gpDetectEl) gpDetectEl.textContent = `Détecté: ${e.gamepad.id.substring(0,30)}... (${preset})`;
+  });
+  window.addEventListener('gamepaddisconnected', () => {
+    if (gpDetectEl) gpDetectEl.textContent = 'Manette non détectée';
   });
 
   buildGpActions();
@@ -1315,6 +1369,49 @@ function injectCSS() {
       font-family: monospace;
       color: rgba(94,184,255,0.6);
     }
+    
+    /* Presets */
+    .aura-gp-presets {
+      margin-top: 20px;
+      padding: 16px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+    .aura-gp-preset-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .aura-gp-preset-btn {
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .aura-gp-preset-btn:hover {
+      background: rgba(94,184,255,0.2);
+      border-color: #5eb8ff;
+    }
+    .aura-gp-preset-btn.active {
+      background: rgba(94,184,255,0.3);
+      border-color: #5eb8ff;
+      color: #fff;
+    }
+    .aura-gp-preset-detect {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 8px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+    }
   `;
   document.head.appendChild(style);
 }
@@ -1559,6 +1656,21 @@ function injectHTML() {
             </div>
             <div style="text-align:right">
               <div class="aura-gp-reset-btn" id="aura-gp-reset" data-i18n="gp.reset">Réinitialiser le mapping</div>
+            </div>
+
+            <!-- Presets -->
+            <div class="aura-gp-presets">
+              <div class="aura-sec-title">Profil automatique</div>
+              <div class="aura-sec-line"></div>
+              <div class="aura-gp-preset-btns">
+                <div class="aura-gp-preset-btn" data-preset="Xbox">Xbox</div>
+                <div class="aura-gp-preset-btn" data-preset="PlayStation">PS4/PS5</div>
+                <div class="aura-gp-preset-btn" data-preset="Nintendo">Nintendo</div>
+                <div class="aura-gp-preset-btn" data-preset="PowerA">PowerA</div>
+                <div class="aura-gp-preset-btn" data-preset="8BitDo">8BitDo</div>
+                <div class="aura-gp-preset-btn" data-preset="Generic">Générique</div>
+              </div>
+              <div class="aura-gp-preset-detect" id="aura-gp-detected">Manette non détectée</div>
             </div>
 
             <!-- Calibration -->
