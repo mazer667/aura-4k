@@ -13,13 +13,17 @@
 1. [Presentation](#presentation)
 2. [Installation](#installation)
 3. [Structure du projet](#structure-du-projet)
-4. [Configuration](#configuration)
-5. [Utilisation](#utilisation)
-6. [Modules JavaScript](#modules-javascript)
-7. [Options et parametres](#options-et-parametres)
-8. [API IPC](#api-ipc)
-9. [Cache et performances](#cache-et-performances)
-10. [Technologies employees](#technologies-employees)
+4. [Architecture](#architecture)
+5. [Configuration](#configuration)
+6. [Utilisation](#utilisation)
+7. [Modules JavaScript](#modules-javascript)
+8. [Options et parametres](#options-et-parametres)
+9. [API IPC](#api-ipc)
+10. [Cache et performances](#cache-et-performances)
+11. [Technologies employees](#technologies-employees)
+12. [Changelog](#changelog)
+13. [Contribution](#contribution)
+14. [Licence](#licence)
 
 ---
 
@@ -624,9 +628,48 @@ npm run test:coverage
 
 ---
 
-## License
+## Changelog
 
-Projet personnel - Usage libre
+### 2.5.0 (Avril 2026)
+- 🎮 Gamepad persistant (deadzone + mapping sauvegardés)
+- 📊 Barre de progression au chargement
+- 🔔 Toasts améliorés (icônes, couleurs par type)
+- ♻️ Cache LRU optimisé avec constantes
+- ✅ Validation IPC renforcée (chemins + throttling)
+- 🐛 Fix: bouton B retourne au menu console
+- 🐛 Fix: navigation gamepad dans console-select
+- 📝 Documentation complète
+
+### 2.4.x (Versions précédentes)
+- Support 70+ consoles
+- Musique par jeu
+- Favoris
+- Internationalisation (6 langues)
+- Generation XML automatique
+- Cache IndexedDB
+- Images WebP
+
+---
+
+## Contribution
+
+1. Fork le projet
+2. Creer une branche (`git checkout -b feature/ma-feature`)
+3. Commiter vos changements (`git commit -m 'Ajout feature'`)
+4. Pusher (`git push origin feature/ma-feature`)
+5. Creer une Pull Request
+
+### Standards de code
+
+- ESLint: `npm run lint`
+- Tests: `npm test` (min 32 tests)
+- Format: Prettier
+
+---
+
+## Licence
+
+MIT License
 
 ---
 
@@ -635,3 +678,70 @@ Projet personnel - Usage libre
 - Developpement: AURA
 - Version: 2.5.0
 - Derniere mise a jour: Avril 2026
+
+---
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        MAIN PROCESS (main.js)                   │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │   Config    │  │   IPC       │  │   Game      │             │
+│  │   Loader    │  │   Handlers  │  │   Launcher  │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
+└─────────────────────────────────────────────────────────────────┘
+                              │ IPC (contextBridge)
+┌─────────────────────────────────────────────────────────────────┐
+│                      RENDERER PROCESS                           │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │                      UI Layer                            │   │
+│  │  index.html  │  console-select.html  │  options.html    │   │
+│  └──────────────────────────────────────────────────────────┘   │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │                   JavaScript Modules                     │   │
+│  │                                                           │   │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐   │   │
+│  │  │  state   │  │  games   │  │   i18n   │  │options  │   │   │
+│  │  │   .js    │  │   .js    │  │   .js    │  │  .js    │   │   │
+│  │  └──────────┘  └──────────┘  └──────────┘  └─────────┘   │   │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐   │   │
+│  │  │  ui      │  │navigation│  │ gamepad  │  │ audio   │   │   │
+│  │  │   .js    │  │   .js    │  │   .js    │  │  .js    │   │   │
+│  │  └──────────┘  └──────────┘  └──────────┘  └─────────┘   │   │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐                │   │
+│  │  │  music   │  │ image    │  │  aura    │                │   │
+│  │  │   .js    │  │ Cache.js │  │   .js    │                │   │
+│  │  └──────────┘  └──────────┘  └──────────┘                │   │
+│  └──────────────────────────────────────────────────────────┘   │
+│                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │                      Data Layer                           │   │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌─────────────┐    │   │
+│  │  │ IndexedDB    │  │ localStorage │  │ File System │    │   │
+│  │  │ (gameCache)  │  │ (options)    │  │ (XML/ROMs)  │    │   │
+│  │  └──────────────┘  └──────────────┘  └─────────────┘    │   │
+│  └──────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Flux de données
+
+1. **Chargement jeux:**
+   ```
+   console-select.html → main.js (IPC) → consoles.json
+   → index.html → games.js → XML parser → IndexedDB (cache)
+   ```
+
+2. **Lancement jeu:**
+   ```
+   gamepad.js / keyboard → navigation.js → main.js (IPC)
+   → RetroArch (spawn child process)
+   ```
+
+3. **Options:**
+   ```
+   options.js ↔ localStorage (persisté)
+         ↓
+   gamepad.js / audio.js / ui.js (appliqué en temps réel)
+   ```
