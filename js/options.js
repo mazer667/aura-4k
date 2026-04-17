@@ -70,14 +70,17 @@ let settings      = { ...DEFAULTS };
 let animFrameId   = null;
 let frameInterval = 1000 / 60;
 
-const TABS = ['audio', 'display', 'interface', 'gamepad', 'language', 'data', 'about'];
+const TABS = ['audio', 'display', 'interface', 'gamepad', 'calibration', 'language', 'data', 'about'];
 
 // ─────────────────────────────────────────────────────────────
 //  API PUBLIQUE — importée par navigation.js, ui.js, index.html
 // ─────────────────────────────────────────────────────────────
 export function isOptionsOpen()    { return isOpen; }
 export function isInGamepadTab() {
-  return isOpen && document.getElementById('aura-tab-gamepad')?.classList.contains('active');
+  return isOpen && (
+    document.getElementById('aura-tab-gamepad')?.classList.contains('active') ||
+    document.getElementById('aura-tab-calibration')?.classList.contains('active')
+  );
 }
 export function openOptions()      { setOpenState(true); }
 export function closeOptions()     { setOpenState(false); }
@@ -1654,6 +1657,7 @@ function injectHTML() {
         <div class="aura-opt-nav-item" data-tab="display"><span class="aura-nav-ico">🖥</span> <span data-i18n="tab.display">Affichage</span></div>
         <div class="aura-opt-nav-item" data-tab="interface"><span class="aura-nav-ico">🎮</span> <span data-i18n="tab.interface">Interface</span></div>
         <div class="aura-opt-nav-item" data-tab="gamepad"><span class="aura-nav-ico">🕹</span> <span data-i18n="tab.gamepad">Manette</span></div>
+        <div class="aura-opt-nav-item" data-tab="calibration"><span class="aura-nav-ico">🎯</span> <span>Test</span></div>
         <div class="aura-opt-nav-item" data-tab="language"><span class="aura-nav-ico">🌐</span> <span data-i18n="tab.language">Langue</span></div>
         <div class="aura-opt-nav-item" data-tab="data"><span class="aura-nav-ico">💾</span> <span data-i18n="tab.data">Données</span></div>
         <div class="aura-opt-nav-item" data-tab="about"><span class="aura-nav-ico">ℹ</span> <span data-i18n="tab.about">À propos</span></div>
@@ -2052,6 +2056,53 @@ function injectHTML() {
           </div>
 
           <div id="aura-data-result" style="margin-top:12px;display:none"></div>
+        </div>
+
+        <!-- CALIBRATION -->
+        <div class="aura-opt-tab" id="aura-tab-calibration">
+          <div class="aura-sec-title">Test Manette - Calibration</div>
+          <div class="aura-sec-line"></div>
+          <div style="text-align:center;margin-bottom:16px;color:rgba(255,255,255,0.5);font-size:12px;">
+            Appuyez sur les boutons pour voir leur réponse
+          </div>
+          
+          <div class="aura-gp-calibration" style="margin-top:0">
+            <div class="aura-gp-cal-status" id="aura-gp-cal-status">
+              Branchez votre manette
+            </div>
+            <div class="aura-gp-cal-grid">
+              <div class="aura-gp-cal-btn" data-idx="0">A</div>
+              <div class="aura-gp-cal-btn" data-idx="1">B</div>
+              <div class="aura-gp-cal-btn" data-idx="2">X</div>
+              <div class="aura-gp-cal-btn" data-idx="3">Y</div>
+              <div class="aura-gp-cal-btn" data-idx="4">LB</div>
+              <div class="aura-gp-cal-btn" data-idx="5">RB</div>
+              <div class="aura-gp-cal-btn" data-idx="6">LT</div>
+              <div class="aura-gp-cal-btn" data-idx="7">RT</div>
+              <div class="aura-gp-cal-btn" data-idx="8">SEL</div>
+              <div class="aura-gp-cal-btn" data-idx="9">START</div>
+              <div class="aura-gp-cal-btn" data-idx="10">L3</div>
+              <div class="aura-gp-cal-btn" data-idx="11">R3</div>
+              <div class="aura-gp-cal-btn" data-idx="12">↑</div>
+              <div class="aura-gp-cal-btn" data-idx="13">↓</div>
+              <div class="aura-gp-cal-btn" data-idx="14">←</div>
+              <div class="aura-gp-cal-btn" data-idx="15">→</div>
+            </div>
+            <div class="aura-gp-cal-axes">
+              <div class="aura-gp-cal-axis">
+                <span>Stick G:</span>
+                <span id="aura-gp-cal-axis0">X:0 Y:0</span>
+              </div>
+              <div class="aura-gp-cal-axis">
+                <span>Stick D:</span>
+                <span id="aura-gp-cal-axis1">X:0 Y:0</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="aura-gp-preset-detect" id="aura-gp-detected" style="margin-top:16px">
+            Manette non détectée
+          </div>
         </div>
 
         <!-- À PROPOS -->
