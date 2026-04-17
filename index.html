@@ -580,7 +580,7 @@ window.onunhandledrejection = (e) => {
 
 // Imports
 import { loadConfig, loadGamesAndPopulate, getMusicId } from './js/games.js';
-import { initDisplay, setIdleUI, shotsAppear, shotsDisappear, btnsHide, btnsShow, setFilterFav, setFilterLetter } from './js/ui.js';
+import { initDisplay, setIdleUI, shotsAppear, shotsDisappear, btnsHide, btnsShow, setFilterFav, setFilterLetter, AL } from './js/ui.js';
 import { navigate, launchCurrentGame, navigateToLetter, navigateToGame } from './js/navigation.js';
 import { getIdle, setIdle, getGames, getCurrentIndex, getCurrentGame, toggleFavorite, isFavorite, getFavorites } from './js/state.js';
 import { initAudio, playSound, playSoundAndWait, muteAllAudio } from './js/audio.js';
@@ -705,6 +705,30 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     window.toggleShotsFromUI();
   }
+  
+  // Navigation par lettres
+  if (e.key === 'PageUp') {
+    e.preventDefault();
+    const currentIdx = getCurrentIndex();
+    const games = getGames();
+    if (games.length === 0) return;
+    const currentLetter = games[currentIdx]?.title?.charAt(0).toUpperCase() || 'A';
+    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
+    const nextIdx = (idx + 1 + AL.length) % AL.length;
+    setFilterLetter(AL[nextIdx]);
+    navigate(0);
+  }
+  if (e.key === 'PageDown') {
+    e.preventDefault();
+    const currentIdx = getCurrentIndex();
+    const games = getGames();
+    if (games.length === 0) return;
+    const currentLetter = games[currentIdx]?.title?.charAt(0).toUpperCase() || 'A';
+    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
+    const nextIdx = (idx - 1 + AL.length) % AL.length;
+    setFilterLetter(AL[nextIdx]);
+    navigate(0);
+  }
 });
 
 function tick() {
@@ -767,7 +791,7 @@ async function init() {
     document.dispatchEvent(event);
   });
   setGoToLetter(function(dir) {
-    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowDown' : 'ArrowUp', bubbles: true });
+    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'PageUp' : 'PageDown', bubbles: true });
     document.dispatchEvent(event);
   });
   setLaunchGame(function() {

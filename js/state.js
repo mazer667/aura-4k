@@ -1,10 +1,10 @@
 // js/state.js - Encapsulated state with module pattern
 
 // ─── PRIVATE STATE ────────────────────────────────────────────
-let _G = [];
+const _G = [];
 let _ci = 0;
 let _idle = false;
-let _bgActive = { bgL:'a', bgC:'a', bgR:'a' };
+const _bgActive = { bgL:'a', bgC:'a', bgR:'a' };
 let _listeners = [];
 
 // ─── STATE API ───────────────────────────────────────────────
@@ -49,7 +49,10 @@ const FAV_KEY = 'aura4k_favorites';
 export function getFavorites() {
   try {
     return JSON.parse(localStorage.getItem(FAV_KEY) || '[]');
-  } catch { return []; }
+  } catch (err) {
+    console.warn('[STATE] Favorites parse error:', err.message);
+    return [];
+  }
 }
 
 export function toggleFavorite(rom) {
@@ -74,7 +77,10 @@ const LAST_KEY = 'aura4k_last_played';
 export function getLastPlayed() {
   try {
     return JSON.parse(localStorage.getItem(LAST_KEY) || null);
-  } catch { return null; }
+  } catch (err) {
+    console.warn('[STATE] Last played parse error:', err.message);
+    return null;
+  }
 }
 
 export function setLastPlayed(consoleName, rom) {

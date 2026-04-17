@@ -10,6 +10,33 @@ let CONFIG = null;
 let CONSOLES = null;
 
 // ─────────────────────────────────────────────────────────────
+//  VALIDATION - Chemins et entrées IPC
+// ─────────────────────────────────────────────────────────────
+function isValidPath(filePath) {
+  if (typeof filePath !== 'string') return false;
+  if (filePath.length > 4096) return false;
+  const dangerous = ['..', '\\\\', '//', 'C:\\Windows', 'C:\\Program'];
+  return !dangerous.some(d => filePath.includes(d));
+}
+
+function sanitizePath(filePath) {
+  if (typeof filePath !== 'string') return '';
+  return filePath.replace(/[<>:"|?*]/g, '').replace(/\\/g, '/');
+}
+
+// Throttling pour IPC
+const ipcThrottle = new Map();
+const THROTTLE_MS = 100;
+
+function checkThrottle(channel) {
+  const now = Date.now();
+  const last = ipcThrottle.get(channel) || 0;
+  if (now - last < THROTTLE_MS) return false;
+  ipcThrottle.set(channel, now);
+  return true;
+}
+
+// ─────────────────────────────────────────────────────────────
 //  FILE LOGGING
 // ─────────────────────────────────────────────────────────────
 const _console = { log: console.log, error: console.error, warn: console.warn };
@@ -20,7 +47,9 @@ function log(type, msg) {
   const logMsg = `[${timestamp}] [${type}] ${msg}`;
   try {
     if (LOG_FILE) fs.appendFileSync(LOG_FILE, logMsg + '\n');
-  } catch {}
+  } catch (err) {
+    _console.warn('[LOG FILE ERROR]', err.message);
+  }
   if (type === 'ERROR') _console.error(logMsg);
   else _console.log(logMsg);
 }
@@ -164,6 +193,13 @@ ipcMain.handle('load-console-select', () => {
 });
 
 ipcMain.handle('select-console', (event, consoleName) => {
+  // Validation IPC
+  if (!isValidPath(consoleName)) {
+    console.error('[Console] Invalid consoleName:', consoleName);
+    return;
+  }
+  if (!checkThrottle('select-console')) return;
+  
   const config = getConsoleConfig(consoleName);
   if (!config) {
     console.error('[Console] Config introuvable:', consoleName);
@@ -175,6 +211,20 @@ ipcMain.handle('select-console', (event, consoleName) => {
 
 ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) => {
   if (isGameRunning) return;
+  
+  // Validation IPC
+  if (!isValidPath(romPath)) {
+    console.error('[Launch] Invalid romPath:', romPath);
+    return;
+  }
+  if (consoleName && !isValidPath(consoleName)) {
+    console.error('[Launch] Invalid consoleName:', consoleName);
+    return;
+  }
+  if (!checkThrottle('launch-game')) {
+    console.warn('[Launch] Throttled');
+    return;
+  }
   
   try {
     const consoleConfig = consoleName ? getConsoleConfig(consoleName) : getConsoleConfig(selectedConsole);
@@ -289,6 +339,14 @@ ipcMain.handle('select-folder', async () => {
 });
 
 ipcMain.handle('count-roms', (event, folderPath) => {
+  // Validation IPC
+  if (!isValidPath(folderPath)) {
+    return { count: 0, error: 'Invalid path' };
+  }
+  if (!checkThrottle('count-roms')) {
+    return { count: 0, error: 'Throttled' };
+  }
+  
   try {
     if (!fs.existsSync(folderPath)) return { count: 0, error: 'Dossier introuvable' };
     
@@ -477,6 +535,17 @@ async function fetchFromScreenScraper(gameName, systemId) {
 }
 
 ipcMain.handle('create-xml', async (event, consoleName, romsFolder) => {
+  // Validation IPC
+  if (!isValidPath(consoleName)) {
+    return { success: false, error: 'Invalid console name' };
+  }
+  if (!isValidPath(romsFolder)) {
+    return { success: false, error: 'Invalid folder path' };
+  }
+  if (!checkThrottle('create-xml')) {
+    return { success: false, error: 'Throttled' };
+  }
+  
   try {
     console.log('[Data] Creating XML for:', consoleName);
     console.log('[Data] Source folder:', romsFolder);

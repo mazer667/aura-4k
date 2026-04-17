@@ -1,20 +1,21 @@
 // js/gamepad.js
-import { idle, toggleFavorite, isFavorite } from './state.js';
-import { btnsHide, setIdleUI, shotsAppear, shotsDisappear, btnsShow } from './ui.js';
+import { idle, toggleFavorite, isFavorite, getGames, getCurrentIndex } from './state.js';
+import { btnsHide, setIdleUI, shotsAppear, shotsDisappear, btnsShow, setFilterLetter, AL, getFilteredGames as getFiltGames } from './ui.js';
+import { navigate as navGame } from './navigation.js';
 import { isOptionsOpen, toggleOptions } from './options.js';
 import { AURA, setGameRunning as setAuraGameRunning } from './aura.js';
+import { GAMEPAD, TIMING } from './constants.js';
 
-const INITIAL_DELAY   = 380;
-const REPEAT_INTERVAL = 140;
+const { INITIAL_DELAY, REPEAT_INTERVAL, DEBOUNCE_INTERVAL, DEFAULT_DEADZONE } = GAMEPAD;
 
 const prev    = {};
 const holding = {};
-let paused    = false;
+const paused    = false;
 let btn8Prev  = false;
 let isGameRunning = false;
 
 let lastNavigateTime = 0;
-const NAVIGATE_DEBOUNCE = 120;
+const NAVIGATE_DEBOUNCE = DEBOUNCE_INTERVAL;
 
 export function setGameRunning(running) {
   isGameRunning = running;
@@ -25,7 +26,7 @@ export function setGameRunning(running) {
 }
 
 function getDeadzone() {
-  return AURA.gpDeadzone ?? 0.45;
+  return AURA.gpDeadzone ?? DEFAULT_DEADZONE;
 }
 
 function getBtn(key) {
@@ -108,6 +109,8 @@ function navigate(dir) {
   
   if (AURA.navigate) {
     AURA.navigate(dir);
+  } else {
+    navGame(dir);
   }
 }
 
@@ -118,6 +121,17 @@ function navigateToLetter(dir) {
   
   if (AURA.goToLetter) {
     AURA.goToLetter(dir);
+  } else {
+    const currentLetter = getGames()[getCurrentIndex()]?.title?.charAt(0).toUpperCase() || 'A';
+    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
+    const nextIdx = (idx + dir + AL.length) % AL.length;
+    const newLetter = AL[nextIdx];
+    setFilterLetter(newLetter);
+    
+    const filtered = getFiltGames();
+    if (filtered.length > 0) {
+      navGame(0);
+    }
   }
 }
 

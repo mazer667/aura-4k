@@ -230,7 +230,8 @@ export async function loadGamesFromXML(consoleName = 'FBNeo - Arcade Games') {
         
         worker.postMessage({ xmlContent: xmlText, consoleKey: consoleName });
       });
-    } catch {
+    } catch (err) {
+      console.warn('[Games] Worker failed, fallback to main thread:', err.message);
       return parseXmlText(xmlText, consoleName);
     }
   } catch (error) {

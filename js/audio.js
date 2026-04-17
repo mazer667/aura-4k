@@ -1,7 +1,7 @@
 // js/audio.js - Lazy loading des sons
 import { AURA } from './aura.js';
 
-let sounds = {};
+const sounds = {};
 let isMuted = false;
 const soundFiles = {
   highlight: 'sounds/highlight.wav',
