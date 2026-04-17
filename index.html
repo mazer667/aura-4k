@@ -799,9 +799,7 @@ async function init() {
     document.dispatchEvent(event);
   });
   setExitWithFade(function() {
-    playSound('unload');
-    stopMusic();
-    window.electronAPI.quitApp();
+    window.exitWithFade();
   });
 
   initGamepad();
