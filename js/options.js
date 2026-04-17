@@ -1259,6 +1259,62 @@ function injectCSS() {
       transition: all 0.18s; display: inline-block;
     }
     .aura-gp-reset-btn:hover { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.6); }
+    
+    /* Calibration */
+    .aura-gp-calibration {
+      margin-top: 20px;
+      padding: 16px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+    .aura-gp-cal-status {
+      font-family: 'Barlow', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .aura-gp-cal-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .aura-gp-cal-btn {
+      padding: 8px 4px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      text-align: center;
+      font-size: 10px;
+      color: rgba(255,255,255,0.3);
+      transition: all 0.1s;
+    }
+    .aura-gp-cal-btn.active {
+      background: rgba(94,184,255,0.3);
+      border-color: #5eb8ff;
+      color: #fff;
+    }
+    .aura-gp-cal-axes {
+      display: flex;
+      gap: 16px;
+    }
+    .aura-gp-cal-axis {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 4px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+    }
+    .aura-gp-cal-axis span:last-child {
+      font-family: monospace;
+      color: rgba(94,184,255,0.6);
+    }
   `;
   document.head.appendChild(style);
 }
@@ -1503,6 +1559,44 @@ function injectHTML() {
             </div>
             <div style="text-align:right">
               <div class="aura-gp-reset-btn" id="aura-gp-reset" data-i18n="gp.reset">Réinitialiser le mapping</div>
+            </div>
+
+            <!-- Calibration -->
+            <div class="aura-gp-calibration">
+              <div class="aura-sec-title">Calibration - Test Manette</div>
+              <div class="aura-sec-line"></div>
+              <div class="aura-gp-cal-status" id="aura-gp-cal-status">
+                Branchez votre manette et appuyez sur les boutons
+              </div>
+              <div class="aura-gp-cal-grid" id="aura-gp-cal-grid">
+                <!-- 16 boutons possibles -->
+                <div class="aura-gp-cal-btn" data-idx="0">A</div>
+                <div class="aura-gp-cal-btn" data-idx="1">B</div>
+                <div class="aura-gp-cal-btn" data-idx="2">X</div>
+                <div class="aura-gp-cal-btn" data-idx="3">Y</div>
+                <div class="aura-gp-cal-btn" data-idx="4">LB</div>
+                <div class="aura-gp-cal-btn" data-idx="5">RB</div>
+                <div class="aura-gp-cal-btn" data-idx="6">LT</div>
+                <div class="aura-gp-cal-btn" data-idx="7">RT</div>
+                <div class="aura-gp-cal-btn" data-idx="8">SEL</div>
+                <div class="aura-gp-cal-btn" data-idx="9">START</div>
+                <div class="aura-gp-cal-btn" data-idx="10">L3</div>
+                <div class="aura-gp-cal-btn" data-idx="11">R3</div>
+                <div class="aura-gp-cal-btn" data-idx="12">↑</div>
+                <div class="aura-gp-cal-btn" data-idx="13">↓</div>
+                <div class="aura-gp-cal-btn" data-idx="14">←</div>
+                <div class="aura-gp-cal-btn" data-idx="15">→</div>
+              </div>
+              <div class="aura-gp-cal-axes">
+                <div class="aura-gp-cal-axis">
+                  <span>Stick G:</span>
+                  <span id="aura-gp-cal-axis0">X: 0.00 Y: 0.00</span>
+                </div>
+                <div class="aura-gp-cal-axis">
+                  <span>Stick D:</span>
+                  <span id="aura-gp-cal-axis1">X: 0.00 Y: 0.00</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
