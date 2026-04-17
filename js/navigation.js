@@ -53,7 +53,15 @@ export function navigateToLetter(dir) {
   navigate(dir);
 }
 
-function showToast(message) {
+function showToast(message, type = 'info') {
+  const colors = {
+    info:    { bg: 'rgba(20,30,50,0.92)', border: 'rgba(94,184,255,0.5)', icon: 'ℹ️' },
+    success: { bg: 'rgba(20,50,30,0.92)', border: 'rgba(74,222,128,0.5)', icon: '✓' },
+    error:   { bg: 'rgba(50,20,20,0.92)', border: 'rgba(248,113,113,0.5)', icon: '✕' },
+    warning: { bg: 'rgba(50,40,20,0.92)', border: 'rgba(251,191,36,0.5)', icon: '⚠' },
+  };
+  const style = colors[type] || colors.info;
+  
   let toast = document.getElementById('aura-toast');
   if (!toast) {
     toast = document.createElement('div');
@@ -63,21 +71,30 @@ function showToast(message) {
       bottom: '180px',
       left: '50%',
       transform: 'translateX(-50%)',
-      backgroundColor: 'rgba(0,0,0,0.8)',
+      backgroundColor: style.bg,
       color: 'white',
-      padding: '12px 24px',
-      borderRadius: '8px',
+      padding: '14px 28px',
+      borderRadius: '10px',
       fontFamily: 'Barlow, sans-serif',
       fontSize: '16px',
       fontWeight: '600',
-      border: '1px solid rgba(248,113,113,0.4)',
+      border: `1px solid ${style.border}`,
       zIndex: '1000',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '12px',
+      boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
     });
     document.body.appendChild(toast);
   }
-  toast.textContent = message;
+  
+  toast.style.backgroundColor = style.bg;
+  toast.style.borderColor = style.border;
+  toast.innerHTML = `<span>${style.icon}</span><span>${message}</span>`;
   toast.style.opacity = '1';
-  setTimeout(() => { toast.style.opacity = '0'; }, 2500);
+  
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => { toast.style.opacity = '0'; }, 3000);
 }
 
 export function navigateToGame(index) {
@@ -96,13 +113,13 @@ export function launchCurrentGame() {
   try {
     const game = getCurrentGame();
     if (!game) {
-      showToast('Aucun jeu selectionne');
+      showToast('Aucun jeu sélectionné', 'warning');
       return;
     }
 
     const romBasePath = getRomPath(game);
     if (!romBasePath) {
-      showToast('Chemin ROM introuvable');
+      showToast('Chemin ROM introuvable', 'error');
       return;
     }
 
@@ -114,6 +131,6 @@ export function launchCurrentGame() {
     window.electronAPI.launchGame(romBasePath, game.console, extensions);
   } catch (err) {
     console.error('[Launch] Erreur:', err);
-    showToast('Erreur au lancement');
+    showToast('Erreur au lancement', 'error');
   }
 }
