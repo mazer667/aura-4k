@@ -2,7 +2,7 @@
 import { idle, toggleFavorite, isFavorite, getGames, getCurrentIndex } from './state.js';
 import { btnsHide, setIdleUI, shotsAppear, shotsDisappear, btnsShow, setFilterLetter, AL, getFilteredGames as getFiltGames } from './ui.js';
 import { navigate as navGame } from './navigation.js';
-import { isOptionsOpen, toggleOptions } from './options.js';
+import { isOptionsOpen, isInGamepadTab, toggleOptions } from './options.js';
 import { AURA, setGameRunning as setAuraGameRunning } from './aura.js';
 import { GAMEPAD, TIMING } from './constants.js';
 
@@ -174,6 +174,12 @@ function poll() {
   }
   btn8Prev = selectPressed;
 
+  if (isInGamepadTab()) {
+    // Calibration mode - only show button presses, no navigation
+    requestAnimationFrame(poll);
+    return;
+  }
+  
   if (isOptionsOpen()) {
     const ly = gp.axes[1] ?? 0;
     

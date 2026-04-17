@@ -76,6 +76,9 @@ const TABS = ['audio', 'display', 'interface', 'gamepad', 'language', 'data', 'a
 //  API PUBLIQUE — importée par navigation.js, ui.js, index.html
 // ─────────────────────────────────────────────────────────────
 export function isOptionsOpen()    { return isOpen; }
+export function isInGamepadTab() {
+  return isOpen && document.getElementById('aura-tab-gamepad')?.classList.contains('active');
+}
 export function openOptions()      { setOpenState(true); }
 export function closeOptions()     { setOpenState(false); }
 export function toggleOptions()    { setOpenState(!isOpen); }
