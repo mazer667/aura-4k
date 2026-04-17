@@ -836,6 +836,68 @@ function bindEvents() {
   
   renderProfiles();
 
+  // Calibration - Real-time button display
+  (function initCalibration() {
+    const calBtns = document.querySelectorAll('.aura-gp-cal-btn');
+    const calAxis0 = document.getElementById('aura-gp-cal-axis0');
+    const calAxis1 = document.getElementById('aura-gp-cal-axis1');
+    const calStatus = document.getElementById('aura-gp-cal-status');
+    let pollId = null;
+
+    function poll() {
+      const gps = navigator.getGamepads ? navigator.getGamepads() : [];
+      const gp = [...gps].find(g => g?.connected);
+      
+      if (gp) {
+        if (calStatus) calStatus.textContent = 'Manette connectée - Testez les boutons';
+        
+        // Update buttons - check pressed state
+        gp.buttons.forEach((btn, idx) => {
+          const el = calBtns[idx];
+          if (el) {
+            const isPressed = btn.pressed || btn.value > 0.5;
+            el.classList.toggle('active', isPressed);
+          }
+        });
+        
+        // Update axes
+        if (calAxis0) calAxis0.textContent = 'X:' + (gp.axes[0]?.toFixed(1)||0) + ' Y:' + (gp.axes[1]?.toFixed(1)||0);
+        if (calAxis1) calAxis1.textContent = 'X:' + (gp.axes[2]?.toFixed(1)||0) + ' Y:' + (gp.axes[3]?.toFixed(1)||0);
+      } else {
+        if (calStatus) calStatus.textContent = 'Branchez votre manette';
+      }
+      
+      pollId = requestAnimationFrame(poll);
+    }
+
+    // Start when gamepad tab is active
+    const gpTab = document.getElementById('aura-tab-gamepad');
+    if (gpTab?.classList.contains('active')) {
+      pollId = requestAnimationFrame(poll);
+    }
+
+    // Observe tab changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((m) => {
+        if (m.attributeName === 'class') {
+          const target = m.target;
+          if (target.id === 'aura-tab-gamepad') {
+            if (target.classList.contains('active') && !pollId) {
+              pollId = requestAnimationFrame(poll);
+            } else if (!target.classList.contains('active') && pollId) {
+              cancelAnimationFrame(pollId);
+              pollId = null;
+            }
+          }
+        }
+      });
+    });
+
+    document.querySelectorAll('.aura-opt-tab').forEach(tab => {
+      observer.observe(tab, { attributes: true });
+    });
+  })();
+
   buildGpActions();
   _exportGpMapping();
 
