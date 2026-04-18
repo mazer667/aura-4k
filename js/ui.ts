@@ -97,10 +97,8 @@ export function updateUI(g: Game | null, gL: Game | null, gR: Game | null) {
       const gameLetter = g.title.charAt(0).toUpperCase();
       displayLetter = /[0-9]/.test(gameLetter) ? '#' : gameLetter;
     }
-    const favs = getFavorites();
-    const favCount = favs.length;
     
-    let html = `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">FAV${favCount > 0 ? ' ' + favCount : ''}&nbsp;</span>`;
+    let html = `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">FAV&nbsp;</span>`;
     
     for (let i = 0; i < AL.length; i++) {
       const l = AL[i];
@@ -158,7 +156,7 @@ function updateAlpha() {
   const alphaEl = document.getElementById('alpha');
   if (alphaEl) {
     alphaEl.innerHTML =
-      `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">FAV${favCount > 0 ? ' ' + favCount : ''}&nbsp;</span>` +
+      `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">FAV&nbsp;</span>` +
       AL.map(l => {
         const isActive = (filterLetter === l) || (displayLetter && l === displayLetter && !filterFav);
         return `<span class="ac${isActive ? ' on' : ''}" data-letter="${l}" style="cursor:pointer;">${l}&nbsp;&nbsp;</span>`;
