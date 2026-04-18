@@ -9,6 +9,7 @@ const MAX_DISPLAYED_GAMES = 500;
 function setFilterLetter(letter) {
   filterLetter = letter;
   filterFav = false;
+  updateAlpha();
 }
 function setFilterFav(on) {
   if (typeof on === "boolean") {

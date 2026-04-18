@@ -1,5 +1,5 @@
-import { idle, toggleFavorite, getGames, getCurrentIndex } from "./state.js";
-import { btnsHide, setIdleUI, shotsAppear, shotsDisappear, btnsShow, setFilterLetter, AL, getFilteredGames as getFiltGames } from "./ui.js";
+import { idle, toggleFavorite } from "./state.js";
+import { btnsHide, setIdleUI, shotsAppear, shotsDisappear, btnsShow } from "./ui.js";
 import { navigate as navGame } from "./navigation.js";
 import { isOptionsOpen, isInGamepadTab, toggleOptions } from "./options.js";
 import { AURA, setGameRunning as setAuraGameRunning } from "./aura.js";
@@ -112,16 +112,6 @@ function navigateToLetter(dir) {
   lastNavigateTime = now;
   if (AURA.goToLetter) {
     AURA.goToLetter(dir);
-  } else {
-    const currentLetter = getGames()[getCurrentIndex()]?.title?.charAt(0).toUpperCase() || "A";
-    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? "#" : currentLetter);
-    const nextIdx = (idx + dir + AL.length) % AL.length;
-    const newLetter = AL[nextIdx];
-    setFilterLetter(newLetter);
-    const filtered = getFiltGames();
-    if (filtered.length > 0) {
-      navGame(0);
-    }
   }
 }
 function launchCurrentGame() {

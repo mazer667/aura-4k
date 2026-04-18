@@ -46,40 +46,30 @@ function navigateToLetter(dir) {
   const currentGame = allGames[currentIdx];
   const currentLetter = currentGame?.title?.charAt(0).toUpperCase() || "A";
   const currentLetterIdx = AL.indexOf(/[0-9]/.test(currentLetter) ? "#" : currentLetter);
-  const currentLetterGames = allGames.filter((g) => {
-    const l = g.title?.charAt(0).toUpperCase() || "#";
-    return /[0-9]/.test(l) ? "#" : l === currentLetter;
-  });
-  const idxInLetter = currentLetterGames.indexOf(currentGame);
-  if (dir > 0 && idxInLetter < currentLetterGames.length - 1) {
-    navigate(1);
-    return;
-  }
-  if (dir < 0 && idxInLetter > 0) {
-    navigate(-1);
-    return;
-  }
-  let nextLetterIdx = currentLetterIdx;
-  let foundGame = null;
+  let foundLetter = null;
   for (let i = 1; i < AL.length; i++) {
     const checkIdx = (currentLetterIdx + dir * i + AL.length) % AL.length;
     const checkLetter = AL[checkIdx];
-    const gamesWithLetter = allGames.filter((g) => {
+    const hasGames = allGames.some((g) => {
       const l = g.title?.charAt(0).toUpperCase() || "#";
       return /[0-9]/.test(l) ? "#" : l === checkLetter;
     });
-    if (gamesWithLetter.length > 0) {
-      foundGame = dir > 0 ? gamesWithLetter[0] : gamesWithLetter[gamesWithLetter.length - 1];
-      nextLetterIdx = checkIdx;
+    if (hasGames) {
+      foundLetter = checkLetter;
       break;
     }
   }
-  if (foundGame) {
-    setFilterLetter(AL[nextLetterIdx]);
-    const newIdx = allGames.indexOf(foundGame);
-    setCi(newIdx);
+  if (foundLetter) {
+    setFilterLetter(foundLetter);
     const filtered = getFilteredGames();
-    updateGameDisplay(foundGame, filtered[0], filtered[filtered.length - 1], filtered, allGames);
+    if (filtered.length > 0) {
+      const game = filtered[0];
+      const newIdx = allGames.indexOf(game);
+      setCi(newIdx);
+      const prevGame = filtered[filtered.length - 1] || game;
+      const nextGame = filtered[1] || game;
+      updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
+    }
   }
 }
 function showToast(message, type = "info") {

@@ -37,19 +37,65 @@ export function navigate(dir) {
   const allGames = getGames();
   const currentGame = allGames[getCurrentIndex()];
   const currentIdx = filtered.indexOf(currentGame);
-  const newIdx = (currentIdx + dir + filtered.length) % filtered.length;
   
-  const game = filtered[newIdx];
+  // Check if we're at a letter boundary
+  let nextIdx = currentIdx + dir;
+  
+  if (nextIdx < 0 || nextIdx >= filtered.length) {
+    // At boundary - need to change letter
+    const currentLetter = currentGame?.title?.charAt(0).toUpperCase() || 'A';
+    const currentLetterIdx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
+    
+    let foundLetter = null;
+    for (let i = 1; i < AL.length; i++) {
+      const checkIdx = (currentLetterIdx + dir * i + AL.length) % AL.length;
+      const checkLetter = AL[checkIdx];
+      
+      const hasGames = allGames.some(g => {
+        const l = g.title?.charAt(0).toUpperCase() || '#';
+        return /[0-9]/.test(l) ? '#' : l === checkLetter;
+      });
+      
+      if (hasGames) {
+        foundLetter = checkLetter;
+        break;
+      }
+    }
+    
+    if (foundLetter) {
+      setFilterLetter(foundLetter);
+      const newFiltered = getFilteredGames();
+      if (newFiltered.length > 0) {
+        const targetGame = dir > 0 ? newFiltered[0] : newFiltered[newFiltered.length - 1];
+        const newGameIdx = allGames.indexOf(targetGame);
+        setCi(newGameIdx);
+        
+        const game = targetGame;
+        const prevGame = newFiltered[newFiltered.length - 1] || game;
+        const nextGame = newFiltered[1] || game;
+        updateGameDisplay(game, prevGame, nextGame, newFiltered, allGames);
+        
+        requestIdleCallback?.(() => {
+          preloadAdjacentGames(dir > 0 ? 0 : newFiltered.length - 1, newFiltered);
+        }) || setTimeout(() => preloadAdjacentGames(dir > 0 ? 0 : newFiltered.length - 1, newFiltered), 50);
+        return;
+      }
+    }
+    // No more letters - wrap around in current filtered
+    nextIdx = (currentIdx + dir + filtered.length) % filtered.length;
+  }
+  
+  const game = filtered[nextIdx];
   if (!game) return;
   
-  const prevGame = filtered[(newIdx - 1 + filtered.length) % filtered.length] || game;
-  const nextGame = filtered[(newIdx + 1) % filtered.length] || game;
+  const prevGame = filtered[(nextIdx - 1 + filtered.length) % filtered.length] || game;
+  const nextGame = filtered[(nextIdx + 1) % filtered.length] || game;
 
   updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
   
   requestIdleCallback?.(() => {
-    preloadAdjacentGames(newIdx, filtered);
-  }) || setTimeout(() => preloadAdjacentGames(newIdx, filtered), 50);
+    preloadAdjacentGames(nextIdx, filtered);
+  }) || setTimeout(() => preloadAdjacentGames(nextIdx, filtered), 50);
 }
 
 export function navigateToLetter(dir) {
