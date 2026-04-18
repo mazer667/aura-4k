@@ -1,5 +1,5 @@
 const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron');
-const { exec } = require('child_process');
+const { execFile } = require('child_process');
 const path = require('path');
 const fs   = require('fs');
 require('dotenv').config();
@@ -15,9 +15,22 @@ let CONSOLES = null;
 // ─────────────────────────────────────────────────────────────
 function isValidPath(filePath) {
   if (typeof filePath !== 'string') return false;
-  if (filePath.length > 4096) return false;
-  const dangerous = ['..', '\\\\', '//', 'C:\\Windows', 'C:\\Program'];
-  return !dangerous.some(d => filePath.includes(d));
+  if (filePath.length === 0 || filePath.length > 4096) return false;
+  if (/^[~]/.test(filePath)) return false;
+  if (path.isAbsolute(filePath)) return false;
+  if (/^[\/]/.test(filePath)) return false;
+  if (/^[ \t]/.test(filePath) || /[ \t]$/.test(filePath)) return false;
+  if (/[^\u0020-\u007E\u00A0-\uFFFF]/.test(filePath)) return false;
+  if (/^[\.]/.test(filePath)) return false;
+  if (/[\x00-\x1F]/.test(filePath)) return false;
+  if (/[<>:"|?*]/.test(filePath)) return false;
+
+  const normalized = path.normalize(filePath);
+  if (normalized.includes('\0')) return false;
+  const segments = normalized.split(path.sep);
+  if (segments.includes('..')) return false;
+
+  return true;
 }
 
 function sanitizePath(filePath) {
@@ -295,12 +308,12 @@ ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) =>
 
     console.log('[Launch] Core utilisé:', corePath);
 
-    const command = `"${retroarchPath}" -L "${corePath}" "${fullRomPath}" --fullscreen`;
-    console.log('[Launch] Commande:', command);
+    const args = ['-L', corePath, fullRomPath, '--fullscreen'];
+    console.log('[Launch] ExecFile:', retroarchPath, args.join(' '));
     isGameRunning = true;
     win.webContents.send('game-started');
-    
-    exec(command, (error, stdout, stderr) => {
+
+    execFile(retroarchPath, args, { windowsHide: true }, (error, stdout, stderr) => {
       if (error) {
         console.error('Erreur d\'exécution:', error);
         console.error('Stderr:', stderr);
