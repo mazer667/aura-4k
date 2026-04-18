@@ -38,6 +38,16 @@ function sanitizePath(filePath) {
   return filePath.replace(/[<>:"|?*]/g, '').replace(/\\/g, '/');
 }
 
+function isPathInBaseDir(targetPath, baseDir) {
+  try {
+    const resolved = path.resolve(targetPath);
+    const baseResolved = path.resolve(baseDir);
+    return resolved.startsWith(baseResolved + path.sep) || resolved === baseResolved;
+  } catch {
+    return false;
+  }
+}
+
 // Throttling pour IPC
 const ipcThrottle = new Map();
 const THROTTLE_MS = 100;
@@ -235,6 +245,10 @@ ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) =>
     console.error('[Launch] Invalid consoleName:', consoleName);
     return;
   }
+  if (extensions && (!Array.isArray(extensions) || !extensions.every(e => typeof e === 'string' && /^\.[a-zA-Z0-9]+$/.test(e)))) {
+    console.error('[Launch] Invalid extensions:', extensions);
+    return;
+  }
   if (!checkThrottle('launch-game')) {
     console.warn('[Launch] Throttled');
     return;
@@ -264,13 +278,13 @@ ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) =>
 
     // Essai direct d'abord (chemin déjà complet et correct)
     const directPath = path.join(baseDir, normalizedRomPath);
-    if (fs.existsSync(directPath)) {
+    if (fs.existsSync(directPath) && isPathInBaseDir(directPath, baseDir)) {
       fullRomPath = directPath;
     } else {
       // Tester chaque extension sur le chemin sans extension
       for (const ext of romExtensions) {
         const testPath = path.join(baseDir, basePath + ext);
-        if (fs.existsSync(testPath)) {
+        if (fs.existsSync(testPath) && isPathInBaseDir(testPath, baseDir)) {
           fullRomPath = testPath;
           break;
         }
@@ -290,6 +304,13 @@ ipcMain.handle('launch-game', async (event, romPath, consoleName, extensions) =>
     }
 
     console.log('[Launch] ROM trouvée:', fullRomPath);
+
+    // Vérifier que la ROM est dans le répertoire de base
+    if (!isPathInBaseDir(fullRomPath, baseDir)) {
+      console.error('[Launch] ERREUR: Chemin ROM hors de la base');
+      win.webContents.send('game-ended');
+      return;
+    }
 
     // Vérifier le core
     if (!corePath || !fs.existsSync(corePath)) {
