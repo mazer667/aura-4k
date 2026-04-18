@@ -148,9 +148,6 @@ function getConsoleXmlInfo(consoleName) {
 //  Fenêtre
 // ─────────────────────────────────────────────────────────────
 function createWindow() {
-  // CSP stricte avec nonce pour allows inline scripts/styles
-  const nonce = require('crypto').randomBytes(16).toString('base64');
-  
   win = new BrowserWindow({
     fullscreen: true,
     kiosk:      true,
@@ -159,22 +156,8 @@ function createWindow() {
     webPreferences: {
       nodeIntegration:  false,
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js'),
-      webSecurity: true,
-      sandbox: true
+      preload: path.join(__dirname, 'preload.js')
     }
-  });
-
-  // Appliquer CSP via session
-  win.webContents.session.webRequest.onHeadersReceived((details, callback) => {
-    callback({
-      responseHeaders: {
-        ...details.responseHeaders,
-        'Content-Security-Policy': [
-          `default-src 'self'; script-src 'self' 'nonce-${nonce}'; style-src 'self' 'nonce-${nonce}'; font-src 'self' file:; img-src 'self' data: file:; media-src 'self' file:; connect-src 'self' file:;`
-        ]
-      }
-    });
   });
 
   win.loadFile('console-select.html');
