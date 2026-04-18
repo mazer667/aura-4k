@@ -5,8 +5,17 @@ import { playSound } from "./audio.js";
 import { playMusicForGame } from "./music.js";
 import { preloadAdjacentGames } from "./preloader.js";
 let onGameChange = null;
+let preloadScheduled = false;
 function setOnGameChange(callback) {
   onGameChange = callback;
+}
+function schedulePreload(idx, filtered) {
+  if (preloadScheduled) return;
+  preloadScheduled = true;
+  requestIdleCallback?.(() => {
+    preloadAdjacentGames(idx, filtered);
+    preloadScheduled = false;
+  }, { timeout: 1e3 });
 }
 function updateGameDisplay(game, prevGame, nextGame, filtered, allGames) {
   const gameIdx = allGames.indexOf(game);
@@ -57,9 +66,7 @@ function navigate(dir) {
         const prevGame2 = newFiltered[newFiltered.length - 1] || game2;
         const nextGame2 = newFiltered[1] || game2;
         updateGameDisplay(game2, prevGame2, nextGame2, newFiltered, allGames);
-        requestIdleCallback?.(() => {
-          preloadAdjacentGames(dir > 0 ? 0 : newFiltered.length - 1, newFiltered);
-        }) || setTimeout(() => preloadAdjacentGames(dir > 0 ? 0 : newFiltered.length - 1, newFiltered), 50);
+        schedulePreload(dir > 0 ? 0 : newFiltered.length - 1, newFiltered);
         return;
       }
     }
@@ -70,9 +77,7 @@ function navigate(dir) {
   const prevGame = filtered[(nextIdx - 1 + filtered.length) % filtered.length] || game;
   const nextGame = filtered[(nextIdx + 1) % filtered.length] || game;
   updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
-  requestIdleCallback?.(() => {
-    preloadAdjacentGames(nextIdx, filtered);
-  }) || setTimeout(() => preloadAdjacentGames(nextIdx, filtered), 50);
+  schedulePreload(nextIdx, filtered);
 }
 function navigateToLetter(dir) {
   const allGames = getGames();
