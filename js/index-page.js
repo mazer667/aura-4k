@@ -51,8 +51,8 @@ setOnGameChange((game) => {
 const scaler = document.getElementById('scaler');
 function scale() {
   if (!scaler) return;
-  const s = Math.max(innerWidth/2020, innerHeight/1080);
-  const ox = (innerWidth - 2020*s)/2;
+  const s = Math.max(innerWidth/1920, innerHeight/1080);
+  const ox = (innerWidth - 1920*s)/2;
   const oy = (innerHeight - 1080*s)/2;
   scaler.style.transform = `translate(${ox}px,${oy}px) scale(${s})`;
 }
