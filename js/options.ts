@@ -1364,7 +1364,7 @@ function injectCSS() {
     .aura-progress-fill { height: 100%; background: var(--aura-accent); transition: width 0.3s; width: 0%; }
     .aura-progress-text { display: flex; justify-content: space-between; margin-top: 6px; font-size: 10px; color: rgba(255,255,255,0.4); }
     .aura-progress-name { font-weight: 600; color: rgba(255,255,255,0.6); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 60%; }
-    .aura-progress-count { font-weight: 700; }
+    .aura-progress-count { font-weight: 700; color: #fbbf24; }
     .aura-data-result { margin-top: 10px; padding: 10px; border-radius: 4px; font-size: 11px; display: none; }
     .aura-data-result.success { display: block; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #34d399; }
     .aura-data-result.error { display: block; background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: #f87171; }
