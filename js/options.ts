@@ -48,6 +48,7 @@ const DEFAULTS = {
   gp_quit:     2,   // Button 2 (X gauche) = Quitter
   gp_shots:    3,   // Button 3 (B droite) = Screenshots
   gp_favorite: 0,   // Button 0 (Y haut) = Favoris
+  gp_addFav:  7,   // Button 7 (RT) = Ajouter favori
   gp_options:  8,   // Select / Share
   gp_deadzone: 45,  // 45%
 };
@@ -57,7 +58,7 @@ type OptionKey = keyof typeof DEFAULTS;
 type OptionValue = typeof DEFAULTS[OptionKey];
 type GpKey =
   | 'gp_left' | 'gp_right' | 'gp_up' | 'gp_down'
-  | 'gp_play' | 'gp_quit' | 'gp_shots' | 'gp_favorite'
+  | 'gp_play' | 'gp_quit' | 'gp_shots' | 'gp_favorite' | 'gp_addFav'
   | 'gp_options' | 'gp_deadzone';
 
 type GpAction = {
@@ -72,12 +73,12 @@ type GpProfile = {
 };
 
 const GP_PRESETS: Record<string, Record<GpKey, number>> = {
-  'Xbox': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:2, gp_favorite:3, gp_options:6, gp_deadzone:15 },
-  'PlayStation': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:15 },
-  'Nintendo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:3, gp_favorite:2, gp_options:8, gp_deadzone:15 },
-  'PowerA': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:3, gp_shots:2, gp_favorite:0, gp_options:8, gp_deadzone:20 },
-  '8BitDo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:15 },
-  'Generic': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:20 },
+  'Xbox': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:2, gp_favorite:3, gp_addFav:7, gp_options:6, gp_deadzone:15 },
+  'PlayStation': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_addFav:7, gp_options:8, gp_deadzone:15 },
+  'Nintendo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:3, gp_favorite:2, gp_addFav:7, gp_options:8, gp_deadzone:15 },
+  'PowerA': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:3, gp_shots:2, gp_favorite:0, gp_addFav:7, gp_options:8, gp_deadzone:20 },
+  '8BitDo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_addFav:7, gp_options:8, gp_deadzone:15 },
+  'Generic': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_addFav:7, gp_options:8, gp_deadzone:20 },
 };
 
 function detectControllerPreset(gpId: string | null) {
@@ -642,7 +643,8 @@ function bindEvents() {
     { key: 'gp_play',    label: 'Jouer',              hint: 'Lancer le jeu'     },
     { key: 'gp_quit',    label: 'Quitter',            hint: 'Fermer AURA'      },
     { key: 'gp_shots',   label: 'Screenshots',        hint: 'Afficher captures' },
-    { key: 'gp_favorite',label: 'Favoris',            hint: 'Toggle favoris'   },
+    { key: 'gp_favorite',label: 'Filtre favoris',     hint: 'Afficher favoris' },
+    { key: 'gp_addFav', label: 'Ajouter favori',   hint: 'Ajouter aux favoris' },
     { key: 'gp_options', label: 'Menu Options',       hint: 'Ouvrir/Fermer'    },
   ];
 
@@ -747,6 +749,7 @@ function bindEvents() {
       quit:     settings.gp_quit,
       shots:    settings.gp_shots,
       favorite: settings.gp_favorite,
+      addFav:  settings.gp_addFav,
       options:  settings.gp_options,
     };
     setGpMapping(mapping);
@@ -783,7 +786,7 @@ function bindEvents() {
 
   // Reset mapping
   document.getElementById('aura-gp-reset')?.addEventListener('click', () => {
-    (['gp_left','gp_right','gp_up','gp_down','gp_play','gp_quit','gp_shots','gp_favorite','gp_options','gp_deadzone'] as GpKey[]).forEach(k => {
+    (['gp_left','gp_right','gp_up','gp_down','gp_play','gp_quit','gp_shots','gp_favorite','gp_addFav','gp_options','gp_deadzone'] as GpKey[]).forEach(k => {
       settings[k] = DEFAULTS[k];
       localStorage.removeItem(LS_PREFIX + k);
     });
@@ -888,7 +891,7 @@ function bindEvents() {
     if (!name) return;
     const profiles = getProfiles();
     const mapping = {} as Record<GpKey, number>;
-    (['gp_left','gp_right','gp_up','gp_down','gp_play','gp_quit','gp_shots','gp_favorite','gp_options','gp_deadzone'] as GpKey[]).forEach(k => {
+    (['gp_left','gp_right','gp_up','gp_down','gp_play','gp_quit','gp_shots','gp_favorite','gp_addFav','gp_options','gp_deadzone'] as GpKey[]).forEach(k => {
       mapping[k] = Number(settings[k] ?? DEFAULTS[k]);
     });
     profiles.push({ name, mapping });

@@ -12,6 +12,7 @@ export const MAX_DISPLAYED_GAMES = 500; // Limit for performance
 export function setFilterLetter(letter: string | null) {
   filterLetter = letter;
   filterFav = false;
+  updateAlpha();
 }
 
 export function setFilterFav(on?: boolean) {

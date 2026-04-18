@@ -37,6 +37,7 @@ const DEFAULT_BTN = {
   quit: 2,
   shots: 3,
   favorite: 0,
+  addFav: 7,
   options: 8
 };
 function startHold(key, fn) {
@@ -223,6 +224,7 @@ function poll() {
   if (pressed(gp, getBtn("up"))) navigateToLetter(-1);
   if (pressed(gp, getBtn("down"))) navigateToLetter(1);
   if (pressed(gp, getBtn("favorite"))) toggleFavFilter();
+  if (pressed(gp, getBtn("addFav"))) toggleFav();
   if (pressed(gp, getBtn("play"))) launchCurrentGame();
   if (pressed(gp, getBtn("quit"))) exitWithFade();
   if (pressed(gp, getBtn("shots"))) toggleShots();
