@@ -175,8 +175,8 @@ function startIntro() {
         playMusicForGame(games[idx], true);
         updateFavLabel(games[idx].rom);
       }
-    }, 800);
-  }, 2500);
+    }, 1200);
+  }, 3500);
 }
 
 async function init() {

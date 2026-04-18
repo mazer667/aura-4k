@@ -410,12 +410,12 @@ async function init() {
   const overlay   = document.getElementById('intro-overlay');
   const introLogo = document.getElementById('intro-logo');
   setTimeout(() => { introLogo.classList.add('show'); playSound('load'); }, 150);
-  setTimeout(() => { introLogo.classList.remove('show'); }, 1800);
+  setTimeout(() => { introLogo.classList.remove('show'); }, 2800);
   setTimeout(() => {
     overlay.classList.add('fade-out');
     initBgMusic();
-    setTimeout(() => { overlay.style.display = 'none'; }, 950);
-  }, 2450);
+    setTimeout(() => { overlay.style.display = 'none'; }, 1200);
+  }, 3400);
   setNavigate(function(dir) {
     const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true });
     document.dispatchEvent(event);
