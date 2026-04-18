@@ -22,21 +22,6 @@ function schedulePreload(idx, filtered) {
   }, { timeout: 1000 });
 }
 
-let onGameChange = null;
-
-export function setOnGameChange(callback) {
-  onGameChange = callback;
-}
-
-function schedulePreload(idx, filtered) {
-  if (preloadScheduled) return;
-  preloadScheduled = true;
-  requestIdleCallback?.(() => {
-    preloadAdjacentGames(idx, filtered);
-    preloadScheduled = false;
-  }, { timeout: 1000 });
-}
-
 function updateGameDisplay(game, prevGame, nextGame, filtered, allGames) {
   const gameIdx = allGames.indexOf(game);
   setCi(gameIdx >= 0 ? gameIdx : 0);
