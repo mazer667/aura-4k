@@ -88,7 +88,7 @@ export function updateUI(g: Game | null, gL: Game | null, gR: Game | null) {
         `<span class="tag">${g.year}</span>` +
         `<span class="tag">${playersLabel}</span>` +
         `<span class="tag">${genreLabel}</span>` +
-        (isFavorite(g.rom) ? '<span class="tag" style="color:#fbbf24;">★</span>' : '');
+        (isFavorite(g.rom) ? '<span class="tag" style="color:#fbbf24;">FAV</span>' : '');
     }
 
     // Met a jour l'alphabet - lettre du jeu actuel en jaune
@@ -100,7 +100,7 @@ export function updateUI(g: Game | null, gL: Game | null, gR: Game | null) {
     const favs = getFavorites();
     const favCount = favs.length;
     
-    let html = `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">★${favCount > 0 ? ' ' + favCount : ''}&nbsp;</span>`;
+    let html = `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">FAV${favCount > 0 ? ' ' + favCount : ''}&nbsp;</span>`;
     
     for (let i = 0; i < AL.length; i++) {
       const l = AL[i];
@@ -158,10 +158,10 @@ function updateAlpha() {
   const alphaEl = document.getElementById('alpha');
   if (alphaEl) {
     alphaEl.innerHTML =
-      `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">★${favCount > 0 ? ' ' + favCount : ''}&nbsp;</span>` +
+      `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">FAV${favCount > 0 ? ' ' + favCount : ''}&nbsp;</span>` +
       AL.map(l => {
         const isActive = (filterLetter === l) || (displayLetter && l === displayLetter && !filterFav);
-        return `<span class="ac${isActive ? ' on' : ''}" data-letter="${l}" style="cursor:pointer;">${isActive ? '★ ' : ''}${l}&nbsp;&nbsp;</span>`;
+        return `<span class="ac${isActive ? ' on' : ''}" data-letter="${l}" style="cursor:pointer;">${l}&nbsp;&nbsp;</span>`;
       }).join('');
 
     const newAlphaEl = alphaEl.cloneNode(true) as HTMLElement;

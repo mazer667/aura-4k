@@ -69,7 +69,7 @@ function updateUI(g, gL, gR) {
     }
     const genreLabel = tGenre(g.genre) || g.genre;
     if (gtags) {
-      gtags.innerHTML = `<span class="tag">${g.year}</span><span class="tag">${playersLabel}</span><span class="tag">${genreLabel}</span>` + (isFavorite(g.rom) ? '<span class="tag" style="color:#fbbf24;">\u2605</span>' : "");
+      gtags.innerHTML = `<span class="tag">${g.year}</span><span class="tag">${playersLabel}</span><span class="tag">${genreLabel}</span>` + (isFavorite(g.rom) ? '<span class="tag" style="color:#fbbf24;">FAV</span>' : "");
     }
     let displayLetter = "A";
     if (g && g.title && typeof g.title === "string" && g.title.length > 0) {
@@ -78,7 +78,7 @@ function updateUI(g, gL, gR) {
     }
     const favs = getFavorites();
     const favCount = favs.length;
-    let html = `<span class="ac${filterFav ? " fav on" : ""}" data-filter="fav" style="cursor:pointer;">\u2605${favCount > 0 ? " " + favCount : ""}&nbsp;</span>`;
+    let html = `<span class="ac${filterFav ? " fav on" : ""}" data-filter="fav" style="cursor:pointer;">FAV${favCount > 0 ? " " + favCount : ""}&nbsp;</span>`;
     for (let i = 0; i < AL.length; i++) {
       const l = AL[i];
       const isActive = filterLetter === l || l === displayLetter && !filterFav;
@@ -126,9 +126,9 @@ function updateAlpha() {
   const favCount = favs.length;
   const alphaEl = document.getElementById("alpha");
   if (alphaEl) {
-    alphaEl.innerHTML = `<span class="ac${filterFav ? " fav on" : ""}" data-filter="fav" style="cursor:pointer;">\u2605${favCount > 0 ? " " + favCount : ""}&nbsp;</span>` + AL.map((l) => {
+    alphaEl.innerHTML = `<span class="ac${filterFav ? " fav on" : ""}" data-filter="fav" style="cursor:pointer;">FAV${favCount > 0 ? " " + favCount : ""}&nbsp;</span>` + AL.map((l) => {
       const isActive = filterLetter === l || displayLetter && l === displayLetter && !filterFav;
-      return `<span class="ac${isActive ? " on" : ""}" data-letter="${l}" style="cursor:pointer;">${isActive ? "\u2605 " : ""}${l}&nbsp;&nbsp;</span>`;
+      return `<span class="ac${isActive ? " on" : ""}" data-letter="${l}" style="cursor:pointer;">${l}&nbsp;&nbsp;</span>`;
     }).join("");
     const newAlphaEl = alphaEl.cloneNode(true);
     alphaEl.parentNode?.replaceChild(newAlphaEl, alphaEl);

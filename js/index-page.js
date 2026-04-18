@@ -26,7 +26,7 @@ function updateFavLabel(rom) {
   const label = document.getElementById('favLabel');
   if (!label) return;
   if (rom && isFavorite(rom)) {
-    label.textContent = 'FAVORI *';
+    label.textContent = 'FAVORI';
     label.style.color = '#fbbf24';
   } else {
     label.textContent = 'FAVORI';
