@@ -22,25 +22,27 @@ function schedulePreload(idx, filtered) {
   }, { timeout: 1000 });
 }
 
-let currentBgSlot = 'a';
+let onGameChange = null;
+
+export function setOnGameChange(callback) {
+  onGameChange = callback;
+}
+
+function schedulePreload(idx, filtered) {
+  if (preloadScheduled) return;
+  preloadScheduled = true;
+  requestIdleCallback?.(() => {
+    preloadAdjacentGames(idx, filtered);
+    preloadScheduled = false;
+  }, { timeout: 1000 });
+}
 
 function updateGameDisplay(game, prevGame, nextGame, filtered, allGames) {
   const gameIdx = allGames.indexOf(game);
   setCi(gameIdx >= 0 ? gameIdx : 0);
 
-  const newSlot = currentBgSlot === 'a' ? 'b' : 'a';
-  const newBg = document.getElementById(newSlot === 'a' ? 'bgCa' : 'bgCb');
-  const oldBg = document.getElementById(currentBgSlot === 'a' ? 'bgCa' : 'bgCb');
-  
-  if (newBg) {
-    newBg.style.backgroundImage = `url('${imgPath(game)}')`;
-    newBg.style.opacity = '1';
-  }
-  if (oldBg) {
-    oldBg.style.opacity = '0';
-  }
-  currentBgSlot = newSlot;
-
+  const bgCa = document.getElementById('bgCa');
+  if (bgCa) bgCa.style.backgroundImage = `url('${imgPath(game)}')`;
   const bgLa = document.getElementById('bgLa');
   if (bgLa) bgLa.style.backgroundImage = `url('${imgPath(prevGame)}')`;
   const bgRa = document.getElementById('bgRa');
