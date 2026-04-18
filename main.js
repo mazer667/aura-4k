@@ -481,8 +481,12 @@ function cleanGameName(name) {
 async function fetchFromScreenScraper(gameName, systemId) {
   const cleanName = cleanGameName(gameName);
   try {
-    const user = 'bactino';
-    const pass = 'sexions';
+    const user = process.env.SS_USER || '';
+    const pass = process.env.SS_PASS || '';
+    if (!user || !pass) {
+      console.log('[ScreenScraper] Credentials not configured');
+      return { description: cleanName, manufacturer: '', year: '', genre: '', players: '1', rating: '' };
+    }
     const url = `https://www.screenscraper.fr/api2/jeuInfos.php?devid=bactino&devpassword=grvhoQrDvvB&softname=aura4k&output=json&ssid=${user}&sspassword=${pass}&systemeid=${systemId}&romnom=${encodeURIComponent(cleanName)}`;
     
     let data;

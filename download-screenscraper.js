@@ -9,9 +9,9 @@ const fs = require('fs');
 const path = require('path');
 
 // === CONFIGURATION ===
-// Configure tes identifiants ScreenScraper ici
-const SCREENSCRAPER_USER = 'bactino';
-const SCREENSCRAPER_PASS = 'grvhoQrDvvB'; // À modifier si besoin
+// Configure tes identifiants ScreenScraper ici (ou via variables d'environnement SS_USER et SS_PASS)
+const SCREENSCRAPER_USER = process.env.SS_USER || '';
+const SCREENSCRAPER_PASS = process.env.SS_PASS || '';
 
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
