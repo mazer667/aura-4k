@@ -1,6 +1,6 @@
 // js/navigation.js
 import { setCi, getCurrentIndex, getGames, getCurrentGame, setLastPlayed, isFavorite } from './state.js';
-import { getFilteredGames, setFilterLetter, setFilterFav, ix, updateUI } from './ui.js';
+import { getFilteredGames, setFilterLetter, setFilterFav, AL, updateUI } from './ui.js';
 import { imgPath, preloadGameImages, getRomPath, getRomExtensions } from './games.js';
 import { playSound } from './audio.js';
 import { playMusicForGame } from './music.js';
@@ -53,7 +53,64 @@ export function navigate(dir) {
 }
 
 export function navigateToLetter(dir) {
-  navigate(dir);
+  const allGames = getGames();
+  if (allGames.length === 0) return;
+  
+  const currentIdx = getCurrentIndex();
+  const currentGame = allGames[currentIdx];
+  const currentLetter = currentGame?.title?.charAt(0).toUpperCase() || 'A';
+  const currentLetterIdx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
+  
+  // Find games with current letter
+  const currentLetterGames = allGames.filter(g => {
+    const l = g.title?.charAt(0).toUpperCase() || '#';
+    return /[0-9]/.test(l) ? '#' : l === currentLetter;
+  });
+  
+  // Check if we can navigate within current letter
+  const idxInLetter = currentLetterGames.indexOf(currentGame);
+  
+  // If going forward and not at end of current letter, just go to next game
+  if (dir > 0 && idxInLetter < currentLetterGames.length - 1) {
+    navigate(1);
+    return;
+  }
+  
+  // If going backward and not at start of current letter, go to previous game
+  if (dir < 0 && idxInLetter > 0) {
+    navigate(-1);
+    return;
+  }
+  
+  // Need to change letter
+  let nextLetterIdx = currentLetterIdx;
+  let foundGame = null;
+  
+  // Search for next letter with games
+  for (let i = 1; i < AL.length; i++) {
+    const checkIdx = (currentLetterIdx + dir * i + AL.length) % AL.length;
+    const checkLetter = AL[checkIdx];
+    
+    const gamesWithLetter = allGames.filter(g => {
+      const l = g.title?.charAt(0).toUpperCase() || '#';
+      return /[0-9]/.test(l) ? '#' : l === checkLetter;
+    });
+    
+    if (gamesWithLetter.length > 0) {
+      foundGame = dir > 0 ? gamesWithLetter[0] : gamesWithLetter[gamesWithLetter.length - 1];
+      nextLetterIdx = checkIdx;
+      break;
+    }
+  }
+  
+  if (foundGame) {
+    setFilterLetter(AL[nextLetterIdx]);
+    const newIdx = allGames.indexOf(foundGame);
+    setCi(newIdx);
+    
+    const filtered = getFilteredGames();
+    updateGameDisplay(foundGame, filtered[0], filtered[filtered.length - 1], filtered, allGames);
+  }
 }
 
 function showToast(message, type = 'info') {
