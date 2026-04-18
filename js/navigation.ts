@@ -7,9 +7,19 @@ import { playMusicForGame } from './music.js';
 import { preloadAdjacentGames, preloadBackgrounds } from './preloader.js';
 
 let onGameChange = null;
+let preloadScheduled = false;
 
 export function setOnGameChange(callback) {
   onGameChange = callback;
+}
+
+function schedulePreload(idx, filtered) {
+  if (preloadScheduled) return;
+  preloadScheduled = true;
+  requestIdleCallback?.(() => {
+    preloadAdjacentGames(idx, filtered);
+    preloadScheduled = false;
+  }, { timeout: 1000 });
 }
 
 function updateGameDisplay(game, prevGame, nextGame, filtered, allGames) {
@@ -74,10 +84,7 @@ export function navigate(dir) {
         const prevGame = newFiltered[newFiltered.length - 1] || game;
         const nextGame = newFiltered[1] || game;
         updateGameDisplay(game, prevGame, nextGame, newFiltered, allGames);
-        
-        requestIdleCallback?.(() => {
-          preloadAdjacentGames(dir > 0 ? 0 : newFiltered.length - 1, newFiltered);
-        }) || setTimeout(() => preloadAdjacentGames(dir > 0 ? 0 : newFiltered.length - 1, newFiltered), 50);
+        schedulePreload(dir > 0 ? 0 : newFiltered.length - 1, newFiltered);
         return;
       }
     }
@@ -92,10 +99,7 @@ export function navigate(dir) {
   const nextGame = filtered[(nextIdx + 1) % filtered.length] || game;
 
   updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
-  
-  requestIdleCallback?.(() => {
-    preloadAdjacentGames(nextIdx, filtered);
-  }) || setTimeout(() => preloadAdjacentGames(nextIdx, filtered), 50);
+  schedulePreload(nextIdx, filtered);
 }
 
 export function navigateToLetter(dir) {

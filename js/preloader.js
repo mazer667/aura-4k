@@ -1,6 +1,6 @@
 import { imgPath, shotPath } from "./games.js";
 import { preloadImage } from "./imageCache.js";
-const PRELOAD_RANGE = 5;
+const PRELOAD_RANGE = 3;
 function preloadAdjacentGames(currentIndex, games) {
   if (!games?.length) return;
   const indices = [];
@@ -11,23 +11,27 @@ function preloadAdjacentGames(currentIndex, games) {
       indices.push(idx);
     }
   }
-  indices.forEach((i) => {
-    const game = games[i];
-    if (!game) return;
-    const centerUrl = imgPath(game);
-    const shot1 = shotPath(game, 1);
-    const shot2 = shotPath(game, 2);
-    const shot3 = shotPath(game, 3);
-    preloadImage(centerUrl);
-    preloadImage(shot1);
-    preloadImage(shot2);
-    preloadImage(shot3);
-  });
+  requestIdleCallback?.(() => {
+    indices.forEach((i) => {
+      const game = games[i];
+      if (!game) return;
+      const centerUrl = imgPath(game);
+      const shot1 = shotPath(game, 1);
+      const shot2 = shotPath(game, 2);
+      const shot3 = shotPath(game, 3);
+      preloadImage(centerUrl);
+      preloadImage(shot1);
+      preloadImage(shot2);
+      preloadImage(shot3);
+    });
+  }, { timeout: 2000 });
 }
 function preloadBackgrounds(prevGame, currGame, nextGame) {
-  if (prevGame) preloadImage(imgPath(prevGame));
-  if (currGame) preloadImage(imgPath(currGame));
-  if (nextGame) preloadImage(imgPath(nextGame));
+  requestIdleCallback?.(() => {
+    if (prevGame) preloadImage(imgPath(prevGame));
+    if (currGame) preloadImage(imgPath(currGame));
+    if (nextGame) preloadImage(imgPath(nextGame));
+  }, { timeout: 1000 });
 }
 const preloadQueue = [];
 let isProcessing = false;
