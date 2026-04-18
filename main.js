@@ -2,6 +2,7 @@ const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron');
 const { exec } = require('child_process');
 const path = require('path');
 const fs   = require('fs');
+require('dotenv').config();
 
 let win;
 let isGameRunning   = false;
@@ -481,12 +482,8 @@ function cleanGameName(name) {
 async function fetchFromScreenScraper(gameName, systemId) {
   const cleanName = cleanGameName(gameName);
   try {
-    const user = process.env.SS_USER || '';
-    const pass = process.env.SS_PASS || '';
-    if (!user || !pass) {
-      console.log('[ScreenScraper] Credentials not configured');
-      return { description: cleanName, manufacturer: '', year: '', genre: '', players: '1', rating: '' };
-    }
+    const user = process.env.SS_USER || 'bactino';
+    const pass = process.env.SS_PASS || 'sexions';
     const url = `https://www.screenscraper.fr/api2/jeuInfos.php?devid=bactino&devpassword=grvhoQrDvvB&softname=aura4k&output=json&ssid=${user}&sspassword=${pass}&systemeid=${systemId}&romnom=${encodeURIComponent(cleanName)}`;
     
     let data;
