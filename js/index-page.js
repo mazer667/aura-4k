@@ -135,25 +135,11 @@ document.addEventListener('keydown', e => {
   }
   if (e.key === 'PageUp') {
     e.preventDefault();
-    const currentIdx = getCurrentIndex();
-    const games = getGames();
-    if (games.length === 0) return;
-    const currentLetter = games[currentIdx]?.title?.charAt(0).toUpperCase() || 'A';
-    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
-    const nextIdx = (idx + 1 + AL.length) % AL.length;
-    setFilterLetter(AL[nextIdx]);
-    navigate(0);
+    navigateToLetter(1);
   }
   if (e.key === 'PageDown') {
     e.preventDefault();
-    const currentIdx = getCurrentIndex();
-    const games = getGames();
-    if (games.length === 0) return;
-    const currentLetter = games[currentIdx]?.title?.charAt(0).toUpperCase() || 'A';
-    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
-    const nextIdx = (idx - 1 + AL.length) % AL.length;
-    setFilterLetter(AL[nextIdx]);
-    navigate(0);
+    navigateToLetter(-1);
   }
 });
 
