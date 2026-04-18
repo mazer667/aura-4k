@@ -34,7 +34,7 @@ describe('games.js', () => {
 
   describe('functions', () => {
     it('should export games functions', async () => {
-      const games = await import('../js/games.js');
+      const games = await import('../js/games.ts');
       expect(typeof games.getConsoleConfigByName).toBe('function');
       expect(typeof games.getRomExtensions).toBe('function');
       expect(typeof games.loadConfig).toBe('function');
@@ -49,7 +49,7 @@ describe('navigation.js', () => {
 
   describe('module exports', () => {
     it('should export required functions', async () => {
-      const nav = await import('../js/navigation.js');
+      const nav = await import('../js/navigation.ts');
       expect(typeof nav.navigate).toBe('function');
       expect(typeof nav.navigateToLetter).toBe('function');
       expect(typeof nav.launchCurrentGame).toBe('function');
@@ -66,7 +66,7 @@ describe('state.js', () => {
 
   describe('state management', () => {
     it('should export state functions', async () => {
-      const state = await import('../js/state.js');
+      const state = await import('../js/state.ts');
       expect(typeof state.getGames).toBe('function');
       expect(typeof state.getCurrentIndex).toBe('function');
       expect(typeof state.setCi).toBe('function');
@@ -86,7 +86,7 @@ describe('ui.js', () => {
 
   describe('UI functions', () => {
     it('should export UI functions', async () => {
-      const ui = await import('../js/ui.js');
+      const ui = await import('../js/ui.ts');
       expect(typeof ui.updateUI).toBe('function');
       expect(typeof ui.setFilterLetter).toBe('function');
       expect(typeof ui.setFilterFav).toBe('function');
@@ -101,7 +101,7 @@ describe('options.js', () => {
 
   describe('options API', () => {
     it('should export options functions', async () => {
-      const options = await import('../js/options.js');
+      const options = await import('../js/options.ts');
       expect(typeof options.isOptionsOpen).toBe('function');
       expect(typeof options.toggleOptions).toBe('function');
       expect(typeof options.getSetting).toBe('function');
@@ -119,7 +119,7 @@ describe('audio.js', () => {
 
   describe('audio functions', () => {
     it('should export audio functions', async () => {
-      const audio = await import('../js/audio.js');
+      const audio = await import('../js/audio.ts');
       expect(typeof audio.initAudio).toBe('function');
       expect(typeof audio.playSound).toBe('function');
     });
@@ -133,7 +133,7 @@ describe('music.js', () => {
 
   describe('music functions', () => {
     it('should export music functions', async () => {
-      const music = await import('../js/music.js');
+      const music = await import('../js/music.ts');
       expect(typeof music.playMusicForGame).toBe('function');
       expect(typeof music.pauseMusic).toBe('function');
       expect(typeof music.stopMusic).toBe('function');
@@ -148,7 +148,7 @@ describe('gamepad.js', () => {
 
   describe('gamepad API', () => {
     it('should export gamepad functions', async () => {
-      const gamepad = await import('../js/gamepad.js');
+      const gamepad = await import('../js/gamepad.ts');
       expect(typeof gamepad.initGamepad).toBe('function');
       expect(typeof gamepad.setGameRunning).toBe('function');
     });
@@ -162,7 +162,7 @@ describe('i18n.js', () => {
 
   describe('i18n API', () => {
     it('should export i18n functions', async () => {
-      const i18n = await import('../js/i18n.js');
+      const i18n = await import('../js/i18n.ts');
       expect(typeof i18n.t).toBe('function');
       expect(typeof i18n.applyLanguage).toBe('function');
       expect(i18n.TRANSLATIONS).toBeDefined();
@@ -177,13 +177,13 @@ describe('aura.js', () => {
 
   describe('AURA namespace', () => {
     it('should export AURA object', async () => {
-      const aura = await import('../js/aura.js');
+      const aura = await import('../js/aura.ts');
       expect(aura.AURA).toBeDefined();
       expect(aura.AURA.navigate).toBeNull();
     });
 
     it('should export setter functions', async () => {
-      const aura = await import('../js/aura.js');
+      const aura = await import('../js/aura.ts');
       expect(typeof aura.setNavigate).toBe('function');
       expect(typeof aura.setLaunchGame).toBe('function');
     });
@@ -197,7 +197,7 @@ describe('batchUpdate.js', () => {
 
   describe('batchUpdate', () => {
     it('should export batchUpdate function', async () => {
-      const { batchUpdate } = await import('../js/batchUpdate.js');
+      const { batchUpdate } = await import('../js/batchUpdate.ts');
       expect(typeof batchUpdate).toBe('function');
     });
   });
@@ -210,7 +210,7 @@ describe('preloader.js', () => {
 
   describe('preloader', () => {
     it('should export preload functions', async () => {
-      const preloader = await import('../js/preloader.js');
+      const preloader = await import('../js/preloader.ts');
       expect(typeof preloader.preloadAdjacentGames).toBe('function');
     });
   });
@@ -223,7 +223,7 @@ describe('imageCache.js', () => {
 
   describe('imageCache', () => {
     it('should export cache functions', async () => {
-      const imageCache = await import('../js/imageCache.js');
+      const imageCache = await import('../js/imageCache.ts');
       expect(typeof imageCache.getCachedImage).toBe('function');
       expect(typeof imageCache.preloadImage).toBe('function');
       expect(typeof imageCache.clearCache).toBe('function');
@@ -238,7 +238,7 @@ describe('gameCache.js', () => {
 
   describe('gameCache', () => {
     it('should export cache functions', async () => {
-      const gameCache = await import('../js/gameCache.js');
+      const gameCache = await import('../js/gameCache.ts');
       expect(typeof gameCache.initCache).toBe('function');
       expect(typeof gameCache.getCachedGames).toBe('function');
       expect(typeof gameCache.setCachedGames).toBe('function');
@@ -253,7 +253,7 @@ describe('imageOptimizer.js', () => {
 
   describe('imageOptimizer', () => {
     it('should export optimizer functions', async () => {
-      const optimizer = await import('../js/imageOptimizer.js');
+      const optimizer = await import('../js/imageOptimizer.ts');
       expect(typeof optimizer.convertToWebP).toBe('function');
       expect(typeof optimizer.preloadAsWebP).toBe('function');
       expect(typeof optimizer.getOptimizationStats).toBe('function');

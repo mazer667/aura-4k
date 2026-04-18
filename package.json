@@ -5,7 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "prestart": "npm run transpile",
     "dev": "vite",
+    "predev": "npm run transpile",
+    "transpile": "esbuild js/**/*.ts --outdir=js --bundle=false --format=esm --platform=browser",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
@@ -14,7 +17,8 @@
     "format": "prettier --write js/",
     "build": "rollup -c",
     "build:prod": "rollup -c --environment BUILD:production",
-    "build:all": "npm run lint && npm run test && npm run build"
+    "build:all": "npm run lint && npm run test && npm run build",
+    "dist": "electron-builder"
   },
   "keywords": [
     "game-launcher",
@@ -26,14 +30,50 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@types/node": "^25.6.0",
     "@vitest/coverage-v8": "^1.6.0",
+    "electron": "^26.2.0",
+    "electron-builder": "^26.8.1",
+    "esbuild": "^0.28.0",
     "eslint": "^8.57.0",
     "jsdom": "^29.0.2",
     "prettier": "^3.2.5",
     "rollup": "^4.13.0",
+    "tslib": "^2.8.1",
+    "typescript": "^6.0.3",
     "vitest": "^1.4.0"
   },
-  "dependencies": {
-    "electron": "^41.2.0"
+  "build": {
+    "appId": "com.aura.aura4k",
+    "productName": "AURA 4K",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "config.json",
+      "consoles.json",
+      "index.html",
+      "console-select.html",
+      "fonts/**/*",
+      "sounds/**/*",
+      "assets/**/*",
+      "retroarch/**/*",
+      "data/**/*",
+      "js/**/*",
+      "fonts.css"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
   }
 }

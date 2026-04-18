@@ -2,8 +2,8 @@
 <html lang="fr" id="html-root">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' file:; img-src 'self' data: file:; media-src 'self' file:; connect-src 'self' file:;">
-<title>AURA 4K — Game Launcher</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' file:; img-src 'self' data: file:; media-src 'self' file:; connect-src 'self' file:;">
+<title>AURA 4K â€” Game Launcher</title>
 <link rel="preload" as="style" href="fonts.css">
 <link rel="stylesheet" href="fonts.css">
 <style>
@@ -13,7 +13,7 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
 #scaler { position:fixed; top:0; left:0; transform-origin:top left; opacity:0; transition:opacity 0.8s ease; contain: layout style; }
 
 .screen {
-  width:2020px; height:1080px;
+  width:1920px; height:1080px;
   position:relative; overflow:hidden; background:#080808;
   contain: layout style;
 }
@@ -549,7 +549,7 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
     <div class="bg-b" id="bgCb"></div>
     <div class="grain"></div>
     <div class="cvign"></div>
-    <div class="gtitle" id="gtitle">—</div>
+    <div class="gtitle" id="gtitle">â€”</div>
     <div class="gtags" id="gtags"></div>
 
     <div class="shots">
@@ -559,9 +559,9 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
     </div>
 
     <div class="btns">
-      <button class="nav-item" id="navLeft"><div class="ci L"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.prev">Jeu précédent</span></button>
+      <button class="nav-item" id="navLeft"><div class="ci L"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.prev">Jeu prÃ©cÃ©dent</span></button>
       <button class="nav-item" id="navRight"><div class="ci R"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.next">Jeu suivant</span></button>
-      <button class="nav-item" id="navUp"><div class="ci U"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.letter.prev">Lettre précédente</span></button>
+      <button class="nav-item" id="navUp"><div class="ci U"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.letter.prev">Lettre prÃ©cÃ©dente</span></button>
       <button class="nav-item" id="navDown"><div class="ci D"><div class="ci-h"></div><div class="ci-v"></div><div class="arm"></div></div><span data-i18n="nav.letter.next">Lettre suivante</span></button>
 
       <div class="sep"></div>
@@ -599,7 +599,7 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
 
   <div class="alpha" id="alpha"></div>
   <div id="fav-indicator" style="position:absolute; top:8px; left:50%; transform:translateX(-50%); z-index:35; display:none;">
-    <span style="font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:900; letter-spacing:4px; color:#fbbf24; background:rgba(0,0,0,0.6); border:1px solid rgba(251,191,36,0.5); padding:4px 16px; border-radius:20px; text-shadow:0 0 8px rgba(251,191,36,0.8);">★ FAVORIS</span>
+    <span style="font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:900; letter-spacing:4px; color:#fbbf24; background:rgba(0,0,0,0.6); border:1px solid rgba(251,191,36,0.5); padding:4px 16px; border-radius:20px; text-shadow:0 0 8px rgba(251,191,36,0.8);">â˜… FAVORIS</span>
   </div>
   <div class="div dL"></div>
   <div class="div dR"></div>
@@ -619,295 +619,6 @@ html, body { width:100%; height:100%; background:#000; overflow:hidden; cursor:n
 
 
 
-<script type="module">
-// ─── ERROR BOUNDARIES ───────────────────────────────────────────
-window.onerror = (msg, url, line, col, err) => {
-  console.error('[RENDERER ERROR]', msg, '| line:', line, '|', url);
-  return false;
-};
-window.onunhandledrejection = (e) => {
-  console.error('[UNHANDLED REJECTION]', e.reason);
-};
-
-// Imports
-import { loadConfig, loadGamesAndPopulate, getMusicId } from './js/games.js';
-import { initDisplay, setIdleUI, shotsAppear, shotsDisappear, btnsHide, btnsShow, setFilterFav, setFilterLetter, AL } from './js/ui.js';
-import { navigate, launchCurrentGame, navigateToLetter, navigateToGame } from './js/navigation.js';
-import { getIdle, setIdle, getGames, getCurrentIndex, getCurrentGame, toggleFavorite, isFavorite, getFavorites } from './js/state.js';
-import { initAudio, playSound, playSoundAndWait, muteAllAudio } from './js/audio.js';
-import { initGamepad, setGameRunning } from './js/gamepad.js';
-import { playMusicForGame, stopMusic, pauseMusic, resumeMusic, muteMusic } from './js/music.js';
-import { initOptions, toggleOptions, isOptionsOpen } from './js/options.js';
-import { setOnGameChange } from './js/navigation.js';
-import { setNavigate, setGoToLetter, setLaunchGame, setExitWithFade, setToggleFavorite, setIsFavorite } from './js/aura.js';
-
-window.toggleFavorite = toggleFavorite;
-window.isFavorite = isFavorite;
-
-function updateFavLabel(rom) {
-  const label = document.getElementById('favLabel');
-  if (!label) return;
-  if (rom && isFavorite(rom)) {
-    label.textContent = 'FAVORI *';
-    label.style.color = '#fbbf24';
-  } else {
-    label.textContent = 'FAVORI';
-    label.style.color = '#fff';
-  }
-}
-
-function toggleFav() {
-  const game = getCurrentGame();
-  if (!game || !game.rom) return;
-  toggleFavorite(game.rom);
-  updateFavLabel(game.rom);
-  playSound('select');
-}
-
-window.toggleFav = toggleFav;
-
-setOnGameChange((game) => {
-  if (game?.rom) updateFavLabel(game.rom);
-});
-
-const scaler = document.getElementById('scaler');
-function scale() {
-  const s = Math.max(innerWidth/2020, innerHeight/1080);
-  const ox = (innerWidth - 2020*s)/2;
-  const oy = (innerHeight - 1080*s)/2;
-  scaler.style.transform = `translate(${ox}px,${oy}px) scale(${s})`;
-}
-scale(); addEventListener('resize', scale);
-
-const cur = document.getElementById('cur');
-addEventListener('mousemove', e => { cur.style.left = e.clientX+'px'; cur.style.top = e.clientY+'px'; });
-document.querySelectorAll('.cz').forEach(z => {
-  z.addEventListener('mouseenter', () => cur.classList.add('big'));
-  z.addEventListener('mouseleave', () => cur.classList.remove('big'));
-});
-
-window.exitWithFade = async function() {
-  stopMusic();
-  const fadeDiv = document.createElement('div');
-  Object.assign(fadeDiv.style, {
-    position:'fixed', top:'0', left:'0', width:'100%', height:'100%',
-    backgroundColor:'black', zIndex:'9999', pointerEvents:'none',
-    opacity:'0', transition:'opacity 0.8s ease'
-  });
-  document.body.appendChild(fadeDiv);
-  requestAnimationFrame(() => { fadeDiv.style.opacity = '1'; });
-  await playSoundAndWait('unload');
-  window.electronAPI.loadConsoleSelect();
-};
-
-window.toggleShotsFromUI = function() {
-  if (!getIdle()) {
-    btnsHide();
-    setTimeout(() => { setIdleUI(true); shotsAppear(); }, 280);
-  } else {
-    shotsDisappear(() => { setIdleUI(false); setTimeout(() => btnsShow(), 200); });
-  }
-};
-
-window.launchCurrentGame = launchCurrentGame;
-
-document.getElementById('navLeft').addEventListener('click', () => navigate(-1));
-document.getElementById('navRight').addEventListener('click', () => navigate(1));
-document.getElementById('navUp').addEventListener('click', () => navigateToLetter(-1));
-document.getElementById('navDown').addEventListener('click', () => navigateToLetter(1));
-
-document.getElementById('btnB').addEventListener('click', () => launchCurrentGame());
-document.getElementById('btnY').addEventListener('click', () => toggleFav());
-document.getElementById('btnA').addEventListener('click', () => window.exitWithFade());
-document.getElementById('btnX').addEventListener('click', () => window.toggleShotsFromUI());
-
-document.getElementById('czL').addEventListener('click', () => navigate(-1));
-document.getElementById('czR').addEventListener('click', () => navigate(1));
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Backspace') {
-    e.preventDefault();
-    toggleOptions();
-    return;
-  }
-  
-  if (isOptionsOpen()) return;
-  
-  if (e.key === 'ArrowLeft')  { e.preventDefault(); navigate(-1); }
-  if (e.key === 'ArrowRight') { e.preventDefault(); navigate(1); }
-  if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    if (!getIdle()) {
-      btnsHide();
-      setTimeout(() => { setIdleUI(true); shotsAppear(); }, 280);
-    }
-  }
-  if (e.key === 'ArrowDown') {
-    e.preventDefault();
-    if (getIdle()) {
-      shotsDisappear(() => { setIdleUI(false); setTimeout(() => btnsShow(), 200); });
-    }
-  }
-  if (e.key === 'Enter')      { e.preventDefault(); launchCurrentGame(); }
-  if (e.key === 'Escape')     { setFilterFav(false); setFilterLetter(null); window.exitWithFade(); }
-  if (e.key === 'f' || e.key === 'F') { e.preventDefault(); toggleFav(); }
-  if (e.key === '*') { e.preventDefault(); setFilterFav(true); navigate(0); }
-  if (e.key === ' ' || e.key === 'Space') {
-    e.preventDefault();
-    window.toggleShotsFromUI();
-  }
-  
-  // Navigation par lettres
-  if (e.key === 'PageUp') {
-    e.preventDefault();
-    const currentIdx = getCurrentIndex();
-    const games = getGames();
-    if (games.length === 0) return;
-    const currentLetter = games[currentIdx]?.title?.charAt(0).toUpperCase() || 'A';
-    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
-    const nextIdx = (idx + 1 + AL.length) % AL.length;
-    setFilterLetter(AL[nextIdx]);
-    navigate(0);
-  }
-  if (e.key === 'PageDown') {
-    e.preventDefault();
-    const currentIdx = getCurrentIndex();
-    const games = getGames();
-    if (games.length === 0) return;
-    const currentLetter = games[currentIdx]?.title?.charAt(0).toUpperCase() || 'A';
-    const idx = AL.indexOf(/[0-9]/.test(currentLetter) ? '#' : currentLetter);
-    const nextIdx = (idx - 1 + AL.length) % AL.length;
-    setFilterLetter(AL[nextIdx]);
-    navigate(0);
-  }
-});
-
-function tick() {
-  const n = new Date();
-  document.getElementById('ch').textContent = `${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}`;
-  document.getElementById('cd').textContent = `${String(n.getDate()).padStart(2,'0')}.${String(n.getMonth()+1).padStart(2,'0')}.${n.getFullYear()}`;
-  const clockH = document.getElementById('ch');
-  const logoImg = document.querySelector('.logo-img');
-  if (clockH && logoImg) {
-    const w = clockH.getBoundingClientRect().width;
-    logoImg.style.width = `${w}px`;
-    logoImg.style.height = '32px';
-  }
-}
-
-function startIntro() {
-  const introDiv = document.getElementById('intro');
-  const logoImg = introDiv.querySelector('.intro-logo');
-  setTimeout(() => { logoImg.classList.add('show'); playSound('load'); }, 100);
-  setTimeout(() => {
-    introDiv.style.opacity = '0';
-    setTimeout(() => { 
-      introDiv.style.display = 'none'; 
-      scaler.style.opacity = '1';
-      
-      const games = getGames();
-      const idx = getCurrentIndex();
-      if (games && games.length > 0 && games[idx]) {
-        playMusicForGame(games[idx], true);
-        updateFavLabel(games[idx].rom);
-      }
-    }, 800);
-  }, 2500);
-}
-
-async function init() {
-  scaler.style.opacity = '0';
-  await initAudio();
-  await loadConfig();
-
-  // ── Loading progress events ──
-  const lpBar = document.querySelector('.lp-fill');
-  const lpText = document.querySelector('.lp-text');
-  const lpContainer = document.getElementById('loading-progress');
-  
-  window.addEventListener('aura-loading-start', (e) => {
-    if (lpContainer) lpContainer.classList.remove('hidden');
-    if (lpText) lpText.textContent = `Chargement ${e.detail.console}...`;
-    if (lpBar) lpBar.style.width = '10%';
-  });
-  
-  window.addEventListener('aura-loading-progress', (e) => {
-    if (lpBar) lpBar.style.width = `${e.detail.progress}%`;
-    if (lpText && e.detail.phase) {
-      const phaseText = { parsing: 'Analyse XML...', saving: 'Sauvegarde cache...' };
-      if (phaseText[e.detail.phase]) lpText.textContent = phaseText[e.detail.phase];
-    }
-  });
-  
-  window.addEventListener('aura-loading-complete', (e) => {
-    if (lpBar) lpBar.style.width = '100%';
-    if (lpText) lpText.textContent = `${e.detail.count} jeux ${e.detail.fromCache ? '(cache)' : ''}`;
-    setTimeout(() => {
-      if (lpContainer) lpContainer.classList.add('hidden');
-    }, 1500);
-  });
-
-  // ── Récupérer la console choisie dans l'écran de sélection ──
-  const selectedConsole = await window.electronAPI.getSelectedConsole();
-  const consoleKey = selectedConsole || 'Fbneo';
-
-  await loadGamesAndPopulate(consoleKey);
-  
-  // Cacher le skeleton loader
-  const skeleton = document.getElementById('skeleton-loader');
-  if (skeleton) skeleton.classList.add('hidden');
-  
-  initDisplay();
-  setTimeout(() => { if (window.updateLetterDisplay) window.updateLetterDisplay(); }, 100);
-  initOptions();
-  tick();
-  setInterval(tick, 1000);
-
-  // Exposer les fonctions de navigation pour le gamepad via AURA
-  setNavigate(function(dir) {
-    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'ArrowRight' : 'ArrowLeft', bubbles: true });
-    document.dispatchEvent(event);
-  });
-  setGoToLetter(function(dir) {
-    const event = new KeyboardEvent('keydown', { key: dir > 0 ? 'PageUp' : 'PageDown', bubbles: true });
-    document.dispatchEvent(event);
-  });
-  setLaunchGame(function() {
-    const event = new KeyboardEvent('keydown', { key: 'Enter', bubbles: true });
-    document.dispatchEvent(event);
-  });
-  setExitWithFade(function() {
-    window.exitWithFade();
-  });
-
-  initGamepad();
-
-  // ── Pause / reprise audio quand un jeu est lancé / terminé ──
-  if (window.electronAPI?.onGameStarted) {
-    window.electronAPI.onGameStarted(() => {
-      setGameRunning(true);
-      pauseMusic();
-      muteMusic(true);
-      muteAllAudio(true);
-    });
-  }
-  if (window.electronAPI?.onGameEnded) {
-    window.electronAPI.onGameEnded(() => {
-      setGameRunning(false);
-      muteMusic(false);
-      muteAllAudio(false);
-      resumeMusic();
-    });
-  }
-
-  startIntro();
-}
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js').catch(() => {});
-}
-
-init();
-</script>
+<script type="module" src="./js/index-page.js"></script>
 </body>
 </html>

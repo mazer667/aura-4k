@@ -1,123 +1,139 @@
-import { setCi, getCurrentIndex, getGames, getCurrentGame, setLastPlayed } from "./state.js";
-import { getFilteredGames, updateUI } from "./ui.js";
-import { imgPath, preloadGameImages, getRomPath, getRomExtensions } from "./games.js";
-import { playSound } from "./audio.js";
-import { playMusicForGame } from "./music.js";
-import { preloadAdjacentGames } from "./preloader.js";
+// js/navigation.js
+import { setCi, getCurrentIndex, getGames, getCurrentGame, setLastPlayed, isFavorite } from './state.js';
+import { getFilteredGames, setFilterLetter, setFilterFav, ix, updateUI } from './ui.js';
+import { imgPath, preloadGameImages, getRomPath, getRomExtensions } from './games.js';
+import { playSound } from './audio.js';
+import { playMusicForGame } from './music.js';
+import { preloadAdjacentGames, preloadBackgrounds } from './preloader.js';
+
 let onGameChange = null;
-function setOnGameChange(callback) {
+
+export function setOnGameChange(callback) {
   onGameChange = callback;
 }
+
 function updateGameDisplay(game, prevGame, nextGame, filtered, allGames) {
   const gameIdx = allGames.indexOf(game);
   setCi(gameIdx >= 0 ? gameIdx : 0);
-  const bgCa = document.getElementById("bgCa");
+
+  const bgCa = document.getElementById('bgCa');
   if (bgCa) bgCa.style.backgroundImage = `url('${imgPath(game)}')`;
-  const bgLa = document.getElementById("bgLa");
+  const bgLa = document.getElementById('bgLa');
   if (bgLa) bgLa.style.backgroundImage = `url('${imgPath(prevGame)}')`;
-  const bgRa = document.getElementById("bgRa");
+  const bgRa = document.getElementById('bgRa');
   if (bgRa) bgRa.style.backgroundImage = `url('${imgPath(nextGame)}')`;
+
   updateUI(game, prevGame, nextGame);
   preloadGameImages(game);
-  playSound("highlight");
+  playSound('highlight');
   playMusicForGame(game);
   if (onGameChange) onGameChange(game);
 }
-function navigate(dir) {
+
+export function navigate(dir) {
   const filtered = getFilteredGames();
   if (filtered.length === 0) return;
+  
   const allGames = getGames();
   const currentGame = allGames[getCurrentIndex()];
   const currentIdx = filtered.indexOf(currentGame);
   const newIdx = (currentIdx + dir + filtered.length) % filtered.length;
+  
   const game = filtered[newIdx];
   if (!game) return;
+  
   const prevGame = filtered[(newIdx - 1 + filtered.length) % filtered.length] || game;
   const nextGame = filtered[(newIdx + 1) % filtered.length] || game;
+
   updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
+  
   requestIdleCallback?.(() => {
     preloadAdjacentGames(newIdx, filtered);
   }) || setTimeout(() => preloadAdjacentGames(newIdx, filtered), 50);
 }
-function navigateToLetter(dir) {
+
+export function navigateToLetter(dir) {
   navigate(dir);
 }
-function showToast(message, type = "info") {
+
+function showToast(message, type = 'info') {
   const colors = {
-    info: { bg: "rgba(20,30,50,0.92)", border: "rgba(94,184,255,0.5)", icon: "\u2139\uFE0F" },
-    success: { bg: "rgba(20,50,30,0.92)", border: "rgba(74,222,128,0.5)", icon: "\u2713" },
-    error: { bg: "rgba(50,20,20,0.92)", border: "rgba(248,113,113,0.5)", icon: "\u2715" },
-    warning: { bg: "rgba(50,40,20,0.92)", border: "rgba(251,191,36,0.5)", icon: "\u26A0" }
+    info:    { bg: 'rgba(20,30,50,0.92)', border: 'rgba(94,184,255,0.5)', icon: 'ℹ️' },
+    success: { bg: 'rgba(20,50,30,0.92)', border: 'rgba(74,222,128,0.5)', icon: '✓' },
+    error:   { bg: 'rgba(50,20,20,0.92)', border: 'rgba(248,113,113,0.5)', icon: '✕' },
+    warning: { bg: 'rgba(50,40,20,0.92)', border: 'rgba(251,191,36,0.5)', icon: '⚠' },
   };
   const style = colors[type] || colors.info;
-  let toast = document.getElementById("aura-toast");
+  
+  let toast = document.getElementById('aura-toast');
   if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "aura-toast";
+    toast = document.createElement('div');
+    toast.id = 'aura-toast';
     Object.assign(toast.style, {
-      position: "fixed",
-      bottom: "180px",
-      left: "50%",
-      transform: "translateX(-50%)",
+      position: 'fixed',
+      bottom: '180px',
+      left: '50%',
+      transform: 'translateX(-50%)',
       backgroundColor: style.bg,
-      color: "white",
-      padding: "14px 28px",
-      borderRadius: "10px",
-      fontFamily: "Barlow, sans-serif",
-      fontSize: "16px",
-      fontWeight: "600",
+      color: 'white',
+      padding: '14px 28px',
+      borderRadius: '10px',
+      fontFamily: 'Barlow, sans-serif',
+      fontSize: '16px',
+      fontWeight: '600',
       border: `1px solid ${style.border}`,
-      zIndex: "1000",
-      display: "flex",
-      alignItems: "center",
-      gap: "12px",
-      boxShadow: "0 4px 20px rgba(0,0,0,0.4)"
+      zIndex: '1000',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '12px',
+      boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
     });
     document.body.appendChild(toast);
   }
+  
   toast.style.backgroundColor = style.bg;
   toast.style.borderColor = style.border;
   toast.innerHTML = `<span>${style.icon}</span><span>${message}</span>`;
-  toast.style.opacity = "1";
+  toast.style.opacity = '1';
+  
   clearTimeout(toast._timer);
-  toast._timer = setTimeout(() => {
-    toast.style.opacity = "0";
-  }, 3e3);
+  toast._timer = setTimeout(() => { toast.style.opacity = '0'; }, 3000);
 }
-function navigateToGame(index) {
+
+export function navigateToGame(index) {
   const filtered = getFilteredGames();
   if (index < 0 || index >= filtered.length) return;
+  
   const game = filtered[index];
   const allGames = getGames();
   const prevGame = filtered[(index - 1 + filtered.length) % filtered.length] || game;
   const nextGame = filtered[(index + 1) % filtered.length] || game;
+  
   updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
 }
-function launchCurrentGame() {
+
+export function launchCurrentGame() {
   try {
     const game = getCurrentGame();
     if (!game) {
-      showToast("Aucun jeu s\xE9lectionn\xE9", "warning");
+      showToast('Aucun jeu sélectionné', 'warning');
       return;
     }
+
     const romBasePath = getRomPath(game);
     if (!romBasePath) {
-      showToast("Chemin ROM introuvable", "error");
+      showToast('Chemin ROM introuvable', 'error');
       return;
     }
+
     const extensions = getRomExtensions(game);
-    playSound("select");
+
+    playSound('select');
     setLastPlayed(game.console, game.rom);
+
     window.electronAPI.launchGame(romBasePath, game.console, extensions);
   } catch (err) {
-    console.error("[Launch] Erreur:", err);
-    showToast("Erreur au lancement", "error");
+    console.error('[Launch] Erreur:', err);
+    showToast('Erreur au lancement', 'error');
   }
 }
-export {
-  launchCurrentGame,
-  navigate,
-  navigateToGame,
-  navigateToLetter,
-  setOnGameChange
-};

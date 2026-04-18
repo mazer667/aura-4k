@@ -1,128 +1,177 @@
-import { applyLanguage, t } from "./i18n.js";
-import { setSfxVolume, setMusicVolume, setGpDeadzone, setGpMapping } from "./aura.js";
-const LS_PREFIX = "aura4k_";
+// js/options.js
+import { applyLanguage, t } from './i18n.js';
+import { AURA, setSfxVolume, setMusicVolume, setGpDeadzone, setGpMapping } from './aura.js';
+
+const LS_PREFIX = 'aura4k_';
+
+type ElectronAPI = {
+  getAllConsoles?: () => Promise<Array<{ name: string; imagesFolder?: string; imageCenterSubfolder?: string; screenshotsSubfolder?: string }>>;
+  getConfig?: () => Promise<{ assetsBasePath?: string }>;
+  selectFolder?: () => Promise<{ canceled: boolean; path: string }>;
+  countRoms?: (folder: string) => Promise<{ count: number }>;
+  createXml?: (consoleName: string, folder: string) => Promise<{ success: boolean; count?: number; error?: string }>;
+  onScanProgress?: (handler: (data: { progress: number; current: number; total: number; gameName: string }) => void) => void;
+  setFullscreen?: (on: boolean) => void;
+  launchGame?: (romBasePath: string, consoleName: string, extensions: string[]) => void;
+  getXmlTimestamp?: (consoleName: string) => Promise<number>;
+  quitApp?: () => void;
+};
+
+declare global {
+  interface Window {
+    electronAPI?: ElectronAPI;
+    setMusicVolume?: (volume: number) => void;
+    updateSfxVolume?: (volume: number) => void;
+  }
+}
+
 const DEFAULTS = {
-  volume_music: 72,
-  volume_sfx: 60,
-  mute: false,
-  fullscreen: true,
-  show_clock: true,
-  grain_intensity: 35,
-  cursor_size: 12,
-  accent_color: "#5eb8ff",
-  language: "fr",
-  subtitles: true,
-  transition_speed: "normal",
-  fps_limit: 60,
+  volume_music:     72,
+  volume_sfx:       60,
+  mute:             false,
+  fullscreen:       true,
+  show_clock:       true,
+  grain_intensity:  35,
+  cursor_size:      12,
+  accent_color:     '#5eb8ff',
+  language:         'fr',
+  subtitles:        true,
+  transition_speed: 'normal',
+  fps_limit:        60,
   hide_empty_consoles: false,
   // Manette — mapping par défaut (index boutons Gamepad API standard)
-  gp_left: 4,
-  // LB
-  gp_right: 5,
-  // RB
-  gp_up: 12,
-  // D-pad haut
-  gp_down: 13,
-  // D-pad bas
-  gp_play: 1,
-  // Button 1 (A bas) = Jouer
-  gp_quit: 2,
-  // Button 2 (X gauche) = Quitter
-  gp_shots: 3,
-  // Button 3 (B droite) = Screenshots
-  gp_favorite: 0,
-  // Button 0 (Y haut) = Favoris
-  gp_options: 8,
-  // Select / Share
-  gp_deadzone: 45
-  // 45%
+  gp_left:     4,   // LB
+  gp_right:    5,   // RB
+  gp_up:       12,  // D-pad haut
+  gp_down:     13,  // D-pad bas
+  gp_play:     1,   // Button 1 (A bas) = Jouer
+  gp_quit:     2,   // Button 2 (X gauche) = Quitter
+  gp_shots:    3,   // Button 3 (B droite) = Screenshots
+  gp_favorite: 0,   // Button 0 (Y haut) = Favoris
+  gp_options:  8,   // Select / Share
+  gp_deadzone: 45,  // 45%
 };
-const GP_PRESETS = {
-  "Xbox": { gp_left: 4, gp_right: 5, gp_up: 12, gp_down: 13, gp_play: 0, gp_quit: 1, gp_shots: 2, gp_favorite: 3, gp_options: 6, gp_deadzone: 15 },
-  "PlayStation": { gp_left: 4, gp_right: 5, gp_up: 12, gp_down: 13, gp_play: 1, gp_quit: 2, gp_shots: 3, gp_favorite: 0, gp_options: 8, gp_deadzone: 15 },
-  "Nintendo": { gp_left: 4, gp_right: 5, gp_up: 12, gp_down: 13, gp_play: 0, gp_quit: 1, gp_shots: 3, gp_favorite: 2, gp_options: 8, gp_deadzone: 15 },
-  "PowerA": { gp_left: 4, gp_right: 5, gp_up: 12, gp_down: 13, gp_play: 1, gp_quit: 3, gp_shots: 2, gp_favorite: 0, gp_options: 8, gp_deadzone: 20 },
-  "8BitDo": { gp_left: 4, gp_right: 5, gp_up: 12, gp_down: 13, gp_play: 1, gp_quit: 2, gp_shots: 3, gp_favorite: 0, gp_options: 8, gp_deadzone: 15 },
-  "Generic": { gp_left: 4, gp_right: 5, gp_up: 12, gp_down: 13, gp_play: 1, gp_quit: 2, gp_shots: 3, gp_favorite: 0, gp_options: 8, gp_deadzone: 20 }
+
+// Controller presets for auto-detection
+type OptionKey = keyof typeof DEFAULTS;
+type OptionValue = typeof DEFAULTS[OptionKey];
+type GpKey =
+  | 'gp_left' | 'gp_right' | 'gp_up' | 'gp_down'
+  | 'gp_play' | 'gp_quit' | 'gp_shots' | 'gp_favorite'
+  | 'gp_options' | 'gp_deadzone';
+
+type GpAction = {
+  key: GpKey;
+  label: string;
+  hint: string;
 };
-function detectControllerPreset(gpId) {
-  const id = (gpId || "").toLowerCase();
-  if (id.includes("xbox")) return "Xbox";
-  if (id.includes("playstation") || id.includes("ps4") || id.includes("ps5") || id.includes("dualshock")) return "PlayStation";
-  if (id.includes("nintendo") || id.includes("switch") || id.includes("wii") || id.includes("gamecube")) return "Nintendo";
-  if (id.includes("powera") || id.includes("power") || id.includes("nan")) return "PowerA";
-  if (id.includes("8bitdo")) return "8BitDo";
-  return "Generic";
+
+type GpProfile = {
+  name: string;
+  mapping: Record<GpKey, number>;
+};
+
+const GP_PRESETS: Record<string, Record<GpKey, number>> = {
+  'Xbox': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:2, gp_favorite:3, gp_options:6, gp_deadzone:15 },
+  'PlayStation': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:15 },
+  'Nintendo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:0, gp_quit:1, gp_shots:3, gp_favorite:2, gp_options:8, gp_deadzone:15 },
+  'PowerA': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:3, gp_shots:2, gp_favorite:0, gp_options:8, gp_deadzone:20 },
+  '8BitDo': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:15 },
+  'Generic': { gp_left:4, gp_right:5, gp_up:12, gp_down:13, gp_play:1, gp_quit:2, gp_shots:3, gp_favorite:0, gp_options:8, gp_deadzone:20 },
+};
+
+function detectControllerPreset(gpId: string | null) {
+  const id = (gpId || '').toLowerCase();
+  if (id.includes('xbox')) return 'Xbox';
+  if (id.includes('playstation') || id.includes('ps4') || id.includes('ps5') || id.includes('dualshock')) return 'PlayStation';
+  if (id.includes('nintendo') || id.includes('switch') || id.includes('wii') || id.includes('gamecube')) return 'Nintendo';
+  if (id.includes('powera') || id.includes('power') || id.includes('nan')) return 'PowerA';
+  if (id.includes('8bitdo')) return '8BitDo';
+  return 'Generic';
 }
-function applyPreset(presetName) {
+
+function applyPreset(presetName: string) {
   const preset = GP_PRESETS[presetName];
   if (!preset) return;
-  Object.keys(preset).forEach((key) => {
-    if (key.startsWith("gp_")) {
+  
+  (Object.keys(preset) as GpKey[]).forEach(key => {
+    if (key.startsWith('gp_')) {
       saveSetting(key, preset[key]);
     }
   });
+  
+  // rebuild will happen in init
 }
-let isOpen = false;
-let currentTab = 0;
-let settings = { ...DEFAULTS };
-let animFrameId = null;
-let frameInterval = 1e3 / 60;
-const TABS = ["audio", "display", "interface", "gamepad", "calibration", "language", "data", "about"];
-function isOptionsOpen() {
-  return isOpen;
+
+let isOpen        = false;
+let currentTab    = 0;
+let settings: Record<string, any> = { ...DEFAULTS };
+let animFrameId: number | null   = null;
+let frameInterval = 1000 / 60;
+
+const TABS = ['audio', 'display', 'interface', 'gamepad', 'calibration', 'language', 'data', 'about'];
+
+// ─────────────────────────────────────────────────────────────
+//  API PUBLIQUE — importée par navigation.js, ui.js, index.html
+// ─────────────────────────────────────────────────────────────
+export function isOptionsOpen()    { return isOpen; }
+export function isInGamepadTab() {
+  return isOpen && (
+    document.getElementById('aura-tab-gamepad')?.classList.contains('active') ||
+    document.getElementById('aura-tab-calibration')?.classList.contains('active')
+  );
 }
-function isInGamepadTab() {
-  return isOpen && (document.getElementById("aura-tab-gamepad")?.classList.contains("active") || document.getElementById("aura-tab-calibration")?.classList.contains("active"));
-}
-function openOptions() {
-  setOpenState(true);
-}
-function closeOptions() {
-  setOpenState(false);
-}
-function toggleOptions() {
-  setOpenState(!isOpen);
-}
-function getSetting(key) {
-  return settings[key] ?? DEFAULTS[key];
-}
-function getFPSLimit() {
+export function openOptions()      { setOpenState(true); }
+export function closeOptions()     { setOpenState(false); }
+export function toggleOptions()    { setOpenState(!isOpen); }
+export function getSetting(key: OptionKey): OptionValue { return settings[key] ?? DEFAULTS[key]; }
+
+export function getFPSLimit() {
   return settings.fps_limit ?? DEFAULTS.fps_limit;
 }
-function getFrameInterval() {
-  return frameInterval > 0 ? frameInterval : 1e3 / 60;
+
+export function getFrameInterval() {
+  // Toujours retourner une valeur valide > 0
+  return frameInterval > 0 ? frameInterval : 1000 / 60;
 }
-function getTransitionDuration() {
-  const map = { fast: 250, normal: 500, slow: 1e3, none: 0 };
-  return map[settings.transition_speed] ?? 500;
+
+export function getTransitionDuration() {
+  const map = { fast: 250, normal: 500, slow: 1000, none: 0 } as const;
+  return map[settings.transition_speed as keyof typeof map] ?? 500;
 }
-function initOptions() {
+
+export function initOptions() {
   loadSettings();
   injectCSS();
   injectHTML();
   bindEvents();
   populateControls();
-  applyAllSettings();
-  applyFPSLimit();
-  applyLanguage(settings.language);
-  console.log("[Options] Initialis\xE9 \u2014 FPS:", getFPSLimit(), "Langue:", settings.language);
+  applyAllSettings();             // grain, curseur, horloge, accent, volume
+  applyFPSLimit();                // démarre la boucle animation avec les bons FPS
+  applyLanguage(settings.language); // applique la langue sauvegardée au démarrage
+  console.log('[Options] Initialisé — FPS:', getFPSLimit(), 'Langue:', settings.language);
 }
+
+// ─────────────────────────────────────────────────────────────
+//  PERSISTANCE
+// ─────────────────────────────────────────────────────────────
 function loadSettings() {
   settings = { ...DEFAULTS };
-  for (const key of Object.keys(DEFAULTS)) {
+  for (const key of Object.keys(DEFAULTS) as OptionKey[]) {
     const raw = localStorage.getItem(LS_PREFIX + key);
     if (raw === null) continue;
-    if (typeof DEFAULTS[key] === "boolean") settings[key] = raw === "true";
-    else if (typeof DEFAULTS[key] === "number") settings[key] = Number(raw);
+    if (typeof DEFAULTS[key] === 'boolean') settings[key] = raw === 'true';
+    else if (typeof DEFAULTS[key] === 'number') settings[key] = Number(raw);
     else settings[key] = raw;
   }
 }
-function saveSetting(key, value) {
+
+function saveSetting(key: OptionKey, value: OptionValue) {
   settings[key] = value;
   localStorage.setItem(LS_PREFIX + key, String(value));
   showSavedIndicator();
 }
+
 function resetAllSettings() {
   for (const key of Object.keys(DEFAULTS)) {
     localStorage.removeItem(LS_PREFIX + key);
@@ -133,53 +182,76 @@ function resetAllSettings() {
   applyFPSLimit();
   showSavedIndicator();
 }
+
+// ─────────────────────────────────────────────────────────────
+//  OPEN / CLOSE
+// ─────────────────────────────────────────────────────────────
 function setOpenState(state) {
   isOpen = state;
-  const scaler = document.getElementById("scaler");
-  const overlay = document.getElementById("aura-opt-overlay");
-  const panel = document.getElementById("aura-opt-panel");
+  const scaler  = document.getElementById('scaler');
+  const overlay = document.getElementById('aura-opt-overlay');
+  const panel   = document.getElementById('aura-opt-panel');
+
   if (isOpen) {
-    scaler?.classList.add("aura-opt-blurred");
-    overlay?.classList.add("open");
-    panel?.classList.add("open");
+    scaler ?.classList.add('aura-opt-blurred');
+    overlay?.classList.add('open');
+    panel  ?.classList.add('open');
   } else {
-    scaler?.classList.remove("aura-opt-blurred");
-    overlay?.classList.remove("open");
-    panel?.classList.remove("open");
+    scaler ?.classList.remove('aura-opt-blurred');
+    overlay?.classList.remove('open');
+    panel  ?.classList.remove('open');
   }
 }
+
+// ─────────────────────────────────────────────────────────────
+//  ONGLETS
+// ─────────────────────────────────────────────────────────────
 function activateTab(index) {
   currentTab = Math.max(0, Math.min(TABS.length - 1, index));
   const tabName = TABS[currentTab];
-  document.querySelectorAll(".aura-opt-nav-item").forEach(
-    (el) => el.classList.toggle("active", el.dataset.tab === tabName)
+  document.querySelectorAll<HTMLElement>('.aura-opt-nav-item').forEach(el =>
+    el.classList.toggle('active', el.dataset.tab === tabName)
   );
-  document.querySelectorAll(".aura-opt-tab").forEach(
-    (el) => el.classList.toggle("active", el.id === `aura-tab-${tabName}`)
+  document.querySelectorAll<HTMLElement>('.aura-opt-tab').forEach(el =>
+    el.classList.toggle('active', el.id === `aura-tab-${tabName}`)
   );
 }
+
 function moveTab(delta) {
   activateTab(currentTab + delta);
 }
+
+// ─────────────────────────────────────────────────────────────
+//  FPS — boucle d'animation
+// ─────────────────────────────────────────────────────────────
 function applyFPSLimit() {
   const fps = getFPSLimit();
-  frameInterval = 1e3 / fps;
+  frameInterval = 1000 / fps;
+
+  // Annuler l'ancienne boucle avant d'en démarrer une nouvelle
   if (animFrameId) {
     cancelAnimationFrame(animFrameId);
     animFrameId = null;
   }
+
   let lastTime = performance.now();
+
   function loop(now) {
     const elapsed = now - lastTime;
     if (elapsed >= frameInterval) {
-      lastTime = now - elapsed % frameInterval;
-      window.dispatchEvent(new CustomEvent("frame", { detail: { fps } }));
+      lastTime = now - (elapsed % frameInterval);
+      window.dispatchEvent(new CustomEvent('frame', { detail: { fps } }));
     }
     animFrameId = requestAnimationFrame(loop);
   }
+
   animFrameId = requestAnimationFrame(loop);
-  console.log(`[Options] FPS limit\xE9 \xE0 ${fps} \u2014 intervalle: ${frameInterval.toFixed(1)}ms`);
+  console.log(`[Options] FPS limité à ${fps} — intervalle: ${frameInterval.toFixed(1)}ms`);
 }
+
+// ─────────────────────────────────────────────────────────────
+//  APPLICATION DES RÉGLAGES
+// ─────────────────────────────────────────────────────────────
 function applyAllSettings() {
   applyVolume();
   applyGrain();
@@ -187,212 +259,273 @@ function applyAllSettings() {
   applyClock();
   applyAccent();
 }
+
 function applyVolume() {
   const musicVol = settings.mute ? 0 : settings.volume_music / 100;
-  const sfxVol = settings.mute ? 0 : settings.volume_sfx / 100;
-  if (typeof window.setMusicVolume === "function") {
+  const sfxVol   = settings.mute ? 0 : settings.volume_sfx / 100;
+
+  // ── music.js expose window.setMusicVolume() ──────────────
+  if (typeof window.setMusicVolume === 'function') {
     window.setMusicVolume(musicVol);
   }
-  if (typeof window.updateSfxVolume === "function") {
+
+  // ── audio.js expose window.updateSfxVolume() ─────────────
+  if (typeof window.updateSfxVolume === 'function') {
     window.updateSfxVolume(sfxVol);
   }
+
+  // Mettre aussi à jour le namespace AURA
   setSfxVolume(sfxVol);
   setMusicVolume(musicVol);
 }
+
 function applyGrain() {
-  const opacity = settings.grain_intensity / 100 * 0.25;
-  document.querySelectorAll(".grain").forEach((el) => {
+  // Plage : 0 → invisible, 100 → opacité maximale 0.25
+  const opacity = (settings.grain_intensity / 100) * 0.25;
+  document.querySelectorAll<HTMLElement>('.grain').forEach(el => {
     el.style.opacity = opacity.toFixed(3);
   });
 }
+
 function applyCursor() {
-  const cur = document.getElementById("cur");
+  const cur = document.getElementById('cur');
   if (!cur) return;
-  cur.style.width = `${settings.cursor_size}px`;
+  cur.style.width  = `${settings.cursor_size}px`;
   cur.style.height = `${settings.cursor_size}px`;
-  document.documentElement.style.setProperty("--cursor-size", `${settings.cursor_size}px`);
-  document.documentElement.style.setProperty("--cursor-big", `${settings.cursor_size * 2.8}px`);
+  // Mettre à jour aussi la taille "big" via variable CSS
+  document.documentElement.style.setProperty('--cursor-size', `${settings.cursor_size}px`);
+  document.documentElement.style.setProperty('--cursor-big',  `${settings.cursor_size * 2.8}px`);
 }
+
 function applyClock() {
-  const clockEl = document.querySelector(".clock");
+  const clockEl = document.querySelector<HTMLElement>('.clock');
   if (!clockEl) return;
-  clockEl.style.visibility = settings.show_clock ? "visible" : "hidden";
-  clockEl.style.opacity = settings.show_clock ? "1" : "0";
+  clockEl.style.visibility = settings.show_clock ? 'visible' : 'hidden';
+  clockEl.style.opacity    = settings.show_clock ? '1' : '0';
 }
+
 function applyAccent() {
-  document.documentElement.style.setProperty("--aura-accent", settings.accent_color);
+  document.documentElement.style.setProperty('--aura-accent', settings.accent_color);
 }
+
+// ─────────────────────────────────────────────────────────────
+//  PEUPLEMENT DES CONTRÔLES
+// ─────────────────────────────────────────────────────────────
 function populateControls() {
-  setSlider("aura-sl-music", settings.volume_music);
-  setSlider("aura-sl-sfx", settings.volume_sfx);
-  setSlider("aura-sl-grain", settings.grain_intensity);
-  setSlider("aura-sl-deadzone", settings.gp_deadzone ?? 15);
-  setToggle("aura-tg-mute", settings.mute);
-  setToggle("aura-tg-fs", settings.fullscreen);
-  setToggle("aura-tg-clock", settings.show_clock);
-  setToggle("aura-tg-subs", settings.subtitles);
-  setToggle("aura-tg-hideempty", settings.hide_empty_consoles);
-  setStepper("aura-st-cursor", settings.cursor_size);
-  setStepper("aura-st-fps", settings.fps_limit);
-  setRadioGroup("speed", settings.transition_speed);
-  document.querySelectorAll(".aura-lang-card").forEach((card) => {
-    card.classList.toggle("active", card.dataset.lang === settings.language);
+  setSlider('aura-sl-music', settings.volume_music);
+  setSlider('aura-sl-sfx',   settings.volume_sfx);
+  setSlider('aura-sl-grain', settings.grain_intensity);
+  setSlider('aura-sl-deadzone', settings.gp_deadzone ?? 15);
+
+  setToggle('aura-tg-mute',  settings.mute);
+  setToggle('aura-tg-fs',    settings.fullscreen);
+  setToggle('aura-tg-clock', settings.show_clock);
+  setToggle('aura-tg-subs',  settings.subtitles);
+  setToggle('aura-tg-hideempty', settings.hide_empty_consoles);
+
+  setStepper('aura-st-cursor', settings.cursor_size);
+  setStepper('aura-st-fps',    settings.fps_limit);
+
+  setRadioGroup('speed', settings.transition_speed);
+
+  document.querySelectorAll<HTMLElement>('.aura-lang-card').forEach(card => {
+    card.classList.toggle('active', card.dataset.lang === settings.language);
   });
-  document.querySelectorAll(".aura-accent-dot").forEach((dot) => {
-    dot.classList.toggle("active", dot.dataset.color === settings.accent_color);
+
+  document.querySelectorAll<HTMLElement>('.aura-accent-dot').forEach(dot => {
+    dot.classList.toggle('active', dot.dataset.color === settings.accent_color);
   });
 }
+
 function setSlider(id, value) {
-  const el = document.getElementById(id);
+  const el = document.getElementById(id) as HTMLInputElement | null;
   if (!el) return;
   el.value = String(value);
-  const pct = (value - Number(el.min)) / (Number(el.max) - Number(el.min)) * 100;
-  el.style.setProperty("--pct", `${pct}%`);
-  const valEl = document.getElementById(id.replace("aura-sl-", "aura-val-"));
+  const pct = ((value - Number(el.min)) / (Number(el.max) - Number(el.min))) * 100;
+  el.style.setProperty('--pct', `${pct}%`);
+  const valEl = document.getElementById(id.replace('aura-sl-', 'aura-val-'));
   if (valEl) valEl.textContent = String(value);
 }
+
 function setToggle(id, state) {
-  document.getElementById(id)?.classList.toggle("on", state);
+  document.getElementById(id)?.classList.toggle('on', state);
 }
+
 function setStepper(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value;
 }
+
 function setRadioGroup(group, activeValue) {
-  document.querySelectorAll(`[data-group="${group}"]`).forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.value === activeValue);
+  document.querySelectorAll<HTMLElement>(`[data-group="${group}"]`).forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.value === activeValue);
   });
 }
+
 function showSavedIndicator() {
-  const el = document.getElementById("aura-opt-saved");
+  const el = document.getElementById('aura-opt-saved');
   if (!el) return;
-  el.classList.add("show");
+  el.classList.add('show');
   clearTimeout(el._saveTimer);
-  el._saveTimer = setTimeout(() => el.classList.remove("show"), 1800);
+  el._saveTimer = setTimeout(() => el.classList.remove('show'), 1800);
 }
-let selectedRomsFolder = "";
+
+// ─────────────────────────────────────────────────────────────
+//  DATA TAB — ROM Scan, HyperList
+// ─────────────────────────────────────────────────────────────
+let selectedRomsFolder = '';
+
 function initDataTab() {
   loadConsolesList();
   loadSSCredentials();
-  document.getElementById("aura-btn-ss-save")?.addEventListener("click", saveSSCredentials);
-  document.getElementById("aura-btn-select-folder")?.addEventListener("click", selectRomsFolder);
-  document.getElementById("aura-btn-create-xml")?.addEventListener("click", createXml);
+  
+  document.getElementById('aura-btn-ss-save')?.addEventListener('click', saveSSCredentials);
+  document.getElementById('aura-btn-select-folder')?.addEventListener('click', selectRomsFolder);
+  document.getElementById('aura-btn-create-xml')?.addEventListener('click', createXml);
+  
   if (window.electronAPI?.onScanProgress) {
     window.electronAPI.onScanProgress((data) => {
       updateScanProgress(data);
     });
   }
 }
+
 function applyDataTabI18n() {
-  const dataTab = document.getElementById("aura-tab-data");
+  const dataTab = document.getElementById('aura-tab-data');
   if (!dataTab) return;
-  dataTab.querySelectorAll("[data-i18n]").forEach((el) => {
+  
+  dataTab.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (key && t(key)) {
       el.textContent = t(key);
     }
   });
 }
+
 function updateScanProgress(data) {
-  const progressEl = document.getElementById("aura-scan-progress");
-  const barEl = document.getElementById("aura-progress-bar");
-  const countEl = document.getElementById("aura-progress-count");
-  const gameEl = document.getElementById("aura-progress-game");
-  if (progressEl) progressEl.style.display = "block";
-  if (barEl) barEl.style.width = data.progress + "%";
-  if (countEl) countEl.textContent = data.current + "/" + data.total + " (" + data.progress + "%)";
+  const progressEl = document.getElementById('aura-scan-progress');
+  const barEl = document.getElementById('aura-progress-bar');
+  const countEl = document.getElementById('aura-progress-count');
+  const gameEl = document.getElementById('aura-progress-game');
+  
+  if (progressEl) progressEl.style.display = 'block';
+  if (barEl) barEl.style.width = data.progress + '%';
+  if (countEl) countEl.textContent = data.current + '/' + data.total + ' (' + data.progress + '%)';
   if (gameEl) gameEl.textContent = data.gameName;
 }
+
 function loadSSCredentials() {
-  const userEl = document.getElementById("aura-ss-user");
-  const passEl = document.getElementById("aura-ss-pass");
-  if (userEl) userEl.value = localStorage.getItem("aura4k_ss_user") || "";
-  if (passEl) passEl.value = localStorage.getItem("aura4k_ss_pass") || "";
+  const userEl = document.getElementById('aura-ss-user') as HTMLInputElement | null;
+  const passEl = document.getElementById('aura-ss-pass') as HTMLInputElement | null;
+  if (userEl) userEl.value = localStorage.getItem('aura4k_ss_user') || '';
+  if (passEl) passEl.value = localStorage.getItem('aura4k_ss_pass') || '';
 }
+
 function saveSSCredentials() {
-  const userEl = document.getElementById("aura-ss-user");
-  const passEl = document.getElementById("aura-ss-pass");
-  if (userEl) localStorage.setItem("aura4k_ss_user", userEl.value);
-  if (passEl) localStorage.setItem("aura4k_ss_pass", passEl.value);
-  showDataResult("success", t("data.saved"));
+  const userEl = document.getElementById('aura-ss-user') as HTMLInputElement | null;
+  const passEl = document.getElementById('aura-ss-pass') as HTMLInputElement | null;
+  if (userEl) localStorage.setItem('aura4k_ss_user', userEl.value);
+  if (passEl) localStorage.setItem('aura4k_ss_pass', passEl.value);
+  showDataResult('success', t('data.saved'));
 }
+
 async function loadConsolesList() {
-  const select = document.getElementById("aura-console-select");
+  const select = document.getElementById('aura-console-select') as HTMLSelectElement | null;
   if (!select) return;
-  const chooseOpt = document.createElement("option");
-  chooseOpt.value = "";
-  chooseOpt.textContent = t("data.choose");
-  select.innerHTML = "";
+  
+  const chooseOpt = document.createElement('option');
+  chooseOpt.value = '';
+  chooseOpt.textContent = t('data.choose');
+  select.innerHTML = '';
   select.appendChild(chooseOpt);
+  
   if (window.electronAPI?.getAllConsoles) {
     const consoles = await window.electronAPI.getAllConsoles();
-    consoles.forEach((c) => {
-      const opt = document.createElement("option");
+    consoles.forEach(c => {
+      const opt = document.createElement('option');
       opt.value = c.name;
       opt.textContent = c.name;
       select.appendChild(opt);
     });
   }
 }
+
 async function selectRomsFolder() {
   if (!window.electronAPI?.selectFolder) {
-    showDataResult("error", t("data.novailable"));
+    showDataResult('error', t('data.novailable'));
     return;
   }
+  
   const result = await window.electronAPI.selectFolder();
+  
   if (result.canceled) return;
+  
   selectedRomsFolder = result.path;
-  const selectedFolderEl = document.getElementById("aura-selected-folder");
+  const selectedFolderEl = document.getElementById('aura-selected-folder');
   if (selectedFolderEl) selectedFolderEl.textContent = selectedRomsFolder;
+  
   const countResult = await window.electronAPI?.countRoms?.(selectedRomsFolder);
-  const gamesLabel = t("data.games");
-  const romsCountEl = document.getElementById("aura-roms-count");
+  const gamesLabel = t('data.games');
+  const romsCountEl = document.getElementById('aura-roms-count');
   if (countResult && romsCountEl) {
-    romsCountEl.innerHTML = countResult.count + ' <span data-i18n="data.games">' + gamesLabel + "</span>";
+    romsCountEl.innerHTML = countResult.count + ' <span data-i18n="data.games">' + gamesLabel + '</span>';
   }
 }
+
 async function createXml() {
-  const select = document.getElementById("aura-console-select");
+  const select = document.getElementById('aura-console-select') as HTMLSelectElement | null;
   const consoleName = select?.value;
+  
   if (!selectedRomsFolder) {
-    showDataResult("error", t("data.selectfolder"));
+    showDataResult('error', t('data.selectfolder'));
     return;
   }
+  
   if (!consoleName) {
-    showDataResult("error", t("data.selectconsole"));
+    showDataResult('error', t('data.selectconsole'));
     return;
   }
-  const dataResultEl = document.getElementById("aura-data-result");
-  const scanProgressEl = document.getElementById("aura-scan-progress");
-  if (dataResultEl) dataResultEl.style.display = "none";
-  if (scanProgressEl) scanProgressEl.style.display = "block";
+  
+  const dataResultEl = document.getElementById('aura-data-result');
+  const scanProgressEl = document.getElementById('aura-scan-progress');
+  if (dataResultEl) dataResultEl.style.display = 'none';
+  if (scanProgressEl) scanProgressEl.style.display = 'block';
+  
   const result = await window.electronAPI?.createXml?.(consoleName, selectedRomsFolder);
-  if (scanProgressEl) scanProgressEl.style.display = "none";
+  
+  if (scanProgressEl) scanProgressEl.style.display = 'none';
+  
   if (result.success) {
-    showDataResult("success", t("data.created") + " " + result.count + " " + t("data.games"));
-    window.dispatchEvent(new CustomEvent("aura-consoles-changed"));
+    showDataResult('success', t('data.created') + ' ' + result.count + ' ' + t('data.games'));
+    // Recharger les consoles dans le menu
+    window.dispatchEvent(new CustomEvent('aura-consoles-changed'));
   } else {
-    showDataResult("error", t("data.error") + ": " + result.error);
+    showDataResult('error', t('data.error') + ': ' + result.error);
   }
 }
-function showDataResult(type, message) {
-  const el = document.getElementById("aura-data-result");
+
+function showDataResult(type: 'success' | 'error', message: string) {
+  const el = document.getElementById('aura-data-result') as HTMLElement | null;
   if (!el) return;
-  el.className = "aura-data-result " + type;
+  el.className = 'aura-data-result ' + type;
   el.textContent = message;
-  el.style.display = "block";
-  setTimeout(() => {
-    el.style.display = "none";
-  }, 8e3);
+  el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; }, 8000);
 }
+
+// ─────────────────────────────────────────────────────────────
+//  ÉVÉNEMENTS
+// ─────────────────────────────────────────────────────────────
 function bindEvents() {
-  document.getElementById("aura-opt-overlay")?.addEventListener("click", (e) => {
-    const target = e.target;
-    if (target?.id === "aura-opt-overlay") closeOptions();
-  });
-  document.getElementById("aura-opt-close")?.addEventListener("click", closeOptions);
-  document.querySelectorAll(".aura-opt-nav-item").forEach((item) => {
-    item.addEventListener("click", () => {
+  // Fermeture
+  document.getElementById('aura-opt-overlay')
+    ?.addEventListener('click', e => { const target = e.target as HTMLElement | null; if (target?.id === 'aura-opt-overlay') closeOptions(); });
+  document.getElementById('aura-opt-close')
+    ?.addEventListener('click', closeOptions);
+
+  // Onglets
+  document.querySelectorAll<HTMLElement>('.aura-opt-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
       const tab = item.dataset.tab;
       if (tab) {
         const idx = TABS.indexOf(tab);
@@ -400,169 +533,178 @@ function bindEvents() {
       }
     });
   });
-  bindSlider("aura-sl-music", "aura-val-music", (v) => {
-    saveSetting("volume_music", v);
+
+  // ── Sliders ──────────────────────────────────────────────
+  bindSlider('aura-sl-music', 'aura-val-music', v => {
+    saveSetting('volume_music', v);
     applyVolume();
   });
-  bindSlider("aura-sl-sfx", "aura-val-sfx", (v) => {
-    saveSetting("volume_sfx", v);
+  bindSlider('aura-sl-sfx', 'aura-val-sfx', v => {
+    saveSetting('volume_sfx', v);
     applyVolume();
   });
-  bindSlider("aura-sl-grain", "aura-val-grain", (v) => {
-    saveSetting("grain_intensity", v);
+  bindSlider('aura-sl-grain', 'aura-val-grain', v => {
+    saveSetting('grain_intensity', v);
     applyGrain();
   });
-  bindToggle("aura-tg-mute", (v) => {
-    saveSetting("mute", v);
+
+  // ── Toggles ──────────────────────────────────────────────
+  bindToggle('aura-tg-mute', v => {
+    saveSetting('mute', v);
     applyVolume();
   });
-  bindToggle("aura-tg-fs", (v) => {
-    saveSetting("fullscreen", v);
+  bindToggle('aura-tg-fs', v => {
+    saveSetting('fullscreen', v);
+    // Electron en priorité, fallback navigateur
     if (window.electronAPI?.setFullscreen) {
       window.electronAPI.setFullscreen(v);
     } else {
-      if (v) document.documentElement.requestFullscreen?.().catch(() => {
-      });
-      else document.exitFullscreen?.().catch(() => {
-      });
+      if (v) document.documentElement.requestFullscreen?.().catch(() => {});
+      else   document.exitFullscreen?.().catch(() => {});
     }
   });
-  document.addEventListener("fullscreenchange", () => {
+  // Sync le toggle si l'utilisateur sort du fullscreen avec F11 / Échap
+  document.addEventListener('fullscreenchange', () => {
     const isFs = !!document.fullscreenElement;
-    saveSetting("fullscreen", isFs);
-    setToggle("aura-tg-fs", isFs);
+    saveSetting('fullscreen', isFs);
+    setToggle('aura-tg-fs', isFs);
   });
-  bindToggle("aura-tg-clock", (v) => {
-    saveSetting("show_clock", v);
+  bindToggle('aura-tg-clock', v => {
+    saveSetting('show_clock', v);
     applyClock();
   });
-  bindToggle("aura-tg-hideempty", (v) => {
-    saveSetting("hide_empty_consoles", v);
-    window.dispatchEvent(new CustomEvent("aura-consoles-changed"));
+  bindToggle('aura-tg-hideempty', v => {
+    saveSetting('hide_empty_consoles', v);
+    // Trigger console list refresh
+    window.dispatchEvent(new CustomEvent('aura-consoles-changed'));
   });
-  bindToggle("aura-tg-subs", (v) => {
-    saveSetting("subtitles", v);
+  bindToggle('aura-tg-subs', v => {
+    saveSetting('subtitles', v);
   });
+
+  // ── Steppers ─────────────────────────────────────────────
+  // FPS : valeurs discrètes
   bindStepper(
-    "aura-st-fps",
-    "aura-st-fps-dec",
-    "aura-st-fps-inc",
+    'aura-st-fps', 'aura-st-fps-dec', 'aura-st-fps-inc',
     [30, 60, 120, 144, 240],
-    (v) => {
-      saveSetting("fps_limit", v);
-      applyFPSLimit();
-    }
+    v => { saveSetting('fps_limit', v); applyFPSLimit(); }
   );
+  // Curseur : pas de 2
   bindStepper(
-    "aura-st-cursor",
-    "aura-st-cur-dec",
-    "aura-st-cur-inc",
+    'aura-st-cursor', 'aura-st-cur-dec', 'aura-st-cur-inc',
     [6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
-    (v) => {
-      saveSetting("cursor_size", v);
-      applyCursor();
-    }
+    v => { saveSetting('cursor_size', v); applyCursor(); }
   );
-  document.querySelectorAll('[data-group="speed"]').forEach((btn) => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll('[data-group="speed"]').forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+
+  // ── Vitesse de transition ─────────────────────────────────
+  document.querySelectorAll<HTMLElement>('[data-group="speed"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll<HTMLElement>('[data-group="speed"]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
       const value = btn.dataset.value;
-      if (value) saveSetting("transition_speed", value);
+      if (value) saveSetting('transition_speed', value);
+      // ui.js lit getTransitionDuration() à chaque crossfade — pas besoin d'autre action
     });
   });
-  document.querySelectorAll(".aura-accent-dot").forEach((dot) => {
-    dot.addEventListener("click", () => {
-      document.querySelectorAll(".aura-accent-dot").forEach((d) => d.classList.remove("active"));
-      dot.classList.add("active");
+
+  // ── Couleur accent ───────────────────────────────────────
+  document.querySelectorAll<HTMLElement>('.aura-accent-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      document.querySelectorAll<HTMLElement>('.aura-accent-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
       const color = dot.dataset.color;
-      if (color) saveSetting("accent_color", color);
+      if (color) saveSetting('accent_color', color);
       applyAccent();
     });
   });
-  document.querySelectorAll(".aura-lang-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      document.querySelectorAll(".aura-lang-card").forEach((c) => c.classList.remove("active"));
-      card.classList.add("active");
+
+  // ── Langue ───────────────────────────────────────────────
+  document.querySelectorAll<HTMLElement>('.aura-lang-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll<HTMLElement>('.aura-lang-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
       const lang = card.dataset.lang;
       if (lang) {
-        saveSetting("language", lang);
-        applyLanguage(lang);
-        applyDataTabI18n();
+        saveSetting('language', lang);
+        applyLanguage(lang); // ← traduit tout le DOM immédiatement
+        applyDataTabI18n(); // ← met à jour les traductions du tab Data
       }
     });
   });
-  const GP_ACTIONS = [
-    { key: "gp_left", label: "Jeu pr\xE9c\xE9dent", hint: "Navigation gauche" },
-    { key: "gp_right", label: "Jeu suivant", hint: "Navigation droite" },
-    { key: "gp_up", label: "Lettre pr\xE9c\xE9dente", hint: "Navigation haut" },
-    { key: "gp_down", label: "Lettre suivante", hint: "Navigation bas" },
-    { key: "gp_play", label: "Jouer", hint: "Lancer le jeu" },
-    { key: "gp_quit", label: "Quitter", hint: "Fermer AURA" },
-    { key: "gp_shots", label: "Screenshots", hint: "Afficher captures" },
-    { key: "gp_favorite", label: "Favoris", hint: "Toggle favoris" },
-    { key: "gp_options", label: "Menu Options", hint: "Ouvrir/Fermer" }
+
+  // ── Gamepad ───────────────────────────────────────────────
+  // Définition des actions remappables
+  const GP_ACTIONS: GpAction[] = [
+    { key: 'gp_left',    label: 'Jeu précédent',    hint: 'Navigation gauche'  },
+    { key: 'gp_right',   label: 'Jeu suivant',       hint: 'Navigation droite' },
+    { key: 'gp_up',      label: 'Lettre précédente', hint: 'Navigation haut'   },
+    { key: 'gp_down',    label: 'Lettre suivante',    hint: 'Navigation bas'    },
+    { key: 'gp_play',    label: 'Jouer',              hint: 'Lancer le jeu'     },
+    { key: 'gp_quit',    label: 'Quitter',            hint: 'Fermer AURA'      },
+    { key: 'gp_shots',   label: 'Screenshots',        hint: 'Afficher captures' },
+    { key: 'gp_favorite',label: 'Favoris',            hint: 'Toggle favoris'   },
+    { key: 'gp_options', label: 'Menu Options',       hint: 'Ouvrir/Fermer'    },
   ];
-  const BTN_NAMES = {
-    0: "A/Croix",
-    1: "B/Rond",
-    2: "X/Carr\xE9",
-    3: "Y/Triangle",
-    4: "LB",
-    5: "RB",
-    6: "LT",
-    7: "RT",
-    8: "Select",
-    9: "Start",
-    10: "L3",
-    11: "R3",
-    12: "\u2191",
-    13: "\u2193",
-    14: "\u2190",
-    15: "\u2192"
+
+  const BTN_NAMES: Record<number, string> = {
+    0:'A/Croix', 1:'B/Rond', 2:'X/Carré', 3:'Y/Triangle',
+    4:'LB', 5:'RB', 6:'LT', 7:'RT',
+    8:'Select', 9:'Start', 10:'L3', 11:'R3',
+    12:'↑', 13:'↓', 14:'←', 15:'→',
   };
-  let listeningKey = null;
-  let gpPollId = null;
+
+  let listeningKey: GpKey | null = null;  // action en cours d'assignation
+  let gpPollId: number | null = null;  // requestAnimationFrame ID
+
   function buildGpActions() {
-    const container = document.getElementById("aura-gp-actions");
+    const container = document.getElementById('aura-gp-actions');
     if (!container) return;
-    container.innerHTML = "";
-    GP_ACTIONS.forEach((action) => {
+    container.innerHTML = '';
+    GP_ACTIONS.forEach(action => {
       const btnIdx = Number(settings[action.key] ?? DEFAULTS[action.key]);
       const btnName = BTN_NAMES[btnIdx] ?? `Btn ${btnIdx}`;
-      const row = document.createElement("div");
-      row.className = "aura-gp-action";
+      const row = document.createElement('div');
+      row.className   = 'aura-gp-action';
       row.dataset.key = action.key;
       row.innerHTML = `
         <div class="aura-gp-action-name">${action.label}</div>
         <div class="aura-gp-action-hint">${action.hint}</div>
         <div class="aura-gp-badge" id="aura-gp-badge-${action.key}">${btnName}</div>`;
-      row.addEventListener("click", () => startListening(action.key));
+      row.addEventListener('click', () => startListening(action.key));
       container.appendChild(row);
     });
   }
-  function startListening(key) {
+
+  function startListening(key: GpKey) {
+    // Annuler toute écoute précédente
     if (listeningKey) stopListening(false);
     listeningKey = key;
-    document.querySelectorAll(".aura-gp-action").forEach((r) => {
-      r.classList.toggle("listening", r.dataset.key === key);
+
+    // UI : marquer l'action active
+    document.querySelectorAll<HTMLElement>('.aura-gp-action').forEach(r => {
+      r.classList.toggle('listening', r.dataset.key === key);
     });
-    const hint = document.getElementById("aura-gp-listen-hint");
-    if (hint) hint.classList.add("show");
+    const hint = document.getElementById('aura-gp-listen-hint');
+    if (hint) hint.classList.add('show');
+
+    // Démarrer le polling manette
     startGpPoll();
   }
-  function stopListening(save) {
+
+  function stopListening(save?: boolean) {
     if (listeningKey && save !== false) {
+      // rien à faire ici, assigné dans la boucle
     }
     listeningKey = null;
-    document.querySelectorAll(".aura-gp-action").forEach((r) => r.classList.remove("listening"));
-    const hint = document.getElementById("aura-gp-listen-hint");
-    if (hint) hint.classList.remove("show");
+    document.querySelectorAll('.aura-gp-action').forEach(r => r.classList.remove('listening'));
+    const hint = document.getElementById('aura-gp-listen-hint');
+    if (hint) hint.classList.remove('show');
     stopGpPoll();
   }
+
   function startGpPoll() {
     if (gpPollId) return;
-    const prevStates = {};
+    const prevStates: Record<string, boolean> = {};
     function poll() {
       const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
       for (const gp of gamepads) {
@@ -570,7 +712,7 @@ function bindEvents() {
         gp.buttons.forEach((btn, idx) => {
           const stateKey = `${gp.index}-${idx}`;
           const wasPressed = prevStates[stateKey];
-          const isPressed = btn.pressed || btn.value > 0.5;
+          const isPressed  = btn.pressed || btn.value > 0.5;
           if (isPressed && !wasPressed && listeningKey) {
             assignButton(listeningKey, idx);
           }
@@ -581,131 +723,143 @@ function bindEvents() {
     }
     gpPollId = requestAnimationFrame(poll);
   }
+
   function stopGpPoll() {
-    if (gpPollId) {
-      cancelAnimationFrame(gpPollId);
-      gpPollId = null;
-    }
+    if (gpPollId) { cancelAnimationFrame(gpPollId); gpPollId = null; }
   }
-  function assignButton(key, btnIdx) {
+
+  function assignButton(key: GpKey, btnIdx: number) {
     saveSetting(key, btnIdx);
     const badge = document.getElementById(`aura-gp-badge-${key}`);
     if (badge) badge.textContent = BTN_NAMES[btnIdx] ?? `Btn ${btnIdx}`;
     stopListening(true);
+    // Exposer le nouveau mapping globalement
     _exportGpMapping();
   }
+
   function _exportGpMapping() {
     const mapping = {
-      left: settings.gp_left,
-      right: settings.gp_right,
-      up: settings.gp_up,
-      down: settings.gp_down,
-      play: settings.gp_play,
-      quit: settings.gp_quit,
-      shots: settings.gp_shots,
+      left:     settings.gp_left,
+      right:    settings.gp_right,
+      up:       settings.gp_up,
+      down:     settings.gp_down,
+      play:     settings.gp_play,
+      quit:     settings.gp_quit,
+      shots:    settings.gp_shots,
       favorite: settings.gp_favorite,
-      options: settings.gp_options
+      options:  settings.gp_options,
     };
     setGpMapping(mapping);
   }
-  document.addEventListener("click", (e) => {
-    const target = e.target;
-    if (listeningKey && target && !target.closest(".aura-gp-action")) stopListening(false);
+
+  // Clic ailleurs = annuler l'écoute
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element | null;
+    if (listeningKey && target && !target.closest('.aura-gp-action')) stopListening(false);
   });
-  window.addEventListener("gamepadconnected", (e) => {
-    const el = document.getElementById("aura-gp-status");
-    if (el) {
-      el.textContent = `${e.gamepad.id.substring(0, 22)}\u2026`;
-      el.style.color = "rgba(52,211,153,0.7)";
-    }
+
+  // Status détection manette
+  window.addEventListener('gamepadconnected', e => {
+    const el = document.getElementById('aura-gp-status');
+    if (el) { el.textContent = `${e.gamepad.id.substring(0,22)}…`; el.style.color = 'rgba(52,211,153,0.7)'; }
   });
-  window.addEventListener("gamepaddisconnected", () => {
-    const el = document.getElementById("aura-gp-status");
-    if (el) {
-      el.textContent = "Aucune manette";
-      el.style.color = "rgba(255,255,255,0.2)";
-    }
+  window.addEventListener('gamepaddisconnected', () => {
+    const el = document.getElementById('aura-gp-status');
+    if (el) { el.textContent = 'Aucune manette'; el.style.color = 'rgba(255,255,255,0.2)'; }
   });
-  bindSlider("aura-sl-deadzone", "aura-val-deadzone", (v) => {
-    saveSetting("gp_deadzone", v);
+
+  // Deadzone slider
+  bindSlider('aura-sl-deadzone', 'aura-val-deadzone', v => {
+    saveSetting('gp_deadzone', v);
     setGpDeadzone(v / 100);
   });
-  const dzSlider = document.getElementById("aura-sl-deadzone");
-  const dzVal = document.getElementById("aura-val-deadzone");
+  // Afficher % sur le label
+  const dzSlider = document.getElementById('aura-sl-deadzone') as HTMLInputElement | null;
+  const dzVal    = document.getElementById('aura-val-deadzone');
   if (dzSlider && dzVal) {
-    dzSlider.addEventListener("input", () => {
-      dzVal.textContent = dzSlider.value + "%";
-    });
-    dzVal.textContent = (settings.gp_deadzone ?? 15) + "%";
+    dzSlider.addEventListener('input', () => { dzVal.textContent = dzSlider.value + '%'; });
+    dzVal.textContent = (settings.gp_deadzone ?? 15) + '%';
   }
-  document.getElementById("aura-gp-reset")?.addEventListener("click", () => {
-    ["gp_left", "gp_right", "gp_up", "gp_down", "gp_play", "gp_quit", "gp_shots", "gp_favorite", "gp_options", "gp_deadzone"].forEach((k) => {
+
+  // Reset mapping
+  document.getElementById('aura-gp-reset')?.addEventListener('click', () => {
+    (['gp_left','gp_right','gp_up','gp_down','gp_play','gp_quit','gp_shots','gp_favorite','gp_options','gp_deadzone'] as GpKey[]).forEach(k => {
       settings[k] = DEFAULTS[k];
       localStorage.removeItem(LS_PREFIX + k);
     });
     buildGpActions();
-    setSlider("aura-sl-deadzone", DEFAULTS.gp_deadzone);
-    if (dzVal) dzVal.textContent = DEFAULTS.gp_deadzone + "%";
+    setSlider('aura-sl-deadzone', DEFAULTS.gp_deadzone);
+    if (dzVal) dzVal.textContent = DEFAULTS.gp_deadzone + '%';
     _exportGpMapping();
     showSavedIndicator();
-    document.querySelectorAll(".aura-gp-preset-btn").forEach((b) => b.classList.remove("active"));
+    document.querySelectorAll('.aura-gp-preset-btn').forEach(b => b.classList.remove('active'));
   });
-  document.querySelectorAll(".aura-gp-preset-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
+
+  // Preset buttons
+  document.querySelectorAll<HTMLElement>('.aura-gp-preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
       const preset = btn.dataset.preset;
       if (preset) {
         applyPreset(preset);
       }
-      document.querySelectorAll(".aura-gp-preset-btn").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+      document.querySelectorAll<HTMLElement>('.aura-gp-preset-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     });
   });
-  const gpDetectEl = document.getElementById("aura-gp-detected");
-  window.addEventListener("gamepadconnected", (e) => {
+
+  // Update detected preset display
+  const gpDetectEl = document.getElementById('aura-gp-detected');
+  window.addEventListener('gamepadconnected', (e) => {
     const preset = detectControllerPreset(e.gamepad.id);
-    if (gpDetectEl) gpDetectEl.textContent = `D\xE9tect\xE9: ${e.gamepad.id.substring(0, 30)}... (${preset})`;
+    if (gpDetectEl) gpDetectEl.textContent = `Détecté: ${e.gamepad.id.substring(0,30)}... (${preset})`;
   });
-  window.addEventListener("gamepaddisconnected", () => {
-    if (gpDetectEl) gpDetectEl.textContent = "Manette non d\xE9tect\xE9e";
+  window.addEventListener('gamepaddisconnected', () => {
+    if (gpDetectEl) gpDetectEl.textContent = 'Manette non détectée';
   });
-  const PROFILES_KEY = "aura4k_gp_profiles";
-  let currentProfile = null;
-  function getProfiles() {
-    try {
-      return JSON.parse(localStorage.getItem(PROFILES_KEY) || "[]");
-    } catch {
-      return [];
-    }
+
+  // Custom Profiles Management
+  const PROFILES_KEY = 'aura4k_gp_profiles';
+  let currentProfile: string | null = null;
+  
+  function getProfiles(): GpProfile[] {
+    try { return JSON.parse(localStorage.getItem(PROFILES_KEY) || '[]') as GpProfile[]; }
+    catch { return []; }
   }
-  function saveProfiles(profiles) {
+  
+  function saveProfiles(profiles: GpProfile[]) {
     localStorage.setItem(PROFILES_KEY, JSON.stringify(profiles));
   }
+  
   function renderProfiles() {
-    const list = document.getElementById("aura-gp-profile-list");
+    const list = document.getElementById('aura-gp-profile-list');
     if (!list) return;
     const profiles = getProfiles();
+    
     if (profiles.length === 0) {
-      list.innerHTML = '<div class="aura-gp-no-profiles">Aucun profil enregistr\xE9</div>';
+      list.innerHTML = '<div class="aura-gp-no-profiles">Aucun profil enregistré</div>';
       return;
     }
+    
     list.innerHTML = profiles.map((p, idx) => `
-      <div class="aura-gp-profile-item ${currentProfile === p.name ? "active" : ""}" data-idx="${idx}">
+      <div class="aura-gp-profile-item ${currentProfile === p.name ? 'active' : ''}" data-idx="${idx}">
         <span class="aura-gp-profile-name">${p.name}</span>
-        <button class="aura-gp-profile-delete" data-delete="${idx}">\xD7</button>
+        <button class="aura-gp-profile-delete" data-delete="${idx}">×</button>
       </div>
-    `).join("");
-    list.querySelectorAll(".aura-gp-profile-item").forEach((item) => {
-      item.addEventListener("click", (e) => {
-        const target = e.target;
-        if (target instanceof Element && target.classList.contains("aura-gp-profile-delete")) return;
-        const idx = parseInt(item.dataset.idx || "0");
+    `).join('');
+    
+    list.querySelectorAll<HTMLElement>('.aura-gp-profile-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        const target = e.target as Element | null;
+        if (target instanceof Element && target.classList.contains('aura-gp-profile-delete')) return;
+        const idx = parseInt(item.dataset.idx || '0');
         loadProfile(profiles[idx]);
       });
     });
-    list.querySelectorAll(".aura-gp-profile-delete").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
+    
+    list.querySelectorAll<HTMLElement>('.aura-gp-profile-delete').forEach(btn => {
+      btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const idx = parseInt(btn.dataset.delete || "0");
+        const idx = parseInt(btn.dataset.delete || '0');
         profiles.splice(idx, 1);
         saveProfiles(profiles);
         if (currentProfile === profiles[idx]?.name) currentProfile = null;
@@ -713,11 +867,12 @@ function bindEvents() {
       });
     });
   }
-  function loadProfile(profile) {
+  
+  function loadProfile(profile: GpProfile | null) {
     if (!profile) return;
     currentProfile = profile.name;
-    Object.keys(profile.mapping).forEach((key) => {
-      if (key.startsWith("gp_")) {
+    (Object.keys(profile.mapping) as GpKey[]).forEach(key => {
+      if (key.startsWith('gp_')) {
         settings[key] = profile.mapping[key];
         localStorage.setItem(LS_PREFIX + key, String(profile.mapping[key]));
       }
@@ -727,12 +882,13 @@ function bindEvents() {
     renderProfiles();
     showSavedIndicator();
   }
-  document.getElementById("aura-gp-profile-new")?.addEventListener("click", () => {
-    const name = prompt("Nom du profil:");
+  
+  document.getElementById('aura-gp-profile-new')?.addEventListener('click', () => {
+    const name = prompt('Nom du profil:');
     if (!name) return;
     const profiles = getProfiles();
-    const mapping = {};
-    ["gp_left", "gp_right", "gp_up", "gp_down", "gp_play", "gp_quit", "gp_shots", "gp_favorite", "gp_options", "gp_deadzone"].forEach((k) => {
+    const mapping = {} as Record<GpKey, number>;
+    (['gp_left','gp_right','gp_up','gp_down','gp_play','gp_quit','gp_shots','gp_favorite','gp_options','gp_deadzone'] as GpKey[]).forEach(k => {
       mapping[k] = Number(settings[k] ?? DEFAULTS[k]);
     });
     profiles.push({ name, mapping });
@@ -741,44 +897,58 @@ function bindEvents() {
     renderProfiles();
     showSavedIndicator();
   });
+  
   renderProfiles();
+
+  // Calibration - Real-time button display
   (function initCalibration() {
-    const calBtns = document.querySelectorAll(".aura-gp-cal-btn");
-    const calAxis0 = document.getElementById("aura-gp-cal-axis0");
-    const calAxis1 = document.getElementById("aura-gp-cal-axis1");
-    const calStatus = document.getElementById("aura-gp-cal-status");
-    let pollId = null;
+    const calBtns = document.querySelectorAll<HTMLElement>('.aura-gp-cal-btn');
+    const calAxis0 = document.getElementById('aura-gp-cal-axis0');
+    const calAxis1 = document.getElementById('aura-gp-cal-axis1');
+    const calStatus = document.getElementById('aura-gp-cal-status');
+    let pollId: number | null = null;
+
     function poll() {
       const gps = navigator.getGamepads ? navigator.getGamepads() : [];
-      const gp = [...gps].find((g) => g?.connected);
+      const gp = [...gps].find(g => g?.connected);
+      
       if (gp) {
-        if (calStatus) calStatus.textContent = "Manette connect\xE9e - Testez les boutons";
+        if (calStatus) calStatus.textContent = 'Manette connectée - Testez les boutons';
+        
+        // Update buttons - check pressed state
         gp.buttons.forEach((btn, idx) => {
           const el = calBtns[idx];
           if (el) {
             const isPressed = btn.pressed || btn.value > 0.5;
-            el.classList.toggle("active", isPressed);
+            el.classList.toggle('active', isPressed);
           }
         });
-        if (calAxis0) calAxis0.textContent = "X:" + (gp.axes[0]?.toFixed(1) || 0) + " Y:" + (gp.axes[1]?.toFixed(1) || 0);
-        if (calAxis1) calAxis1.textContent = "X:" + (gp.axes[2]?.toFixed(1) || 0) + " Y:" + (gp.axes[3]?.toFixed(1) || 0);
+        
+        // Update axes
+        if (calAxis0) calAxis0.textContent = 'X:' + (gp.axes[0]?.toFixed(1)||0) + ' Y:' + (gp.axes[1]?.toFixed(1)||0);
+        if (calAxis1) calAxis1.textContent = 'X:' + (gp.axes[2]?.toFixed(1)||0) + ' Y:' + (gp.axes[3]?.toFixed(1)||0);
       } else {
-        if (calStatus) calStatus.textContent = "Branchez votre manette";
+        if (calStatus) calStatus.textContent = 'Branchez votre manette';
       }
+      
       pollId = requestAnimationFrame(poll);
     }
-    const gpTab = document.getElementById("aura-tab-gamepad");
-    if (gpTab?.classList.contains("active")) {
+
+    // Start when gamepad tab is active
+    const gpTab = document.getElementById('aura-tab-gamepad');
+    if (gpTab?.classList.contains('active')) {
       pollId = requestAnimationFrame(poll);
     }
+
+    // Observe tab changes
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((m) => {
-        if (m.attributeName === "class") {
-          const target = m.target;
-          if (target && target.id === "aura-tab-gamepad") {
-            if (target.classList.contains("active") && !pollId) {
+        if (m.attributeName === 'class') {
+          const target = m.target as HTMLElement | null;
+          if (target && target.id === 'aura-tab-gamepad') {
+            if (target.classList.contains('active') && !pollId) {
               pollId = requestAnimationFrame(poll);
-            } else if (!target.classList.contains("active") && pollId) {
+            } else if (!target.classList.contains('active') && pollId) {
               cancelAnimationFrame(pollId);
               pollId = null;
             }
@@ -786,95 +956,112 @@ function bindEvents() {
         }
       });
     });
-    document.querySelectorAll(".aura-opt-tab").forEach((tab) => {
+
+    document.querySelectorAll('.aura-opt-tab').forEach(tab => {
       observer.observe(tab, { attributes: true });
     });
   })();
+
   buildGpActions();
   _exportGpMapping();
-  document.getElementById("aura-btn-reset")?.addEventListener("click", () => {
-    if (confirm(t("about.reset.confirm"))) resetAllSettings();
+
+  // ── Maintenance ──────────────────────────────────────────
+  document.getElementById('aura-btn-reset')?.addEventListener('click', () => {
+    if (confirm(t('about.reset.confirm'))) resetAllSettings();
   });
-  document.getElementById("aura-btn-cache")?.addEventListener("click", async () => {
-    const { clearCache } = await import("./gameCache.js");
-    const { clearCache: clearImageCache } = await import("./imageCache.js");
-    const { clearOptimizedCache } = await import("./imageOptimizer.js");
+  document.getElementById('aura-btn-cache')?.addEventListener('click', async () => {
+    const { clearCache } = await import('./gameCache.js');
+    const { clearCache: clearImageCache } = await import('./imageCache.js');
+    const { clearOptimizedCache } = await import('./imageOptimizer.js');
+    
     await clearCache();
     clearImageCache();
     clearOptimizedCache();
+    
     showSavedIndicator();
   });
+
+  // ── Data Tab ──────────────────────────────────────────────
   initDataTab();
   applyDataTabI18n();
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Backspace") {
+
+  // ── Clavier — phase CAPTURE pour intercepter avant index.html ──
+  document.addEventListener('keydown', e => {
+    // Backspace = SELECT : toujours basculer le menu
+    if (e.key === 'Backspace') {
       e.preventDefault();
       e.stopPropagation();
       toggleOptions();
       return;
     }
+
+    // Si le menu est fermé, laisser passer les autres touches
     if (!isOpen) return;
+
+    // Menu ouvert : on bloque TOUT pour que le fond ne bouge pas
     e.stopPropagation();
-    if (e.key === "Escape") {
-      e.preventDefault();
-      closeOptions();
-    }
-    if (e.key === "ArrowUp") {
-      e.preventDefault();
-      moveTab(-1);
-    }
-    if (e.key === "ArrowDown") {
-      e.preventDefault();
-      moveTab(1);
-    }
-  }, true);
+
+    if (e.key === 'Escape')    { e.preventDefault(); closeOptions(); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); moveTab(-1); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); moveTab(1); }
+  }, true); // ← true = phase capture, s'exécute AVANT les listeners de index.html
 }
-function bindSlider(sliderId, valId, callback) {
-  const slider = document.getElementById(sliderId);
-  const valEl = document.getElementById(valId);
+
+// ─────────────────────────────────────────────────────────────
+//  HELPERS CONTRÔLES
+// ─────────────────────────────────────────────────────────────
+function bindSlider(sliderId: string, valId: string, callback: (value: number) => void) {
+  const slider = document.getElementById(sliderId) as HTMLInputElement | null;
+  const valEl  = document.getElementById(valId);
   if (!slider) return;
-  slider.addEventListener("input", () => {
-    const v = Number(slider.value);
-    const pct = (v - Number(slider.min)) / (Number(slider.max) - Number(slider.min)) * 100;
-    slider.style.setProperty("--pct", `${pct}%`);
+
+  slider.addEventListener('input', () => {
+    const v   = Number(slider.value);
+    const pct = ((v - Number(slider.min)) / (Number(slider.max) - Number(slider.min))) * 100;
+    slider.style.setProperty('--pct', `${pct}%`);
     if (valEl) valEl.textContent = String(v);
     callback(v);
   });
 }
-function bindToggle(toggleId, callback) {
+
+function bindToggle(toggleId: string, callback: (state: boolean) => void) {
   const el = document.getElementById(toggleId);
   if (!el) return;
-  el.addEventListener("click", () => {
-    el.classList.toggle("on");
-    callback(el.classList.contains("on"));
+  el.addEventListener('click', () => {
+    el.classList.toggle('on');
+    callback(el.classList.contains('on'));
   });
 }
-function bindStepper(valId, decId, incId, options, callback) {
+
+function bindStepper(valId: string, decId: string, incId: string, options: number[], callback: (value: number) => void) {
   const valEl = document.getElementById(valId);
   if (!valEl) return;
-  document.getElementById(decId)?.addEventListener("click", () => {
-    const current = parseInt(valEl.textContent || "0");
+
+  document.getElementById(decId)?.addEventListener('click', () => {
+    const current = parseInt(valEl.textContent || '0');
     const idx = options.indexOf(current);
     if (idx > 0) {
-      const nextValue = options[idx - 1];
+      const nextValue = options[idx - 1]!;
       valEl.textContent = String(nextValue);
       callback(nextValue);
     }
   });
-  document.getElementById(incId)?.addEventListener("click", () => {
-    const current = parseInt(valEl.textContent || "0");
+
+  document.getElementById(incId)?.addEventListener('click', () => {
+    const current = parseInt(valEl.textContent || '0');
     const idx = options.indexOf(current);
     if (idx >= 0 && idx < options.length - 1) {
-      const nextValue = options[idx + 1];
+      const nextValue = options[idx + 1]!;
       valEl.textContent = String(nextValue);
       callback(nextValue);
     }
   });
 }
+
 function injectCSS() {
-  if (document.getElementById("aura-opt-css")) return;
-  const style = document.createElement("style");
-  style.id = "aura-opt-css";
+  if (document.getElementById('aura-opt-css')) return;
+  const style = document.createElement('style');
+  style.id = 'aura-opt-css';
   style.textContent = `
     :root {
       --aura-accent: #5eb8ff;
@@ -892,7 +1079,7 @@ function injectCSS() {
       height: var(--cursor-big) !important;
     }
 
-    /* Fond flout\xE9 quand le menu est ouvert */
+    /* Fond flouté quand le menu est ouvert */
     #scaler {
       transition: filter 0.45s ease;
     }
@@ -1247,11 +1434,11 @@ function injectCSS() {
       width: 5px; height: 5px; border-radius: 50%; background: rgba(100,220,150,0.8);
     }
 
-    /* \u2500\u2500 Manette \u2500\u2500 */
+    /* ── Manette ── */
     .aura-gp-layout {
       display: flex; gap: 20px; align-items: flex-start;
     }
-    /* Sch\xE9ma visuel de la manette */
+    /* Schéma visuel de la manette */
     .aura-gp-visual {
       flex-shrink: 0; width: 220px;
       background: rgba(255,255,255,0.03);
@@ -1504,29 +1691,33 @@ function injectCSS() {
   `;
   document.head.appendChild(style);
 }
+
+// ─────────────────────────────────────────────────────────────
+//  INJECTION HTML — avec data-i18n sur chaque texte
+// ─────────────────────────────────────────────────────────────
 function injectHTML() {
-  if (document.getElementById("aura-opt-overlay")) return;
-  document.body.insertAdjacentHTML("beforeend", `
+  if (document.getElementById('aura-opt-overlay')) return;
+  document.body.insertAdjacentHTML('beforeend', `
   <div id="aura-opt-overlay"></div>
   <div id="aura-opt-panel">
     <div class="aura-opt-header">
       <div class="aura-opt-title">
         <span data-i18n="opt.title">OPTIONS</span>
         <span style="color:var(--aura-accent)" data-i18n="opt.title.amp">&amp;</span>
-        <span data-i18n="opt.title.sub">PARAM\xC8TRES</span>
+        <span data-i18n="opt.title.sub">PARAMÈTRES</span>
       </div>
       <div id="aura-opt-close"><span class="esc">ESC</span> <span data-i18n="opt.close">Fermer</span></div>
     </div>
     <div class="aura-opt-body">
       <div class="aura-opt-nav">
-        <div class="aura-opt-nav-item active" data-tab="audio"><span class="aura-nav-ico">\u{1F50A}</span> <span data-i18n="tab.audio">Audio</span></div>
-        <div class="aura-opt-nav-item" data-tab="display"><span class="aura-nav-ico">\u{1F5A5}</span> <span data-i18n="tab.display">Affichage</span></div>
-        <div class="aura-opt-nav-item" data-tab="interface"><span class="aura-nav-ico">\u{1F3AE}</span> <span data-i18n="tab.interface">Interface</span></div>
-        <div class="aura-opt-nav-item" data-tab="gamepad"><span class="aura-nav-ico">\u{1F579}</span> <span data-i18n="tab.gamepad">Manette</span></div>
-        <div class="aura-opt-nav-item" data-tab="calibration"><span class="aura-nav-ico">\u{1F3AF}</span> <span>Test</span></div>
-        <div class="aura-opt-nav-item" data-tab="language"><span class="aura-nav-ico">\u{1F310}</span> <span data-i18n="tab.language">Langue</span></div>
-        <div class="aura-opt-nav-item" data-tab="data"><span class="aura-nav-ico">\u{1F4BE}</span> <span data-i18n="tab.data">Donn\xE9es</span></div>
-        <div class="aura-opt-nav-item" data-tab="about"><span class="aura-nav-ico">\u2139</span> <span data-i18n="tab.about">\xC0 propos</span></div>
+        <div class="aura-opt-nav-item active" data-tab="audio"><span class="aura-nav-ico">🔊</span> <span data-i18n="tab.audio">Audio</span></div>
+        <div class="aura-opt-nav-item" data-tab="display"><span class="aura-nav-ico">🖥</span> <span data-i18n="tab.display">Affichage</span></div>
+        <div class="aura-opt-nav-item" data-tab="interface"><span class="aura-nav-ico">🎮</span> <span data-i18n="tab.interface">Interface</span></div>
+        <div class="aura-opt-nav-item" data-tab="gamepad"><span class="aura-nav-ico">🕹</span> <span data-i18n="tab.gamepad">Manette</span></div>
+        <div class="aura-opt-nav-item" data-tab="calibration"><span class="aura-nav-ico">🎯</span> <span>Test</span></div>
+        <div class="aura-opt-nav-item" data-tab="language"><span class="aura-nav-ico">🌐</span> <span data-i18n="tab.language">Langue</span></div>
+        <div class="aura-opt-nav-item" data-tab="data"><span class="aura-nav-ico">💾</span> <span data-i18n="tab.data">Données</span></div>
+        <div class="aura-opt-nav-item" data-tab="about"><span class="aura-nav-ico">ℹ</span> <span data-i18n="tab.about">À propos</span></div>
       </div>
       <div class="aura-opt-content">
 
@@ -1563,7 +1754,7 @@ function injectHTML() {
           <div class="aura-row">
             <div class="aura-row-info">
               <div class="aura-row-label" data-i18n="audio.mute.label">Muet global</div>
-              <div class="aura-row-desc"  data-i18n="audio.mute.desc">D\xE9sactive tout le son de l'interface</div>
+              <div class="aura-row-desc"  data-i18n="audio.mute.desc">Désactive tout le son de l'interface</div>
             </div>
             <div class="aura-row-ctrl"><div class="aura-toggle" id="aura-tg-mute"></div></div>
           </div>
@@ -1576,7 +1767,7 @@ function injectHTML() {
           <div class="aura-row">
             <div class="aura-row-info">
               <div class="aura-row-label" data-i18n="display.fs.label">Fullscreen</div>
-              <div class="aura-row-desc"  data-i18n="display.fs.desc">Occupe toute la surface de l'\xE9cran</div>
+              <div class="aura-row-desc"  data-i18n="display.fs.desc">Occupe toute la surface de l'écran</div>
             </div>
             <div class="aura-row-ctrl"><div class="aura-toggle on" id="aura-tg-fs"></div></div>
           </div>
@@ -1603,7 +1794,7 @@ function injectHTML() {
             </div>
             <div class="aura-row-ctrl">
               <div class="aura-stepper">
-                <div class="aura-stepper-btn" id="aura-st-fps-dec">\u2212</div>
+                <div class="aura-stepper-btn" id="aura-st-fps-dec">−</div>
                 <div class="aura-stepper-val" id="aura-st-fps">60</div>
                 <div class="aura-stepper-btn" id="aura-st-fps-inc">+</div>
               </div>
@@ -1618,7 +1809,7 @@ function injectHTML() {
           <div class="aura-row">
             <div class="aura-row-info">
               <div class="aura-row-label" data-i18n="ui.speed.label">Vitesse de transition</div>
-              <div class="aura-row-desc"  data-i18n="ui.speed.desc">Dur\xE9e des animations entre les jeux</div>
+              <div class="aura-row-desc"  data-i18n="ui.speed.desc">Durée des animations entre les jeux</div>
             </div>
             <div class="aura-row-ctrl">
               <div class="aura-radio-group">
@@ -1630,8 +1821,8 @@ function injectHTML() {
           </div>
           <div class="aura-row">
             <div class="aura-row-info">
-              <div class="aura-row-label" data-i18n="ui.grain.label">Intensit\xE9 du grain</div>
-              <div class="aura-row-desc"  data-i18n="ui.grain.desc">Texture de grain cin\xE9matique sur le fond</div>
+              <div class="aura-row-label" data-i18n="ui.grain.label">Intensité du grain</div>
+              <div class="aura-row-desc"  data-i18n="ui.grain.desc">Texture de grain cinématique sur le fond</div>
             </div>
             <div class="aura-row-ctrl">
               <div class="aura-slider-wrap">
@@ -1645,11 +1836,11 @@ function injectHTML() {
           <div class="aura-row">
             <div class="aura-row-info">
               <div class="aura-row-label" data-i18n="ui.cursize.label">Taille du curseur</div>
-              <div class="aura-row-desc"  data-i18n="ui.cursize.desc">Diam\xE8tre du pointeur personnalis\xE9</div>
+              <div class="aura-row-desc"  data-i18n="ui.cursize.desc">Diamètre du pointeur personnalisé</div>
             </div>
             <div class="aura-row-ctrl">
               <div class="aura-stepper">
-                <div class="aura-stepper-btn" id="aura-st-cur-dec">\u2212</div>
+                <div class="aura-stepper-btn" id="aura-st-cur-dec">−</div>
                 <div class="aura-stepper-val" id="aura-st-cursor">12</div>
                 <div class="aura-stepper-btn" id="aura-st-cur-inc">+</div>
               </div>
@@ -1677,10 +1868,10 @@ function injectHTML() {
         <div class="aura-opt-tab" id="aura-tab-gamepad">
           <div class="aura-sec-title" data-i18n="gp.mapping">Assignation des boutons</div>
           <div class="aura-sec-line"></div>
-          <div id="aura-gp-listen-hint" class="aura-gp-listen-hint">Appuie sur un bouton de la manette\u2026</div>
+          <div id="aura-gp-listen-hint" class="aura-gp-listen-hint">Appuie sur un bouton de la manette…</div>
           <div class="aura-gp-layout">
 
-            <!-- Sch\xE9ma visuel -->
+            <!-- Schéma visuel -->
             <div class="aura-gp-visual">
               <div class="aura-gp-visual-title">Standard Layout</div>
               <svg class="aura-gp-svg" viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1720,7 +1911,7 @@ function injectHTML() {
 
             <!-- Actions remappables -->
             <div class="aura-gp-actions" id="aura-gp-actions">
-              <!-- Inject\xE9 par JS -->
+              <!-- Injecté par JS -->
             </div>
           </div>
 
@@ -1731,7 +1922,7 @@ function injectHTML() {
             <div class="aura-row">
               <div class="aura-row-info">
                 <div class="aura-row-label" data-i18n="gp.dz.label">Zone morte</div>
-                <div class="aura-row-desc"  data-i18n="gp.dz.desc">Seuil minimum de d\xE9placement du joystick</div>
+                <div class="aura-row-desc"  data-i18n="gp.dz.desc">Seuil minimum de déplacement du joystick</div>
               </div>
               <div class="aura-row-ctrl">
                 <div class="aura-slider-wrap">
@@ -1741,7 +1932,7 @@ function injectHTML() {
               </div>
             </div>
             <div style="text-align:right">
-              <div class="aura-gp-reset-btn" id="aura-gp-reset" data-i18n="gp.reset">R\xE9initialiser le mapping</div>
+              <div class="aura-gp-reset-btn" id="aura-gp-reset" data-i18n="gp.reset">Réinitialiser le mapping</div>
             </div>
 
             <!-- Presets -->
@@ -1754,14 +1945,14 @@ function injectHTML() {
                 <div class="aura-gp-preset-btn" data-preset="Nintendo">Nintendo</div>
                 <div class="aura-gp-preset-btn" data-preset="PowerA">PowerA</div>
                 <div class="aura-gp-preset-btn" data-preset="8BitDo">8BitDo</div>
-                <div class="aura-gp-preset-btn" data-preset="Generic">G\xE9n\xE9rique</div>
+                <div class="aura-gp-preset-btn" data-preset="Generic">Générique</div>
               </div>
-              <div class="aura-gp-preset-detect" id="aura-gp-detected">Manette non d\xE9tect\xE9e</div>
+              <div class="aura-gp-preset-detect" id="aura-gp-detected">Manette non détectée</div>
             </div>
 
             <!-- Custom Profiles -->
             <div class="aura-gp-custom-profiles">
-              <div class="aura-sec-title">Profils personnalis\xE9s</div>
+              <div class="aura-sec-title">Profils personnalisés</div>
               <div class="aura-sec-line"></div>
               <div class="aura-gp-profile-list" id="aura-gp-profile-list">
                 <!-- Dynamique -->
@@ -1792,10 +1983,10 @@ function injectHTML() {
                 <div class="aura-gp-cal-btn" data-idx="9">START</div>
                 <div class="aura-gp-cal-btn" data-idx="10">L3</div>
                 <div class="aura-gp-cal-btn" data-idx="11">R3</div>
-                <div class="aura-gp-cal-btn" data-idx="12">\u2191</div>
-                <div class="aura-gp-cal-btn" data-idx="13">\u2193</div>
-                <div class="aura-gp-cal-btn" data-idx="14">\u2190</div>
-                <div class="aura-gp-cal-btn" data-idx="15">\u2192</div>
+                <div class="aura-gp-cal-btn" data-idx="12">↑</div>
+                <div class="aura-gp-cal-btn" data-idx="13">↓</div>
+                <div class="aura-gp-cal-btn" data-idx="14">←</div>
+                <div class="aura-gp-cal-btn" data-idx="15">→</div>
               </div>
               <div class="aura-gp-cal-axes">
                 <div class="aura-gp-cal-axis">
@@ -1813,28 +2004,28 @@ function injectHTML() {
 
         <!-- LANGUE -->
         <div class="aura-opt-tab" id="aura-tab-language">
-          <div class="aura-sec-title" data-i18n="lang.select">S\xE9lectionner la langue</div>
+          <div class="aura-sec-title" data-i18n="lang.select">Sélectionner la langue</div>
           <div class="aura-sec-line"></div>
           <div class="aura-lang-grid">
-            <div class="aura-lang-card active" data-lang="fr"><span>\u{1F1EB}\u{1F1F7}</span><span class="aura-lang-name">Fran\xE7ais</span></div>
-            <div class="aura-lang-card" data-lang="en"><span>\u{1F1EC}\u{1F1E7}</span><span class="aura-lang-name">English</span></div>
-            <div class="aura-lang-card" data-lang="de"><span>\u{1F1E9}\u{1F1EA}</span><span class="aura-lang-name">Deutsch</span></div>
-            <div class="aura-lang-card" data-lang="es"><span>\u{1F1EA}\u{1F1F8}</span><span class="aura-lang-name">Espa\xF1ol</span></div>
-            <div class="aura-lang-card" data-lang="it"><span>\u{1F1EE}\u{1F1F9}</span><span class="aura-lang-name">Italiano</span></div>
-            <div class="aura-lang-card" data-lang="ja"><span>\u{1F1EF}\u{1F1F5}</span><span class="aura-lang-name">\u65E5\u672C\u8A9E</span></div>
+            <div class="aura-lang-card active" data-lang="fr"><span>🇫🇷</span><span class="aura-lang-name">Français</span></div>
+            <div class="aura-lang-card" data-lang="en"><span>🇬🇧</span><span class="aura-lang-name">English</span></div>
+            <div class="aura-lang-card" data-lang="de"><span>🇩🇪</span><span class="aura-lang-name">Deutsch</span></div>
+            <div class="aura-lang-card" data-lang="es"><span>🇪🇸</span><span class="aura-lang-name">Español</span></div>
+            <div class="aura-lang-card" data-lang="it"><span>🇮🇹</span><span class="aura-lang-name">Italiano</span></div>
+            <div class="aura-lang-card" data-lang="ja"><span>🇯🇵</span><span class="aura-lang-name">日本語</span></div>
           </div>
           <div class="aura-sec-title" data-i18n="lang.subs">Sous-titres</div>
           <div class="aura-sec-line"></div>
           <div class="aura-row">
             <div class="aura-row-info">
               <div class="aura-row-label" data-i18n="lang.subs.show.label">Afficher les sous-titres</div>
-              <div class="aura-row-desc"  data-i18n="lang.subs.show.desc">Dans les bandes-annonces int\xE9gr\xE9es</div>
+              <div class="aura-row-desc"  data-i18n="lang.subs.show.desc">Dans les bandes-annonces intégrées</div>
             </div>
             <div class="aura-row-ctrl"><div class="aura-toggle on" id="aura-tg-subs"></div></div>
           </div>
         </div>
 
-        <!-- DONN\xC9ES -->
+        <!-- DONNÉES -->
         <div class="aura-opt-tab" id="aura-tab-data">
           <div class="aura-sec-title" data-i18n="data.title">ScreenScraper</div>
           <div class="aura-sec-line"></div>
@@ -1851,7 +2042,7 @@ function injectHTML() {
               <div class="aura-row-label" data-i18n="data.password">Mot de passe</div>
             </div>
             <div class="aura-row-ctrl">
-              <input type="password" id="aura-ss-pass" class="aura-data-input" style="width:150px" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022">
+              <input type="password" id="aura-ss-pass" class="aura-data-input" style="width:150px" placeholder="••••••••">
             </div>
           </div>
           <div class="aura-row">
@@ -1861,7 +2052,7 @@ function injectHTML() {
             </div>
           </div>
 
-          <div class="aura-sec-title" data-i18n="data.xmltitle">G\xE9n\xE9rer HyperList XML</div>
+          <div class="aura-sec-title" data-i18n="data.xmltitle">Générer HyperList XML</div>
           <div class="aura-sec-line"></div>
 
           <div class="aura-row">
@@ -1876,7 +2067,7 @@ function injectHTML() {
 
           <div class="aura-row">
             <div class="aura-row-info">
-              <div class="aura-row-label" data-i18n="data.selected">Dossier s\xE9lectionn\xE9</div>
+              <div class="aura-row-label" data-i18n="data.selected">Dossier sélectionné</div>
               <div class="aura-row-desc" id="aura-selected-folder" data-i18n="data.nofolder">Aucun dossier choisi</div>
             </div>
             <div class="aura-row-ctrl">
@@ -1898,11 +2089,11 @@ function injectHTML() {
 
           <div class="aura-row">
             <div class="aura-row-info">
-              <div class="aura-row-label" data-i18n="data.step3">3. Cr\xE9er le fichier XML</div>
-              <div class="aura-row-desc" data-i18n="data.step3desc">Cr\xE9e data/[nom].xml avec tous les jeux</div>
+              <div class="aura-row-label" data-i18n="data.step3">3. Créer le fichier XML</div>
+              <div class="aura-row-desc" data-i18n="data.step3desc">Crée data/[nom].xml avec tous les jeux</div>
             </div>
             <div class="aura-row-ctrl">
-              <button class="aura-action-btn" id="aura-btn-create-xml" data-i18n="data.createxml">Cr\xE9er XML</button>
+              <button class="aura-action-btn" id="aura-btn-create-xml" data-i18n="data.createxml">Créer XML</button>
             </div>
           </div>
 
@@ -1910,7 +2101,7 @@ function injectHTML() {
             <div class="aura-row">
               <div class="aura-row-info">
                 <div class="aura-row-label" data-i18n="data.progress">Progression</div>
-                <div class="aura-row-desc" id="aura-progress-game">\u2014</div>
+                <div class="aura-row-desc" id="aura-progress-game">—</div>
               </div>
               <div class="aura-row-ctrl">
                 <span id="aura-progress-count">0/0</span>
@@ -1929,7 +2120,7 @@ function injectHTML() {
           <div class="aura-sec-title">Test Manette - Calibration</div>
           <div class="aura-sec-line"></div>
           <div style="text-align:center;margin-bottom:16px;color:rgba(255,255,255,0.5);font-size:12px;">
-            Appuyez sur les boutons pour voir leur r\xE9ponse
+            Appuyez sur les boutons pour voir leur réponse
           </div>
           
           <div class="aura-gp-calibration" style="margin-top:0">
@@ -1949,10 +2140,10 @@ function injectHTML() {
               <div class="aura-gp-cal-btn" data-idx="9">START</div>
               <div class="aura-gp-cal-btn" data-idx="10">L3</div>
               <div class="aura-gp-cal-btn" data-idx="11">R3</div>
-              <div class="aura-gp-cal-btn" data-idx="12">\u2191</div>
-              <div class="aura-gp-cal-btn" data-idx="13">\u2193</div>
-              <div class="aura-gp-cal-btn" data-idx="14">\u2190</div>
-              <div class="aura-gp-cal-btn" data-idx="15">\u2192</div>
+              <div class="aura-gp-cal-btn" data-idx="12">↑</div>
+              <div class="aura-gp-cal-btn" data-idx="13">↓</div>
+              <div class="aura-gp-cal-btn" data-idx="14">←</div>
+              <div class="aura-gp-cal-btn" data-idx="15">→</div>
             </div>
             <div class="aura-gp-cal-axes">
               <div class="aura-gp-cal-axis">
@@ -1967,33 +2158,33 @@ function injectHTML() {
           </div>
           
           <div class="aura-gp-preset-detect" id="aura-gp-detected" style="margin-top:16px">
-            Manette non d\xE9tect\xE9e
+            Manette non détectée
           </div>
         </div>
 
-        <!-- \xC0 PROPOS -->
+        <!-- À PROPOS -->
         <div class="aura-opt-tab" id="aura-tab-about">
           <div class="aura-ver-badge"><div class="aura-ver-dot"></div>AURA 4K v2.4.1</div>
           <div class="aura-about-block">
             <div class="aura-kv"><span class="aura-kv-key" data-i18n="about.version">Version</span><span class="aura-kv-val">2.4.1</span></div>
             <div class="aura-kv"><span class="aura-kv-key" data-i18n="about.build">Build</span><span class="aura-kv-val">20250401-stable</span></div>
             <div class="aura-kv"><span class="aura-kv-key" data-i18n="about.engine">Moteur</span><span class="aura-kv-val">AURA Render Engine 3.1</span></div>
-            <div class="aura-kv"><span class="aura-kv-key" data-i18n="about.platform">Plateforme</span><span class="aura-kv-val">Windows \xB7 macOS \xB7 Linux</span></div>
-            <div class="aura-kv"><span class="aura-kv-key" data-i18n="about.maxres">R\xE9solution max</span><span class="aura-kv-val">3840 \xD7 2160 (4K UHD)</span></div>
+            <div class="aura-kv"><span class="aura-kv-key" data-i18n="about.platform">Plateforme</span><span class="aura-kv-val">Windows · macOS · Linux</span></div>
+            <div class="aura-kv"><span class="aura-kv-key" data-i18n="about.maxres">Résolution max</span><span class="aura-kv-val">3840 × 2160 (4K UHD)</span></div>
           </div>
           <div class="aura-sec-title" data-i18n="about.maintenance">Maintenance</div>
           <div class="aura-sec-line"></div>
           <div class="aura-row">
             <div class="aura-row-info">
               <div class="aura-row-label" data-i18n="about.cache.label">Vider le cache</div>
-              <div class="aura-row-desc"  data-i18n="about.cache.desc">Supprime miniatures et donn\xE9es temporaires</div>
+              <div class="aura-row-desc"  data-i18n="about.cache.desc">Supprime miniatures et données temporaires</div>
             </div>
             <div class="aura-row-ctrl"><button class="aura-action-btn" id="aura-btn-cache" data-i18n="about.cache.btn">Vider</button></div>
           </div>
           <div class="aura-row">
             <div class="aura-row-info">
-              <div class="aura-row-label" data-i18n="about.reset.label">R\xE9initialiser les param\xE8tres</div>
-              <div class="aura-row-desc"  data-i18n="about.reset.desc">Restaure tous les r\xE9glages par d\xE9faut</div>
+              <div class="aura-row-label" data-i18n="about.reset.label">Réinitialiser les paramètres</div>
+              <div class="aura-row-desc"  data-i18n="about.reset.desc">Restaure tous les réglages par défaut</div>
             </div>
             <div class="aura-row-ctrl"><button class="aura-action-btn danger" id="aura-btn-reset" data-i18n="about.reset.btn">Reset</button></div>
           </div>
@@ -2003,23 +2194,11 @@ function injectHTML() {
     </div>
     <div class="aura-opt-footer">
       <div class="aura-foot-hints">
-        <span class="aura-key">\u2191\u2193</span> <span data-i18n="footer.tab">Onglet</span>
+        <span class="aura-key">↑↓</span> <span data-i18n="footer.tab">Onglet</span>
         <span class="aura-key">ESC</span> <span data-i18n="footer.close">Fermer</span>
-        <span class="aura-key">\u232B SELECT</span> <span data-i18n="footer.toggle">Ouvrir/Fermer</span>
+        <span class="aura-key">⌫ SELECT</span> <span data-i18n="footer.toggle">Ouvrir/Fermer</span>
       </div>
-      <div id="aura-opt-saved"><div class="aura-saved-dot"></div> <span data-i18n="footer.saved">Sauvegard\xE9</span></div>
+      <div id="aura-opt-saved"><div class="aura-saved-dot"></div> <span data-i18n="footer.saved">Sauvegardé</span></div>
     </div>
   </div>`);
 }
-export {
-  closeOptions,
-  getFPSLimit,
-  getFrameInterval,
-  getSetting,
-  getTransitionDuration,
-  initOptions,
-  isInGamepadTab,
-  isOptionsOpen,
-  openOptions,
-  toggleOptions
-};

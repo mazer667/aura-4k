@@ -8,8 +8,8 @@ module.exports = defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
-      include: ['js/**/*.js'],
-      exclude: ['js/**/*.worker.js']
+      include: ['js/**/*.ts'],
+      exclude: ['js/**/*.worker.ts']
     }
   }
 });

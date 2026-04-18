@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { FPS, CURSOR, NAVIGATION, ANIMATION, GAMEPAD, CACHE, TIMING } from '../js/constants.js';
+import { FPS, CURSOR, NAVIGATION, ANIMATION, GAMEPAD, CACHE, TIMING } from '../js/constants.ts';
 
 describe('constants.js', () => {
   describe('FPS', () => {
