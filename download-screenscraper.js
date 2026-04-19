@@ -11,7 +11,9 @@ const path = require('path');
 // === CONFIGURATION ===
 // Configure tes identifiants ScreenScraper ici (ou via variables d'environnement SS_USER et SS_PASS)
 const SCREENSCRAPER_USER = process.env.SS_USER || 'bactino';
-const SCREENSCRAPER_PASS = process.env.SS_PASS || 'grvhoQrDvvB';
+const SCREENSCRAPER_PASS = process.env.SS_PASS || 'sexions';
+const SCREENSCRAPER_DEV_ID = process.env.SS_DEV_ID || 'bactino';
+const SCREENSCRAPER_DEV_PASS = process.env.SS_DEV_PASS || 'grvhoQrDvvB';
 
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'data');
@@ -21,11 +23,11 @@ const ASSETS_DIR = path.join(ROOT, 'assets', 'consoles');
 function apiRequest(gameName, romPath, consoleId) {
   return new Promise((resolve, reject) => {
     const params = new URLSearchParams({
-      ...(SCREENSCRAPER_USER && { softname: 'Aura4K' }),
-      ...(SCREENSCRAPER_USER && { devid: SCREENSCRAPER_USER }),
-      ...(SCREENSCRAPER_PASS && { devpassword: SCREENSCRAPER_PASS }),
-      ...(SCREENSCRAPER_USER && { user: SCREENSCRAPER_USER }),
-      ...(SCREENSCRAPER_PASS && { password: SCREENSCRAPER_PASS }),
+      softname: 'Aura4K',
+      devid: SCREENSCRAPER_DEV_ID,
+      devpassword: SCREENSCRAPER_DEV_PASS,
+      ssid: SCREENSCRAPER_USER,
+      sspassword: SCREENSCRAPER_PASS,
       systemeid: consoleId,
       rom: gameName,
       romtaille: fs.existsSync(romPath) ? fs.statSync(romPath).size : 0

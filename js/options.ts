@@ -694,9 +694,6 @@ function bindEvents() {
   }
 
   function stopListening(save?: boolean) {
-    if (listeningKey && save !== false) {
-      // rien à faire ici, assigné dans la boucle
-    }
     listeningKey = null;
     document.querySelectorAll('.aura-gp-action').forEach(r => r.classList.remove('listening'));
     const hint = document.getElementById('aura-gp-listen-hint');

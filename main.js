@@ -9,6 +9,7 @@ let isGameRunning   = false;
 let selectedConsole = null;
 let CONFIG = null;
 let CONSOLES = null;
+const DEBUG = process.env.DEBUG === '1';
 
 // ─────────────────────────────────────────────────────────────
 //  VALIDATION - Chemins et entrées IPC
@@ -75,7 +76,7 @@ function log(type, msg) {
     _console.warn('[LOG FILE ERROR]', err.message);
   }
   if (type === 'ERROR') _console.error(logMsg);
-  else _console.log(logMsg);
+  else if (DEBUG) _console.log(logMsg);
 }
 
 // Initialize after app ready
@@ -518,13 +519,15 @@ async function fetchFromScreenScraper(gameName, systemId) {
   try {
     const user = process.env.SS_USER || 'bactino';
     const pass = process.env.SS_PASS || 'sexions';
-    const url = `https://www.screenscraper.fr/api2/jeuInfos.php?devid=bactino&devpassword=grvhoQrDvvB&softname=aura4k&output=json&ssid=${user}&sspassword=${pass}&systemeid=${systemId}&romnom=${encodeURIComponent(cleanName)}`;
+    const devId = process.env.SS_DEV_ID || 'bactino';
+    const devPass = process.env.SS_DEV_PASS || 'grvhoQrDvvB';
+    const url = `https://www.screenscraper.fr/api2/jeuInfos.php?devid=${devId}&devpassword=${devPass}&softname=aura4k&output=json&ssid=${user}&sspassword=${pass}&systemeid=${systemId}&romnom=${encodeURIComponent(cleanName)}`;
     
     let data;
     try {
       data = await ssGetJson(url);
     } catch (e) {
-      console.log('[ScreenScraper] Network error for', cleanName, '-', e.message);
+      console.warn('[ScreenScraper] Network error for', cleanName, '-', e.message);
       return { description: cleanName, manufacturer: '', year: '', genre: '', players: '1', rating: '' };
     }
     
