@@ -266,17 +266,18 @@ export function initDisplay() {
   const bgCa = document.getElementById('bgCa') as HTMLElement | null;
   const bgLa = document.getElementById('bgLa') as HTMLElement | null;
   const bgRa = document.getElementById('bgRa') as HTMLElement | null;
+  const defaultImg = 'assets/no-image.svg';
 
   if (bgCa) {
-    bgCa.style.backgroundImage = `url('${imgPath(g)}')`;
+    bgCa.style.backgroundImage = imgPath(g) ? `url('${imgPath(g)}')` : `url('${defaultImg}')`;
     bgCa.style.backgroundSize = 'cover';
   }
   if (bgLa) {
-    bgLa.style.backgroundImage = `url('${imgPath(gL)}')`;
+    bgLa.style.backgroundImage = imgPath(gL) ? `url('${imgPath(gL)}')` : `url('${defaultImg}')`;
     bgLa.style.backgroundSize = 'cover';
   }
   if (bgRa) {
-    bgRa.style.backgroundImage = `url('${imgPath(gR)}')`;
+    bgRa.style.backgroundImage = imgPath(gR) ? `url('${imgPath(gR)}')` : `url('${defaultImg}')`;
     bgRa.style.backgroundSize = 'cover';
   }
 
