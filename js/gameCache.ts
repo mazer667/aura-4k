@@ -2,37 +2,54 @@
 // IndexedDB cache pour les jeux - évite de re-parser le XML à chaque fois
 
 const DB_NAME = 'aura4k_cache';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 const STORE_NAME = 'games_cache';
 
-let db = null;
+let db: IDBDatabase | null = null;
+let initPromise: Promise<void> | null = null;
 
-export async function initCache() {
-  return new Promise<void>((resolve, reject) => {
+async function _ensureDB(): Promise<IDBDatabase> {
+  if (db) return db;
+  
+  if (initPromise) {
+    await initPromise;
+    return db!;
+  }
+  
+  initPromise = new Promise<void>((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
     
-    request.onerror = () => reject(request.error);
+    request.onerror = () => {
+      initPromise = null;
+      reject(request.error);
+    };
     
     request.onsuccess = () => {
       db = request.result;
       resolve();
     };
     
-    request.onupgradeneeded = () => {
-      const database = request.result;
+    request.onupgradeneeded = (event) => {
+      const database = (event.target as IDBOpenDBRequest).result;
       if (!database.objectStoreNames.contains(STORE_NAME)) {
         const store = database.createObjectStore(STORE_NAME, { keyPath: 'consoleKey' });
         store.createIndex('by_rom', 'rom', { unique: false });
       }
     };
   });
+  
+  return initPromise.then(() => db!);
 }
 
-export async function getCachedGames(consoleKey) {
-  if (!db) await initCache();
+export function initCache(): Promise<void> {
+  return _ensureDB().then(() => undefined);
+}
+
+export async function getCachedGames(consoleKey: string) {
+  const database = await _ensureDB();
   
   return new Promise<any>((resolve, reject) => {
-    const tx = db.transaction(STORE_NAME, 'readonly');
+    const tx = database.transaction(STORE_NAME, 'readonly');
     const store = tx.objectStore(STORE_NAME);
     const request = store.get(consoleKey);
     
@@ -41,11 +58,11 @@ export async function getCachedGames(consoleKey) {
   });
 }
 
-export async function setCachedGames(consoleKey, games, xmlTimestamp) {
-  if (!db) await initCache();
+export async function setCachedGames(consoleKey: string, games: any[], xmlTimestamp: number) {
+  const database = await _ensureDB();
   
   return new Promise<void>((resolve, reject) => {
-    const tx = db.transaction(STORE_NAME, 'readwrite');
+    const tx = database.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
     
     const data = {
@@ -62,10 +79,10 @@ export async function setCachedGames(consoleKey, games, xmlTimestamp) {
 }
 
 export async function clearCache() {
-  if (!db) await initCache();
+  const database = await _ensureDB();
   
   return new Promise<void>((resolve, reject) => {
-    const tx = db.transaction(STORE_NAME, 'readwrite');
+    const tx = database.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
     const request = store.clear();
     
@@ -75,10 +92,10 @@ export async function clearCache() {
 }
 
 export async function getCacheInfo() {
-  if (!db) await initCache();
+  const database = await _ensureDB();
   
   return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE_NAME, 'readonly');
+    const tx = database.transaction(STORE_NAME, 'readonly');
     const store = tx.objectStore(STORE_NAME);
     const request = store.getAll();
     
@@ -93,4 +110,8 @@ export async function getCacheInfo() {
     };
     request.onerror = () => reject(request.error);
   });
+}
+
+export function getDB(): IDBDatabase | null {
+  return db;
 }

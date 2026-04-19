@@ -1,6 +1,6 @@
 // js/games.ts
 import { Game, ConsoleConfig, AppConfig } from './types.js';
-import { G, setCi, getGames, getCurrentGame } from './state.js';
+import { G, setCi, getGames, getCurrentGame, beginBatch, endBatch } from './state.js';
 import { preloadImage, preloadImages, isImageCached } from './imageCache.js';
 import { initCache, getCachedGames, setCachedGames } from './gameCache.js';
 
@@ -279,6 +279,7 @@ export async function loadGamesAndPopulate(consoleName = 'FBNeo - Arcade Games',
     window.dispatchEvent(new CustomEvent('aura-loading-complete', { detail: { count: games.length, fromCache: false } }));
   }
   
+  beginBatch();
   G.length = 0;
   if (games.length === 0) {
     G.push({
@@ -290,6 +291,9 @@ export async function loadGamesAndPopulate(consoleName = 'FBNeo - Arcade Games',
     G.push(...games);
   }
   setCi(0);
+  endBatch();
+  
+  window.dispatchEvent(new CustomEvent('aura-games-loaded', { detail: { count: G.length } }));
 }
 
 export async function clearGamesCache() {

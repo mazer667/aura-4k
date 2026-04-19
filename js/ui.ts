@@ -7,7 +7,46 @@ import { batchUpdate } from './batchUpdate.js';
 export const AL = ['#','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 export let filterFav = false;
 export let filterLetter: string | null = null;
-export const MAX_DISPLAYED_GAMES = 500; // Limit for performance
+export const MAX_DISPLAYED_GAMES = 500;
+
+const _domCache: Record<string, HTMLElement | null> = {};
+
+let _filteredCache: Game[] | null = null;
+let _lastFilterKey = '';
+let _filterDebounceTimer: number | null = null;
+let _letterIndex: Map<string, Game[]> | null = null;
+
+function _buildLetterIndex(games: Game[]) {
+  const index = new Map<string, Game[]>();
+  for (const g of games) {
+    const letter = g.title?.charAt(0).toUpperCase() || '#';
+    const key = /^[0-9]/.test(letter) ? '#' : letter;
+    if (!index.has(key)) index.set(key, []);
+    index.get(key)!.push(g);
+  }
+  _letterIndex = index;
+}
+
+function _getGamesByLetter(letter: string, games: Game[]): Game[] {
+  if (!_letterIndex || _letterIndex.size === 0) {
+    _buildLetterIndex(games);
+  }
+  return _letterIndex?.get(letter) || [];
+}
+
+function _cacheDom() {
+  _domCache.snL = document.getElementById('snL');
+  _domCache.snR = document.getElementById('snR');
+  _domCache.pub = document.getElementById('pub');
+  _domCache.gtitle = document.getElementById('gtitle');
+  _domCache.gtags = document.getElementById('gtags');
+  _domCache.alpha = document.getElementById('alpha');
+  _domCache.s0 = document.getElementById('s0');
+  _domCache.s1 = document.getElementById('s1');
+  _domCache.s2 = document.getElementById('s2');
+  _domCache.favIndicator = document.getElementById('fav-indicator');
+  _domCache.screen = document.getElementById('screen');
+}
 
 export function setFilterLetter(letter: string | null) {
   filterLetter = letter;
@@ -30,18 +69,44 @@ export function setFilterFav(on?: boolean) {
 
 export function getFilteredGames() {
   const games = getGames();
+  const key = `${filterFav}:${filterLetter}:${games.length}`;
+  
+  if (key === _lastFilterKey && _filteredCache) {
+    return _filteredCache;
+  }
+  
+  let filtered: Game[];
   if (filterFav) {
     const favs = getFavorites();
-    return games.filter(g => favs.includes(g.rom)).slice(0, MAX_DISPLAYED_GAMES);
-  }
-  if (filterLetter) {
+    const favSet = new Set(favs);
+    filtered = games.filter(g => favSet.has(g.rom)).slice(0, MAX_DISPLAYED_GAMES);
+  } else if (filterLetter) {
     const letter = filterLetter;
     if (letter === '#') {
-      return games.filter(g => /^[0-9]/.test(g.title)).slice(0, MAX_DISPLAYED_GAMES);
+      filtered = _getGamesByLetter('#', games);
+    } else {
+      filtered = _getGamesByLetter(letter, games);
     }
-    return games.filter(g => g.title.toUpperCase().startsWith(letter)).slice(0, MAX_DISPLAYED_GAMES);
+    filtered = filtered.slice(0, MAX_DISPLAYED_GAMES);
+  } else {
+    filtered = games.slice(0, MAX_DISPLAYED_GAMES);
   }
-  return games.slice(0, MAX_DISPLAYED_GAMES);
+  
+  _filteredCache = filtered;
+  _lastFilterKey = key;
+  return filtered;
+}
+
+export function invalidateFilterCache() {
+  _filteredCache = null;
+  _lastFilterKey = '';
+  _letterIndex = null;
+}
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('aura-loading-complete', () => {
+    invalidateFilterCache();
+  });
 }
 
 export const ix = (d: number): number => {
@@ -58,20 +123,13 @@ export function updateUI(g: Game | null, gL: Game | null, gR: Game | null) {
   if (!g || !gL || !gR) return;
   
   batchUpdate(() => {
-    const snL = document.getElementById('snL');
-    const snR = document.getElementById('snR');
-    const pub = document.getElementById('pub');
-    const gtitle = document.getElementById('gtitle');
-    const gtags = document.getElementById('gtags');
-    const alpha = document.getElementById('alpha');
-    
-    const snLSpan = snL?.querySelector<HTMLSpanElement>('span');
-    const snRSpan = snR?.querySelector<HTMLSpanElement>('span');
+    const snLSpan = _domCache.snL?.querySelector<HTMLSpanElement>('span');
+    const snRSpan = _domCache.snR?.querySelector<HTMLSpanElement>('span');
 
     if (snLSpan) snLSpan.textContent = gL.short ?? '';
     if (snRSpan) snRSpan.textContent = gR.short ?? '';
-    if (pub) pub.textContent = g.pub;
-    if (gtitle) gtitle.textContent = g.title;
+    if (_domCache.pub) _domCache.pub.textContent = g.pub;
+    if (_domCache.gtitle) _domCache.gtitle.textContent = g.title;
 
     let playersLabel: string;
     if (g.playersRange) {
@@ -84,15 +142,14 @@ export function updateUI(g: Game | null, gL: Game | null, gR: Game | null) {
 
     const genreLabel = tGenre(g.genre) || g.genre;
 
-    if (gtags) {
-      gtags.innerHTML =
+    if (_domCache.gtags) {
+      _domCache.gtags.innerHTML =
         `<span class="tag">${g.year}</span>` +
         `<span class="tag">${playersLabel}</span>` +
         `<span class="tag">${genreLabel}</span>` +
         (isFavorite(g.rom) ? '<span class="tag" style="color:#fbbf24;">FAV</span>' : '');
     }
 
-    // Met a jour l'alphabet - lettre du jeu actuel en jaune
     let displayLetter = 'A';
     if (g && g.title && typeof g.title === 'string' && g.title.length > 0) {
       const gameLetter = g.title.charAt(0).toUpperCase();
@@ -107,19 +164,16 @@ export function updateUI(g: Game | null, gL: Game | null, gR: Game | null) {
       html += `<span class="ac${isActive ? ' on' : ''}" data-letter="${l}" style="cursor:pointer;">${l}&nbsp;&nbsp;</span>`;
     }
     
-    if (alpha) {
-      alpha.innerHTML = html;
+    if (_domCache.alpha) {
+      _domCache.alpha.innerHTML = html;
     }
   });
 
-  const s0 = document.getElementById('s0');
-  const s1 = document.getElementById('s1');
-  const s2 = document.getElementById('s2');
-  if (s0) setShot(s0, g, 1);
-  if (s1) setShot(s1, g, 2);
-  if (s2) setShot(s2, g, 3);
+  if (_domCache.s0) setShot(_domCache.s0, g, 1);
+  if (_domCache.s1) setShot(_domCache.s1, g, 2);
+  if (_domCache.s2) setShot(_domCache.s2, g, 3);
   
-  document.querySelectorAll<HTMLElement>('#alpha [data-letter]').forEach(el => {
+  _domCache.alpha?.querySelectorAll<HTMLElement>('[data-letter]').forEach(el => {
     el.addEventListener('click', () => {
       const letter = el.dataset.letter || null;
       if (filterLetter === letter) {
@@ -133,7 +187,7 @@ export function updateUI(g: Game | null, gL: Game | null, gR: Game | null) {
     });
   });
   
-  document.querySelector<HTMLElement>('#alpha [data-filter="fav"]')?.addEventListener('click', () => {
+  _domCache.alpha?.querySelector<HTMLElement>('[data-filter="fav"]')?.addEventListener('click', () => {
     filterFav = !filterFav;
     if (filterFav) filterLetter = null;
     updateAlpha();
@@ -151,10 +205,7 @@ function updateAlpha() {
     displayLetter = /[0-9]/.test(gameLetter) ? '#' : gameLetter;
   }
   
-  const favs = getFavorites();
-  const favCount = favs.length;
-  
-  const alphaEl = document.getElementById('alpha');
+  const alphaEl = _domCache.alpha;
   if (alphaEl) {
     alphaEl.innerHTML =
       `<span class="ac${filterFav ? ' fav on' : ''}" data-filter="fav" style="cursor:pointer;">FAV&nbsp;</span>` +
@@ -165,6 +216,7 @@ function updateAlpha() {
 
     const newAlphaEl = alphaEl.cloneNode(true) as HTMLElement;
     alphaEl.parentNode?.replaceChild(newAlphaEl, alphaEl);
+    _domCache.alpha = newAlphaEl;
 
     newAlphaEl.querySelectorAll<HTMLElement>('[data-letter]').forEach(el => {
       el.addEventListener('click', () => {
@@ -190,9 +242,8 @@ function updateAlpha() {
 }
 
 function updateFavIndicator() {
-  const indicator = document.getElementById('fav-indicator');
-  if (indicator) {
-    indicator.style.display = filterFav ? 'block' : 'none';
+  if (_domCache.favIndicator) {
+    _domCache.favIndicator.style.display = filterFav ? 'block' : 'none';
   }
 }
 
@@ -200,6 +251,7 @@ function updateFavIndicator() {
 (window as any).setFilterFav = setFilterFav;
 
 export function initDisplay() {
+  _cacheDom();
   const games = getGames();
   if (!games.length) return;
   filterFav = false;
@@ -235,8 +287,7 @@ export function initDisplay() {
 
 export function setIdleUI(on: boolean) {
   setIdle(on);
-  const screen = document.getElementById('screen');
-  if (screen) screen.classList.toggle('idle', on);
+  if (_domCache.screen) _domCache.screen.classList.toggle('idle', on);
 }
 
 export function shotsAppear() {

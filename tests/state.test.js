@@ -10,8 +10,10 @@ const localStorageMock = {
 global.localStorage = localStorageMock;
 
 describe('state.ts', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     vi.clearAllMocks();
+    const { _resetFavoritesCache } = await import('../js/state.ts');
+    _resetFavoritesCache();
   });
 
   describe('getFavorites', () => {

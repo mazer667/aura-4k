@@ -47,8 +47,22 @@ export async function convertToWebP(imageUrl, quality = 0.85) {
   });
 }
 
+const MAX_CONCURRENT_OPT = 3;
+
 export async function preloadAsWebP(urls, quality = 0.85) {
-  return Promise.all(urls.map(url => convertToWebP(url, quality)));
+  const results: string[] = [];
+  
+  for (let i = 0; i < urls.length; i += MAX_CONCURRENT_OPT) {
+    const batch = urls.slice(i, i + MAX_CONCURRENT_OPT);
+    const batchResults = await Promise.all(batch.map(url => convertToWebP(url, quality)));
+    results.push(...batchResults);
+    
+    if (i + MAX_CONCURRENT_OPT < urls.length && 'requestIdleCallback' in window) {
+      await new Promise(resolve => (window as any).requestIdleCallback(resolve, { timeout: 1000 }));
+    }
+  }
+  
+  return results;
 }
 
 export function getOptimizationStats() {

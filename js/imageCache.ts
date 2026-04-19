@@ -5,7 +5,10 @@ import { CACHE } from './constants.js';
 
 const imageCache = new Map();
 const loadingSet = new Set();
-const MAX_CACHE_SIZE = 100; // Limit cache size for performance
+const MAX_CACHE_SIZE = 300;
+const MAX_CONCURRENT_LOADS = 4;
+const loadQueue: Array<() => void> = [];
+let activeLoads = 0;
 
 const PLACEHOLDER_SVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23111' width='400' height='300'/%3E%3Ctext x='200' y='155' font-family='sans-serif' font-size='14' fill='%23333' text-anchor='middle'%3ENo Image%3C/text%3E%3C/svg%3E";
 
@@ -21,6 +24,13 @@ export function getCachedImage(url) {
   if (loadingSet.has(url)) return null;
   
   return null;
+}
+
+function _processQueue() {
+  while (activeLoads < MAX_CONCURRENT_LOADS && loadQueue.length > 0) {
+    const next = loadQueue.shift();
+    if (next) next();
+  }
 }
 
 export function preloadImage(url) {
@@ -42,31 +52,50 @@ export function preloadImage(url) {
   }
   
   return new Promise((resolve) => {
-    loadingSet.add(url);
-    const img = new Image();
-    
-    img.onload = () => {
-      imageCache.set(url, {
-        element: img,
-        loaded: true,
-        lastAccess: Date.now()
-      });
-      loadingSet.delete(url);
-      cleanupCache();
-      resolve(img);
+    const load = () => {
+      activeLoads++;
+      loadingSet.add(url);
+      const img = new Image();
+      
+      img.onload = () => {
+        imageCache.set(url, {
+          element: img,
+          loaded: true,
+          lastAccess: Date.now()
+        });
+        loadingSet.delete(url);
+        cleanupCache();
+        activeLoads--;
+        resolve(img);
+        _processQueue();
+      };
+      
+      img.onerror = () => {
+        loadingSet.delete(url);
+        activeLoads--;
+        resolve(null);
+        _processQueue();
+      };
+      
+      img.src = url;
     };
     
-    img.onerror = () => {
-      loadingSet.delete(url);
-      resolve(null);
-    };
-    
-    img.src = url;
+    if (activeLoads >= MAX_CONCURRENT_LOADS) {
+      loadQueue.push(load);
+    } else {
+      load();
+    }
   });
 }
 
-export function preloadImages(urls) {
-  return Promise.all(urls.map(url => preloadImage(url)));
+export async function preloadImages(urls, maxBatch = 6) {
+  const results: (HTMLImageElement | null)[] = [];
+  for (let i = 0; i < urls.length; i += maxBatch) {
+    const batch = urls.slice(i, i + maxBatch);
+    const batchResults = await Promise.all(batch.map(url => preloadImage(url)));
+    results.push(...batchResults);
+  }
+  return results;
 }
 
 export function isImageCached(url) {
