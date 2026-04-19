@@ -693,7 +693,7 @@ function bindEvents() {
     startGpPoll();
   }
 
-  function stopListening(save?: boolean) {
+  function stopListening(_save?: boolean) {
     listeningKey = null;
     document.querySelectorAll('.aura-gp-action').forEach(r => r.classList.remove('listening'));
     const hint = document.getElementById('aura-gp-listen-hint');

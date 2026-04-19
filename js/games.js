@@ -1,4 +1,4 @@
-import { G, setCi, getGames, getCurrentGame } from "./state.js";
+import { G, setCi, getGames, getCurrentGame, beginBatch, endBatch } from "./state.js";
 import { preloadImages, isImageCached } from "./imageCache.js";
 import { initCache, getCachedGames, setCachedGames } from "./gameCache.js";
 let appConfig = null;
@@ -156,7 +156,7 @@ function parseXmlText(xmlText, consoleName) {
 }
 async function loadGamesFromXML(consoleName = "FBNeo - Arcade Games") {
   try {
-    const consoleConfig = getConsoleConfigByName(consoleName);
+    getConsoleConfigByName(consoleName);
     const xmlFile = `data/${consoleName}.xml`;
     const res = await fetch(xmlFile);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -167,7 +167,7 @@ async function loadGamesFromXML(consoleName = "FBNeo - Arcade Games") {
     }
     try {
       const worker = new Worker("js/xmlParser.worker.js");
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         const timeout = setTimeout(() => {
           worker.terminate();
           resolve(parseXmlText(xmlText, consoleName));
@@ -222,6 +222,7 @@ async function loadGamesAndPopulate(consoleName = "FBNeo - Arcade Games", forceR
     }
     window.dispatchEvent(new CustomEvent("aura-loading-complete", { detail: { count: games.length, fromCache: false } }));
   }
+  beginBatch();
   G.length = 0;
   if (games.length === 0) {
     G.push({
@@ -240,6 +241,8 @@ async function loadGamesAndPopulate(consoleName = "FBNeo - Arcade Games", forceR
     G.push(...games);
   }
   setCi(0);
+  endBatch();
+  window.dispatchEvent(new CustomEvent("aura-games-loaded", { detail: { count: G.length } }));
 }
 async function clearGamesCache() {
   if (!cacheInitialized) {

@@ -15,12 +15,6 @@ let _filteredCache: Game[] | null = null;
 let _lastFilterKey = '';
 let _letterIndex: Map<string, Game[]> | null = null;
 
-function _escapeHtml(str: string): string {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
-
 function _buildLetterIndex(games: Game[]) {
   const index = new Map<string, Game[]>();
   for (const g of games) {

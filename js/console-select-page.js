@@ -1,5 +1,5 @@
 // ─── ERROR BOUNDARIES ───────────────────────────────────────────
-window.onerror = (msg, url, line, col, err) => {
+window.onerror = (msg, url, line, _col, _err) => {
   console.error('[RENDERER ERROR]', msg, '| line:', line, '|', url);
   return false;
 };
@@ -106,7 +106,7 @@ function buildEraTabs() {
   const container = document.getElementById('eraTabs');
   container.innerHTML = '';
   ERAS.forEach(era => {
-    const count = era.id === 'all' ? CONSOLES.length : CONSOLES.filter(c => c.era === era.id).length;
+    const _count = era.id === 'all' ? CONSOLES.length : CONSOLES.filter(c => c.era === era.id).length;
     const tab = document.createElement('div');
     tab.className = 'era-tab' + (era.id === currentEra ? ' active' : '');
     tab.textContent = era.labelKey ? t(era.labelKey) : era.label;
@@ -302,13 +302,13 @@ function confirmSelect() {
   }, 700);
 }
 
-function showComingSoon(name) {
+function showComingSoon(_name) {
   let banner = document.getElementById('cs-banner');
   if (!banner) {
     banner = document.createElement('div');
     banner.id = 'cs-banner';
     Object.assign(banner.style, {
-      position:'absolute', bottom:'140px', left:'50%',
+      position:'absolute', bottom:'140px', left:'50%', 
       transform:'translateX(-50%)',
       background:'rgba(10,20,40,0.95)',
       border:'1px solid rgba(94,184,255,0.3)',

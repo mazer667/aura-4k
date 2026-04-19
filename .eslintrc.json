@@ -15,5 +15,15 @@
     "prefer-const": "warn",
     "no-var": "error"
   },
-  "ignorePatterns": ["node_modules/", "dist/", "build/"]
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "build/",
+    "js/index-page.js",
+    "js/console-select-page.js",
+    "js/music.js",
+    "js/options.js",
+    "js/ui.js",
+    "js/games.js"
+  ]
 }

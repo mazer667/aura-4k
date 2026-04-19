@@ -555,8 +555,6 @@ function bindEvents() {
     startGpPoll();
   }
   function stopListening(save) {
-    if (listeningKey && save !== false) {
-    }
     listeningKey = null;
     document.querySelectorAll(".aura-gp-action").forEach((r) => r.classList.remove("listening"));
     const hint = document.getElementById("aura-gp-listen-hint");
