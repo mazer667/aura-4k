@@ -42,7 +42,7 @@ function setShot(el, game, n) {
   const url = shotPath(game, n);
   el.style.backgroundColor = "#111";
   if (!url) {
-    el.style.backgroundImage = "";
+    el.style.backgroundImage = 'url("assets/no-image.svg")';
     return;
   }
   el.style.backgroundImage = `url('${url}')`;
@@ -156,7 +156,7 @@ function parseXmlText(xmlText, consoleName) {
 }
 async function loadGamesFromXML(consoleName = "FBNeo - Arcade Games") {
   try {
-    getConsoleConfigByName(consoleName);
+    const consoleConfig = getConsoleConfigByName(consoleName);
     const xmlFile = `data/${consoleName}.xml`;
     const res = await fetch(xmlFile);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -167,7 +167,7 @@ async function loadGamesFromXML(consoleName = "FBNeo - Arcade Games") {
     }
     try {
       const worker = new Worker("js/xmlParser.worker.js");
-      return new Promise((resolve) => {
+      return new Promise((resolve, reject) => {
         const timeout = setTimeout(() => {
           worker.terminate();
           resolve(parseXmlText(xmlText, consoleName));

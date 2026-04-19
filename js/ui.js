@@ -10,11 +10,6 @@ const _domCache = {};
 let _filteredCache = null;
 let _lastFilterKey = "";
 let _letterIndex = null;
-function _escapeHtml(str) {
-  const div = document.createElement("div");
-  div.textContent = str;
-  return div.innerHTML;
-}
 function _buildLetterIndex(games) {
   const index = /* @__PURE__ */ new Map();
   for (const g of games) {
@@ -221,16 +216,17 @@ function initDisplay() {
   const bgCa = document.getElementById("bgCa");
   const bgLa = document.getElementById("bgLa");
   const bgRa = document.getElementById("bgRa");
+  const defaultImg = "assets/no-image.svg";
   if (bgCa) {
-    bgCa.style.backgroundImage = `url('${imgPath(g)}')`;
+    bgCa.style.backgroundImage = imgPath(g) ? `url('${imgPath(g)}')` : `url('${defaultImg}')`;
     bgCa.style.backgroundSize = "cover";
   }
   if (bgLa) {
-    bgLa.style.backgroundImage = `url('${imgPath(gL)}')`;
+    bgLa.style.backgroundImage = imgPath(gL) ? `url('${imgPath(gL)}')` : `url('${defaultImg}')`;
     bgLa.style.backgroundSize = "cover";
   }
   if (bgRa) {
-    bgRa.style.backgroundImage = `url('${imgPath(gR)}')`;
+    bgRa.style.backgroundImage = imgPath(gR) ? `url('${imgPath(gR)}')` : `url('${defaultImg}')`;
     bgRa.style.backgroundSize = "cover";
   }
   updateUI(g, gL, gR);
