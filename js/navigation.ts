@@ -41,29 +41,25 @@ function updateGameDisplay(game, prevGame, nextGame, filtered, allGames) {
 }
 
 export function navigate(dir) {
-  const filtered = getFilteredGames();
-  if (filtered.length === 0) return;
-  
   const allGames = getGames();
+  if (allGames.length === 0) return;
+  
   const currentIdx = getCurrentIndex();
-  const currentGame = allGames[currentIdx];
-  const currentFilteredIdx = filtered.indexOf(currentGame);
   
-  // Simple infinite scroll - wrap around filtered list
-  let nextFilteredIdx = currentFilteredIdx + dir;
-  if (nextFilteredIdx < 0) nextFilteredIdx = filtered.length - 1;
-  if (nextFilteredIdx >= filtered.length) nextFilteredIdx = 0;
+  // Simple infinite scroll - wrap around ALL games
+  let nextIdx = currentIdx + dir;
+  if (nextIdx < 0) nextIdx = allGames.length - 1;
+  if (nextIdx >= allGames.length) nextIdx = 0;
   
-  const game = filtered[nextFilteredIdx];
+  const game = allGames[nextIdx];
   if (!game) return;
   
-  const prevGame = filtered[(nextFilteredIdx - 1 + filtered.length) % filtered.length];
-  const nextGame = filtered[(nextFilteredIdx + 1) % filtered.length];
+  const prevGame = allGames[(nextIdx - 1 + allGames.length) % allGames.length];
+  const nextGame = allGames[(nextIdx + 1) % allGames.length];
 
-  const gameIdx = allGames.indexOf(game);
-  setCi(gameIdx);
-  updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
-  schedulePreload(nextFilteredIdx, filtered);
+  setCi(nextIdx);
+  updateGameDisplay(game, prevGame, nextGame, allGames, allGames);
+  schedulePreload(nextIdx, allGames);
 }
 
 export function navigateToLetter(dir) {

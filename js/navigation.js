@@ -17,21 +17,11 @@ function schedulePreload(idx, filtered) {
     preloadScheduled = false;
   }, { timeout: 1e3 });
 }
-let currentBgSlot = "a";
 function updateGameDisplay(game, prevGame, nextGame, filtered, allGames) {
   const gameIdx = allGames.indexOf(game);
   setCi(gameIdx >= 0 ? gameIdx : 0);
-  const newSlot = currentBgSlot === "a" ? "b" : "a";
-  const newBg = document.getElementById(newSlot === "a" ? "bgCa" : "bgCb");
-  const oldBg = document.getElementById(currentBgSlot === "a" ? "bgCa" : "bgCb");
-  if (newBg) {
-    newBg.style.backgroundImage = `url('${imgPath(game)}')`;
-    newBg.style.opacity = "1";
-  }
-  if (oldBg) {
-    oldBg.style.opacity = "0";
-  }
-  currentBgSlot = newSlot;
+  const bgCa = document.getElementById("bgCa");
+  if (bgCa) bgCa.style.backgroundImage = `url('${imgPath(game)}')`;
   const bgLa = document.getElementById("bgLa");
   if (bgLa) bgLa.style.backgroundImage = `url('${imgPath(prevGame)}')`;
   const bgRa = document.getElementById("bgRa");
@@ -46,48 +36,20 @@ function navigate(dir) {
   const filtered = getFilteredGames();
   if (filtered.length === 0) return;
   const allGames = getGames();
-  const currentGame = allGames[getCurrentIndex()];
-  const currentIdx = filtered.indexOf(currentGame);
-  let nextIdx = currentIdx + dir;
-  if (nextIdx < 0 || nextIdx >= filtered.length) {
-    const currentLetter = currentGame?.title?.charAt(0).toUpperCase() || "A";
-    const currentLetterIdx = AL.indexOf(/[0-9]/.test(currentLetter) ? "#" : currentLetter);
-    let foundLetter = null;
-    for (let i = 1; i < AL.length; i++) {
-      const checkIdx = (currentLetterIdx + dir * i + AL.length) % AL.length;
-      const checkLetter = AL[checkIdx];
-      const hasGames = allGames.some((g) => {
-        const l = g.title?.charAt(0).toUpperCase() || "#";
-        return /[0-9]/.test(l) ? "#" : l === checkLetter;
-      });
-      if (hasGames) {
-        foundLetter = checkLetter;
-        break;
-      }
-    }
-    if (foundLetter) {
-      setFilterLetter(foundLetter);
-      const newFiltered = getFilteredGames();
-      if (newFiltered.length > 0) {
-        const targetGame = dir > 0 ? newFiltered[0] : newFiltered[newFiltered.length - 1];
-        const newGameIdx = allGames.indexOf(targetGame);
-        setCi(newGameIdx);
-        const game2 = targetGame;
-        const prevGame2 = newFiltered[newFiltered.length - 1] || game2;
-        const nextGame2 = newFiltered[1] || game2;
-        updateGameDisplay(game2, prevGame2, nextGame2, newFiltered, allGames);
-        schedulePreload(dir > 0 ? 0 : newFiltered.length - 1, newFiltered);
-        return;
-      }
-    }
-    nextIdx = (currentIdx + dir + filtered.length) % filtered.length;
-  }
-  const game = filtered[nextIdx];
+  const currentIdx = getCurrentIndex();
+  const currentGame = allGames[currentIdx];
+  const currentFilteredIdx = filtered.indexOf(currentGame);
+  let nextFilteredIdx = currentFilteredIdx + dir;
+  if (nextFilteredIdx < 0) nextFilteredIdx = filtered.length - 1;
+  if (nextFilteredIdx >= filtered.length) nextFilteredIdx = 0;
+  const game = filtered[nextFilteredIdx];
   if (!game) return;
-  const prevGame = filtered[(nextIdx - 1 + filtered.length) % filtered.length] || game;
-  const nextGame = filtered[(nextIdx + 1) % filtered.length] || game;
+  const prevGame = filtered[(nextFilteredIdx - 1 + filtered.length) % filtered.length];
+  const nextGame = filtered[(nextFilteredIdx + 1) % filtered.length];
+  const gameIdx = allGames.indexOf(game);
+  setCi(gameIdx);
   updateGameDisplay(game, prevGame, nextGame, filtered, allGames);
-  schedulePreload(nextIdx, filtered);
+  schedulePreload(nextFilteredIdx, filtered);
 }
 function navigateToLetter(dir) {
   const allGames = getGames();
