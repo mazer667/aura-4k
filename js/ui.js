@@ -216,17 +216,16 @@ function initDisplay() {
   const bgCa = document.getElementById("bgCa");
   const bgLa = document.getElementById("bgLa");
   const bgRa = document.getElementById("bgRa");
-  const defaultImg = "assets/no-image.svg";
   if (bgCa) {
-    bgCa.style.backgroundImage = imgPath(g) ? `url('${imgPath(g)}')` : `url('${defaultImg}')`;
+    bgCa.style.backgroundImage = imgPath(g) ? `url('${imgPath(g)}')` : "url(assets/no-image.svg)";
     bgCa.style.backgroundSize = "cover";
   }
   if (bgLa) {
-    bgLa.style.backgroundImage = imgPath(gL) ? `url('${imgPath(gL)}')` : `url('${defaultImg}')`;
+    bgLa.style.backgroundImage = imgPath(gL) ? `url('${imgPath(gL)}')` : "url(assets/no-image.svg)";
     bgLa.style.backgroundSize = "cover";
   }
   if (bgRa) {
-    bgRa.style.backgroundImage = imgPath(gR) ? `url('${imgPath(gR)}')` : `url('${defaultImg}')`;
+    bgRa.style.backgroundImage = imgPath(gR) ? `url('${imgPath(gR)}')` : "url(assets/no-image.svg)";
     bgRa.style.backgroundSize = "cover";
   }
   updateUI(g, gL, gR);

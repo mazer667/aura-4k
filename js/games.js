@@ -42,7 +42,7 @@ function setShot(el, game, n) {
   const url = shotPath(game, n);
   el.style.backgroundColor = "#111";
   if (!url) {
-    el.style.backgroundImage = 'url("assets/no-image.svg")';
+    el.style.backgroundImage = "url(assets/no-image.svg)";
     return;
   }
   el.style.backgroundImage = `url('${url}')`;

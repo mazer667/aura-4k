@@ -268,15 +268,15 @@ export function initDisplay() {
   const bgRa = document.getElementById('bgRa') as HTMLElement | null;
 
   if (bgCa) {
-    bgCa.style.backgroundImage = imgPath(g) ? `url('${imgPath(g)}')` : 'url(assets/no-image.svg)';
+    bgCa.style.backgroundImage = `url('${imgPath(g)}')`;
     bgCa.style.backgroundSize = 'cover';
   }
   if (bgLa) {
-    bgLa.style.backgroundImage = imgPath(gL) ? `url('${imgPath(gL)}')` : 'url(assets/no-image.svg)';
+    bgLa.style.backgroundImage = `url('${imgPath(gL)}')`;
     bgLa.style.backgroundSize = 'cover';
   }
   if (bgRa) {
-    bgRa.style.backgroundImage = imgPath(gR) ? `url('${imgPath(gR)}')` : 'url(assets/no-image.svg)';
+    bgRa.style.backgroundImage = `url('${imgPath(gR)}')`;
     bgRa.style.backgroundSize = 'cover';
   }
 
