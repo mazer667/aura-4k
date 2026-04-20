@@ -17,7 +17,7 @@ AURA 4K est un launcher de jeux rétro codé en Electron avec une interface cin�
 - 🕹️ **Gamepad support** - Navigation complète avec gamepad
 - 🎵 **Musique par jeu** - Lecture automatique de musique pour chaque jeu
 - ⭐ **Favoris** - Ajout rapide en jeu avec bouton Y
-- 🔍 **Recherche** - Navigation lettre par lettre (A-Z)
+- 🔍 **Recherche** - Navigation rapide avec ↑/↓ (10 jeux)
 - 📦 **Cache IndexedDB** - Chargement rapide des jeux
 - 🌍 **Internationalisation** - 6 langues (FR, EN, ES, DE, IT, JA)
 - 🖼️ **Images** - Support Image centre et screenshots
@@ -59,6 +59,56 @@ npm start
 1. Lancez l'application
 2. Vos ROMs doivent être dans `assets/consoles/[Console]/roms/`
 3. Allez dans **Options > Data > Créer XML** pour générer les listes de jeux
+
+---
+
+## Comment utiliser
+
+### 1. Écran de sélection de console
+
+Au lancement, vous voyez la liste des **48 consoles** disponibles :
+- Utilisez **↑ / ↓** pour sélectionner une console
+- Appuyez sur **Entrée** ou **A** pour valider
+
+### 2. Liste des jeux
+
+Une fois la console choisie, vous voyez tous vos jeux :
+- **← / →** : Jeu précédent / suivant (défilement infini)
+- **↑ / ↓** : Passage rapide (10 jeux)
+- **Entrée** ou **A** : Lancer le jeu
+- **Y** : Ajouter/retirer des favoris
+- **B** : Afficher les screenshots
+- **Backspace** : Accéder au menu options
+- **Escape** : Retour à la sélection console
+
+### 3. Menu Options
+
+Appuyez sur **Backspace** pour ouvrir les options :
+- **Data** : Générer les fichiers XML, configurer RetroArch
+- **Affichage** : Mode liste/grille, tri des jeux
+- **Audio** : Volume musique et effets
+- **Langue** : Français, English, Español, Deutsch, Italiano, 日本語
+
+### 4. Lancer un jeu
+
+Quand un jeu est sélectionné :
+1. Appuyez sur **Entrée** ou **A**
+2. Le jeu se lance via RetroArch (si configuré)
+3. Appuyez sur **X** ou **Escape** pour quitter le jeu et revenir au launcher
+
+### 5. Charger ses propres jeux
+
+```
+Étape 1: Placez vos ROMs
+  assets/consoles/nes/roms/*.nes
+  assets/consoles/snes/roms/*.sfc
+  assets/consoles/md/roms/*.md
+
+Étape 2: Créez les listes XML
+  [Esc] > Options > Data > Créer XML
+
+Étape 3: C'est prêt ! Vos jeux apparaissent dans la console correspondante
+```
 
 ---
 
@@ -137,12 +187,12 @@ aura-4k/
 
 | Input | Action |
 |-------|--------|
-| ← / → | Jeu précédent/suivant |
-| ↑ / ↓ | Jeu précédent/suivant |
+| ← / → | Jeu précédent/suivant (défilement infini) |
+| ↑ / ↓ | Passage rapide (10 jeux) |
 | Entrée / A | Lancer jeu |
 | Y | Ajouter favori |
 | B | Screenshots |
-| X | Quitter jeu |
+| X | Quitter jeu (retour au launcher) |
 | Backspace | Menu options |
 | Escape | Retour / Quitter |
 
@@ -230,9 +280,9 @@ Chaque jeu peut avoir :
 
 Appuyez sur **Y** pendant la sélection d'un jeu pour l'ajouter aux favoris. Appuyez à nouveau pour retirer.
 
-### Filtre lettre
+### Recherche rapide
 
-Utilisez les flèches haut/bas pour naviguer entre les lettres (A-Z) et voir uniquement les jeux commençant par cette lettre.
+Utilisez **↑ / ↓** pour sauter de 10 en 10 jeux. Le défilement est infini (boucle).
 
 ---
 
