@@ -24,6 +24,14 @@ AURA 4K est un launcher de jeux rétro codé en Electron avec une interface cin�
 
 ---
 
+## Aperçu
+
+![Écran principal](ui/Capture%20d'%C3%A9cran%202026-04-20%20123023.png)
+
+![Sélection console](ui/Capture%20d'%C3%A9cran%202026-04-19%20225344.png)
+
+---
+
 ## Installation
 
 ### Prérequis
