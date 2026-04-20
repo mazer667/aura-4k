@@ -1,0 +1,7 @@
+{
+  "assetsBasePath": "assets",
+  "retroarch": {
+    "executable": "retroarch/retroarch.exe",
+    "defaultCore": "retroarch/cores/fbneo_libretro.dll"
+  }
+}

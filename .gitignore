@@ -1,0 +1,13 @@
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+dist/
+coverage/
+*.xml
+*.webp
+*.mp3
+*.wav
+*.png
+*.jpg
+.env
