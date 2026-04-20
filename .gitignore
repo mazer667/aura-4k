@@ -5,9 +5,4 @@ Thumbs.db
 dist/
 coverage/
 *.xml
-*.webp
-*.mp3
-*.wav
-*.png
-*.jpg
 .env
