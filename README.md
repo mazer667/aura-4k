@@ -34,13 +34,11 @@ AURA 4K est un launcher de jeux rétro codé en Electron avec une interface cin�
 
 ## Installation
 
-### Prérequis
+### Option 1: Executable (Recommandée)
 
-- Node.js 18+
-- Windows 10/11
-- RetroArch installé (optionnel mais recommandé)
+Téléchargez la dernière version `.exe` dans [Releases](https://github.com/mazer667/aura-4k/releases) et lancez directement. Pas de Node.js requis !
 
-### Étapes
+### Option 2: Code source (Développeurs)
 
 ```bash
 # 1. Cloner le projet
@@ -50,8 +48,8 @@ cd aura-4k
 # 2. Installer les dépendances
 npm install
 
-# 3. Lancer le launcher
-npm start
+# 3.Créer l'executable
+npm run dist
 ```
 
 ### Première utilisation
@@ -241,29 +239,14 @@ aura-4k/
 
 ---
 
-## Commandes utiles
+## Commandes (pour developers)
 
 ```bash
-# Installer les dépendances
-npm install
-
-# Lancer en mode développement
-npm start
-
-# Exécuter les tests
-npm test
-
-# Vérifier le code avec ESLint
-npm run lint
-
-# Formater le code avec Prettier
-npm run format
-
-# Build production
-npm run build
-
-# Tester avec Electron directement
-electron .
+npm install          # Installer les dépendances
+npm start           # Lancer en mode développement
+npm run dist        # Créer l'executable .exe
+npm run test        # Exécuter les tests
+npm run lint        # Vérifier le code
 ```
 
 ---
