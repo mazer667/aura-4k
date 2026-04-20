@@ -164,7 +164,19 @@ aura-4k/
 5. Sélectionnez la console dans la liste déroulante
 6. Cliquez sur **Créer XML**
 7. Attendez la génération (avec barre de progression)
-8. Les jeux apparaissent avec nom, jaquette, description, etc.
+8. Les jeux apparaissent avec nom, jaquette, description, genre, année, éditeur, etc.
+
+**Ce que fait Screenscrapper :**
+- Nom du jeu
+- Description
+- Éditeur / Développeur
+- Année de sortie
+- Genre
+- Nombre de joueurs
+- Note
+- Jaquette (box art)
+- Screenshots
+- Musique
 
 ### Méthode 2: Manuel
 
