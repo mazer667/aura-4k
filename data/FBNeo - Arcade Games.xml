@@ -1,0 +1,5277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <game name="1941">
+    <description>1941: Counter Attack</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="1942">
+    <description>1942</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1984</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="1943">
+    <description>1943 : The Battle Of Midway</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="1943kai">
+    <description>1943 Kai : Midway Kaisen</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="1944">
+    <description>1944 : The Loop Master</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>2000</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="19xx">
+    <description>19XX : The War Against Destiny</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="2020bb">
+    <description>2020 Super Baseball</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Baseball</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="3countb">
+    <description>3 Count Bout</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="64street">
+    <description>64th. Street - A Detective Story</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="actfancr">
+    <description>Act-Fancer: Cybernetick Hyper Weapon</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mhavoc">
+    <description>Adventures of Major Havoc ,The</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1983</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aerofgt">
+    <description>Aero Fighters</description>
+    <manufacturer>Video System</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sonicwi2">
+    <description>Aero Fighters 2</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sonicwi3">
+    <description>Aero Fighters 3</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aburner2">
+    <description>After Burner II</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="agallet">
+    <description>Air Gallet</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1996</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="airwolf">
+    <description>Airwolf</description>
+    <manufacturer>Kyugo Boueki</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>6.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ajax">
+    <description>Ajax</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="akatana">
+    <description>Akai Katana</description>
+    <manufacturer>Cave</manufacturer>
+    <year>2010</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="astorm">
+    <description>Alien Storm</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-3</players>
+    <rating>8.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aliensyn">
+    <description>Alien Syndrome</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="avsp">
+    <description>Alien vs. Predator</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aliens">
+    <description>Aliens</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aligator">
+    <description>Alligator Hunt</description>
+    <manufacturer>Gaelco</manufacturer>
+    <year>1994</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="alpham2">
+    <description>Alpha Mission 2</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="altbeast">
+    <description>Altered Beast</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="amidar">
+    <description>Amidar</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1982</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="androdun">
+    <description>Andro Dunos</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aquajack">
+    <description>Aqua Jack</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="arkanoid">
+    <description>Arkanoid</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1986</year>
+    <genre>Action</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="arknoid2">
+    <description>Arkanoid - Revenge Of Doh</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1987</year>
+    <genre>Action</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="armwrest">
+    <description>Arm Wrestling</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1985</year>
+    <genre>Sport</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="batrider">
+    <description>Armed Police Batrider</description>
+    <manufacturer>Raizing</manufacturer>
+    <year>1998</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="armorcar">
+    <description>Armored Car</description>
+    <manufacturer>Stern</manufacturer>
+    <year>1981</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="armwar">
+    <description>Armored Warriors</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aof">
+    <description>Art of Fighting</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aof2">
+    <description>Art of Fighting 2</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aof3">
+    <description>Art of Fighting 3 : The Path of the Warrior</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="asterix">
+    <description>Asterix</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="asteroid">
+    <description>Asteroids</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1979</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="astdelux">
+    <description>Asteroids Deluxe</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1981</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="aurail">
+    <description>Aurail</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="avengers">
+    <description>Avengers</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1987</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="avspirit">
+    <description>Avenging Spirit</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="baddudes">
+    <description>Bad Dudes vs. Dragonninja</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1988</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="badlands">
+    <description>Bad Lands</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bangbead">
+    <description>Bang Bead</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2000</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bankp">
+    <description>Bank Panic</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1984</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bstars2">
+    <description>Baseball Stars 2</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bstars">
+    <description>Baseball Stars Professional</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1990</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="batman">
+    <description>Batman</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>8.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="batsugun">
+    <description>Batsugun</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="batcir">
+    <description>Battle Circuit</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bgaregga">
+    <description>Battle Garegga</description>
+    <manufacturer>Raizing</manufacturer>
+    <year>1996</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bzone">
+    <description>Battle Zone</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1980</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="btoads">
+    <description>Battletoads</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="blswhstl">
+    <description>Bells And Whistles</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="berzerk">
+    <description>Berzerk</description>
+    <manufacturer>Stern</manufacturer>
+    <year>1980</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>4.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="biomtoy">
+    <description>Biomechanical Toy</description>
+    <manufacturer>Gaelco</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bionicc">
+    <description>Bionic Commando</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-2</players>
+    <rating>8.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="blktiger">
+    <description>Black Tiger</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bwidow">
+    <description>Black Widow</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1982</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="blstroid">
+    <description>Blasteroids</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Tir / Avion, 3eme personne</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="blazstar">
+    <description>Blazing Star</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1998</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bloodbro">
+    <description>Blood Bros.</description>
+    <manufacturer>Tad</manufacturer>
+    <year>1990</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bjourney">
+    <description>Blue's Journey</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bogeyman">
+    <description>Bogey Manor</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1985</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bombjack">
+    <description>Bomb Jack</description>
+    <manufacturer>Tehkan</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bongo">
+    <description>Bongo</description>
+    <manufacturer>Jetsoft</manufacturer>
+    <year>1983</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>6.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="boogwing">
+    <description>Boogie Wings</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="brkthru">
+    <description>Break Thru</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1986</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="breakrev">
+    <description>Breakers Revenge</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1998</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bublbobl">
+    <description>Bubble Bobble</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bublbob2">
+    <description>Bubble Bobble 2</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bubbles">
+    <description>Bubbles</description>
+    <manufacturer>Williams</manufacturer>
+    <year>1982</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="buckrog">
+    <description>Buck Rogers - Planet Of Zoom</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1982</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bucky">
+    <description>Bucky O'Hare</description>
+    <manufacturer>Tatsumi</manufacturer>
+    <year>1992</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bnj">
+    <description>Bump 'n' Jump</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1982</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="btime">
+    <description>BurgerTime</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="burningf">
+    <description>Burning Fight</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="cabal">
+    <description>Cabal</description>
+    <manufacturer>Tad</manufacturer>
+    <year>1988</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dino">
+    <description>Cadillacs and Dinosaurs</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="csclub">
+    <description>Capcom Sports Club</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Sport / Multisports</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="captaven">
+    <description>Captain America And The Avengers</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="captcomm">
+    <description>Captain Commando</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="carnival">
+    <description>Carnival</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1980</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="cawing">
+    <description>Carrier Air Wing</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="centiped">
+    <description>Centipede</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1981</year>
+    <genre>Tir / Space Invaders Like</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="chaknpop">
+    <description>Chack'n Pop</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1983</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="chasehq">
+    <description>Chase H.Q.</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1988</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="chinagat">
+    <description>China Gate</description>
+    <manufacturer>Technos Japan</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="choplift">
+    <description>Choplifter</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1985</year>
+    <genre>Tir / Avion</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="circusc">
+    <description>Circus Charlie</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="citycon">
+    <description>City Connection</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1985</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="cleopatr">
+    <description>Cleopatra Fortune</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1996</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="columns">
+    <description>Columns</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ctribe">
+    <description>Combatribes, The</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1990</year>
+    <genre>Combat</genre>
+    <players>1-3</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="commando">
+    <description>Commando</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1985</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="congo">
+    <description>Congo Bongo</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1983</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="contra">
+    <description>Contra</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1987</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="galivan">
+    <description>Cosmo Police Galivan</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1985</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="cotton">
+    <description>Cotton: Fantastic Night Dreams</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="cclimber">
+    <description>Crazy Climber</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1980</year>
+    <genre>Action / Escalade</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ckong">
+    <description>Crazy Kong</description>
+    <manufacturer>Falcon</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ckongpt2">
+    <description>Crazy Kong Part 2</description>
+    <manufacturer>Falcon</manufacturer>
+    <year>1981</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="crimfght">
+    <description>Crime Fighters</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="crsword">
+    <description>Crossed Swords</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Aventure</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="crswd2bl">
+    <description>Crossed Swords II</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Aventure</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="twocrude">
+    <description>Crude Buster</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ccastles">
+    <description>Crystal Castles</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1983</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="eswat">
+    <description>Cyber Police ESWAT</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="cybots">
+    <description>Cyberbots : Fullmetal Madness</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="cyvern">
+    <description>Cyvern : The Dragon Weapons</description>
+    <manufacturer>Kaneko</manufacturer>
+    <year>1998</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddcrew2">
+    <description>D. D. Crew</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="darkseal">
+    <description>Dark Seal</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1990</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dstlk">
+    <description>Darkstalkers: The Night Warriors</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="deadconx">
+    <description>Dead Connection</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="deathsml">
+    <description>Deathsmiles</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2007</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dsmbl">
+    <description>Deathsmiles MegaBlack Label</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2008</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="defender">
+    <description>Defender</description>
+    <manufacturer>Williams</manufacturer>
+    <year>1981</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dmnfrnt">
+    <description>Demon Front</description>
+    <manufacturer>IGS</manufacturer>
+    <year>2002</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="digdug">
+    <description>Dig Dug</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1982</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="digdug2">
+    <description>Dig Dug 2</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1985</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dimahoo">
+    <description>Dimahoo</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>2000</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddonpach">
+    <description>DoDonPachi</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1997</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dfkbl">
+    <description>DoDonPachi Dai-Fukkatsu Black Label</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2010</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddp3">
+    <description>DoDonPachi III</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2002</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddpdfk">
+    <description>DoDonPachi Resurrection</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2008</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddpsdoj">
+    <description>Dodonpachi Saidaioujou</description>
+    <manufacturer>CAVE Interactive</manufacturer>
+    <year>2012</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dogyuun">
+    <description>Dogyuun</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dondokod">
+    <description>Don Doko Don</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dkong">
+    <description>Donkey Kong</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1981</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dkong3">
+    <description>Donkey Kong 3</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1983</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dkongjr">
+    <description>Donkey Kong Junior</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="donpachi">
+    <description>DonPachi</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1995</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddragon">
+    <description>Double Dragon</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1987</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="doubledr">
+    <description>Double Dragon</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddragon2">
+    <description>Double Dragon 2 - The Revenge</description>
+    <manufacturer>Technos Japan</manufacturer>
+    <year>1988</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddragon3">
+    <description>Double Dragon 3 - The Rosetta Stone</description>
+    <manufacturer>Technos Japan</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="drtoppel">
+    <description>Dr. Toppel's Adventure</description>
+    <manufacturer>Kaneko</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dbreed">
+    <description>Dragon Breed</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="drgnbstr">
+    <description>Dragon Buster</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1984</year>
+    <genre>Action RPG</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dsaber">
+    <description>Dragon Saber</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dbz">
+    <description>DragonBall Z</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dbz2">
+    <description>Dragonball Z 2 - Super Battle</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dsoccr94">
+    <description>Dream Soccer '94</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1994</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lightbr">
+    <description>Dungeon Magic</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddsom">
+    <description>Dungeons &amp; Dragons: Shadow over Mystara</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddtod">
+    <description>Dungeons &amp; Dragons: Tower of Doom</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dynagear">
+    <description>Dyna Gear</description>
+    <manufacturer>Sammy USA Corporation</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ddux">
+    <description>Dynamite Dux</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dynwar">
+    <description>Dynasty Wars</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ecofghtr">
+    <description>Eco Fighters</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="eightman">
+    <description>Eight Man</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="elevator">
+    <description>Elevator Action</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1983</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="elvactr">
+    <description>Elevator Action Returns</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="enduror">
+    <description>Enduro Racer</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1986</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="eprom">
+    <description>Escape From The Planet Of The Robot Monsters</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="esprade">
+    <description>ESP Ra.De.</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1998</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="espgal">
+    <description>Espgaluda</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2003</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="espgal2">
+    <description>Espgaluda II</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2005</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="exedexes">
+    <description>Exed Exes</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1985</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fantzone">
+    <description>Fantasy Zone</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fantzn2">
+    <description>Fantasy Zone 2 - The Tears Of Opa-opa</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kabukikl">
+    <description>Far East of Eden: Kabuki Klash</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fastlane">
+    <description>Fast Lane</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1987</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fatfury3">
+    <description>Fatal Fury 3: Road to the Final Victory</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fatfury1">
+    <description>Fatal Fury : King of Fighters</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fatfursp">
+    <description>Fatal Fury Special</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="feversos">
+    <description>Fever SOS</description>
+    <manufacturer>Nihon Systems</manufacturer>
+    <year>1998</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ffight">
+    <description>Final Fight</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fireshrk">
+    <description>Fire Shark</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fixeight">
+    <description>FixEight</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1-3</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="flicky">
+    <description>Flicky</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="fshark">
+    <description>Flying Shark</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="foodf">
+    <description>Food Fight</description>
+    <manufacturer>General Computer Corporation</manufacturer>
+    <year>1982</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>8.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="forgottn">
+    <description>Forgotten Worlds</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="frogger">
+    <description>Frogger</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1981</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="funkyjet">
+    <description>Funky Jet</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gstream">
+    <description>G-Stream G2020</description>
+    <manufacturer>Oriental Soft</manufacturer>
+    <year>2002</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gijoe">
+    <description>G.I. Joe</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gaia">
+    <description>Gaia Crusaders</description>
+    <manufacturer>Noise Factory</manufacturer>
+    <year>1999</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gground">
+    <description>Gain Ground</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Tir</genre>
+    <players>1-3</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="galaga">
+    <description>Galaga</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1981</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="galaga88">
+    <description>Galaga '88</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="galaxian">
+    <description>Galaxian</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1979</year>
+    <genre>Tir / Space Invaders Like</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="galmedes">
+    <description>Galmedes</description>
+    <manufacturer>Visco</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gangwars">
+    <description>Gang Wars</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ganryu">
+    <description>Ganryu</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1999</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gaplus">
+    <description>Gaplus</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1984</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="garou">
+    <description>Garou: Mark of the Wolves</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1999</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gauntlet2p">
+    <description>Gauntlet</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1985</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gaunt22p">
+    <description>Gauntlet 2</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="geebeeg">
+    <description>Gee Bee</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1978</year>
+    <genre>Action</genre>
+    <players>1-2</players>
+    <rating>6.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gpilots">
+    <description>Ghost Pilots</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gng">
+    <description>Ghosts'n Goblins</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1985</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ghouls">
+    <description>Ghouls'n Ghosts</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gigawing">
+    <description>Giga Wing</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1999</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="goalx3">
+    <description>Goal! Goal! Goal!</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="godzilla">
+    <description>Godzilla</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="goldnaxe">
+    <description>Golden Axe</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ga2">
+    <description>Golden Axe - The Revenge Of Death Adder</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gradius3">
+    <description>Gradius 3</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rushatck">
+    <description>Green Beret</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="grindstm">
+    <description>Grind Stormer</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="growl">
+    <description>Growl</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="grdians">
+    <description>Guardians: Denjin Makai II</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1995</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gunsmoke">
+    <description>Gun.Smoke</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1985</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gnbarich">
+    <description>Gunbarich</description>
+    <manufacturer>Psikyo</manufacturer>
+    <year>2001</year>
+    <genre>Action</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gunbird2">
+    <description>Gunbird 2</description>
+    <manufacturer>Psikyo</manufacturer>
+    <year>1998</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gunforce">
+    <description>Gunforce - Battle Fire Engulfed Terror Island</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gunlock">
+    <description>Gunlock</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gunnail">
+    <description>GunNail</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="guwange">
+    <description>Guwange</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1999</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gyruss">
+    <description>Gyruss</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1983</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hharry">
+    <description>Hammerin' Harry</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hangon">
+    <description>Hang-on</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1985</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hcastle">
+    <description>Haunted Castle</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="heatbrl">
+    <description>Heated Barrel</description>
+    <manufacturer>Tad</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hbarrel">
+    <description>Heavy Barrel</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1987</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hvysmsh">
+    <description>Heavy Smash</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1993</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hellfire">
+    <description>Hellfire</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hitice">
+    <description>Hit The Ice</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hook">
+    <description>Hook</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hopmappy">
+    <description>Hopping Mappy</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="horizon">
+    <description>Horizon</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1985</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>8.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="trackfld">
+    <description>Hyper Olympic</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1983</year>
+    <genre>Action</genre>
+    <players>1-4</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="hsf2">
+    <description>Hyper Street Fighter II: The Anniversary Edition</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>2004</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ibara">
+    <description>Ibara</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2005</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ibarablk">
+    <description>Ibara Kuro Black Label</description>
+    <manufacturer>Cave</manufacturer>
+    <year>2006</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ikari3">
+    <description>Ikari 3 - The Rescue</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1989</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ikari">
+    <description>Ikari Warriors</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1986</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="imgfight">
+    <description>Image Fight</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="inthunt">
+    <description>In the Hunt</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1993</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="jackal">
+    <description>Jackal</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="jailbrek">
+    <description>Jail Break</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="jojoba">
+    <description>Jojo's Bizarre Adventure</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1999</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="jojo">
+    <description>JoJo's Venture</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1998</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="journey">
+    <description>Journey</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1983</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="joust">
+    <description>Joust</description>
+    <manufacturer>Williams</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="junglek">
+    <description>Jungle King</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="junofrst">
+    <description>Juno First</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1983</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gblchmp">
+    <description>Kaiser Knuckle</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kangaroo">
+    <description>Kangaroo</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kchamp">
+    <description>Karate Champ</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1984</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="karnov">
+    <description>Karnov</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="karnovr">
+    <description>Karnov's Revenge</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ket">
+    <description>Ketsui - Kizuna Jigoku Tachi</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2002</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kick">
+    <description>Kick</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1981</year>
+    <genre>Action</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kicker">
+    <description>Kicker</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1985</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="horekid">
+    <description>Kid No Hore Hore Daisakusen</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1987</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kingball">
+    <description>King And Balloon</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1980</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ringking">
+    <description>King Of Boxer</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1985</year>
+    <genre>Sport / Boxe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kotm">
+    <description>King of the Monsters</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kotm2">
+    <description>King of the Monsters 2 : The Next Thing</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="klax">
+    <description>Klax</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="knights">
+    <description>Knights of the Round</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="krull">
+    <description>Krull</description>
+    <manufacturer>Gottlieb</manufacturer>
+    <year>1983</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kungfum">
+    <description>Kung-fu Master</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1984</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="landmakr">
+    <description>Land Maker</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1998</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lastbld2">
+    <description>Last Blade 2, The</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1999</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lastblad">
+    <description>Last Blade, The</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1998</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lresort">
+    <description>Last Resort</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lbowling">
+    <description>League Bowling</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Bowling</genre>
+    <players>1-4</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="loht">
+    <description>Legend of Hero Tonma</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lkage">
+    <description>Legend Of Kage, The</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lwings">
+    <description>Legendary Wings</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lethalth">
+    <description>Lethal Thunder</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="liblrabl">
+    <description>Libble Rabble</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1983</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="liquidk">
+    <description>Liquid Kids</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="lizwiz">
+    <description>Lizard Wizard</description>
+    <manufacturer>Techstar (Sunn license)</manufacturer>
+    <year>1985</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="locomotn">
+    <description>Loco-motion</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1982</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ldrun">
+    <description>Lode Runner</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ldrun2">
+    <description>Lode Runner 2 - The Bungeling Strikes Back</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ldrun3">
+    <description>Lode Runner 3 - The Golden Labyrinth</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1985</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ldrun4">
+    <description>Lode Runner 4 - Teikoku Karano Dasshutsu</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="loderndf">
+    <description>Lode Runner: The Dig Fight</description>
+    <manufacturer>Psikyo</manufacturer>
+    <year>2000</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="llander">
+    <description>Lunar Lander</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1979</year>
+    <genre>Simulation / Véhicules</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="macrossp">
+    <description>Macross Plus</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1996</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="msword">
+    <description>Magic Sword: Heroic Fantasy</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mgcrystl">
+    <description>Magical Crystals</description>
+    <manufacturer>Kaneko</manufacturer>
+    <year>1991</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="magdrop2">
+    <description>Magical Drop II</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="magdrop3">
+    <description>Magical Drop III</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1997</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="maglord">
+    <description>Magician Lord</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mainevt2p">
+    <description>Main Event, The</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1988</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mario">
+    <description>Mario Bros.</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1983</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mmatrix">
+    <description>Mars Matrix: Hyper Solid Shooting</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>2000</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="msh">
+    <description>Marvel Super Heroes</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mshvsf">
+    <description>Marvel Super Heroes vs. Street Fighter</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mvsc">
+    <description>Marvel vs. Capcom : Clash of Super Heroes</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1998</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mazinger">
+    <description>Mazinger Z</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="megaman2">
+    <description>Mega Man 2: The Power Fighters</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Combat / Versus Co-op</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="megaman">
+    <description>Mega Man: The Power Battle</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus Co-op</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mtwins">
+    <description>Mega Twins</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mercs">
+    <description>Mercs</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-3</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mslug2">
+    <description>Metal Slug 2 : Super Vehicle-001II</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1998</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mslug3">
+    <description>Metal Slug 3</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2000</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mslug4">
+    <description>Metal Slug 4</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2002</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mslug5">
+    <description>Metal Slug 5</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2003</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mslug">
+    <description>Metal Slug : Super Vehicle-001</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mslugx">
+    <description>Metal Slug X : Super Vehicle-001</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1999</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="metmqstr">
+    <description>Metamoqester</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus Co-op</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="metamrph">
+    <description>Metamorphic Force</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mwalk">
+    <description>Michael Jackson's Moonwalker</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mpang">
+    <description>Mighty! Pang</description>
+    <manufacturer>Mitchell</manufacturer>
+    <year>2000</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mikie">
+    <description>Mikie</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1984</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gtmr2">
+    <description>Mille Miglia 2 - Great 1000 Miles Rally</description>
+    <manufacturer>Kaneko</manufacturer>
+    <year>1995</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="milliped">
+    <description>Millipede</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1982</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="missile">
+    <description>Missile Command</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1980</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mpatrol">
+    <description>Moon Patrol</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1982</year>
+    <genre>Tir / Véhicule, Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mk">
+    <description>Mortal Kombat</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1992</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mk2">
+    <description>Mortal Kombat II</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1993</year>
+    <genre>Combat / 2D</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mrdo">
+    <description>Mr. Do!</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1982</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="docastle">
+    <description>Mr. Do's Castle</description>
+    <manufacturer>Universal </manufacturer>
+    <year>1983</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mrgoemon">
+    <description>Mr. Goemon</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mspacman">
+    <description>Ms. Pac-Man</description>
+    <manufacturer>Coleco Industries</manufacturer>
+    <year>1981</year>
+    <genre>Action</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mmpork">
+    <description>Muchi Muchi Pork!</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2007</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mbombrd">
+    <description>Muscle Bomber Duo : Ultimate Team Battle</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-4</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mushisam">
+    <description>Mushihime-Sama</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2004</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="futari15">
+    <description>Mushihime-Sama Futari</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2006</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="futaribl">
+    <description>Mushihime-Sama Futari Black Label</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2007</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mutnat">
+    <description>Mutation Nation</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="mystwarr">
+    <description>Mystic Warriors</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nam1975">
+    <description>NAM-1975</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1990</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="narc">
+    <description>NARC</description>
+    <manufacturer>Williams</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nbajamte">
+    <description>Nba Jam Te</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1994</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nemesis">
+    <description>Nemesis</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1985</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nemo">
+    <description>Nemo</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="neobombe">
+    <description>Neo Bomberman</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1997</year>
+    <genre>Action</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="neodrift">
+    <description>Neo Drift Out : New Technology</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="neomrdo">
+    <description>Neo Mr. Do!</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1997</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="turfmast">
+    <description>Neo Turf Masters</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Sport / Golf</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nrallyx">
+    <description>New Rally X</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1981</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tnzs">
+    <description>Newzealand Story, The</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nibbler">
+    <description>Nibbler</description>
+    <manufacturer>Rock-Ola</manufacturer>
+    <year>1982</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nitedrvr">
+    <description>Night Driver</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1976</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nslashers">
+    <description>Night Slashers</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nwarr">
+    <description>Night Warriors: Darkstalkers' Revenge</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nitd">
+    <description>Nightmare in the Dark</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2001</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nbbatman">
+    <description>Ninja Baseball Bat Man</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ncombat">
+    <description>Ninja Combat</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ncommand">
+    <description>Ninja Commando</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ninjak">
+    <description>Ninja Kids, The</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nspirit">
+    <description>Ninja Spirit</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ninjakd2">
+    <description>Ninja-kid 2 / Ninjakun Ashura No Shou</description>
+    <manufacturer>UPL</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ninjakun">
+    <description>Ninja-kun: Adventure of Devil Castle</description>
+    <manufacturer>UPL</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nitrobal">
+    <description>Nitro Ball</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1-3</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="osman">
+    <description>Osman</description>
+    <manufacturer>Mitchell</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="outrun">
+    <description>Out Run</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1986</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="outzone">
+    <description>Out Zone</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1990</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="outfxies">
+    <description>Outfoxies, The</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="overtop">
+    <description>Over Top</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Course, Conduite / Course</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pow">
+    <description>P.O.W.: Prisoners of War</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1988</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pacland">
+    <description>Pac-Land</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pacman">
+    <description>Pac-Man</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1980</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="bbros">
+    <description>Pang</description>
+    <manufacturer>Mitchell</manufacturer>
+    <year>1989</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pang3">
+    <description>Pang! 3</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="panicbom">
+    <description>Panic Bomber</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1995</year>
+    <genre>Puzzle-Game / Tomber</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="parodius">
+    <description>Parodius Da!</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pengo">
+    <description>Pengo</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1982</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="penbros">
+    <description>Penguin Brothers</description>
+    <manufacturer>Subsino</manufacturer>
+    <year>2000</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="phoenix">
+    <description>Phoenix</description>
+    <manufacturer>Centuri</manufacturer>
+    <year>1980</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pinkswts">
+    <description>Pink Sweets: Ibara Sorekara</description>
+    <manufacturer>AMI</manufacturer>
+    <year>2006</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pipedrm">
+    <description>Pipe Dream</description>
+    <manufacturer>Video System</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pitfight">
+    <description>Pit Fighter</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Combat</genre>
+    <players>1-3</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pleiads">
+    <description>Pleiads</description>
+    <manufacturer>Tehkan</manufacturer>
+    <year>1981</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pnickj">
+    <description>Pnickies</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pooyan">
+    <description>Pooyan</description>
+    <manufacturer>Stern</manufacturer>
+    <year>1982</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="popeye">
+    <description>Popeye</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="matrim">
+    <description>Power Instinct Matrimelee</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2002</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="preisle2">
+    <description>Prehistoric Isle 2</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1999</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sailormn">
+    <description>Pretty Soldier Sailor Moon</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="progear">
+    <description>Progear</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>2001</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pulstar">
+    <description>Pulstar</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="punchout">
+    <description>Punch-Out!!</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1984</year>
+    <genre>Sport</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="punkshot2">
+    <description>Punk Shot</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1990</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="puyo">
+    <description>Puyo Puyo</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1992</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="puyopuy2">
+    <description>Puyo Puyo 2</description>
+    <manufacturer>Compile</manufacturer>
+    <year>1994</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="puzzloop">
+    <description>Puzz Loop</description>
+    <manufacturer>Mitchell</manufacturer>
+    <year>1998</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pzloop2">
+    <description>Puzz Loop 2</description>
+    <manufacturer>Mitchell</manufacturer>
+    <year>2001</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pbobblen">
+    <description>Puzzle Bobble</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Puzzle-Game / Lancer</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pbobbl2n">
+    <description>Puzzle Bobble 2</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1999</year>
+    <genre>Puzzle-Game / Lancer</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="pbobble3">
+    <description>Puzzle Bobble 3</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1996</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="qbert">
+    <description>Q*bert</description>
+    <manufacturer>D. Gottlieb &amp; Co.</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="qix">
+    <description>Qix</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1981</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="quartet2">
+    <description>Quartet</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1986</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rtype">
+    <description>R-Type</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rtype2">
+    <description>R-type 2</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rtypeleo">
+    <description>R-Type Leo</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="radm">
+    <description>Rad Mobile</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rotd">
+    <description>Rage of the Dragons</description>
+    <manufacturer>Playmore</manufacturer>
+    <year>2002</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="raiden2">
+    <description>Raiden 2</description>
+    <manufacturer>Seibu Kaihatsu</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rbisland">
+    <description>Rainbow Islands</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rallyx">
+    <description>Rally X</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1980</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rambo3">
+    <description>Rambo 3</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rampage">
+    <description>Rampage</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1986</year>
+    <genre>Combat</genre>
+    <players>1-3</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rampart2p">
+    <description>Rampart</description>
+    <manufacturer>Tengen</manufacturer>
+    <year>1990</year>
+    <genre>Tir</genre>
+    <players>1-3</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rastan">
+    <description>Rastan</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rbff1">
+    <description>Real Bout Fatal Fury</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rbff2">
+    <description>Real Bout Fatal Fury 2 - The Newcomers</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1998</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rbffspec">
+    <description>Real Bout Fatal Fury Special</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ghostb">
+    <description>Real Ghostbusters, The</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1987</year>
+    <genre>Tir</genre>
+    <players>1-3</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="redearth">
+    <description>Red Earth</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="renegade">
+    <description>Renegade</description>
+    <manufacturer>Technos Japan</manufacturer>
+    <year>1986</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="jedi">
+    <description>Return of the Jedi</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1984</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ringdest">
+    <description>Ring of Destruction: Slam Masters II</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="riotcity">
+    <description>Riot City</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="roboarmy">
+    <description>Robo Army</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="robocop">
+    <description>RoboCop</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1988</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="robocop2">
+    <description>RoboCop 2</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1991</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="robotron">
+    <description>Robotron - 2084</description>
+    <manufacturer>Vid Kidz</manufacturer>
+    <year>1982</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rocnrope">
+    <description>Roc'n Rope</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1983</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rohga">
+    <description>Rohga Armor Force</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rthunder">
+    <description>Rolling Thunder</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1986</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rthun2">
+    <description>Rolling Thunder 2</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="rygar">
+    <description>Rygar</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sabotenb">
+    <description>Saboten Bombers</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="stdragon">
+    <description>Saint Dragon</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="salamand">
+    <description>Salamander</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="samsho">
+    <description>Samurai Shodown</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1993</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="samsho2">
+    <description>Samurai Shodown II</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="samsho3">
+    <description>Samurai Shodown III</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="samsho4">
+    <description>Samurai Shodown IV : Amakusa's Revenge</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="samsh5fe">
+    <description>Samurai Shodown V Special</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2004</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="shollow">
+    <description>Satan's Hollow</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1982</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="slammast">
+    <description>Saturday Night Slam Masters</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="scramble">
+    <description>Scramble</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1981</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="seawolft">
+    <description>Sea Wolf</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1976</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="slyspy">
+    <description>Secret Agent</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1989</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="seganinj">
+    <description>Sega Ninja</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1985</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sonicfgt">
+    <description>Sega Sonic Cosmo Fighter</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sonic">
+    <description>Segasonic The Hedgehog</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-3</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="seicross">
+    <description>Seicross</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1984</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sengoku">
+    <description>Sengoku</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sengoku2">
+    <description>Sengoku 2</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sengoku3">
+    <description>Sengoku 3</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2001</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="shdancer">
+    <description>Shadow Dancer</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="shadfrce">
+    <description>Shadow Force</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gaiden">
+    <description>Shadow Warriors</description>
+    <manufacturer>Ocean</manufacturer>
+    <year>1988</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="shinobi">
+    <description>Shinobi</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="shocktro">
+    <description>Shock Troopers</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1997</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="shocktr2">
+    <description>Shock Troopers : 2nd Squad</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1999</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sidearms">
+    <description>Side Arms - Hyper Dyne</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sinistar">
+    <description>Sinistar</description>
+    <manufacturer>Williams</manufacturer>
+    <year>1982</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="skykid">
+    <description>Sky Kid</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1985</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="alcon">
+    <description>Slap Fight</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="slapshot">
+    <description>Slap Shot</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="smashtv">
+    <description>Smash T.V.</description>
+    <manufacturer>Williams</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="svc">
+    <description>SNK vs. Capcom : SVC Chaos</description>
+    <manufacturer>SNK Playmore</manufacturer>
+    <year>2003</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="snowbros">
+    <description>Snow Bros. - Nick And Tom</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="socbrawl">
+    <description>Soccer Brawl</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="solomon">
+    <description>Solomon's Key</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1986</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sonson">
+    <description>Son Son</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1984</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sharrier">
+    <description>Space Harrier</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1985</year>
+    <genre>Tir / 3eme Personne</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="invaders">
+    <description>Space Invaders</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1978</year>
+    <genre>Tir / Space Invaders Like</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spcinv95">
+    <description>Space Invaders '95 - The Attack Of Lunar Loonies</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1995</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spacedx">
+    <description>Space Invaders DX</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spidman">
+    <description>Spider-man - The Videogame</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spinmast">
+    <description>Spin Master</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="splatter">
+    <description>Splatter House</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1988</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spyhunt">
+    <description>Spy Hunter</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1983</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spyhunt2">
+    <description>Spy Hunter 2</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1987</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="starwars">
+    <description>Star Wars</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1983</year>
+    <genre>Tir / Avion, 1ere personne</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="stmblade">
+    <description>Storm Blade</description>
+    <manufacturer>Visco</manufacturer>
+    <year>1996</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sf">
+    <description>Street Fighter</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1987</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sfa2">
+    <description>Street Fighter Alpha 2</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sfa3">
+    <description>Street Fighter Alpha 3</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1998</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sfa">
+    <description>Street Fighter Alpha : Warriors' Dreams</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sf2">
+    <description>Street Fighter II : The World Warrior</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1991</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sf2ce">
+    <description>Street Fighter II' : Champion Edition</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1992</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sf2hf">
+    <description>Street Fighter II' : Hyper Fighting</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1992</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sfiii2">
+    <description>Street Fighter III : 2nd Impact - Giant Attack</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sfiii3">
+    <description>Street Fighter III : 3rd Strike - Fight for the Future</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1999</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sfiii">
+    <description>Street Fighter III : New Generation</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sfz2al">
+    <description>Street Fighter Zero 2 Alpha</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="strhoop">
+    <description>Street Hoop</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="strider">
+    <description>Strider</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="s1945">
+    <description>Strikers 1945</description>
+    <manufacturer>Psikyo</manufacturer>
+    <year>1995</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="s1945ii">
+    <description>Strikers 1945 2</description>
+    <manufacturer>Psikyo</manufacturer>
+    <year>1997</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="s1945iii">
+    <description>Strikers 1945 3</description>
+    <manufacturer>Psikyo</manufacturer>
+    <year>1999</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ssridersubc">
+    <description>Sunset Riders</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-4</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="scobra">
+    <description>Super Cobra</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1981</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="scontra">
+    <description>Super Contra</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sdodgeb">
+    <description>Super Dodge Ball</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1996</year>
+    <genre>Sport / Dodgeball</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sgemf">
+    <description>Super Gem Fighter: Mini Mix</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="shangon">
+    <description>Super Hang-On</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Course de Moto vue 3eme pers.</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="superpac">
+    <description>Super Pac-Man</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1982</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spnchout">
+    <description>Super Punch-Out!!</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1984</year>
+    <genre>Sport</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="spf2t">
+    <description>Super Puzzle Fighter II Turbo</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="macross">
+    <description>Super Spacefortress Macross</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="macross2">
+    <description>Super Spacefortress Macross II</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ssf2t">
+    <description>Super Street Fighter II Turbo</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ssf2">
+    <description>Super Street Fighter II: The New Challengers</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="sxevious">
+    <description>Super Xevious</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1984</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="szaxxon">
+    <description>Super Zaxxon</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1982</year>
+    <genre>Shoot'em up / Diagonal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="superman">
+    <description>Superman</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1988</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="gogomile">
+    <description>Susume! Mile Smile / Go Go! Mile Smile</description>
+    <manufacturer>Fuuki</manufacturer>
+    <year>1995</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tankfrce">
+    <description>Tank Force</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1991</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tapper">
+    <description>Tapper</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1983</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wildfang">
+    <description>Tecmo Knight</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tmnt2pj">
+    <description>Teenage Mutant Ninja Turtles</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tmnt22pu">
+    <description>Teenage Mutant Ninja Turtles: Turtles in Time</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tempest">
+    <description>Tempest</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1981</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tengai">
+    <description>Tengai</description>
+    <manufacturer>Psikyo</manufacturer>
+    <year>1996</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="atetris">
+    <description>Tetris</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tetrisp2">
+    <description>Tetris Plus 2</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1997</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tgm2p">
+    <description>Tetris The Absolute The Grand Master 2</description>
+    <manufacturer>Arika</manufacturer>
+    <year>2000</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="edrandy">
+    <description>The Cliffhanger: Edward Randy</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="irrmaze">
+    <description>The Irritating Maze</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1997</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kod">
+    <description>The King of Dragons</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof94">
+    <description>The King of Fighters '94</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof95">
+    <description>The King of Fighters '95</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof96">
+    <description>The King of Fighters '96</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof97">
+    <description>The King of Fighters '97</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof98">
+    <description>The King of Fighters '98 : The Slugfest</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1998</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof99">
+    <description>The King of Fighters '99 : Millennium Battle</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1999</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof2000">
+    <description>The King of Fighters 2000</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2000</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof2001">
+    <description>The King of Fighters 2001</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2002</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof2002">
+    <description>The King of Fighters 2002</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2002</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="kof2003">
+    <description>The King of Fighters 2003</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2004</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="punisher">
+    <description>The Punisher</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="simpsons2p">
+    <description>The Simpsons</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="srumbler">
+    <description>The Speed Rumbler</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1986</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="superspy">
+    <description>The Super Spy</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1991</year>
+    <genre>Divers</genre>
+    <players>1</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="trally">
+    <description>Thrash Rally</description>
+    <manufacturer>ADK</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite / Course</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="3wonders">
+    <description>Three Wonders</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="thndrbld">
+    <description>Thunder Blade</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="thundfox">
+    <description>Thunder Fox</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="dassault">
+    <description>Thunder Zone</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1991</year>
+    <genre>Tir</genre>
+    <players>1-4</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tigerh">
+    <description>Tiger Heli</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1985</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tigeroad">
+    <description>Tiger Road</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="timeplt">
+    <description>Time Pilot</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1982</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="toki">
+    <description>Toki</description>
+    <manufacturer>Tad</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="toobin">
+    <description>Toobin'</description>
+    <manufacturer>Domark</manufacturer>
+    <year>1988</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tophuntr">
+    <description>Top Hunter: Roddy &amp; Cathy</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="totcarn">
+    <description>Total Carnage</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="todruaga">
+    <description>Tower Of Druaga, The</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1984</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="trojan">
+    <description>Trojan</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tron">
+    <description>Tron</description>
+    <manufacturer>Bally Midway</manufacturer>
+    <year>1982</year>
+    <genre>Compilation</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="truxton">
+    <description>Truxton</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="truxton2">
+    <description>Truxton 2 / Tatsujin Oh</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="tumblep">
+    <description>Tumble Pop</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="twincobr">
+    <description>Twin Cobra</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="twinhawk">
+    <description>Twin Hawk</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="twinspri">
+    <description>Twinkle Star Sprites</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1997</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="unsquad">
+    <description>U.N. Squadron</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="vball">
+    <description>U.s. Championship V'ball</description>
+    <manufacturer>Technos Japan</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ssideki4">
+    <description>Ultimate 11: SNK Football Championship</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Sport / Football</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="umk3">
+    <description>Ultimate Mortal Kombat 3</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-8</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="uccops">
+    <description>Undercover Cops</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="upndown">
+    <description>Up'n Down</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1983</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="valkyrie">
+    <description>Valkyrie no Densetsu</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1989</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="vhunt2">
+    <description>Vampire Hunter 2: Darkstalkers' Revenge</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="vsav2">
+    <description>Vampire Savior 2 : The Lord of Vampire</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="vsav">
+    <description>Vampire Savior: The Lord of Vampire</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1997</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="varth">
+    <description>Varth: Operation Thunderstorm</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="vendetta2pu">
+    <description>Vendetta</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Beat'em All</genre>
+    <players>1-4</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="viewpoin">
+    <description>Viewpoint</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Diagonal</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="vimana">
+    <description>Vimana</description>
+    <manufacturer>Toaplan</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="viostorm">
+    <description>Violent Storm</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="volfied">
+    <description>Volfied</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="vulcan">
+    <description>Vulcan Venture</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wakuwak7">
+    <description>Waku Waku 7</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wof">
+    <description>Warriors of Fate</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-3</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="moomesa">
+    <description>Wild West C.O.W.-Boys of Moo Mesa</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="willow">
+    <description>Willow</description>
+    <manufacturer>Lucasfilm Games</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wjammers">
+    <description>Windjammers</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wizdfire">
+    <description>Wizard Fire</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wboy">
+    <description>Wonder Boy</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wb3">
+    <description>Wonder Boy 3 - Monster Lair</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wbml">
+    <description>Wonder Boy In Monster Land</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wwfsstar">
+    <description>WWF Superstars</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Combat</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="wwfwfest">
+    <description>WWF Wrestlefest</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Combat</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="xmultipl">
+    <description>X Multiply</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="xmen2pa">
+    <description>X-Men</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-6</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="xmcota">
+    <description>X-Men : Children of the Atom</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="xmvsf">
+    <description>X-Men vs. Street Fighter</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="solrwarr">
+    <description>Xain'd Sleena</description>
+    <manufacturer>Technos Japan</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="xexex">
+    <description>Xexex</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="xybots">
+    <description>Xybots</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Tir / 3eme Personne</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="yiear">
+    <description>Yie Ar Kung-Fu</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1985</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="zedblade">
+    <description>Zed Blade</description>
+    <manufacturer>SNK</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="zerowing">
+    <description>Zero Wing</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Tir / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="nob">
+    <description>Zippy Bug</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="zookeep">
+    <description>Zoo Keeper</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1982</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="zupapa">
+    <description>Zupapa!</description>
+    <manufacturer>SNK</manufacturer>
+    <year>2001</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+</menu>

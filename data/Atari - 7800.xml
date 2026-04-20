@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <game name="Ace of Aces (USA)">
+    <description>Ace Of Aces</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Tir / Avion, 1ere personne</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Alien Brigade (USA)">
+    <description>Alien Brigade</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Asteroids (USA)">
+    <description>Asteroids</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ballblazer (USA)">
+    <description>Ballblazer</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Barnyard Blaster (USA)">
+    <description>Barnyard Blaster</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Basketbrawl (USA)">
+    <description>Basketbrawl</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Basketball</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Centipede (USA)">
+    <description>Centipede</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Tir / Space Invaders Like</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Choplifter! (USA)">
+    <description>Choplifter!</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Commando (USA)">
+    <description>Commando</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Crack'ed (USA)">
+    <description>Crack'ed</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Tir / 1ere Personne</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Crossbow (USA)">
+    <description>Crossbow</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Tir / 1ere Personne</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dark Chambers (USA)">
+    <description>Dark Chambers</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Desert Falcon (USA)">
+    <description>Desert Falcon</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Diagonal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dig Dug (USA)">
+    <description>Dig Dug</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Donkey Kong (USA)">
+    <description>Donkey Kong</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Donkey Kong Junior (USA)">
+    <description>Donkey Kong Junior</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Double Dragon (USA)">
+    <description>Double Dragon</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F-18 Hornet (USA)">
+    <description>F-18 Hornet</description>
+    <manufacturer>Absolute Entertainment</manufacturer>
+    <year>1988</year>
+    <genre>Tir / Avion</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fatal Run (USA)">
+    <description>Fatal Run</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fight Night (USA)">
+    <description>Fight Night</description>
+    <manufacturer>Accolade</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Boxe</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Food Fight (USA)">
+    <description>Food Fight</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Galaga (USA)">
+    <description>Galaga</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre>Tir / Space Invaders Like</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hat Trick (USA)">
+    <description>Hat Trick</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Sport / Hockey</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ikari Warriors (USA)">
+    <description>Ikari Warriors</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Impossible Mission (USA)">
+    <description>Impossible Mission</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jinks (USA)">
+    <description>Jinks</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Action / Casse briques</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Joust (USA)">
+    <description>Joust</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre>Plateforme / Run &amp; Jump</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Karateka (USA)">
+    <description>Karateka</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kung-Fu Master (USA)">
+    <description>Kung-Fu Master</description>
+    <manufacturer>Absolute Entertainment</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mario Bros. (USA)">
+    <description>Mario Bros.</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mat Mania Challenge (USA)">
+    <description>Mat Mania Challenge</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mean 18 Ultimate Golf (USA)">
+    <description>Mean 18</description>
+    <manufacturer>Accolade</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Golf</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Meltdown (USA)">
+    <description>Meltdown</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Midnight Mutants (USA)">
+    <description>Midnight Mutants</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Motor Psycho (USA)">
+    <description>MotorPsycho</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Course de Moto vue 3eme pers.</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ms. Pac-Man (USA)">
+    <description>Ms. Pac-Man</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ninja Golf (USA)">
+    <description>Ninja Golf</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="One-on-One Basketball (USA)">
+    <description>One-On-One Basketball</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Sport / Basketball</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pete Rose Baseball (USA)">
+    <description>Pete Rose Baseball</description>
+    <manufacturer>Absolute Entertainment</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Baseball</genre>
+    <players>2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Planet Smashers (USA)">
+    <description>Planet Smashers</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pole Position II (USA)">
+    <description>Pole Position 2</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1987</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rampage (USA)">
+    <description>Rampage</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1989</year>
+    <genre>Combat / 2D</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="RealSports Baseball (USA)">
+    <description>Realsports Baseball</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Sport / Baseball</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Robotron - 2084 (USA)">
+    <description>Robotron - 2084</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre></genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Scrapyard Dog (USA)">
+    <description>Scrapyard Dog</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sentinel (Europe)">
+    <description>Sentinel</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Summer Games (USA)">
+    <description>Summer Games</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Sport / Multisports</genre>
+    <players>1-8</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Huey UH-IX (USA)">
+    <description>Super Huey UH-IX</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Skateboardin' (USA)">
+    <description>Super Skateboardin'</description>
+    <manufacturer>Absolute Entertainment</manufacturer>
+    <year>1988</year>
+    <genre>Sport / Skateboard</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tank Command (USA)">
+    <description>Tank Command</description>
+    <manufacturer>Froggo Games</manufacturer>
+    <year>1988</year>
+    <genre>Tir / Vehicule, 3eme personne</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Title Match Pro Wrestling (USA)">
+    <description>Title Match Pro Wrestling</description>
+    <manufacturer>Absolute Entertainment</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tomcat - The F-14 Fighter Simulator (USA)">
+    <description>Tomcat - The F-14 Fighter Simulator</description>
+    <manufacturer>Absolute Entertainment</manufacturer>
+    <year>1989</year>
+    <genre>Tir / Avion</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Touchdown Football (USA)">
+    <description>Touchdown Football</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Football Américain</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tower Toppler (USA)">
+    <description>Tower Toppler</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Water Ski (USA)">
+    <description>Water Ski</description>
+    <manufacturer>Froggo Games</manufacturer>
+    <year>1988</year>
+    <genre>Sport / Nautique</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Winter Games (USA)">
+    <description>Winter Games</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1988</year>
+    <genre>Sport / Multisports</genre>
+    <players>1-8</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Xenophobe (USA)">
+    <description>Xenophobe</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Xevious (USA)">
+    <description>Xevious</description>
+    <manufacturer>Atari</manufacturer>
+    <year>1986</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+</menu>

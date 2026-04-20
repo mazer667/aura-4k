@@ -1,0 +1,2678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <!-- Généré par RetroFrontend — NEC - PC Engine - SuperGrafx - CD — 13/04/2026 -->
+  <game name="Zipang (Japan)">
+    <description>Zipang</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Zero4 Champ (Japan)">
+    <description>Zero 4 Champ</description>
+    <manufacturer>Media Rings</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite / Course</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Youkai Douchuuki (Japan)">
+    <description>Youkai Douchuuki</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="You-You Jinsei (Japan)">
+    <description>Yuu Yuu Jinsei - Victory Life</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1988</year>
+    <genre>Jeu de societe / plateau</genre>
+    <players>1-5</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Yo, Bro (USA)">
+    <description>Yo' Bro</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating>6.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Xevious - Fardraut Saga (Japan)">
+    <description>Xevious - Fardraut Densetsu</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="World Sports Competition (USA)">
+    <description>World Sports Competition</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Sport / Multisports</genre>
+    <players>1-5</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="World Jockey (Japan)">
+    <description>World Jockey</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1991</year>
+    <genre>Course de chevaux</genre>
+    <players>1-4</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="World Court Tennis (USA)">
+    <description>World Court Tennis</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="World Class Baseball (USA)">
+    <description>World Class Baseball</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="World Circuit (Japan)">
+    <description>World Circuit</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite / Course</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wonder Momo (Japan)">
+    <description>Wonder Momo</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating>7.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Winning Shot (Japan)">
+    <description>Winning Shot</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan)">
+    <description>Wallaby!! - Usagi No Kuni No Kangaroo Race</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1990</year>
+    <genre>Course de chevaux</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wai Wai Mahjong - Yukai na Janyuu-tachi (Japan)">
+    <description>Wai Wai Mahjong - Yukaina Janyuu Tachi</description>
+    <manufacturer>Video System</manufacturer>
+    <year>1989</year>
+    <genre>Mahjong</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="W-Ring - The Double Rings (Japan)">
+    <description>W-ring - The Double Rings</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Volfied (Japan)">
+    <description>Volfied</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Vigilante (USA)">
+    <description>Vigilante</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Victory Run (USA)">
+    <description>Victory Run</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1987</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Veigues - Tactical Gladiator (USA)">
+    <description>Veigues - Tactical Gladiator</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Valkyrie no Densetsu (Japan)">
+    <description>Valkyrie No Densetsu</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1990</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Turrican (USA)">
+    <description>Turrican</description>
+    <manufacturer>Accolade</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tsuru Teruhito no Jissen Kabushiki Bai Bai Game (Japan)">
+    <description>Tsuru Teruhito No Jissen Kabushiki Bai Bai Game</description>
+    <manufacturer>Intec</manufacturer>
+    <year>1989</year>
+    <genre>Simulation</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tsuppari Oozumou - Heisei Ban (Japan)">
+    <description>Tsuppari Oozumou - Heisei Ban</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Sumo</genre>
+    <players>1-2</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tricky Kick (USA)">
+    <description>Tricky Kick</description>
+    <manufacturer>Information Global Service</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Toy Shop Boys (Japan)">
+    <description>Toy Shop Boys</description>
+    <manufacturer>Victor Entertainment</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tower of Druaga, The (Japan)">
+    <description>Tower Of Druaga, The</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Toilet Kids (Japan)">
+    <description>Toilet Kids</description>
+    <manufacturer>Media Rings</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Titan (Japan)">
+    <description>Titan</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1991</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Timeball (USA)">
+    <description>Timeball</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Time Cruise (USA)">
+    <description>Time Cruise</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Flipper</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tiger Road (USA)">
+    <description>Tiger Road</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Thunder Blade (Japan)">
+    <description>Thunder Blade</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Terra Cresta II - Mandoler no Gyakushuu (Japan)">
+    <description>Terra Cresta 2 - Mandoraa No Gyakushuu</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tenseiryuu - Saint Dragon (Japan)">
+    <description>Tenseiryuu - Saint Dragon</description>
+    <manufacturer>Aicom Corporation</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tatsunoko Fighter (Japan)">
+    <description>Tatsu No Ko Fighter</description>
+    <manufacturer>Tonkin House</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tatsujin (Japan)">
+    <description>Tatsujin</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="TaleSpin (USA)">
+    <description>Talespin</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Takin' It to the Hoop (USA)">
+    <description>Takin' It To The Hoop</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Takeda Shingen (Japan)">
+    <description>Takeda Shingen</description>
+    <manufacturer>Aicom Corporation</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="TV Sports Hockey (USA)">
+    <description>Tv Sports Hockey</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-5</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="TV Sports Football (USA)">
+    <description>Tv Sports Football</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Football Américain</genre>
+    <players>1-5</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="TV Sports Basketball (USA)">
+    <description>Tv Sports Basketball</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Basketball</genre>
+    <players>1-5</players>
+    <rating>7.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Susanoou Densetsu (Japan)">
+    <description>Susano O Densetsu
+</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Volleyball (USA)">
+    <description>Super Volleyball</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Volleyball</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Star Soldier (USA)">
+    <description>Super Star Soldier</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Momotarou Dentetsu II (Japan)">
+    <description>Super Momotarou Dentetsu 2</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Jeu de societe / plateau</genre>
+    <players>1-5</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Momotarou Dentetsu (Japan)">
+    <description>Super Momotarou Dentetsu</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de societe / plateau</genre>
+    <players>1-4</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Metal Crusher (Japan)">
+    <description>Super Metal Crusher</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1991</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Street Fighter II' - Champion Edition (Japan)">
+    <description>Street Fighter 2' - Champion Edition</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Stratego (Japan)">
+    <description>Stratego</description>
+    <manufacturer>Victor Interactive Software</manufacturer>
+    <year>1992</year>
+    <genre></genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Splatterhouse (USA)">
+    <description>Splatterhouse</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Spiral Wave (Japan)">
+    <description>Spiral Wave</description>
+    <manufacturer>Media Rings</manufacturer>
+    <year>1991</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Spin Pair (Japan)">
+    <description>Spin Pair</description>
+    <manufacturer>Media Rings</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Space Invaders - Fukkatsu no Hi (Japan)">
+    <description>Space Invaders - Fukkatsu No Hi</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Space Invaders Like</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Space Harrier (USA)">
+    <description>Space Harrier</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Tir / 3eme Personne</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sonic Spike - World Championship Beach Volleyball (USA)">
+    <description>Sonic Spike</description>
+    <manufacturer>Information Global Service</manufacturer>
+    <year>1990</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Son Son II (Japan)">
+    <description>Son Son 2</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Somer Assault (USA)">
+    <description>Somer Assault</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1991</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Soldier Blade - Special Version (Japan)">
+    <description>Soldier Blade</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Soldier Blade (USA)">
+    <description>Soldier Blade</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Skweek (Japan)">
+    <description>Skweek</description>
+    <manufacturer>Victor Entertainment</manufacturer>
+    <year>1991</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sinistron (USA)">
+    <description>Sinistron</description>
+    <manufacturer>Information Global Service</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sindibad - Chitei no Daimakyuu (Japan)">
+    <description>Sindibad Chitei No Dai Makyuu</description>
+    <manufacturer>Information Global Service</manufacturer>
+    <year>1990</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Silent Debuggers (USA)">
+    <description>Silent Debuggers</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Tir / 1ere Personne</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="SideArms (USA)">
+    <description>Side Arms</description>
+    <manufacturer>Radiance Software</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shougi Shoshinsha Muyou (Japan)">
+    <description>Shougi Shoshinsha Muyou</description>
+    <manufacturer>Home Data</manufacturer>
+    <year>1991</year>
+    <genre>Shougi</genre>
+    <players>1-2</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shougi Shodan Icchokusen (Japan)">
+    <description>Shougi Shodan Icchokusen</description>
+    <manufacturer>Home Data</manufacturer>
+    <year>1990</year>
+    <genre>Shougi</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shockman (USA)">
+    <description>Shockman</description>
+    <manufacturer>Nippon Computer Systems (NCS)</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shiryou Sensen - War of the Dead (Japan)">
+    <description>Shiryou Sensen - War of the Dead</description>
+    <manufacturer>Victor Entertainment</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shinobi (Japan)">
+    <description>Shinobi</description>
+    <manufacturer>Asmik</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shanghai (Japan)">
+    <description>Shanghai</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1987</year>
+    <genre>Mahjong</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sengoku Mahjong (Japan)">
+    <description>Sengoku Mahjong</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1988</year>
+    <genre>Mahjong</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sekigahara (Japan)">
+    <description>Sekigahara</description>
+    <manufacturer>Tonkin House</manufacturer>
+    <year>1990</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Samurai-Ghost (USA)">
+    <description>Samurai-ghost</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Salamander (World) (Wii U Virtual Console)">
+    <description>Salamander</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sadakichi Seven - Hideyoshi no Ougon (Japan)">
+    <description>Sadakichi 7 Series - Hideyoshi No Ougon</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1988</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="S.C.I. - Special Criminal Investigation (Japan)">
+    <description>Special Criminal Investigation</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ryuukyuu (Japan)">
+    <description>Ryukyu</description>
+    <manufacturer>ASCII</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rock-On (Japan)">
+    <description>Rock-on</description>
+    <manufacturer>Big Club</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rastan Saga II (Japan)">
+    <description>Rastan Saga 2</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Raiden (USA)">
+    <description>Raiden</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Racing Damashii (Japan)">
+    <description>Racing Damashii</description>
+    <manufacturer>Irem Corporation</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rabio Lepus Special (Japan)">
+    <description>Rabio Lepus Special</description>
+    <manufacturer>Video System</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="R-Type (USA)">
+    <description>R-type</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Puzznic (Japan)">
+    <description>Puzznic</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Puzzle Boy (Japan)">
+    <description>Puzzle Boy</description>
+    <manufacturer>Telenet</manufacturer>
+    <year>1991</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Psychosis (USA)">
+    <description>Psychosis</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Psycho Chaser (Japan)">
+    <description>Psycho Chaser</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pro Yakyuu World Stadium (Japan)">
+    <description>Pro Yakyuu World Stadium</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1988</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pro Yakyuu World Stadium '91 (Japan)">
+    <description>Pro Yakyuu World Stadium '91</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>4.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power Tennis (Japan)">
+    <description>Power Tennis</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1993</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power League III (Japan)">
+    <description>Power League 3</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1990</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power League II (Japan)">
+    <description>Power League 2</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Baseball</genre>
+    <players>1-2</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power League 5 (Japan)">
+    <description>Power League 5</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power League 4 (Japan)">
+    <description>Power League 4</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power League '93 (Japan)">
+    <description>Power League '93</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1993</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power Golf (USA)">
+    <description>Power Golf</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1-3</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power Gate (Japan)">
+    <description>Power Gate</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power Eleven (Japan)">
+    <description>Power Eleven</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power Drift (Japan)">
+    <description>Power Drift</description>
+    <manufacturer>Asmik</manufacturer>
+    <year>1990</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Populous (Japan)">
+    <description>Populous</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Parodius Da! - Shinwa kara Owarai e (Japan)">
+    <description>Parodius Da! - Shinwa Kara Owarai He</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Parasol Stars - The Story of Bubble Bobble III (USA)">
+    <description>Parasol Stars - The Story Of Bubble Bobble 3</description>
+    <manufacturer>Working Designs</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pachio-kun - Juuban Shoubu (Japan)">
+    <description>Pachiokun - Juban Shobu</description>
+    <manufacturer>Coconuts Japan</manufacturer>
+    <year>1992</year>
+    <genre>Casino</genre>
+    <players>1</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pac-Land (USA)">
+    <description>Pac-land</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="P-47 - The Freedom Fighter (Japan)">
+    <description>P-47 - The Freedom Fighter</description>
+    <manufacturer>Aicom Corporation</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Override (Japan)">
+    <description>Override</description>
+    <manufacturer>Data East Company</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Out Run (Japan)">
+    <description>Out Run</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Out Live (Japan)">
+    <description>Out Live</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ordyne (USA)">
+    <description>Ordyne</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Operation Wolf (Japan)">
+    <description>Operation Wolf</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Tir / 1ere Personne</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Obocchama-kun (Japan)">
+    <description>Obocchama Kun</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ninja Warriors, The (Japan)">
+    <description>Ninja Warriors, The</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ninja Spirit (USA)">
+    <description>Ninja Spirit</description>
+    <manufacturer>NEC Technologies</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ninja Ryuukenden (Japan)">
+    <description>Ninja Ryuukenden</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Niko Niko Pun (Japan)">
+    <description>Niko Niko Pun</description>
+    <manufacturer>NHK Software</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Night Creatures (USA)">
+    <description>Night Creatures</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating>5.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="NewZealand Story, The (Japan)">
+    <description>New Zealand Story, The</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="New Adventure Island (USA)">
+    <description>New Adventure Island</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Neutopia II (USA)">
+    <description>Neutopia 2</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Neutopia (USA)">
+    <description>Neutopia</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Nekketsu Koukou Dodgeball-bu - PC Soccer Hen (Japan)">
+    <description>Nekketsu Koukou Dodgeball Bu - Soccer Pc Hen</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1992</year>
+    <genre>Sport / Football</genre>
+    <players>1-4</players>
+    <rating>8.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Nekketsu Koukou Dodgeball-bu - PC Bangai Hen (Japan)">
+    <description>Nekketsu Koukou Dodgeball-bu - Pc Bangai Hen</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Dodgeball</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Necros no Yousai (Japan)">
+    <description>Necros No Yousai</description>
+    <manufacturer>ASK Kodansha</manufacturer>
+    <year>1990</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Nazo no Mascarade (Japan)">
+    <description>Nazo No Mascarade</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1990</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Naxat Stadium (Japan)">
+    <description>Naxat Stadium</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1990</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Naxat Open (Japan)">
+    <description>Naxat Open</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="NHK Taiga Drama - Taiheiki (Japan)">
+    <description>Nhk Taiga Drama - Taiheiki</description>
+    <manufacturer>NHK Software</manufacturer>
+    <year>1992</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Moto Roader II (Japan)">
+    <description>Moto Roader 2</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite</genre>
+    <players>1-5</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Moto Roader (USA)">
+    <description>Moto Roader</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite / Moto</genre>
+    <players>1-5</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Morita Shougi PC (Japan)">
+    <description>Morita Shougi Pc</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1991</year>
+    <genre>Shougi</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Monster Pro Wres (Japan)">
+    <description>Monster Pro Wrestling</description>
+    <manufacturer>ASK Kodansha</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Lutte</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Momotarou Katsugeki (Japan)">
+    <description>Momotarou Katsugeki</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Momotarou Densetsu Turbo (Japan)">
+    <description>Momotarou Densetsu Turbo</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1990</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Momotarou Densetsu II (Japan)">
+    <description>Momotarou Densetsu 2</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1990</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Momotarou Densetsu Gaiden - Dai-1-shuu (Japan)">
+    <description>Momotarou Densetsu Gaiden Dai 1 Shuu</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mizubaku Daibouken (Japan)">
+    <description>Mizubaku Dai Bouken</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Military Madness (USA)">
+    <description>Military Madness</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Metal Stoker (Japan)">
+    <description>Metal Stoker</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Maniac Pro Wres - Asu e no Tatakai (Japan)">
+    <description>Maniac Pro Wres - Asu E No Tatakai</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Makai Prince Dorabocchan (Japan)">
+    <description>Makai Prince Dorabocchan</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Makai Hakkenden Shada (Japan)">
+    <description>Makai Hakken Den Shada</description>
+    <manufacturer>Data East Company</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Maison Ikkoku (Japan)">
+    <description>Maison Ikkoku</description>
+    <manufacturer>Microcabin</manufacturer>
+    <year>1989</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mahjong Shikaku Retsuden - Mahjong Wars (Japan)">
+    <description>Mahjong Shikyaku Retsuden - Mahjong Wars</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1990</year>
+    <genre>Mahjong</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mahjong Haouden - Kaiser's Quest (Japan)">
+    <description>Mahjong Haou Den - Kaiser's Quest</description>
+    <manufacturer>UPL</manufacturer>
+    <year>1992</year>
+    <genre>Mahjong</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mahjong Gokuu Special (Japan)">
+    <description>Mahjong Gokuu Special</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1990</year>
+    <genre>Mahjong</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mahjong Gakuen Mild - Touma Soushirou Toujou (Japan)">
+    <description>Mahjong Gakuen Mild - Touma Soushirou Toujou</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1990</year>
+    <genre>Mahjong</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mahjong Gakuen - Touma Soushirou Toujou (Japan)">
+    <description>Mahjong Gakuen - Touma Soushirou Toujou</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de societe asiatique</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Magical Chase (USA)">
+    <description>Magical Chase</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Maerchen Maze (Japan)">
+    <description>Märchen Maze</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lode Runner - Lost Labyrinth (Japan)">
+    <description>Lode Runner - Lost Labyrinth</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Legendary Axe, The (USA)">
+    <description>Legendary Axe, The</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Legendary Axe II (USA)">
+    <description>Legendary Axe 2, The</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Legend of Hero Tonma (USA)">
+    <description>Legend Of Hero Tonma</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kyuukyoku Tiger (Japan)">
+    <description>Kyuukyoku Tiger</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kore ga Pro Yakyuu '90 (Japan)">
+    <description>Kore Ga Pro Yakyuu '90</description>
+    <manufacturer>Intec</manufacturer>
+    <year>1990</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kore ga Pro Yakyuu '89 (Japan)">
+    <description>Kore Ga Pro Yakyuu '89</description>
+    <manufacturer>Intec</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Knight Rider Special (Japan)">
+    <description>Knight Rider Special</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Klax (USA)">
+    <description>Klax</description>
+    <manufacturer>Tengen</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="King of Casino (USA)">
+    <description>King Of Casino</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Casino</genre>
+    <players>1-5</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kiki Kaikai (Japan)">
+    <description>KiKi KaiKai</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="KickBall (Japan)">
+    <description>Kickball</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Baseball</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Keith Courage in Alpha Zones (USA)">
+    <description>Keith Courage In Alpha Zones</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kattobi! Takuhai-kun (Japan)">
+    <description>Kattobi! Takuhai Kun</description>
+    <manufacturer>Tonkin House</manufacturer>
+    <year>1990</year>
+    <genre></genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kaizou Choujin Shubibinman (Japan)">
+    <description>Kaizou Choujin Shubibinman</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Juuouki (Japan)">
+    <description>Juuouki</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jinmu Denshou (Japan)">
+    <description>Jinmu Denshou</description>
+    <manufacturer>Big Club</manufacturer>
+    <year>1989</year>
+    <genre>Tir / 3eme Personne</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jigoku Meguri (Japan)">
+    <description>Jigoku Meguri</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jaseiken Necromancer (World) (Wii U Virtual Console)">
+    <description>Jaseiken Necromancer</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1988</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jackie Chan's Action Kung Fu (USA)">
+    <description>Jackie Chan's Action Kung Fu</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jack Nicklaus' Turbo Golf (USA)">
+    <description>Jack Nicklaus' Turbo Golf</description>
+    <manufacturer>Accolade</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Golf</genre>
+    <players>1-4</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="J.League Greatest Eleven (Japan)">
+    <description>J. League Greatest Eleven</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1993</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="J.J. &amp; Jeff (USA)">
+    <description>J.J. and Jeff</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Impossamole (USA)">
+    <description>Impossamole</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ImageFight (Japan)">
+    <description>Image Fight</description>
+    <manufacturer>Irem Corporation</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Honoo no Toukyuuji - Dodge Danpei (Japan)">
+    <description>Honoo No Toukyuuji Dodge Danpei</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Sport / Dodgeball</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hit the Ice - VHL - The Official Video Hockey League (USA)">
+    <description>Hit the Ice - The Video Hockey League</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hisou Kihei X-SERD (Japan)">
+    <description>Hisou Kihei - Xserd</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1990</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Heavy Unit (Japan)">
+    <description>Heavy Unit</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hatris (Japan)">
+    <description>Hatris</description>
+    <manufacturer>Microcabin</manufacturer>
+    <year>1991</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hanii on the Road (Japan)">
+    <description>Hanii On The Road</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hanii in the Sky (Japan)">
+    <description>Hanii In The Sky</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hana Taaka Daka! (Japan)">
+    <description>Hana Taaka Daka!?</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gunhed - Special Version (Japan)">
+    <description>Blazing Lazers</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gunboat (USA)">
+    <description>Gunboat</description>
+    <manufacturer>Accolade</manufacturer>
+    <year>1992</year>
+    <genre>Simulation / Véhicules</genre>
+    <players>1</players>
+    <rating>2.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gradius (World) (Wii U Virtual Console)">
+    <description>Gradius</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gomola Speed (Japan)">
+    <description>Gomola Speed</description>
+    <manufacturer>UPL</manufacturer>
+    <year>1990</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gokuraku! Chuuka Taisen (Japan)">
+    <description>Gokuraku! Chuuka Taisen</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ghost Manor (USA)">
+    <description>Ghost Manor</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Genpei Toumaden (Japan)">
+    <description>Genpei Toumaden</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Genji Tsuushin Agedama (Japan)">
+    <description>Genji Tsuushin Agedama</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gekisha Boy (Japan)">
+    <description>Gekibo - Gekisha Boy</description>
+    <manufacturer>Irem Corporation</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ganbare! Golf Boys (Japan)">
+    <description>Ganbare! Golf Boys</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Galaga '90 (USA)">
+    <description>Galaga '90</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gaia no Monshou (Japan)">
+    <description>Gaia No Monshou</description>
+    <manufacturer>Nippon Computer Systems (NCS)</manufacturer>
+    <year>1988</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gai Flame (Japan)">
+    <description>Gai Flame</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1990</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fushigi no Yume no Alice (Japan)">
+    <description>Fushigi No Yume No Alice</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Formation Soccer - On J League (Japan)">
+    <description>Formation Soccer - On J. League</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1994</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Formation Soccer - Human Cup '90 (Japan)">
+    <description>Formation Soccer - Human Cup '90</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1990</year>
+    <genre>Sport / Football</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fire Pro Wrestling 3 - Legend Bout (Japan)">
+    <description>Fire Pro Wrestling 3 - Legend Bout</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1992</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-4</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fire Pro Wrestling 2 - 2nd Bout (Japan)">
+    <description>Fire Pro Wrestling 2 - 2nd Bout</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-4</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fire Pro Wrestling - Combination Tag (Japan)">
+    <description>Fire Pro Wrestling - Combination Tag</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-4</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Soldier (Japan) (En)">
+    <description>Final Soldier</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Match Tennis (Japan)">
+    <description>Final Match Tennis</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Tennis</genre>
+    <players>1-4</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Lap Twin (USA)">
+    <description>Final Lap Twin</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating>19.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Blaster (Japan)">
+    <description>Final Blaster</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fighting Run (Japan)">
+    <description>Fighting Run</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fantasy Zone (USA)">
+    <description>Fantasy Zone</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Falcon (USA)">
+    <description>Falcon</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1992</year>
+    <genre>Tir / Avion</genre>
+    <players>1-2</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F1 Triple Battle (Japan)">
+    <description>F1 Triple Battle</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1-3</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F1 Circus (Japan)">
+    <description>F1 Circus</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1990</year>
+    <genre>Course, Conduite</genre>
+    <players>1-5</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F1 Circus '92 - The Speed of Sound (Japan)">
+    <description>F1 Circus '92 - The Speed Of Sound</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1992</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F1 Circus '91 (Japan)">
+    <description>F1 Circus '91 - World Championship</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1991</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F-1 Pilot - You're King of Kings (Japan)">
+    <description>F-1 Pilot - You're King Of Kings</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F-1 Dream (Japan)">
+    <description>F-1 Dream</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Eternal City - Toshi Tensou Keikaku (Japan)">
+    <description>Toshi Tensou Keikaku - Eternal City</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Energy (Japan)">
+    <description>Energy</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1989</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-5</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dungeons &amp; Dragons - Order of the Griffon (USA)">
+    <description>Dungeons and Dragons - Order of the Griffon</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dungeon Explorer (USA)">
+    <description>Dungeon Explorer</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-5</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Drop Off (USA)">
+    <description>Drop Off</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Action</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon's Curse (USA)">
+    <description>Dragon's Curse</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Spirit (USA)">
+    <description>Dragon Spirit</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Saber (Japan)">
+    <description>Dragon Saber - After Story Of Dragon Spirit</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Egg! (Japan)">
+    <description>Dragon Egg!</description>
+    <manufacturer>Masaya Games</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Down Load (Japan)">
+    <description>Down Load</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Double Dungeons (USA)">
+    <description>Double Dungeons</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Doraemon - Nobita no Dorabian Night (Japan)">
+    <description>Doraemon - Nobita No Dorabian Night</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Don Doko Don! (Japan)">
+    <description>Don Doko Don!</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Digital Champ (Japan)">
+    <description>Digital Champ - Battle Boxing</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1</players>
+    <rating>7.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Die Hard (Japan)">
+    <description>Hard, Die</description>
+    <manufacturer>Nichibutsu</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Devil's Crush (USA)">
+    <description>Devil's Crush</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Flipper</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Detana!! TwinBee (Japan)">
+    <description>Detana!! Twinbee</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Deep Blue (USA)">
+    <description>Deep Blue</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dead Moon (USA)">
+    <description>Dead Moon</description>
+    <manufacturer>Natsume</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Davis Cup Tennis (USA)">
+    <description>Davis Cup Tennis</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Darkwing Duck (USA)">
+    <description>Disney's Darkwing Duck</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Darius Plus (Japan) (SG Enhanced)">
+    <description>Darius Plus</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Darius Alpha (World) (SG Enhanced) (Darius Cozmic Collection)">
+    <description>Darius Alpha</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Daisenpuu (Japan)">
+    <description>Daisenpuu</description>
+    <manufacturer>Nec Avenue</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Daichi-kun Crisis - Do Natural (Japan)">
+    <description>Daichi-kun Crisis - Do Natural</description>
+    <manufacturer>Salio</manufacturer>
+    <year>1989</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>8.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cyber-Core (USA)">
+    <description>Cyber-Core</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cyber Knight (Japan)">
+    <description>Cyber Knight</description>
+    <manufacturer>Tonkin House</manufacturer>
+    <year>1990</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cyber Dodge (Japan)">
+    <description>Cyber Dodge</description>
+    <manufacturer>Tonkin House</manufacturer>
+    <year>1992</year>
+    <genre>Sport / Dodgeball</genre>
+    <players>1-2</players>
+    <rating>7.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cross Wiber - Cyber Combat Police (Japan)">
+    <description>Cross Wiber - Cyber Combat Police</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cratermaze (USA)">
+    <description>Cratermaze</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Coryoon - Child of Dragon (Japan)">
+    <description>Coryoon - Child Of Dragon</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Columns (Japan)">
+    <description>Columns</description>
+    <manufacturer>Telenet</manufacturer>
+    <year>1991</year>
+    <genre>Puzzle-Game / Tomber</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="City Hunter (Japan)">
+    <description>City Hunter</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Circus Lido (Japan)">
+    <description>Circus Lido</description>
+    <manufacturer>Uni Post Company</manufacturer>
+    <year>1991</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="China Warrior (USA)">
+    <description>China Warrior</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1987</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Chikudenya Toubei - Kubikiri Yakata Yori (Japan)">
+    <description>Chikudenya Toubei - Kubikiri Yakata Yori</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1990</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Chibi Maruko-chan - Quiz de Piihyara (Japan)">
+    <description>Chibi Maruko Chan - Quiz De Piihyara</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1992</year>
+    <genre>Quiz / Japonais</genre>
+    <players>1-2</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Chew-Man-Fu (USA)">
+    <description>Chew Man Fu</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Chase H.Q. (USA)">
+    <description>Chase H.Q</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Champions Forever Boxing (USA)">
+    <description>Champions Forever Boxing</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Boxe</genre>
+    <players>1-2</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Champion Wrestler (Japan)">
+    <description>Champion Wrestler</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1990</year>
+    <genre>Combat</genre>
+    <players>1-4</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cadash (USA)">
+    <description>Cadash</description>
+    <manufacturer>Working Designs</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Busou Keiji - Cyber Cross (Japan)">
+    <description>Busou Keiji - Cyber Cross</description>
+    <manufacturer>FACE</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Burning Angels (Japan)">
+    <description>Burning Angels</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bull Fight - Ring no Hasha (Japan)">
+    <description>Bull Fight - Ring no Hasha</description>
+    <manufacturer>Cream</manufacturer>
+    <year>1989</year>
+    <genre>Sport</genre>
+    <players>1-8</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bubblegum Crash! - Knight Sabers 2034 (Japan)">
+    <description>Bubblegum Crash! - Knight Sabers 2034</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1991</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Break In (Japan)">
+    <description>Break In</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Billard</genre>
+    <players>1-4</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bravoman (USA)">
+    <description>Bravoman</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Boxyboy (USA)">
+    <description>Boxyboy</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bouken Danshaku Don - The Lost Sunheart (Japan)">
+    <description>Bouken Danshaku Don - The Lost Sunheart</description>
+    <manufacturer>I'Max</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bonk's Revenge (USA)">
+    <description>Bonk's Revenge</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bonk's Adventure (USA)">
+    <description>Bonk's Adventure</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bonk 3 - Bonk's Big Adventure (USA)">
+    <description>Bonk 3 - Bonk's Big Adventure</description>
+    <manufacturer>Turbo Technologies</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bomberman - Users Battle (Japan)">
+    <description>Bomberman</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-5</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bomberman (USA)">
+    <description>Bomberman</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-5</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bomberman '94 (World) (Wii U Virtual Console)">
+    <description>Bomberman '94</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1993</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-5</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bomberman '93 - Special Version (Japan)">
+    <description>Bomberman '93</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-5</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bomberman '93 (USA)">
+    <description>Bomberman '93</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-5</players>
+    <rating>18.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bloody Wolf (USA)">
+    <description>Bloody Wolf</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Blazing Lazers (USA)">
+    <description>Blazing Lazers</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bikkuriman World (Japan)">
+    <description>Bikkuriman World</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Benkei Gaiden (Japan)">
+    <description>Benkei Gaiden</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating>15.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Battle Royale (USA)">
+    <description>Battle Royale</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Combat</genre>
+    <players>1-5</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Battle Lode Runner (Japan)">
+    <description>Battle Lode Runner</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1-5</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Battle Chopper (Japan)">
+    <description>Mr. Heli no Daibouken</description>
+    <manufacturer>Irem Corporation</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Batman (Japan)">
+    <description>Batman</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Barunba (Japan)">
+    <description>Barunba</description>
+    <manufacturer>Namcot</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>10.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bari Bari Densetsu (Japan)">
+    <description>Bari Bari Densetsu</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ballistix (USA)">
+    <description>Ballistix</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Atomic Robo-Kid Special (Japan)">
+    <description>Atomic Robo-kid Special</description>
+    <manufacturer>UPL</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Artist Tool (Japan)">
+    <description>Artist Tool</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Ludo-Educatif</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Armed F (Japan)">
+    <description>Formation Armed F</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating>11.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Appare! Gateball (Japan)">
+    <description>Appare! Gateball</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1988</year>
+    <genre>Sport</genre>
+    <players>1-2</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aoi Blink (Japan)">
+    <description>Aoi Blink</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating>12.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Andre Panza Kick Boxing (USA)">
+    <description>Andre Panza Kick Boxing</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Boxe</genre>
+    <players>1-2</players>
+    <rating>5.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Alien Crush (USA)">
+    <description>Alien Crush</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1989</year>
+    <genre>Flipper</genre>
+    <players>1</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Air Zonk (USA)">
+    <description>Pc Denjin - Punkic Cyborgs</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="After Burner II (Japan)">
+    <description>After Burner 2</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1990</year>
+    <genre>Tir / Avion, 3eme personne</genre>
+    <players>1</players>
+    <rating>16.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aero Blasters (USA)">
+    <description>Aero Blasters</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating>14.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="21 Emon - Mezase Hotel Ou!! (Japan)">
+    <description>21 Emon - Mezase Hotel Ou!!</description>
+    <manufacturer>NEC</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de societe / plateau</genre>
+    <players>1-4</players>
+    <rating>17.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="1943 Kai (Japan)">
+    <description>1943 Kai</description>
+    <manufacturer>Naxat Soft</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating>13.0</rating>
+    <enabled>Yes</enabled>
+  </game>
+</menu>

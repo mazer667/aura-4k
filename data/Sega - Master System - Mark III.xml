@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <game name="Action Fighter (USA, Europe, Brazil) (Rev 1)">
+    <description>Action Fighter</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1986</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aladdin (Europe, Brazil) (En)">
+    <description>Aladdin</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Alex Kidd in Miracle World (World) (Sega Ages)">
+    <description>Alex Kidd In Miracle World</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Alex Kidd in Shinobi World (USA, Europe, Brazil)">
+    <description>Alex Kidd In Shinobi World</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Asterix (Europe, Brazil) (En,Fr) (Rev 1)">
+    <description>Astérix</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aztec Adventure (World)">
+    <description>Aztec Adventure</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Battle Out Run (Europe, Brazil)">
+    <description>Battle Outrun</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bomber Raid (World)">
+    <description>Bomber Raid</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Buggy Run (Europe, Brazil) (En)">
+    <description>Buggy Run</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="California Games (USA, Europe, Brazil)">
+    <description>California Games</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Sport / Multisports</genre>
+    <players>1-8</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="California Games II (Europe)">
+    <description>California Games 2</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Multisports</genre>
+    <players>1-8</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Castle of Illusion Starring Mickey Mouse (USA, Europe, Brazil) (Rev 1)">
+    <description>Castle Of Illusion Starring Mickey Mouse</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cyber Shinobi, The (Europe, Brazil)">
+    <description>Cyber Shinobi, The</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Danan - The Jungle Fighter (Europe, Brazil) (En)">
+    <description>Danan The Jungle Fighter</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1990</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Double Dragon (World)">
+    <description>Double Dragon</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Crystal (Europe, Brazil) (En)">
+    <description>Dragon Crystal</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Enduro Racer (USA, Europe, Brazil) (En)">
+    <description>Enduro Racer</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Course de Moto vue 3eme pers.</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fantasy Zone (World) (Rev 1)">
+    <description>Fantasy Zone</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fantasy Zone II (USA, Europe, Brazil)">
+    <description>Fantasy Zone 2</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1997</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Golden Axe (USA, Europe, Brazil)">
+    <description>Golden Axe</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Golden Axe Warrior (USA, Europe, Brazil)">
+    <description>Golden Axe Warrior</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Golvellius - Valley of Doom (USA, Europe, Brazil)">
+    <description>Golvellius - Valley Of Doom</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kenseiden (USA, Europe, Brazil)">
+    <description>Kenseiden</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Land of Illusion Starring Mickey Mouse (Europe, Brazil)">
+    <description>Land Of Illusion Starring Mickey Mouse</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lord of the Sword (USA, Europe, Brazil)">
+    <description>Lord Of The Sword</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lucky Dime Caper Starring Donald Duck, The (Europe, Brazil)">
+    <description>Lucky Dime Caper Starring Donald Duck, The</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Master of Darkness (Europe, Brazil)">
+    <description>Master of Darkness</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Miracle Warriors - Seal of The Dark Lord (USA, Europe, Brazil) (En)">
+    <description>Miracle Warriors - Seal Of The Dark Lord</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Jeu de Rôle Japonais</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ninja Gaiden (Europe, Brazil)">
+    <description>Ninja Gaiden</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ninja, The (USA, Europe, Brazil) (En)">
+    <description>Ninja, The</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1986</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="OutRun (World)">
+    <description>Outrun</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Penguin Land (USA, Europe)">
+    <description>Penguin Land</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Phantasy Star (World) (Sega Ages)">
+    <description>Phantasy Star</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power Strike (USA, Europe, Brazil) (En)">
+    <description>Power Strike</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Power Strike II (Europe, Brazil) (En)">
+    <description>Power Strike 2</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Psycho Fox (USA, Europe, Brazil)">
+    <description>Psycho Fox</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="R-Type (World)">
+    <description>R-type</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shinobi (USA, Europe, Brazil) (Rev 1)">
+    <description>Shinobi</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sonic Chaos (Europe, Brazil)">
+    <description>Sonic Chaos</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sonic Spinball (Europe, Brazil)">
+    <description>Sonic Spinball</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1995</year>
+    <genre>Flipper</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sonic The Hedgehog (USA, Europe, Brazil)">
+    <description>Sonic The Hedgehog</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sonic The Hedgehog 2 (Europe, Brazil) (Rev 1)">
+    <description>Sonic The Hedgehog 2</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="SpellCaster (USA, Europe, Brazil) (En)">
+    <description>Spellcaster</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wonder Boy (USA, Europe, Brazil) (Rev 1)">
+    <description>Wonder Boy</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wonder Boy III - The Dragon's Trap (USA, Europe)">
+    <description>Wonder Boy 3 - The Dragon's Trap</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wonder Boy in Monster Land (USA, Europe)">
+    <description>Wonder Boy In Monster Land</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1988</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wonder Boy in Monster World (Europe)">
+    <description>Wonder Boy In Monster World</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ys - The Vanished Omens (USA, Europe, Brazil) (En)">
+    <description>Ys - The Vanished Omens</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1989</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Zillion (USA, Europe) (Rev 1)">
+    <description>Zillion</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Zillion II - The Tri Formation (World)">
+    <description>Zillion 2 - The Tri Formation</description>
+    <manufacturer>SEGA</manufacturer>
+    <year>1987</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+</menu>

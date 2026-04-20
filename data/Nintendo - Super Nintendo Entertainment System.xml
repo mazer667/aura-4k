@@ -1,0 +1,2928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <game name="ActRaiser (USA)">
+    <description>Actraiser</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="ActRaiser 2 (USA)">
+    <description>Actraiser 2</description>
+    <manufacturer>Ubi Soft Entertainment Software</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Adventures of Batman &amp; Robin, The (USA)">
+    <description>Adventures Of Batman And Robin, The</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aero Fighters (USA)">
+    <description>Aero Fighters</description>
+    <manufacturer>Mc O'River</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aerobiz (USA)">
+    <description>Aerobiz</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1993</year>
+    <genre>Construction &amp; Management</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aerobiz Supersonic (USA)">
+    <description>Aerobiz Supersonic</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1994</year>
+    <genre>Construction &amp; Management</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Aladdin (USA)">
+    <description>Disney's Aladdin</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Alien 3 (USA) (Rev 1)">
+    <description>Alien 3</description>
+    <manufacturer>LJN</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Alien vs Predator (USA)">
+    <description>Alien Versus Predator</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Amazing Spider-Man, The - Lethal Foes (Japan) (Translated)">
+    <description>Amazing Spider-man - Lethal Foes, The</description>
+    <manufacturer>Epoch</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="American Tail, An - Fievel Goes West (USA)">
+    <description>American Tail - Fievel Goes West, An</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Animaniacs (USA)">
+    <description>Animaniacs</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Arcana (USA)">
+    <description>Arcana</description>
+    <manufacturer>HAL America</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ardy Lightfoot (USA)">
+    <description>Ardy Lightfoot</description>
+    <manufacturer>Titus</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Arkanoid - Doh It Again (USA)">
+    <description>Arkanoid</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1997</year>
+    <genre>Action / Casse briques</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Axelay (USA)">
+    <description>Axelay</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="BASS Masters Classic - Pro Edition (USA)">
+    <description>Bass Masters Classic - Pro Edition</description>
+    <manufacturer>Malibu Games</manufacturer>
+    <year>1995</year>
+    <genre>Peche</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bahamut Lagoon (Japan) (Translated)">
+    <description>Bahamut Lagoon</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1996</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bassin's Black Bass (USA)">
+    <description>Bassin's Black Bass</description>
+    <manufacturer>Hot-B</manufacturer>
+    <year>1994</year>
+    <genre>Peche</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Batman Returns (USA)">
+    <description>Batman Returns</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Best of the Best - Championship Karate (USA)">
+    <description>Best Of The Best - Championship Karate</description>
+    <manufacturer>Electro Brain</manufacturer>
+    <year>1992</year>
+    <genre>Sport / Boxe</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Biker Mice from Mars (USA)">
+    <description>Biker Mice From Mars</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1994</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="BioMetal (USA)">
+    <description>Biometal</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="BlaZeon - The Bio-Cyborg Challenge (USA)">
+    <description>Blazeon - The Bio-cyborg Challenge</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Blackthorne (USA)">
+    <description>Blackhawk</description>
+    <manufacturer>Laguna</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bonkers (USA)">
+    <description>Bonkers</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Boxing Legends of the Ring (USA)">
+    <description>Boxing Legends Of The Ring</description>
+    <manufacturer>Electro Brain</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Boxe</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Brain Lord (USA)">
+    <description>Brain Lord</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Breath of Fire (USA)">
+    <description>Breath Of Fire</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Breath of Fire II (USA)">
+    <description>Breath Of Fire 2</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bugs Bunny - Rabbit Rampage (USA)">
+    <description>Bugs Bunny - Rabbit Rampage</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Bust-A-Move (USA)">
+    <description>Puzzle Bobble - Bust-a-move</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1995</year>
+    <genre>Puzzle-Game / Lancer</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cacoma Knight in Bizyland (USA)">
+    <description>Cacoma Knight In Bizyland</description>
+    <manufacturer>SETA</manufacturer>
+    <year>1992</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cannon Fodder (Europe)">
+    <description>Cannon Fodder</description>
+    <manufacturer>Virgin Interactive</manufacturer>
+    <year>1994</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Castlevania - Dracula X (USA)">
+    <description>Castlevania - Vampire's Kiss</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Choplifter III - Rescue-Survive (USA)">
+    <description>Choplifter 3</description>
+    <manufacturer>Ocean</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Chrono Trigger (USA)">
+    <description>Chrono Trigger</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Chuck Rock (USA)">
+    <description>Chuck Rock</description>
+    <manufacturer>Sony Imagesoft</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Clock Tower (Japan) (Translated)">
+    <description>Clock Tower</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1995</year>
+    <genre>Aventure / Survival Horror</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Clue (USA)">
+    <description>Clue</description>
+    <manufacturer>Parker Brothers</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de societe / plateau</genre>
+    <players>1-6</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Contra III - The Alien Wars (USA)">
+    <description>Contra 3 - The Alien Wars</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cool Spot (USA)">
+    <description>Cool Spot</description>
+    <manufacturer>Virgin Interactive</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Cybernator (USA)">
+    <description>Cybernator</description>
+    <manufacturer>Palcom</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Daffy Duck - The Marvin Missions (USA)">
+    <description>Daffy Duck - The Marvin Missions</description>
+    <manufacturer>Sunsoft</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Death and Return of Superman, The (USA) (Rev 1)">
+    <description>Death And Return Of Superman, The</description>
+    <manufacturer>Blizzard Entertainment</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Demon's Crest (USA)">
+    <description>Demon's Crest</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Donkey Kong Country (USA) (Rev 2)">
+    <description>Donkey Kong Country</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Donkey Kong Country 2 - Diddy's Kong Quest (USA) (En,Fr) (Rev 1)">
+    <description>Donkey Kong Country 2 - Diddy's Kong Quest</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme / Run &amp; Jump</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Donkey Kong Country 3 - Dixie Kong's Double Trouble! (USA) (En,Fr)">
+    <description>Donkey Kong Country 3 - Dixie Kong's Double Trouble</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Ball Z - Hyper Dimension (Japan) (Translated)">
+    <description>Dragon Ball Z : Hyper Dimension</description>
+    <manufacturer>Bandai</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Ball Z - La Legende Saien (France)">
+    <description>Dragon Ball Z : La Légende Saien</description>
+    <manufacturer>Bandai</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Ball Z - Super Saiya Densetsu (Japan) (Rev 1) (Translated)">
+    <description>Dragon Ball Z - Super Saiya Densetsu</description>
+    <manufacturer>Bandai</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Quest I &amp; II (Japan) (Translated)">
+    <description>Dragon Quest 1 And 2</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Quest III (Japan) (Translated)">
+    <description>Dragon Quest 1 And 2</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Quest V (Japan) (Translated)">
+    <description>Dragon Quest 5 - Tenkuu No Hanayome</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon Quest VI (Translated)">
+    <description>Dragon Quest 6 - Maboroshi No Daichi</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Dragon View (USA)">
+    <description>Dragon View</description>
+    <manufacturer>Kemco</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="E.V.O. - Search for Eden (USA)">
+    <description>E.v.o. - Search For Eden</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="EarthBound (USA)">
+    <description>Earthbound</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Earthworm Jim (USA)">
+    <description>Earthworm Jim</description>
+    <manufacturer>Virgin Interactive</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Earthworm Jim 2 (USA)">
+    <description>Earthworm Jim 2</description>
+    <manufacturer>Virgin</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="F-Zero (USA)">
+    <description>F-Zero</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1992</year>
+    <genre>Course, Conduite</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Faceball 2000 (USA)">
+    <description>Faceball 2000</description>
+    <manufacturer>Bullet Proof Software</manufacturer>
+    <year>1992</year>
+    <genre>Tir / 1ere Personne</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fatal Fury (USA)">
+    <description>Fatal Fury</description>
+    <manufacturer>Takara</manufacturer>
+    <year>1991</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fatal Fury 2 (USA)">
+    <description>Fatal Fury 2</description>
+    <manufacturer>Takara</manufacturer>
+    <year>1993</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fatal Fury Special (USA)">
+    <description>Fatal Fury Special</description>
+    <manufacturer>Takara</manufacturer>
+    <year>1995</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Fantasy - Mystic Quest (USA) (Rev 1)">
+    <description>Mystic Quest Legend</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Fantasy II (USA) (Rev 1)">
+    <description>Final Fantasy 2</description>
+    <manufacturer>Square</manufacturer>
+    <year>1991</year>
+    <genre>Jeu de rôles en équipe</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Fantasy III (USA) (Rev 1)">
+    <description>Final Fantasy 6</description>
+    <manufacturer>Square</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Final Fantasy V (Japan) (Translated)">
+    <description>Final Fantasy 5</description>
+    <manufacturer>Square</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fire Emblem - Mystery of the Emblem (Japan) (Translated)">
+    <description>Fire Emblem - Monshô No Nazo</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de Rôle Tactique</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fire Emblem - Seisen no Keifu (Japan) (Translated)">
+    <description>Fire Emblem - Seisen No Keifu</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1996</year>
+    <genre>Jeu de Rôle Tactique</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Fire Emblem - Thracia 776 (Japan) (Translated)">
+    <description>Fire Emblem - Thracia 776</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>2000</year>
+    <genre>Jeu de Rôle Tactique</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="FireStriker (USA)">
+    <description>Firestriker</description>
+    <manufacturer>DTMC</manufacturer>
+    <year>1994</year>
+    <genre>Action / Casse briques</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Firemen, The (Europe) (En,Fr,De)">
+    <description>The Firemen</description>
+    <manufacturer>Human Entertainment</manufacturer>
+    <year>1995</year>
+    <genre>Action / Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Firepower 2000 (USA)">
+    <description>Super Swiv</description>
+    <manufacturer>Time Warner Interactive</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="First Samurai (USA)">
+    <description>First Samurai</description>
+    <manufacturer>Kemco</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Flashback - The Quest for Identity (USA) (En,Fr,De)">
+    <description>Flashback - The Quest For Identity</description>
+    <manufacturer>U.S. Gold</manufacturer>
+    <year>1993</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Flintstones, The - The Treasure of Sierra Madrock (USA)">
+    <description>The Flintstones : The Treasure of Sierra Madrock</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Front Mission (Japan) (Translated)">
+    <description>Front Mission</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Front Mission Series - Gun Hazard (Japan) (Translated)">
+    <description>Front Mission - Gun Hazard</description>
+    <manufacturer>Square</manufacturer>
+    <year>1996</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ganpuru - Gunman's Proof (Japan) (Translated)">
+    <description>Ganpuru - Gunman's Proof</description>
+    <manufacturer>ASCII</manufacturer>
+    <year>1997</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gemfire (USA)">
+    <description>Gemfire</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Genghis Khan II - Clan of the Gray Wolf (USA)">
+    <description>Genghis Khan 2 - Clan Of The Grey Wolf</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1993</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Go for it! Goemon - The Twinkling Journey - The Reason I became a Dancer (Japan) (Translated)">
+    <description>Ganbare Goemon Kirakira Douchuu - Boku Ga Dancer Ni Natta Wake</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1997</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Go for it! Goemon 2 - The Strange General McGuinness (Japan) (Translated)">
+    <description>Ganbare Goemon 2 - Kiteretsu Shougun Magginesu</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Go for it! Goemon 3 - The Mecha Leg Hold of Jurokube Shishi (Japan) (Translated)">
+    <description>Go for it! Goemon 3 - The Mecha Leg Hold of Jurokube Shishi (Japan) (Translated)</description>
+    <manufacturer></manufacturer>
+    <year></year>
+    <genre></genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gokujou Parodius (Japan)">
+    <description>Gokujou Parodius</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Goof Troop (USA)">
+    <description>Goof Troop</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Gradius III (USA)">
+    <description>Gradius 3</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1990</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Great Circus Mystery Starring Mickey &amp; Minnie, The (USA)">
+    <description>The Great Circus Mystery Starring Mickey &amp; Minnie</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hagane - The Final Conflict (USA)">
+    <description>Hagane - The Final Conflict</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Hammer Lock Wrestling (USA)">
+    <description>Hammerlock Wrestling</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1994</year>
+    <genre>Sport / Lutte</genre>
+    <players>1-8</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Harley's Humongous Adventure (USA)">
+    <description>Harley's Humongous Adventure</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1993</year>
+    <genre>Aventure</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Harvest Moon (USA)">
+    <description>Harvest Moon</description>
+    <manufacturer>Natsume</manufacturer>
+    <year>1998</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Humans, The (Europe)">
+    <description>Humans</description>
+    <manufacturer>GameTek</manufacturer>
+    <year>1993</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="HyperZone (USA)">
+    <description>Hyperzone</description>
+    <manufacturer>HAL Laboratory</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Illusion of Gaia (USA)">
+    <description>Illusion of Time</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Indiana Jones' Greatest Adventures (USA)">
+    <description>Indiana Jones' Greatest Adventures</description>
+    <manufacturer>JVC</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Inindo - Way of the Ninja (USA)">
+    <description>Inindo - Way Of The Ninja</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de Rôle Japonais</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Inspector Gadget (USA)">
+    <description>Inspecteur Gadget</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="International Superstar Soccer Deluxe (USA)">
+    <description>International Superstar Soccer Deluxe</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1996</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jikkyou Oshaberi Parodius (Japan)">
+    <description>Jikkyou Oshaberi Parodius</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1995</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jim Lee's WildC.A.T.S - Covert-Action-Teams (USA)">
+    <description>Jim Lee's Wildc.a.t.s - Covert-action-teams</description>
+    <manufacturer>Beam Software</manufacturer>
+    <year>1995</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Joe &amp; Mac (USA)">
+    <description>Joe And Mac - Caveman Ninja</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Joe &amp; Mac 2 - Lost in the Tropics (USA)">
+    <description>Joe And Mac 3 - Lost In The Tropics</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jungle Book, The (USA)">
+    <description>Jungle Book, The</description>
+    <manufacturer>Virgin Interactive Entertainment</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jungle Strike (USA)">
+    <description>Jungle Strike</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Diagonal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Jurassic Park (USA) (Rev 1)">
+    <description>Jurassic Park</description>
+    <manufacturer>Ocean</manufacturer>
+    <year>1993</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ken Griffey Jr.'s Winning Run (USA)">
+    <description>Ken Griffey Jr's Winning Run</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1996</year>
+    <genre>Sport / Baseball</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kid Klown in Crazy Chase (USA)">
+    <description>Kid Klown In Crazy Chase</description>
+    <manufacturer>Kemco</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Killer Instinct (USA) (Rev 1)">
+    <description>Killer Instinct</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="King Arthur's World (USA)">
+    <description>King Arthur's World</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1993</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="King of Demons (Japan) (Translated)">
+    <description>Majuu Ou</description>
+    <manufacturer>KSS</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="King of Dragons (USA)">
+    <description>King Of Dragons, The</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="King of the Monsters (USA)">
+    <description>King Of The Monsters</description>
+    <manufacturer>Takara</manufacturer>
+    <year>1992</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="King of the Monsters 2 (USA)">
+    <description>King Of The Monsters 2</description>
+    <manufacturer>Takara</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kirby Super Star (USA)">
+    <description>Kirby's Fun Pak</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kirby's Avalanche (USA)">
+    <description>Kirby's Ghost Trap</description>
+    <manufacturer>Banpresto</manufacturer>
+    <year>1995</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kirby's Dream Course (USA)">
+    <description>Kirby's Dream Course</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Sport / Golf</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Kirby's Dream Land 3 (USA)">
+    <description>Kirby's Dream Land 3</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1998</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Knights of the Round (USA)">
+    <description>Knights Of The Round</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Legend (USA)">
+    <description>Legend</description>
+    <manufacturer>Seika</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Legend of Zelda, The - A Link to the Past (USA)">
+    <description>Legend Of Zelda - A Link To The Past, The</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1991</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Legend of the Mystical Ninja, The (USA)">
+    <description>Legend Of The Mystical Ninja, The</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme / Run &amp; Jump Scrolling</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Liberty or Death (USA)">
+    <description>Liberty Or Death</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1994</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lion King, The (USA)">
+    <description>Le Roi Lion</description>
+    <manufacturer>Virgin</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Live A Live (Japan) (Translated)">
+    <description>Live A Live</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lord of Darkness (USA)">
+    <description>Nobunaga's Ambition 2 - Lord Of Darkness</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1994</year>
+    <genre>Stratégie</genre>
+    <players>1-8</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lost Vikings 2 (USA)">
+    <description>Lost Vikings 2 Norse By Norsewest, The</description>
+    <manufacturer>Interplay</manufacturer>
+    <year>1997</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lost Vikings, The (USA)">
+    <description>Lost Vikings, The</description>
+    <manufacturer>Interplay</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lucky Luke (Europe) (En,Fr,De,Es)">
+    <description>Lucky Luke</description>
+    <manufacturer>Infogrames</manufacturer>
+    <year>1997</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lufia &amp; the Fortress of Doom (USA)">
+    <description>Lufia And The Fortress Of Doom</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Lufia II - Rise of the Sinistrals (USA)">
+    <description>Lufia 2 - Rise Of The Sinistrals</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1996</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Madden NFL '94 (USA)">
+    <description>Madden Nfl '94</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Football Américain</genre>
+    <players>1-5</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Magic Sword (USA)">
+    <description>Magic Sword</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Magical Pop'n (Japan) (Translated)">
+    <description>Magical Pop'n</description>
+    <manufacturer>Pack In Video</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1-5</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Magical Quest Starring Mickey Mouse, The (USA) (Rev 1)">
+    <description>Magical Quest Starring Mickey Mouse, The</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Marvel Super Heroes in War of the Gems (USA)">
+    <description>Marvel Super Heroes - War of the Gems</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mask, The (USA)">
+    <description>Mask, The</description>
+    <manufacturer>Black Pearl Software</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Maui Mallard in Cold Shadow (USA)">
+    <description>Maui Mallard In Cold Shadow</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mega Man 7 (USA)">
+    <description>Mega Man 7</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mega Man Soccer (USA)">
+    <description>Mega Man Soccer</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Sport / Football</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mega Man X (USA) (Rev 1)">
+    <description>Mega Man X</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mega Man X2 (USA)">
+    <description>Mega Man X2</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mega Man X3 (USA)">
+    <description>Mega Man X3</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Metal Combat - Falcon's Revenge (USA)">
+    <description>Metal Combat - Falcon's Revenge</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1993</year>
+    <genre>Tir avec accessoire</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Metal Marines (USA)">
+    <description>Metal Marines</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1994</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Metal Warriors (USA)">
+    <description>Metal Warriors</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mickey Mania - The Timeless Adventures of Mickey Mouse (USA)">
+    <description>Mickey Mania - The Timeless Adventures Of Mickey Mouse</description>
+    <manufacturer>Sony Imagesoft</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mickey's Ultimate Challenge (USA)">
+    <description>Mickey's Ultimate Challenge</description>
+    <manufacturer>Hi-Tec Software</manufacturer>
+    <year>1994</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Might and Magic II (Europe)">
+    <description>Might and Magic 2</description>
+    <manufacturer>New World Computing</manufacturer>
+    <year>1993</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Might and Magic III - Isles of Terra (USA)">
+    <description>Might And Magic 3 - Isles Of Terra</description>
+    <manufacturer>Iguana Entertainment</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mighty Morphin Power Rangers (USA)">
+    <description>Mighty Morphin Power Rangers</description>
+    <manufacturer>Bandai</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mighty Morphin Power Rangers - The Fighting Edition (USA)">
+    <description>Mighty Morphin Power Rangers - The Fighting Edition</description>
+    <manufacturer>Natsume</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mighty Morphin Power Rangers - The Movie (USA)">
+    <description>Mighty Morphin Power Rangers - The Movie</description>
+    <manufacturer>Bandai</manufacturer>
+    <year>1995</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mobile Suit Gundam Wing - Endless Duel (Japan) (Translated)">
+    <description>Shin Kidou Senki Gundam W - Endless Duel</description>
+    <manufacturer>Bandai</manufacturer>
+    <year>1996</year>
+    <genre>Combat / 2D</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Monopoly (USA) (Rev 1)">
+    <description>Monopoly</description>
+    <manufacturer>Parker Brothers</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de societe / plateau</genre>
+    <players>1-8</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mortal Kombat (USA) (Rev 1)">
+    <description>Mortal Kombat</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mortal Kombat II (USA) (Rev 1)">
+    <description>Mortal Kombat 2</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1994</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Musya - The Classic Japanese Tale of Horror (USA)">
+    <description>Musya</description>
+    <manufacturer>SETA</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Mystery Dungeon 2 - Shiren the Wanderer (Japan) (Translated)">
+    <description>Mystery Dungeon 2 - Shiren the Wanderer (Japan) (Translated)</description>
+    <manufacturer></manufacturer>
+    <year></year>
+    <genre></genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="NBA Jam - Tournament Edition (USA)">
+    <description>NBA Jam Tournament Edition</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1995</year>
+    <genre>Sport / Basketball</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="NHL '94 (USA)">
+    <description>NHL Hockey '94</description>
+    <manufacturer>EA Sports</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Hockey</genre>
+    <players>1-5</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="New Horizons (USA)">
+    <description>Uncharted Waters 2 - New Horizons</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1994</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ninjawarriors (USA)">
+    <description>Ninja Warriors</description>
+    <manufacturer>Titus</manufacturer>
+    <year>1995</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Nobunaga's Ambition (USA)">
+    <description>Nobunaga's Ambition</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1993</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Nosferatu (USA)">
+    <description>Nosferatu</description>
+    <manufacturer>SETA</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ogre Battle - The March of the Black Queen (USA)">
+    <description>Ogre Battle - The March Of The Black Queen</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="On the Ball (USA)">
+    <description>On The Ball</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1993</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Operation Logic Bomb - The Ultimate Search &amp; Destroy (USA)">
+    <description>Operation Logic Bomb - The Ultimate Search and Destroy</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1993</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Out of This World (USA)">
+    <description>Another World</description>
+    <manufacturer>Interplay</manufacturer>
+    <year>1992</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="P.T.O. - Pacific Theater of Operations (USA)">
+    <description>P.t.o. - Pacific Theater Of Operations</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1992</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="P.T.O. II - Pacific Theater of Operations (USA)">
+    <description>P.t.o. - Pacific Theater Of Operations 2</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1995</year>
+    <genre>Simulation</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pac-Man 2 - The New Adventures (USA)">
+    <description>Pac-Man 2 : The New Adventures</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1994</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Paladin's Quest (USA)">
+    <description>Paladin's Quest</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Parodius (Europe)">
+    <description>Parodius</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Phalanx (USA)">
+    <description>Phalanx</description>
+    <manufacturer>Kemco</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Phantom 2040 (USA)">
+    <description>Phantom 2040</description>
+    <manufacturer>Viacom New Media</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pilotwings (USA)">
+    <description>Pilotwings</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1993</year>
+    <genre>Simulation</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pinocchio (USA)">
+    <description>Pinocchio</description>
+    <manufacturer>Disney Interactive</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Plok (USA)">
+    <description>Plok</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pocky &amp; Rocky (USA)">
+    <description>Pocky And Rocky</description>
+    <manufacturer>Natsume</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pocky &amp; Rocky 2 (USA)">
+    <description>Pocky And Rocky 2</description>
+    <manufacturer>Ocean</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em Up</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pop'n TwinBee (Europe)">
+    <description>Pop'n Twinbee</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Pop'n TwinBee - Rainbow Bell Adventures (Europe)">
+    <description>Pop'n Twinbee - Rainbow Bell Adventure</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Populous (USA)">
+    <description>Populous</description>
+    <manufacturer>Imagineer</manufacturer>
+    <year>1990</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Populous II - Trials of the Olympian Gods (Europe)">
+    <description>Populous 2 - Trials Of The Olympian Gods</description>
+    <manufacturer>Bullfrog</manufacturer>
+    <year>1994</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Prehistorik Man (USA) (En,Fr,Es)">
+    <description>Prehistorik Man</description>
+    <manufacturer>Titus</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Push-Over (USA)">
+    <description>Push-over</description>
+    <manufacturer>Ocean</manufacturer>
+    <year>1992</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Putty Squad (Europe)">
+    <description>Putty Squad</description>
+    <manufacturer>Ocean</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="R-Type III (USA)">
+    <description>R-type 3</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1994</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Radical Rex (USA)">
+    <description>Radical Rex</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rampart (USA)">
+    <description>Rampart</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1992</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rendering Ranger R2 (Japan) (En)">
+    <description>Rendering Ranger R2</description>
+    <manufacturer>Virgin</manufacturer>
+    <year>1995</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Riddick Bowe Boxing (USA)">
+    <description>Riddick Bowe Boxing</description>
+    <manufacturer>Extreme Entertainment</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Boxe</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="RoboCop versus The Terminator (USA)">
+    <description>Robocop Vs Terminator</description>
+    <manufacturer>Virgin</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Robotrek (USA)">
+    <description>Robotrek</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rock N' Roll Racing (USA)">
+    <description>Rock N' Roll Racing</description>
+    <manufacturer>Interplay</manufacturer>
+    <year>1993</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rockman &amp; Forte (Japan) (Translated)">
+    <description>Rockman And Forte</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1998</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Rocky Rodent (USA)">
+    <description>Rocky Rodent</description>
+    <manufacturer>Irem</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Romance of the Three Kingdoms II (USA)">
+    <description>Romance Of The Three Kingdoms 2</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1991</year>
+    <genre>Stratégie</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Romance of the Three Kingdoms III - Dragon of Destiny (USA)">
+    <description>Romance Of The Three Kingdoms 3 - Dragon Of Destiny</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1992</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Romance of the Three Kingdoms IV - Wall of Fire (USA)">
+    <description>Romance Of The Three Kingdoms 4 - Wall Of Fire</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1995</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Run Saber (USA)">
+    <description>Run Saber</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="S.O.S - Sink or Swim (USA)">
+    <description>S.o.s. - Sink Or Swim</description>
+    <manufacturer>Titus</manufacturer>
+    <year>1996</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="SWAT Kats - The Radical Squadron (USA)">
+    <description>Swat Kats - The Radical Squadron</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Saturday Night Slam Masters (USA)">
+    <description>Saturday Night Slam Masters</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Sport</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Scooby-Doo Mystery (USA)">
+    <description>Scooby-doo Mystery</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1995</year>
+    <genre>Aventure</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Secret of Evermore (USA)">
+    <description>Secret Of Evermore</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Secret of Mana (USA)">
+    <description>Secret of Mana</description>
+    <manufacturer>Square</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-3</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shadowrun (USA)">
+    <description>Shadowrun</description>
+    <manufacturer>Beam Software</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shanghai II - Dragon's Eye (USA)">
+    <description>Shanghai 2 - Dragon's Eye</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1993</year>
+    <genre>Mahjong</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shien's Revenge (USA)">
+    <description>Shien's Revenge</description>
+    <manufacturer>Tokai Engineering</manufacturer>
+    <year>1994</year>
+    <genre>Tir avec accessoire</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shin Megami Tensei (Japan) (Translated)">
+    <description>Shin Megami Tensei</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Shin Megami Tensei II (Japan) (Translated)">
+    <description>Shin Megami Tensei 2</description>
+    <manufacturer>Atlus</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sid Meier's Civilization (USA)">
+    <description>Sid Meier's Civilization</description>
+    <manufacturer>Koei</manufacturer>
+    <year>1994</year>
+    <genre>Construction &amp; Management</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Side Pocket (USA)">
+    <description>Side Pocket</description>
+    <manufacturer>Data East</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Billard</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="SimAnt - The Electronic Ant Colony (USA)">
+    <description>Sim Ant - The Electronic Ant Colony</description>
+    <manufacturer>Maxis Software</manufacturer>
+    <year>1993</year>
+    <genre>Stratégie</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="SimCity (USA)">
+    <description>Simcity</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1991</year>
+    <genre>Construction &amp; Management</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="SimCity 2000 - The Ultimate City Simulator (USA)">
+    <description>Simcity 2000</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1996</year>
+    <genre>Construction &amp; Management</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Skyblazer (USA)">
+    <description>Skyblazer</description>
+    <manufacturer>Sony Imagesoft</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Smash Tennis (Europe)">
+    <description>Smash Tennis</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Tennis</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Soldiers of Fortune (USA)">
+    <description>Chaos Engine, The</description>
+    <manufacturer>MicroProse</manufacturer>
+    <year>1993</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sonic Blast Man (USA)">
+    <description>Sonic Blast Man</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sonic Blast Man II (USA)">
+    <description>Sonic Blast Man 2</description>
+    <manufacturer>Taito</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Soul Blazer (USA)">
+    <description>Soul Blazer</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Space Megaforce (USA)">
+    <description>Super Aleste</description>
+    <manufacturer>Toho</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Spanky's Quest (USA)">
+    <description>Spanky's Quest</description>
+    <manufacturer>Natsume</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sparkster (USA)">
+    <description>Sparkster</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Speed Racer (USA)">
+    <description>Speed Racer In My Most Dangerous Adventures</description>
+    <manufacturer>Accolade</manufacturer>
+    <year>1993</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Spider-Man - Venom - Maximum Carnage (USA)">
+    <description>Spider-man And Venom - Maximum Carnage</description>
+    <manufacturer>LJN</manufacturer>
+    <year>1994</year>
+    <genre>Beat'em All</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Spindizzy Worlds (USA)">
+    <description>Spindizzy Worlds</description>
+    <manufacturer>ASCII</manufacturer>
+    <year>1993</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Star Fox (USA) (Rev 2)">
+    <description>Starwing</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1993</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Star Fox 2 (USA, Europe)">
+    <description>Star Fox 2</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>2017</year>
+    <genre>Tir / 3eme Personne</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Star Ocean (Japan) (Translated)">
+    <description>Star Ocean</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1996</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Street Fighter Alpha 2 (USA)">
+    <description>Street Fighter Alpha 2</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1996</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Street Fighter II Turbo (USA) (Rev 1)">
+    <description>Street Fighter 2 Turbo - Hyper Fighting</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Strike Gunner S.T.G (USA)">
+    <description>Super Strike Gunner</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Vertical</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Stunt Race FX (USA) (Rev 1)">
+    <description>Stunt Race Fx</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Sunset Riders (USA)">
+    <description>Sunset Riders</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Adventure Island (USA)">
+    <description>Super Adventure Island</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Adventure Island II (USA)">
+    <description>Super Adventure Island 2</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Bomberman (USA)">
+    <description>Super Bomberman</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1993</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Bomberman 2 (USA)">
+    <description>Super Bomberman 2</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1994</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Bomberman 3 (Europe)">
+    <description>Super Bomberman 3</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1995</year>
+    <genre>Action / Labyrinthe</genre>
+    <players>1-5</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Bonk (USA)">
+    <description>Super B.c. Kid</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Bowling (USA)">
+    <description>Super Bowling</description>
+    <manufacturer>American Technos</manufacturer>
+    <year>1992</year>
+    <genre>Sport / Bowling</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Buster Bros. (USA) (Rev 1)">
+    <description>Super Buster Bros.</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1992</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Castlevania IV (USA)">
+    <description>Super Castlevania 4</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Double Dragon (USA)">
+    <description>Super Double Dragon</description>
+    <manufacturer>Tradewest</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Famicom Wars (Japan) (NP) (Translated)">
+    <description>Super Famicom Wars</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1998</year>
+    <genre>Stratégie</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Ghouls 'N Ghosts (USA)">
+    <description>Super Ghouls'n Ghosts</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1991</year>
+    <genre>Plateforme / Fighter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Mario All-Stars (USA)">
+    <description>Super Mario All-stars</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Mario Kart (USA)">
+    <description>Super Mario Kart</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1992</year>
+    <genre>Course vue 3eme pers.</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Mario RPG - Legend of the Seven Stars (USA)">
+    <description>Super Mario Rpg - Legend Of The Seven Stars</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1996</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Mario World (USA)">
+    <description>Super Mario World</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1990</year>
+    <genre>Plateforme / Run &amp; Jump</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Mario World 2 - Yoshi's Island (USA) (Rev 1)">
+    <description>Super Mario World 2 - Yoshi's Island</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Metroid (Japan, USA) (En,Ja)">
+    <description>Super Metroid</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Morph (Europe)">
+    <description>Super Morph</description>
+    <manufacturer>Sony Electronic Publishing</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Ninja Boy (USA)">
+    <description>Super Ninja Boy</description>
+    <manufacturer>Culture Brain</manufacturer>
+    <year>1991</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Off Road (USA)">
+    <description>Super Off Road</description>
+    <manufacturer>Software Creations</manufacturer>
+    <year>1991</year>
+    <genre>Course vue 3eme pers.</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Punch-Out!! (USA)">
+    <description>Super Punch-out!!</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Sport / Boxe</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super R-Type (USA)">
+    <description>Super R-type</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1992</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Smash T.V. (USA)">
+    <description>Super Smash T.v.</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1992</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Star Wars (USA) (Rev 1)">
+    <description>Super Star Wars</description>
+    <manufacturer>JVC</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Star Wars - Return of the Jedi (USA) (Rev 1)">
+    <description>Super Star Wars - Return Of The Jedi</description>
+    <manufacturer>JVC</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Star Wars - The Empire Strikes Back (USA) (Rev 1)">
+    <description>Super Star Wars - The Empire Strikes Back</description>
+    <manufacturer>JVC</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Street Fighter II (USA) (Rev 1)">
+    <description>Super Street Fighter 2</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Tennis (USA)">
+    <description>Super Tennis</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1991</year>
+    <genre>Sport / Tennis</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Turrican (USA)">
+    <description>Super Turrican</description>
+    <manufacturer>Hudson Soft</manufacturer>
+    <year>1993</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Super Turrican 2 (USA)">
+    <description>Super Turrican 2</description>
+    <manufacturer>Ocean</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme / Shooter Scrolling</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Syndicate (USA)">
+    <description>Syndicate</description>
+    <manufacturer>Bullfrog</manufacturer>
+    <year>1995</year>
+    <genre>Stratégie</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tactics Ogre - Let Us Cling Together (Japan) (Rev 2) (Translated)">
+    <description>Tactics Ogre - Let Us Cling Together</description>
+    <manufacturer>Quest</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tales of Phantasia (Japan) (Translated)">
+    <description>Tales Of Phantasia</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Taloon's Great Adventure - Mystery Dungeon (Japan) (Translated)">
+    <description>Taloon's Great Adventure - Mystery Dungeon (Japan) (Translated)</description>
+    <manufacturer></manufacturer>
+    <year></year>
+    <genre></genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tecmo Super Bowl III - Final Edition (USA)">
+    <description>Tecmo Super Bowl 3 - Final Edition</description>
+    <manufacturer>Tecmo</manufacturer>
+    <year>1995</year>
+    <genre>Sport / Football Américain</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Teenage Mutant Ninja Turtles - Tournament Fighters (USA)">
+    <description>Teenage Mutant Ninja Turtles - Tournament Fighters</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Teenage Mutant Ninja Turtles IV - Turtles in Time (USA)">
+    <description>Teenage Mutant Ninja Turtles 4 - Turtles In Time</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Beat'em All</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Terranigma (Europe)">
+    <description>Terranigma</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1995</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tetris &amp; Dr. Mario (USA)">
+    <description>Tetris And Dr. Mario</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Puzzle-Game / Tomber</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tetris 2 (USA) (Rev 1)">
+    <description>Tetris 2</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Puzzle-Game / Tomber</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tetris Attack (USA) (En,Ja)">
+    <description>Tetris Attack</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1995</year>
+    <genre>Puzzle-Game / Tomber</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tiny Toon Adventures - Buster Busts Loose! (USA)">
+    <description>Tiny Toon Adventures - Buster Busts Loose !</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Tiny Toon Adventures - Wacky Sports Challenge (USA)">
+    <description>Tiny Toon Adventures - Wild And Wacky Sports</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1996</year>
+    <genre>Sport / Multisports</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Top Gear (USA)">
+    <description>Top Gear</description>
+    <manufacturer>Gremlin Graphics Software</manufacturer>
+    <year>1992</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Top Gear 2 (USA)">
+    <description>Top Gear 2</description>
+    <manufacturer>Kemco</manufacturer>
+    <year>1993</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Top Gear 3000 (USA)">
+    <description>Top Gear 3000</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1995</year>
+    <genre>Course, Conduite</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Total Carnage (USA)">
+    <description>Total Carnage</description>
+    <manufacturer>Malibu Games</manufacturer>
+    <year>1993</year>
+    <genre>Tir / Run and Gun</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Toy Story (USA)">
+    <description>Toy Story</description>
+    <manufacturer>Traveller's Tales</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Trials of Mana (World) (Rev 1) (Collection of Mana)">
+    <description>Seiken Densetsu 3</description>
+    <manufacturer>Squaresoft</manufacturer>
+    <year>1995</year>
+    <genre>Action RPG</genre>
+    <players>1-3</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Troddlers (USA)">
+    <description>Troddlers</description>
+    <manufacturer>Sales Curve</manufacturer>
+    <year>1993</year>
+    <genre>Réflexion</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="True Lies (USA)">
+    <description>True Lies</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1995</year>
+    <genre>Tir</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Turn and Burn - No-Fly Zone (USA)">
+    <description>Turn And Burn - No-fly Zone</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1994</year>
+    <genre>Tir / Avion</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Twisted Tales of Spike McFang, The (USA)">
+    <description>Twisted Tales Of Spike Mcfang, The</description>
+    <manufacturer>Bullet Proof Software</manufacturer>
+    <year>1993</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="U.N. Squadron (USA)">
+    <description>U.n. Squadron</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1991</year>
+    <genre>Shoot'em up / Horizontal</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ultima - Runes of Virtue II (USA)">
+    <description>Ultima - Runes Of Virtue 2</description>
+    <manufacturer>FCI</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ultima - The Black Gate (USA)">
+    <description>Ultima 7 - The Black Gate</description>
+    <manufacturer>FCI</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ultima - The False Prophet (USA)">
+    <description>Ultima 6 - The False Prophet</description>
+    <manufacturer>Pony Canyon</manufacturer>
+    <year>1992</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ultimate Mortal Kombat 3 (USA)">
+    <description>Ultimate Mortal Kombat 3</description>
+    <manufacturer>Midway</manufacturer>
+    <year>1996</year>
+    <genre>Combat / Versus</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Uniracers (USA)">
+    <description>Unirally</description>
+    <manufacturer>Psygnosis</manufacturer>
+    <year>1995</year>
+    <genre>Course, Conduite</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Urban Strike (USA)">
+    <description>Urban Strike</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1995</year>
+    <genre>Shoot'em Up</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Utopia - The Creation of a Nation (USA)">
+    <description>Utopia - The Creation Of A Nation</description>
+    <manufacturer>Jaleco</manufacturer>
+    <year>1993</year>
+    <genre>Simulation</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Vegas Stakes (USA)">
+    <description>Vegas Stakes</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1993</year>
+    <genre>Casino</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Violinist of Hameln, The (Japan) (Translated)">
+    <description>Hameln No Violin Hiki</description>
+    <manufacturer>Enix</manufacturer>
+    <year>1995</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="WWF Raw (USA)">
+    <description>Wwf Raw</description>
+    <manufacturer>LJN</manufacturer>
+    <year>1994</year>
+    <genre>Sport / Combat</genre>
+    <players>1-4</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="WWF Royal Rumble (USA)">
+    <description>Wwf Royal Rumble</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1993</year>
+    <genre>Sport / Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="WWF WrestleMania - The Arcade Game (USA)">
+    <description>Wwf Wrestlemania - The Arcade Game</description>
+    <manufacturer>Acclaim Entertainment</manufacturer>
+    <year>1995</year>
+    <genre>Sport / Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wario's Woods (USA)">
+    <description>Wario's Woods</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1995</year>
+    <genre>Puzzle-Game / Tomber</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="WeaponLord (USA)">
+    <description>Weaponlord</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1995</year>
+    <genre>Combat</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Where in the World Is Carmen Sandiego (USA) (En,Fr,De,Es,It)">
+    <description>Where in the World is Carmen Sandiego?</description>
+    <manufacturer>Electronic Arts</manufacturer>
+    <year>1993</year>
+    <genre>Ludo-Educatif</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Whirlo (Europe)">
+    <description>Whirlo</description>
+    <manufacturer>Namco</manufacturer>
+    <year>1992</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Whizz (USA)">
+    <description>Whizz</description>
+    <manufacturer>Titus</manufacturer>
+    <year>1996</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wild Guns (USA)">
+    <description>Wild Guns</description>
+    <manufacturer>Titus</manufacturer>
+    <year>1994</year>
+    <genre>Tir / 3eme Personne</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wild Snake (USA)">
+    <description>Wild Snake</description>
+    <manufacturer>Spectrum Holobyte</manufacturer>
+    <year>1994</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wing Commander (USA)">
+    <description>Wing Commander</description>
+    <manufacturer>Mindscape</manufacturer>
+    <year>1992</year>
+    <genre>Tir / Véhicule, 1ere personne</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wing Commander - The Secret Missions (USA)">
+    <description>Wing Commander - The Secret Missions</description>
+    <manufacturer>ORIGIN Systems</manufacturer>
+    <year>1993</year>
+    <genre></genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Wizardry V - Heart of the Maelstrom (USA)">
+    <description>Wizardry 5 - Heart Of The Maelstrom</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Jeu de rôles</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="X-Kaliber 2097 (USA)">
+    <description>X-kaliber 2097</description>
+    <manufacturer>Activision</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="X-Men - Mutant Apocalypse (USA)">
+    <description>X-men - Mutant Apocalypse</description>
+    <manufacturer>Capcom</manufacturer>
+    <year>1994</year>
+    <genre>Plateforme</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Yoshi's Cookie (USA)">
+    <description>Yoshi's Cookie</description>
+    <manufacturer>Bullet Proof Software</manufacturer>
+    <year>1993</year>
+    <genre>Puzzle-Game</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Young Merlin (USA)">
+    <description>Young Merlin</description>
+    <manufacturer>Westwood  Studios</manufacturer>
+    <year>1994</year>
+    <genre>Aventure</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Ys III - Wanderers from Ys (USA)">
+    <description>Ys 3 - Wanderers From Ys</description>
+    <manufacturer>Tonkin House</manufacturer>
+    <year>1992</year>
+    <genre>Action RPG</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Zombies Ate My Neighbors (USA)">
+    <description>Zombies Ate My Neighbors</description>
+    <manufacturer>Konami</manufacturer>
+    <year>1993</year>
+    <genre>Tir</genre>
+    <players>1-2</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+  <game name="Zoop (USA)">
+    <description>Zoop</description>
+    <manufacturer>Viacom New Media</manufacturer>
+    <year>1995</year>
+    <genre>Puzzle-Game</genre>
+    <players>1</players>
+    <rating></rating>
+    <enabled>Yes</enabled>
+  </game>
+</menu>
