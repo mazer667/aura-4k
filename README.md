@@ -153,15 +153,18 @@ aura-4k/
 
 ## Ajout de jeux
 
-### Méthode 1: Création automatique XML
+### Méthode 1: Création automatique XML (Recommandée)
+
+**Prérequis :** Compte [screenscrapper.fr](https://screenscrapper.fr) (gratuit)
 
 1. Créez le dossier: `assets/consoles/[Nom Console]/roms/`
 2. Placez vos ROMs (.zip, .nes, .sms, etc.) dans ce dossier
 3. Dans l'app: **Options > Data**
-4. Sélectionnez la console dans la liste déroulante
-5. Cliquez sur **Créer XML**
-6. Attendez la génération (avec barre de progression)
-7. Les jeux apparaissent dans la liste
+4. Entrez vos identifiants Screenscrapper
+5. Sélectionnez la console dans la liste déroulante
+6. Cliquez sur **Créer XML**
+7. Attendez la génération (avec barre de progression)
+8. Les jeux apparaissent avec nom, jaquette, description, etc.
 
 ### Méthode 2: Manuel
 
@@ -250,6 +253,30 @@ npm run build
 # Tester avec Electron directement
 electron .
 ```
+
+---
+
+## Fichiers XML
+
+Les fichiers XML générés sont sauvegardés dans `data/` et contiennent les informations des jeux :
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<menu>
+  <game name="Super Mario Bros">
+    <description>Super Mario Bros</description>
+    <manufacturer>Nintendo</manufacturer>
+    <year>1985</year>
+    <genre>Platformer</genre>
+    <players>2</players>
+    <rating>9.0</rating>
+    <enabled>Yes</enabled>
+    <path>roms/smb.nes</path>
+  </game>
+</menu>
+```
+
+**Note :** Le XML est automatiquement généré via Screenscrapper. Vous pouvez aussi l'éditer manuellement.
 
 ---
 
